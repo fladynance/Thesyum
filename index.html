@@ -323,9 +323,16 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
 .dv-caption b{color:var(--phosphor)}
 
 @media(max-width:900px){
-  .devices{max-width:380px;padding-bottom:0;margin-bottom:96px}
-  .phone-wrap{position:absolute;right:-6%;bottom:-84px;transform:scale(.9)}
+  .devices{max-width:440px;padding-bottom:0;margin-bottom:40px}
+  /* su mobile impilo monitor e telefono, centrati, invece di sovrapporli */
+  .phone-wrap{position:static;transform:none;margin:-28px auto 0;display:flex;justify-content:center}
+  .phone{transform:none}
   .dv-ctx-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+  .devices{max-width:100%}
+  .phone{width:210px}
+  .phone-wrap{margin-top:-18px}
 }
 
 .rev{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}
@@ -402,6 +409,24 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
 .faq-a p:last-child{margin-bottom:0}
 .faq-a em{color:var(--text);font-style:italic}
 .faq-a strong{color:var(--text);font-weight:500}
+
+/* ===== COMPARISON TABLE ===== */
+.cmp-sec{padding-top:20px}
+.cmp-tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:8px;border:1px solid var(--line);border-radius:var(--r)}
+.cmp{width:100%;border-collapse:collapse;min-width:640px}
+.cmp th,.cmp td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp thead th{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);font-weight:500;background:var(--surface);white-space:nowrap}
+.cmp thead th.us{color:var(--bg);background:var(--phosphor)}
+.cmp tbody tr:last-child td{border-bottom:none}
+.cmp .rowlab{font-family:'Space Grotesk',sans-serif;font-size:14px;color:var(--text);font-weight:500;white-space:nowrap}
+.cmp td.us{background:rgba(110,231,168,.06);color:var(--text);font-size:14px}
+.cmp td{font-size:13.5px;color:var(--dim)}
+.cmp .yes{color:var(--phosphor);font-weight:500}
+.cmp .no{color:var(--faint)}
+.cmp .partial{color:var(--amber)}
+.cmp-note{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);margin-top:14px;text-align:center;letter-spacing:.02em}
+.cmp-hint{display:none;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--faint);text-align:center;margin-top:10px}
+@media(max-width:760px){.cmp-hint{display:block}}
 </style>
 </head>
 <body>
@@ -497,7 +522,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
 <!-- PRODOTTO DAL VIVO -->
 <section class="has-glow glow-green" id="prodotto"><div class="wrap">
   <div class="shead rev">
-    <span class="sec-index">02 / 09</span>
+    <span class="sec-index">02 / 11</span>
     <span class="eyebrow">Il prodotto dal vivo</span>
     <h2>La schermata che apri ogni mattina.</h2>
     <p>Stesso contenuto che riceve chi paga l'abbonamento oggi. Scorri dentro lo schermo: contesto di mercato in apertura, poi la tesi del giorno per intero.</p>
@@ -644,7 +669,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
 <!-- PROBLEMA -->
 <section class="has-glow glow-green"><div class="wrap">
   <div class="shead rev">
-    <span class="sec-index">03 / 09</span><span class="eyebrow">Il problema</span>
+    <span class="sec-index">03 / 11</span><span class="eyebrow">Il problema</span>
     <h2>Chi ti manda notizie non torna mai a dirti se aveva ragione.</h2>
     <p>È la caratteristica strutturale dell'informazione finanziaria: flusso continuo, memoria zero. Ogni mattina si riparte da capo. Le previsioni giuste si ricordano a voce, quelle sbagliate scompaiono dall'archivio — e tu non hai modo di sapere se il servizio che paghi funziona.</p>
   </div>
@@ -665,7 +690,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
 <!-- CATENA -->
 <section id="catena"><div class="wrap">
   <div class="shead rev">
-    <span class="sec-index">04 / 09</span><span class="eyebrow">Il ragionamento</span>
+    <span class="sec-index">04 / 11</span><span class="eyebrow">Il ragionamento</span>
     <h2>Non un punteggio. Una catena che puoi ripetere al cliente.</h2>
     <p>I sistemi quantitativi ti danno un numero e non ti dicono perché. Qui ogni tesi arriva con i suoi passaggi in chiaro: puoi verificarli, contestarli, o riportarli parola per parola in una telefonata con un cliente.</p>
   </div>
@@ -710,7 +735,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
 <!-- DIFESE -->
 <section id="difese" class="has-glow glow-amber"><div class="wrap">
   <div class="shead rev">
-    <span class="sec-index">05 / 09</span><span class="eyebrow">Le difese</span>
+    <span class="sec-index">05 / 11</span><span class="eyebrow">Le difese</span>
     <h2>Tre controlli prima che una tesi esca. Contro il rischio numero uno: le storie belle e false.</h2>
     <p>Un sistema che racconta bene è pericoloso quanto uno che sbaglia i conti. Ogni tesi passa da tre filtri progettati per fermare le narrazioni convincenti ma vuote.</p>
   </div>
@@ -739,16 +764,16 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
 <!-- DUE REPORT -->
 <section id="report"><div class="wrap">
   <div class="shead rev">
-    <span class="sec-index">06 / 09</span><span class="eyebrow">Due documenti, due mestieri</span>
+    <span class="sec-index">06 / 11</span><span class="eyebrow">Due documenti, due mestieri</span>
     <h2>Uno per decidere oggi. Uno da mettere davanti a un cliente.</h2>
     <p>Sono prodotti diversi per bisogni diversi, e vengono scritti in modo diverso. I segnali grezzi non si girano a un cliente; una sintesi settimanale non basta a chi opera.</p>
   </div>
   <div class="two rev">
     <div class="doc">
-      <div class="doc-h"><span class="n">Nota giornaliera</span><span class="w">2× al giorno</span></div>
+      <div class="doc-h"><span class="n">Nota giornaliera</span><span class="w">ogni mattina</span></div>
       <div class="doc-b">
         <div class="who">Per chi opera</div>
-        <p>Mattina e pomeriggio. Tecnica, densa, con i prezzi reali accanto a ogni segnale. È lo strumento con cui decidi cosa fare oggi.</p>
+        <p>Ogni mattina, prima dell'apertura. Tecnica, densa, con i prezzi reali accanto a ogni segnale. È lo strumento con cui decidi cosa fare oggi.</p>
         <ul>
           <li>Temi caldi con impatto e rilevanza</li>
           <li>Prezzi reali allineati all'orario della notizia</li>
@@ -776,7 +801,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
 <!-- ARCHIVIO -->
 <section><div class="wrap">
   <div class="shead rev">
-    <span class="sec-index">07 / 09</span><span class="eyebrow">L'archivio</span>
+    <span class="sec-index">07 / 11</span><span class="eyebrow">L'archivio</span>
     <h2>Tutto quello che è stato catalogato, a portata di domanda.</h2>
   </div>
   <div class="arch">
@@ -826,10 +851,110 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
   </div>
 </div></section>
 
+<!-- CONFRONTO -->
+<section class="cmp-sec"><div class="wrap">
+  <div class="shead rev">
+    <span class="sec-index">08 / 11</span><span class="eyebrow">Il confronto</span>
+    <h2>Dove si colloca, rispetto a quello che usi gi&agrave;.</h2>
+    <p class="sub">Ogni strumento risolve un pezzo del problema. Thesyum &egrave; l'unico costruito attorno alla verifica nel tempo &mdash; non solo alla produzione di contenuti.</p>
+  </div>
+
+  <div class="cmp-tablewrap rev">
+    <table class="cmp">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th class="us">Thesyum</th>
+          <th>Terminale dati<br>professionale</th>
+          <th>Newsletter<br>di analisi</th>
+          <th>App di segnali<br>/ robo-advisor</th>
+          <th>Feed di<br>notizie</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rowlab">Tesi datate con scadenza</td>
+          <td class="us"><span class="yes">S&igrave;</span> &mdash; ogni tesi ha una data e un orizzonte</td>
+          <td><span class="no">No</span> &mdash; dati grezzi, nessuna tesi</td>
+          <td><span class="partial">A volte</span> &mdash; senza scadenza esplicita</td>
+          <td><span class="no">No</span> &mdash; solo segnali istantanei</td>
+          <td><span class="no">No</span></td>
+        </tr>
+        <tr>
+          <td class="rowlab">Verdetto verificato (anche errori)</td>
+          <td class="us"><span class="yes">S&igrave;</span> &mdash; confermata / smentita, a registro</td>
+          <td><span class="no">No</span></td>
+          <td><span class="no">Raro</span> &mdash; gli errori spariscono</td>
+          <td><span class="partial">Parziale</span> &mdash; performance aggregata</td>
+          <td><span class="no">No</span></td>
+        </tr>
+        <tr>
+          <td class="rowlab">Track record consultabile</td>
+          <td class="us"><span class="yes">S&igrave;</span> &mdash; archivio pubblico, errori inclusi</td>
+          <td><span class="no">No</span></td>
+          <td><span class="no">No</span></td>
+          <td><span class="partial">A volte</span></td>
+          <td><span class="no">No</span></td>
+        </tr>
+        <tr>
+          <td class="rowlab">Ragionamento in chiaro (catena causale)</td>
+          <td class="us"><span class="yes">S&igrave;</span> &mdash; ogni passaggio ripetibile</td>
+          <td><span class="no">No</span> &mdash; dati, non ragionamenti</td>
+          <td><span class="partial">Variabile</span></td>
+          <td><span class="no">No</span> &mdash; solo l'esito, non il perch&eacute;</td>
+          <td><span class="no">No</span></td>
+        </tr>
+        <tr>
+          <td class="rowlab">Controllo "gi&agrave; prezzato dal mercato"</td>
+          <td class="us"><span class="yes">S&igrave;</span> &mdash; confronto con il prezzo reale</td>
+          <td><span class="no">No</span></td>
+          <td><span class="no">No</span></td>
+          <td><span class="no">No</span></td>
+          <td><span class="no">No</span></td>
+        </tr>
+        <tr>
+          <td class="rowlab">Riepilogo notizie giornaliero</td>
+          <td class="us"><span class="yes">S&igrave;</span> &mdash; una nota ogni mattina</td>
+          <td><span class="partial">Grezzo</span> &mdash; da comporre a mano</td>
+          <td><span class="no">Raro</span></td>
+          <td><span class="no">No</span></td>
+          <td><span class="yes">S&igrave;</span> &mdash; ma senza sintesi</td>
+        </tr>
+        <tr>
+          <td class="rowlab">Sintesi settimanale per il cliente</td>
+          <td class="us"><span class="yes">S&igrave;</span> &mdash; leggibile, condivisibile</td>
+          <td><span class="no">No</span></td>
+          <td><span class="partial">A volte</span></td>
+          <td><span class="no">No</span></td>
+          <td><span class="no">No</span></td>
+        </tr>
+        <tr>
+          <td class="rowlab">Pensato per il consulente</td>
+          <td class="us"><span class="yes">S&igrave;</span> &mdash; da usare col cliente</td>
+          <td><span class="partial">Generico</span> &mdash; per operatori</td>
+          <td><span class="partial">Variabile</span></td>
+          <td><span class="no">No</span> &mdash; per l'investitore finale</td>
+          <td><span class="no">No</span></td>
+        </tr>
+        <tr>
+          <td class="rowlab">Costo indicativo</td>
+          <td class="us"><span class="yes">da 49&euro;/mese</span></td>
+          <td>oltre 2.000&euro;/mese</td>
+          <td>20&ndash;300&euro;/mese</td>
+          <td>variabile / % gestito</td>
+          <td>gratis &ndash; basso</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cmp-hint">&#8592; scorri la tabella per vedere tutte le colonne</div>
+  <p class="cmp-note">Categorie generiche a scopo illustrativo. Nessun prodotto specifico &egrave; citato o confrontato per nome.</p>
+</div></section>
+
 <!-- PREZZI -->
 <section id="prezzi" class="has-glow glow-amber"><div class="wrap">
   <div class="shead rev">
-    <span class="sec-index">08 / 09</span><span class="eyebrow">Accesso</span>
+    <span class="sec-index">09 / 11</span><span class="eyebrow">Accesso</span>
     <h2>Tre livelli, nessun vincolo di durata.</h2>
   </div>
   <div class="plans rev">
@@ -849,7 +974,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
       <div class="pd">Per chi opera e deve sapere prima dell'apertura.</div>
       <div class="pp">€99<span>/mese</span></div>
       <ul>
-        <li>Nota giornaliera (2× al giorno) + settimanale</li>
+        <li>Nota giornaliera + sintesi settimanale</li>
         <li>Approfondimenti per settore</li>
         <li>Archivio interrogabile, illimitato</li>
         <li>Catene di conseguenze complete</li>
@@ -926,7 +1051,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
 <!-- FAQ -->
 <section id="faq"><div class="wrap faq-wrap">
   <div class="shead rev">
-    <span class="sec-index">09 / 10</span><span class="eyebrow">Prima di iniziare</span>
+    <span class="sec-index">10 / 11</span><span class="eyebrow">Prima di iniziare</span>
     <h2>Domande frequenti</h2>
   </div>
 
@@ -993,7 +1118,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
 <section class="contact" id="contatti"><div class="wrap">
   <div class="contact-grid">
     <div class="contact-txt rev">
-      <span class="sec-index">10 / 10</span><span class="eyebrow">Contatti</span>
+      <span class="sec-index">11 / 11</span><span class="eyebrow">Contatti</span>
       <h2>Vedi il registro dal vivo.</h2>
       <p>Lascia i tuoi dati e ti scriviamo per fissare una demo: venti minuti in cui apriamo il registro reale, le tesi in corso, e le verifiche già chiuse — comprese quelle andate male.</p>
       <p>Se invece vuoi solo maggiori informazioni, scrivilo nel messaggio e rispondiamo a quello.</p>
