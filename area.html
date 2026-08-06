@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Thesyum — Area riservata</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%2308110F'/%3E%3Crect%20x='6'%20y='6'%20width='20'%20height='20'%20rx='2'%20stroke='%23E3EEE9'%20stroke-opacity='.35'%20stroke-width='1.4'/%3E%3Cline%20x1='6'%20y1='13.3'%20x2='26'%20y2='13.3'%20stroke='%23E3EEE9'%20stroke-opacity='.28'%20stroke-width='1.4'/%3E%3Cline%20x1='6'%20y1='18.7'%20x2='26'%20y2='18.7'%20stroke='%23E3EEE9'%20stroke-opacity='.28'%20stroke-width='1.4'/%3E%3Ccircle%20cx='11.2'%20cy='9.7'%20r='2.3'%20fill='%236EE7A8'/%3E%3Ccircle%20cx='11.2'%20cy='16'%20r='2.3'%20fill='%23E3B24A'/%3E%3Ccircle%20cx='11.2'%20cy='22.3'%20r='2.3'%20fill='%236EE7A8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08110F; --surface:#0E1B18; --surface-2:#132420;
+  --line:rgba(224,238,232,0.09); --line-strong:rgba(224,238,232,0.18);
+  --text:#E3EEE9; --dim:rgba(227,238,233,0.60); --faint:rgba(227,238,233,0.32);
+  --phosphor:#6EE7A8; --amber:#E3B24A; --rust:#C96A55; --r:2px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--phosphor);color:var(--bg)}
+.mono{font-family:'JetBrains Mono',monospace}
+.serif{font-family:'Newsreader',serif}
+
+/* ===== GATE (password) ===== */
+.gate{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:24px}
+.gate.hidden{display:none}
+.gate-box{width:100%;max-width:380px;text-align:center}
+.gate-logo{display:flex;align-items:center;justify-content:center;gap:11px;margin-bottom:34px}
+.gate-logo svg{width:30px;height:30px}
+.gate-logo span{font-family:'Newsreader',serif;font-size:26px;letter-spacing:.03em}
+.gate h1{font-family:'Newsreader',serif;font-weight:400;font-size:22px;margin-bottom:8px}
+.gate p{font-size:13.5px;color:var(--dim);margin-bottom:28px;line-height:1.5}
+.gate input{width:100%;background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--r);padding:15px 16px;color:var(--text);font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;letter-spacing:.1em;transition:border-color .2s}
+.gate input:focus{outline:none;border-color:var(--phosphor)}
+.gate input::placeholder{color:var(--faint);letter-spacing:.05em}
+.gate button{width:100%;margin-top:14px;background:var(--phosphor);color:var(--bg);border:none;border-radius:var(--r);padding:15px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;cursor:pointer;transition:.2s}
+.gate button:hover{background:#8df0bd}
+.gate-err{margin-top:16px;font-size:12.5px;color:var(--rust);min-height:18px;font-family:'JetBrains Mono',monospace}
+
+/* ===== APP ===== */
+.app{display:none}
+.app.on{display:block}
+
+header{position:sticky;top:0;z-index:40;background:rgba(8,17,15,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hwrap{max-width:1080px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px}
+.logo svg{width:24px;height:24px}
+.logo span{font-family:'Newsreader',serif;font-size:20px;letter-spacing:.03em}
+.logout{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);border:1px solid var(--line);padding:8px 14px;border-radius:var(--r);cursor:pointer;background:none;transition:.2s}
+.logout:hover{color:var(--text);border-color:var(--line-strong)}
+
+.tabs{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;gap:4px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);padding:18px 18px 15px;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:.15s;background:none;border-top:none;border-left:none;border-right:none}
+.tab:hover{color:var(--dim)}
+.tab.active{color:var(--phosphor);border-bottom-color:var(--phosphor)}
+
+main{max-width:1080px;margin:0 auto;padding:40px 24px 80px}
+.panel{display:none}
+.panel.on{display:block;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.phead{margin-bottom:28px}
+.phead .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--phosphor);display:block;margin-bottom:10px}
+.phead h2{font-family:'Newsreader',serif;font-weight:400;font-size:30px;line-height:1.15}
+.phead p{margin-top:10px;font-size:14.5px;color:var(--dim);max-width:60ch;line-height:1.6}
+
+/* card report */
+.rlist{display:flex;flex-direction:column;gap:12px}
+.rcard{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px;transition:border-color .2s}
+.rcard:hover{border-color:var(--line-strong)}
+.rcard-l{min-width:0}
+.rcard .kind{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--phosphor);margin-bottom:7px;display:flex;align-items:center;gap:8px}
+.rcard .kind .dot{width:5px;height:5px;border-radius:50%;background:var(--phosphor)}
+.rcard.weekly .kind{color:var(--amber)} .rcard.weekly .kind .dot{background:var(--amber)}
+.rcard .rtitle{font-family:'Newsreader',serif;font-size:18px;line-height:1.3;margin-bottom:5px}
+.rcard .rmeta{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint)}
+.rcard-r{display:flex;gap:8px;flex-shrink:0}
+.rbtn{font-family:'JetBrains Mono',monospace;font-size:11px;padding:9px 14px;border-radius:var(--r);border:1px solid var(--line-strong);color:var(--dim);transition:.2s;white-space:nowrap;cursor:pointer;background:none}
+.rbtn:hover{border-color:var(--phosphor);color:var(--phosphor)}
+.rbtn.primary{background:var(--phosphor);color:var(--bg);border-color:var(--phosphor)}
+.rbtn.primary:hover{background:#8df0bd}
+
+/* settimana in corso */
+.building{border:1px dashed var(--line-strong);border-radius:var(--r);background:transparent;padding:20px 22px;display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.building .pulse{width:9px;height:9px;border-radius:50%;background:var(--amber);flex-shrink:0;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+.building .btxt .bt{font-family:'Newsreader',serif;font-size:17px;margin-bottom:3px}
+.building .btxt .bm{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint)}
+
+/* search */
+.searchbar{position:relative;margin-bottom:26px}
+.searchbar input{width:100%;background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--r);padding:16px 16px 16px 46px;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:15px;transition:border-color .2s}
+.searchbar input:focus{outline:none;border-color:var(--phosphor)}
+.searchbar input::placeholder{color:var(--faint)}
+.searchbar svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;stroke:var(--faint)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.chip{font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 13px;border:1px solid var(--line);border-radius:var(--r);color:var(--dim);cursor:pointer;transition:.2s;background:none}
+.chip:hover{border-color:var(--phosphor);color:var(--phosphor)}
+.chip.active{background:rgba(110,231,168,.1);border-color:var(--phosphor);color:var(--phosphor)}
+
+/* news row (ricerca) */
+.nrow{border-bottom:1px solid var(--line);padding:16px 0;display:grid;grid-template-columns:88px 1fr auto;gap:16px;align-items:baseline}
+.nrow:last-child{border-bottom:none}
+.nrow .ndate{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint)}
+.nrow .nbody .ns{font-size:14.5px;line-height:1.5;color:var(--text);margin-bottom:5px}
+.nrow .nbody .nsrc{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--faint)}
+.nrow .ntag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);border:1px solid var(--line);padding:4px 9px;border-radius:var(--r);white-space:nowrap}
+.imp-rialzista{color:var(--phosphor)!important;border-color:rgba(110,231,168,.3)!important}
+.imp-ribassista{color:var(--rust)!important;border-color:rgba(201,106,85,.3)!important}
+
+/* empty state */
+.empty{text-align:center;padding:70px 20px;border:1px dashed var(--line);border-radius:var(--r)}
+.empty .ei{width:44px;height:44px;margin:0 auto 18px;border:1.4px solid var(--line-strong);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.empty .ei svg{width:22px;height:22px;stroke:var(--faint)}
+.empty h3{font-family:'Newsreader',serif;font-weight:400;font-size:20px;margin-bottom:8px}
+.empty p{font-size:13.5px;color:var(--dim);line-height:1.6;max-width:44ch;margin:0 auto}
+.count{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);margin-bottom:16px}
+
+@media(max-width:640px){
+  .phead h2{font-size:25px}
+  .rcard{flex-direction:column;align-items:flex-start}
+  .rcard-r{width:100%}
+  .rbtn{flex:1;text-align:center}
+  .nrow{grid-template-columns:1fr;gap:6px}
+  .nrow .ntag{justify-self:start}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== PASSWORD GATE ===== -->
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <div class="gate-logo">
+      <svg viewBox="0 0 26 26" fill="none">
+        <rect x="1" y="1" width="24" height="24" stroke="#E3EEE9" stroke-opacity=".3"/>
+        <line x1="1" y1="9" x2="25" y2="9" stroke="#E3EEE9" stroke-opacity=".22"/>
+        <line x1="1" y1="17" x2="25" y2="17" stroke="#E3EEE9" stroke-opacity=".22"/>
+        <circle cx="7" cy="5" r="2" fill="#6EE7A8"/><circle cx="7" cy="13" r="2" fill="#E3B24A"/><circle cx="7" cy="21" r="2" fill="#6EE7A8"/>
+      </svg>
+      <span>Thesyum</span>
+    </div>
+    <h1>Area riservata</h1>
+    <p>Inserisci la chiave di accesso che hai ricevuto.</p>
+    <input type="password" id="pwd" placeholder="chiave di accesso" autocomplete="off" onkeydown="if(event.key==='Enter')tryEnter()">
+    <button onclick="tryEnter()">Entra</button>
+    <div class="gate-err" id="gerr"></div>
+  </div>
+</div>
+
+<!-- ===== APP ===== -->
+<div class="app" id="app">
+  <header>
+    <div class="hwrap">
+      <div class="logo">
+        <svg viewBox="0 0 26 26" fill="none">
+          <rect x="1" y="1" width="24" height="24" stroke="#E3EEE9" stroke-opacity=".3"/>
+          <line x1="1" y1="9" x2="25" y2="9" stroke="#E3EEE9" stroke-opacity=".22"/>
+          <line x1="1" y1="17" x2="25" y2="17" stroke="#E3EEE9" stroke-opacity=".22"/>
+          <circle cx="7" cy="5" r="2" fill="#6EE7A8"/><circle cx="7" cy="13" r="2" fill="#E3B24A"/><circle cx="7" cy="21" r="2" fill="#6EE7A8"/>
+        </svg>
+        <span>Thesyum</span>
+      </div>
+      <button class="logout" onclick="logout()">Esci</button>
+    </div>
+  </header>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="oggi" onclick="showTab('oggi')">Oggi</button>
+    <button class="tab" data-tab="settimanali" onclick="showTab('settimanali')">Settimanali</button>
+    <button class="tab" data-tab="archivio" onclick="showTab('archivio')">Archivio</button>
+    <button class="tab" data-tab="cerca" onclick="showTab('cerca')">Cerca per tema</button>
+  </div>
+
+  <main>
+    <!-- OGGI -->
+    <section class="panel on" id="p-oggi">
+      <div class="phead">
+        <span class="eyebrow">Report del giorno</span>
+        <h2>Oggi</h2>
+        <p>Le note di intelligence pubblicate oggi. La nota del mattino esce alle 09:00, quella del pomeriggio nel primo pomeriggio.</p>
+      </div>
+      <div id="oggi-list"></div>
+    </section>
+
+    <!-- SETTIMANALI -->
+    <section class="panel" id="p-settimanali">
+      <div class="phead">
+        <span class="eyebrow">Sintesi settimanali</span>
+        <h2>Settimanali</h2>
+        <p>La sintesi di ogni settimana, pensata per il consulente. Quella in corso è in costruzione fino alla domenica sera.</p>
+      </div>
+      <div id="week-building"></div>
+      <div id="week-list" class="rlist"></div>
+    </section>
+
+    <!-- ARCHIVIO -->
+    <section class="panel" id="p-archivio">
+      <div class="phead">
+        <span class="eyebrow">Tutto lo storico</span>
+        <h2>Archivio</h2>
+        <p>Ogni report pubblicato da quando il registro è attivo. Il più recente in alto.</p>
+      </div>
+      <div class="count" id="arch-count"></div>
+      <div id="arch-list" class="rlist"></div>
+    </section>
+
+    <!-- CERCA -->
+    <section class="panel" id="p-cerca">
+      <div class="phead">
+        <span class="eyebrow">Archivio interrogabile</span>
+        <h2>Cerca per tema</h2>
+        <p>Scrivi un tema — "terre rare", "oro", "petrolio" — e vedi tutte le notizie catalogate che lo riguardano.</p>
+      </div>
+      <div class="searchbar">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.2-5.2m0 0A7.5 7.5 0 1 0 5.2 5.2a7.5 7.5 0 0 0 10.6 10.6Z"/></svg>
+        <input type="text" id="q" placeholder="Cerca un tema o una parola…" oninput="runSearch()">
+      </div>
+      <div class="chips" id="chips"></div>
+      <div class="count" id="search-count"></div>
+      <div id="search-results"></div>
+    </section>
+  </main>
+</div>
+
+<script>
+/* ============================================================
+   CONFIG — cambia qui la password.
+   NB: questa e' una protezione "da vetrina", non una cassaforte.
+   Va bene per i primi clienti; per login individuali serve un server.
+   ============================================================ */
+const ACCESS_KEY = "thesyum2026";   // <-- CAMBIA questa parola
+
+/* DATA_BASE = da dove la pagina legge i dati generati dal Sistema.
+   La pagina vive su thesyum.com/area (repo Landing), ma i report li
+   genera la repo Sistema, che li pubblica sulle sue GitHub Pages.
+   Questo indirizzo e' quello delle Pages della repo Sistema:
+     https://<utente>.github.io/<nome-repo>/
+   Con l'utente "fladynance" e la repo "Commodity-Intelligence-WS-":  */
+const DATA_BASE = "https://fladynance.github.io/Commodity-Intelligence-WS-/";
+
+/* File generati dal Sistema dentro la sua cartella /docs:
+   - reports.json      : elenco dei report (giornalieri + settimanali)
+   - news_archive.json : archivio notizie catalogate (per la ricerca)
+   Se non esistono ancora, la pagina mostra stati vuoti gentili. */
+const REPORTS_URL = DATA_BASE + "reports.json";
+const NEWS_URL = DATA_BASE + "news_archive.json";
+
+/* Rende assoluto un link di report: se nel reports.json l'url e'
+   relativo (es. "report_xxx.html"), gli mette davanti DATA_BASE. */
+function fullUrl(u){
+  if(!u) return "";
+  if(u.startsWith("http")) return u;
+  return DATA_BASE + u;
+}
+
+let REPORTS = [];
+let NEWS = [];
+
+/* ---------- GATE ---------- */
+function tryEnter(){
+  const v = document.getElementById('pwd').value.trim();
+  const err = document.getElementById('gerr');
+  if(v === ACCESS_KEY){
+    sessionStorage.setItem('thesyum_ok','1');
+    openApp();
+  } else {
+    err.textContent = "Chiave non valida. Riprova.";
+    document.getElementById('pwd').value = "";
+  }
+}
+function openApp(){
+  document.getElementById('gate').classList.add('hidden');
+  document.getElementById('app').classList.add('on');
+  loadData();
+}
+function logout(){
+  sessionStorage.removeItem('thesyum_ok');
+  location.reload();
+}
+// se gia' autenticata in questa sessione, salta il gate
+if(sessionStorage.getItem('thesyum_ok')==='1'){ openApp(); }
+
+/* ---------- TABS ---------- */
+function showTab(name){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===name));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.getElementById('p-'+name).classList.add('on');
+}
+
+/* ---------- DATA ---------- */
+async function loadData(){
+  // report
+  try{
+    const r = await fetch(REPORTS_URL, {cache:'no-store'});
+    if(r.ok){ REPORTS = await r.json(); }
+  }catch(e){ REPORTS = []; }
+  // notizie
+  try{
+    const n = await fetch(NEWS_URL, {cache:'no-store'});
+    if(n.ok){ NEWS = await n.json(); }
+  }catch(e){ NEWS = []; }
+  renderOggi();
+  renderWeekly();
+  renderArchive();
+  renderChips();
+  runSearch();
+}
+
+function fmtDate(s){
+  // accetta "2026-07-08" o "2026-07-08 10:57"
+  if(!s) return "";
+  const d = s.split(' ')[0].split('-');
+  if(d.length!==3) return s;
+  return d[2]+'.'+d[1]+'.'+d[0];
+}
+function todayISO(){ return new Date().toISOString().slice(0,10); }
+
+function reportCard(rep){
+  const isWeekly = rep.tipo === 'settimanale';
+  const kindLabel = isWeekly ? 'Sintesi settimanale' : (rep.run==='afternoon'?'Nota · pomeriggio':'Nota · mattino');
+  const open = rep.url ? `<a class="rbtn primary" href="${fullUrl(rep.url)}" target="_blank" rel="noopener">Apri</a>` : '';
+  const dl = rep.url ? `<a class="rbtn" href="${fullUrl(rep.url)}" download>Scarica</a>` : '';
+  return `<div class="rcard ${isWeekly?'weekly':''}">
+    <div class="rcard-l">
+      <div class="kind"><span class="dot"></span>${kindLabel}</div>
+      <div class="rtitle serif">${rep.titolo || 'Report'}</div>
+      <div class="rmeta">${fmtDate(rep.data)}${rep.note? ' · '+rep.note:''}</div>
+    </div>
+    <div class="rcard-r">${open}${dl}</div>
+  </div>`;
+}
+
+function renderOggi(){
+  const box = document.getElementById('oggi-list');
+  const t = todayISO();
+  const today = REPORTS.filter(r=>r.tipo!=='settimanale' && (r.data||'').startsWith(t));
+  if(today.length===0){
+    box.innerHTML = emptyState('Nessun report ancora oggi',
+      'La nota del mattino appare qui appena il sistema la pubblica. Torna dopo le 09:00.');
+    return;
+  }
+  box.className='rlist';
+  box.innerHTML = today.map(reportCard).join('');
+}
+
+function renderWeekly(){
+  const build = document.getElementById('week-building');
+  const list = document.getElementById('week-list');
+  const weeks = REPORTS.filter(r=>r.tipo==='settimanale').sort((a,b)=>(b.data||'').localeCompare(a.data||''));
+  // settimana in corso: mostro il riquadro "in costruzione"
+  build.innerHTML = `<div class="building">
+    <span class="pulse"></span>
+    <div class="btxt">
+      <div class="bt serif">Settimana in corso</div>
+      <div class="bm">In costruzione — la sintesi esce domenica sera</div>
+    </div>
+  </div>`;
+  if(weeks.length===0){
+    list.innerHTML = emptyState('Nessuna settimana archiviata',
+      'Le sintesi settimanali già chiuse appariranno qui, dalla più recente.');
+    return;
+  }
+  list.innerHTML = weeks.map(reportCard).join('');
+}
+
+function renderArchive(){
+  const list = document.getElementById('arch-list');
+  const cnt = document.getElementById('arch-count');
+  const all = [...REPORTS].sort((a,b)=>(b.data||'').localeCompare(a.data||''));
+  if(all.length===0){
+    cnt.textContent='';
+    list.innerHTML = emptyState('Archivio vuoto',
+      'Ogni report pubblicato finisce qui. Il sistema lo aggiorna a ogni run.');
+    return;
+  }
+  cnt.textContent = all.length+' report in archivio';
+  list.innerHTML = all.map(reportCard).join('');
+}
+
+/* ---------- RICERCA ---------- */
+function renderChips(){
+  const box = document.getElementById('chips');
+  const cats = [...new Set(NEWS.map(n=>n.categoria).filter(Boolean))];
+  const labelMap = {
+    energia:'Energia', metalli_preziosi:'Metalli preziosi', metalli_industriali:'Metalli industriali',
+    terre_rare_critici:'Terre rare', agricole:'Agricole', shipping_logistica:'Shipping',
+    ai_semiconduttori:'AI & semic.', difesa_geopolitica:'Difesa', macro:'Macro'
+  };
+  box.innerHTML = cats.map(c=>`<button class="chip" data-cat="${c}" onclick="toggleChip('${c}')">${labelMap[c]||c}</button>`).join('');
+}
+let activeCat = null;
+function toggleChip(c){
+  activeCat = (activeCat===c)? null : c;
+  document.querySelectorAll('.chip').forEach(ch=>ch.classList.toggle('active',ch.dataset.cat===activeCat));
+  runSearch();
+}
+function runSearch(){
+  const q = (document.getElementById('q').value||'').toLowerCase().trim();
+  const box = document.getElementById('search-results');
+  const cnt = document.getElementById('search-count');
+  if(NEWS.length===0){
+    cnt.textContent='';
+    box.innerHTML = emptyState('Archivio notizie non ancora disponibile',
+      'Quando il sistema pubblica l\'archivio notizie, qui potrai cercare per tema.');
+    return;
+  }
+  let res = NEWS;
+  if(activeCat) res = res.filter(n=>n.categoria===activeCat);
+  if(q) res = res.filter(n=>
+    (n.sintesi||'').toLowerCase().includes(q) ||
+    (n.tema_originale||'').toLowerCase().includes(q) ||
+    (n.categoria||'').toLowerCase().includes(q) ||
+    (n.fonte||'').toLowerCase().includes(q)
+  );
+  res = [...res].sort((a,b)=>(b.data||'').localeCompare(a.data||'')).slice(0,200);
+  if(res.length===0){
+    cnt.textContent='';
+    box.innerHTML = emptyState('Nessun risultato',
+      'Prova un altro tema, o togli il filtro di categoria.');
+    return;
+  }
+  cnt.textContent = res.length+(res.length===200?'+ ':' ')+'notizie';
+  box.innerHTML = res.map(n=>{
+    const imp = n.impatto? `<span class="ntag imp-${n.impatto}">${n.impatto}</span>` : '';
+    return `<div class="nrow">
+      <span class="ndate">${fmtDate(n.data)}</span>
+      <div class="nbody"><div class="ns">${n.sintesi||''}</div><div class="nsrc">${n.fonte||''}</div></div>
+      ${imp}
+    </div>`;
+  }).join('');
+}
+
+function emptyState(title, msg){
+  return `<div class="empty">
+    <div class="ei"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.4"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg></div>
+    <h3>${title}</h3><p>${msg}</p>
+  </div>`;
+}
+</script>
+</body>
+</html>
