@@ -390,6 +390,18 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
   .cta{padding:90px 0}
   .fbot{flex-direction:column;align-items:flex-start;gap:6px}
 }
+
+/* ===== FAQ ===== */
+.faq-wrap{max-width:820px}
+.faq-list{border-top:1px solid var(--line);margin-top:8px}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:26px 0;display:flex;justify-content:space-between;align-items:center;gap:18px;color:var(--text);font-family:'Newsreader',serif;font-size:clamp(17px,2.2vw,21px);font-weight:400;line-height:1.4}
+.faq-icon{flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--faint);display:flex;align-items:center;justify-content:center;color:var(--phosphor);font-size:17px;line-height:1;transition:border-color .25s}
+.faq-a{display:none;padding:0 0 28px;max-width:70ch}
+.faq-a p{font-size:15px;line-height:1.7;color:var(--dim);margin:0 0 12px}
+.faq-a p:last-child{margin-bottom:0}
+.faq-a em{color:var(--text);font-style:italic}
+.faq-a strong{color:var(--text);font-weight:500}
 </style>
 </head>
 <body>
@@ -414,6 +426,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
     <a href="#difese">Difese</a>
     <a href="#report">Report</a>
     <a href="#prezzi">Prezzi</a>
+    <a href="#faq">FAQ</a>
   </div>
   <a href="#contatti" class="nav-cta">Richiedi una demo</a>
   <button class="burger" aria-label="Apri menu" onclick="toggleMenu()">
@@ -428,6 +441,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
   <a href="#difese" onclick="toggleMenu()">Difese</a>
   <a href="#report" onclick="toggleMenu()">Report</a>
   <a href="#prezzi" onclick="toggleMenu()">Prezzi</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
   <a href="#contatti" class="m-cta" onclick="toggleMenu()">Richiedi una demo</a>
 </div>
 
@@ -909,11 +923,77 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
   <div class="testi-nav" id="testiNav"></div>
 </div></section>
 
+<!-- FAQ -->
+<section id="faq"><div class="wrap faq-wrap">
+  <div class="shead rev">
+    <span class="sec-index">09 / 10</span><span class="eyebrow">Prima di iniziare</span>
+    <h2>Domande frequenti</h2>
+  </div>
+
+  <div class="faq-list rev">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span>Se una tesi &egrave; sbagliata, sparisce dall'archivio?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>No. &Egrave; il punto esatto. Le tesi smentite restano nel registro con la stessa visibilit&agrave; di quelle confermate &mdash; data, ragionamento, verdetto. Non c'&egrave; modo di riscriverle, spostarle o farle sparire.</p>
+        <p>La maggior parte dei servizi di analisi esiste in un eterno presente: le previsioni giuste si ricordano, quelle sbagliate evaporano. Questo registro &egrave; progettato per funzionare al contrario. Un track record che seleziona solo i successi non &egrave; un track record &mdash; &egrave; marketing.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span>Chi genera le tesi &mdash; un algoritmo o un analista?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>Un sistema AI addestrato su logica finanziaria &mdash; ma la distinzione che conta non &egrave; questa. &Egrave; che ogni tesi nasce da una notizia citata, passa da un contrarian check (un secondo passaggio che prova a demolirla), e viene verificata contro i prezzi reali alla scadenza. Se non regge a quei filtri, non esce.</p>
+        <p>Nessuna tesi viene attribuita a "un analista" per costruire autorevolezza fittizia. Il track record pubblico &egrave; l'unica garanzia offerta &mdash; e pu&ograve; essere verificato voce per voce.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span>Da dove vengono le notizie?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>Il sistema legge ogni giorno oltre 180 fonti: GDELT (che indicizza pi&ugrave; di 100.000 testate mondiali in tempo reale), Google News con query mirate per settore, e 23 feed RSS di testate specializzate &mdash; energia, shipping, terre rare, difesa, tassi e valute.</p>
+        <p>I comunicati stampa aziendali vengono marcati esplicitamente e non possono innescare tesi &mdash; sono scritti per promuovere, non per informare. I prezzi vengono presi da Yahoo Finance in modo indipendente, scritti dal codice, mai generati dall'AI.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span>Cosa succede quando un evento imprevedibile ribalta una tesi corretta?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>Viene segnata come smentita &mdash; perch&eacute; il risultato era sbagliato, anche se il ragionamento non lo era. Ma nel registro compare anche la nota di contesto: se un'analisi era strutturalmente solida e un evento esogeno imprevedibile l'ha fatta saltare, quella distinzione viene esplicitata.</p>
+        <p>&Egrave; la differenza tra un errore di analisi e un errore di timing causato da qualcosa che nessun modello fondamentale poteva anticipare. Il registro &egrave; pensato per far emergere questa distinzione &mdash; non per nasconderla dietro un generico "sbagliato".</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span>Posso usare le tesi direttamente con i clienti?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>La nota giornaliera &egrave; pensata per chi opera &mdash; tecnica, densa, con i prezzi accanto ai ragionamenti. Non &egrave; pensata per essere girata a un cliente cos&igrave; com'&egrave;.</p>
+        <p>La sintesi settimanale invece &egrave; scritta in italiano leggibile, senza gergo tecnico, e pensata esattamente per essere condivisa &mdash; preparare una telefonata del luned&igrave;, supportare una conversazione sul contesto macro, documentare il ragionamento dietro una scelta di portafoglio. Chi ha il piano Studio riceve anche una versione calibrata sull'esposizione specifica dei propri clienti.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span>&Egrave; diverso da una newsletter di analisi?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>Strutturalmente s&igrave;. Una newsletter scrive, pubblica e passa oltre. Non torna mai su quello che ha detto trenta giorni fa. Non ha un meccanismo che la obblighi a farlo.</p>
+        <p>Qui ogni previsione nasce con una data di scadenza e un criterio di verifica esplicito. Il sistema torna da solo a chiudere il giudizio &mdash; confermata, smentita, neutra &mdash; e lo archivia pubblicamente. Non &egrave; un flusso di contenuti: &egrave; un registro con memoria. La differenza si vede dopo tre mesi, non dopo tre minuti.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span>Il piano Studio &egrave; pensato per gli studi di consulenza?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>S&igrave; &mdash; studi di consulenza indipendente, team di gestione patrimoniale, family office, reti con pi&ugrave; professionisti che condividono la ricerca. Il piano Studio include accessi multipli e una sintesi settimanale calibrata sull'esposizione specifica del portafoglio gestito, in un formato pensato per essere condiviso direttamente con il cliente finale.</p>
+        <p>I dettagli si definiscono caso per caso. Scrivi dal form di contatto descrivendo la struttura del tuo team &mdash; ti rispondiamo entro un giorno lavorativo con una proposta su misura, senza impegno.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
 <!-- CONTATTI -->
 <section class="contact" id="contatti"><div class="wrap">
   <div class="contact-grid">
     <div class="contact-txt rev">
-      <span class="sec-index">09 / 09</span><span class="eyebrow">Contatti</span>
+      <span class="sec-index">10 / 10</span><span class="eyebrow">Contatti</span>
       <h2>Vedi il registro dal vivo.</h2>
       <p>Lascia i tuoi dati e ti scriviamo per fissare una demo: venti minuti in cui apriamo il registro reale, le tesi in corso, e le verifiche già chiuse — comprese quelle andate male.</p>
       <p>Se invece vuoi solo maggiori informazioni, scrivilo nel messaggio e rispondiamo a quello.</p>
@@ -999,7 +1079,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
     <div class="fcols">
       <div class="fcol"><h5>Prodotto</h5><a href="#registro">Registro</a><a href="#catena">Catene</a><a href="#report">Report</a><a href="#prezzi">Prezzi</a></div>
       <div class="fcol"><h5>Azienda</h5><a href="#contatti">Contatti</a></div>
-      <div class="fcol"><h5>Legale</h5><a href="#">Privacy</a><a href="#">Termini</a></div>
+      <div class="fcol"><h5>Legale</h5><a href="privacy.html">Privacy</a><a href="termini.html">Termini</a></div>
     </div>
   </div>
   <div class="fbot">
@@ -1090,6 +1170,15 @@ document.getElementById('demoForm').addEventListener('submit',async function(ev)
     alert('Invio non riuscito. Riprova, o scrivici direttamente via email.');
   }
 });
+
+// FAQ accordion
+function toggleFaq(btn){
+  var ans=btn.nextElementSibling, ic=btn.querySelector('.faq-icon');
+  var open=ans.style.display==='block';
+  document.querySelectorAll('.faq-a').forEach(function(a){a.style.display='none';});
+  document.querySelectorAll('.faq-icon').forEach(function(i){i.textContent='+';i.style.borderColor='var(--faint)';});
+  if(!open){ans.style.display='block';ic.textContent='\u2212';ic.style.borderColor='var(--phosphor)';}
+}
 </script>
 </body>
 </html>
