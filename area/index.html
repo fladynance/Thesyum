@@ -235,27 +235,19 @@ main{max-width:1080px;margin:0 auto;padding:40px 24px 80px}
    ============================================================ */
 const ACCESS_KEY = "thesyum2026";   // <-- CAMBIA questa parola
 
-/* DATA_BASE = da dove la pagina legge i dati generati dal Sistema.
-   La pagina vive su thesyum.com/area (repo Landing), ma i report li
-   genera la repo Sistema, che li pubblica sulle sue GitHub Pages.
-   Questo indirizzo e' quello delle Pages della repo Sistema:
-     https://<utente>.github.io/<nome-repo>/
-   Con l'utente "fladynance" e la repo "Commodity-Intelligence-WS-":  */
-const DATA_BASE = "https://fladynance.github.io/Commodity-Intelligence-WS-/";
+/* I dati stanno nella stessa cartella dell'area (area/) nella repo Thesyum.
+   Il workflow di migrazione li copia qui automaticamente ad ogni run.
+   Usiamo percorsi relativi cosi' funziona su qualsiasi dominio. */
+const DATA_BASE = "";  // stessa cartella: percorsi relativi
 
-/* File generati dal Sistema dentro la sua cartella /docs:
-   - reports.json      : elenco dei report (giornalieri + settimanali)
-   - news_archive.json : archivio notizie catalogate (per la ricerca)
-   Se non esistono ancora, la pagina mostra stati vuoti gentili. */
-const REPORTS_URL = DATA_BASE + "reports.json";
-const NEWS_URL = DATA_BASE + "news_archive.json";
+const REPORTS_URL = "reports.json";
+const NEWS_URL = "news_archive.json";
 
-/* Rende assoluto un link di report: se nel reports.json l'url e'
-   relativo (es. "report_xxx.html"), gli mette davanti DATA_BASE. */
+/* Rende assoluto un link di report */
 function fullUrl(u){
   if(!u) return "";
   if(u.startsWith("http")) return u;
-  return DATA_BASE + u;
+  return u;  // gia' relativo alla cartella area/
 }
 
 let REPORTS = [];
