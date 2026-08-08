@@ -407,6 +407,65 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
 .cmp-note{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);margin-top:14px;text-align:center;letter-spacing:.02em}
 .cmp-hint{display:none;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--faint);text-align:center;margin-top:10px}
 @media(max-width:760px){.cmp-hint{display:block}}
+
+/* ============================================================
+   FIX MOBILE
+   Causa del "sito rimpicciolito come da desktop" sul telefono:
+   l'alone decorativo .has-glow::before e' largo 900px fissi.
+   Su uno schermo da 390px sporgeva di 255px per lato, il browser
+   mobile allargava la finestra a 645px e rimpiccioliva tutto.
+   ============================================================ */
+html{-webkit-text-size-adjust:100%}
+.has-glow{position:relative;overflow-x:clip}
+.has-glow::before{width:min(900px,100%)}
+
+@media(max-width:900px){
+  .hero-nofric{font-size:11px;line-height:1.55;margin-top:16px}
+  .hero-actions{gap:12px}
+  .hero-actions .ghost{width:100%;text-align:center;padding:15px 0;border:1px solid var(--line-strong);border-bottom-width:1px;border-radius:var(--r);font-size:13px}
+  .hero-actions .ghost:hover{border-color:var(--text)}
+  .ledger-foot-cta{flex-direction:column;align-items:flex-start;gap:12px}
+  .ledger-link{white-space:normal;line-height:1.6}
+  .sample-cta{padding:26px 22px;gap:22px}
+  .sample-cta .sc-t{font-size:21px}
+  .sample-cta .sc-p{font-size:14px}
+  .sample-cta .btn{width:100%;text-align:center;padding:16px}
+  .disclaimer{padding:18px 18px;font-size:13px;margin-top:28px}
+  .cta{padding:78px 0}
+  .cta h2{font-size:clamp(27px,8.2vw,38px);margin-bottom:24px}
+  .cta .hero-actions{flex-direction:column;align-items:stretch}
+  .cta .btn{width:100%;text-align:center;padding:16px}
+  .sec-index{font-size:10px}
+  .testi-card{padding:26px 22px}
+  .testi-card blockquote{font-size:16.5px}
+  .faq-q{padding:22px 0;gap:14px}
+  .fcols{gap:34px}
+}
+
+/* La tabella di confronto diventa una pila di schede sotto i 760px:
+   niente scorrimento orizzontale, niente testo da 9px. */
+@media(max-width:760px){
+  .cmp-tablewrap{border:none;border-radius:0;overflow:visible}
+  .cmp{min-width:0;display:block}
+  .cmp thead{display:none}
+  .cmp tbody{display:block}
+  .cmp tbody tr{display:block;border:1px solid var(--line);border-radius:var(--r);background:var(--bg);margin-bottom:14px;overflow:hidden}
+  .cmp tbody tr:last-child{margin-bottom:0}
+  .cmp td{display:flex;align-items:flex-start;gap:14px;border-bottom:1px solid var(--line);padding:12px 16px;font-size:13px;line-height:1.5}
+  .cmp tbody tr td:last-child{border-bottom:none}
+  .cmp td.rowlab{display:block;background:var(--surface-2);font-size:15px;white-space:normal;padding:15px 16px;color:var(--text)}
+  .cmp td::before{content:attr(data-col);font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);flex:0 0 38%;padding-top:2px;line-height:1.5}
+  .cmp td.rowlab::before{content:none}
+  .cmp td.us{background:rgba(110,231,168,.07)}
+  .cmp td.us::before{color:var(--phosphor)}
+  .cmp-hint{display:none}
+  .cmp-note{text-align:left;line-height:1.6}
+}
+
+/* Con il menu aperto la barra in alto deve restare sopra, altrimenti
+   la X per chiudere finisce sotto il pannello e il menu non si chiude. */
+header{z-index:103}
+.mobile-menu{padding-top:96px}
 </style>
 </head>
 <body>
@@ -1265,6 +1324,18 @@ function toggleFaq(btn){
   document.querySelectorAll('.faq-icon').forEach(function(i){i.textContent='+';i.style.borderColor='var(--faint)';});
   if(!open){ans.style.display='block';ic.textContent='\u2212';ic.style.borderColor='var(--phosphor)';}
 }
+</script>
+<script>
+// Etichetta le celle della tabella di confronto con il nome della colonna:
+// serve al layout a schede su mobile (vedi @media max-width:760px).
+(function(){
+  const t = document.querySelector('table.cmp');
+  if(!t) return;
+  const cols = [...t.querySelectorAll('thead th')].map(th => th.innerHTML.replace(/<br\s*\/?>/gi,' ').replace(/<[^>]*>/g,'').replace(/&nbsp;/g,' ').replace(/\s+/g,' ').trim());
+  t.querySelectorAll('tbody tr').forEach(tr => {
+    [...tr.children].forEach((td,i) => { if(cols[i]) td.setAttribute('data-col', cols[i]); });
+  });
+})();
 </script>
 </body>
 </html>
