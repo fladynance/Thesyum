@@ -408,6 +408,65 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
 .cmp-hint{display:none;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--faint);text-align:center;margin-top:10px}
 @media(max-width:760px){.cmp-hint{display:block}}
 
+/* ============================================================
+   FIX MOBILE
+   Causa del "sito rimpicciolito come da desktop" sul telefono:
+   l'alone decorativo .has-glow::before e' largo 900px fissi.
+   Su uno schermo da 390px sporgeva di 255px per lato, il browser
+   mobile allargava la finestra a 645px e rimpiccioliva tutto.
+   ============================================================ */
+html{-webkit-text-size-adjust:100%}
+.has-glow{position:relative;overflow-x:clip}
+.has-glow::before{width:min(900px,100%)}
+
+@media(max-width:900px){
+  .hero-nofric{font-size:11px;line-height:1.55;margin-top:16px}
+  .hero-actions{gap:12px}
+  .hero-actions .ghost{width:100%;text-align:center;padding:15px 0;border:1px solid var(--line-strong);border-bottom-width:1px;border-radius:var(--r);font-size:13px}
+  .hero-actions .ghost:hover{border-color:var(--text)}
+  .ledger-foot-cta{flex-direction:column;align-items:flex-start;gap:12px}
+  .ledger-link{white-space:normal;line-height:1.6}
+  .sample-cta{padding:26px 22px;gap:22px}
+  .sample-cta .sc-t{font-size:21px}
+  .sample-cta .sc-p{font-size:14px}
+  .sample-cta .btn{width:100%;text-align:center;padding:16px}
+  .disclaimer{padding:18px 18px;font-size:13px;margin-top:28px}
+  .cta{padding:78px 0}
+  .cta h2{font-size:clamp(27px,8.2vw,38px);margin-bottom:24px}
+  .cta .hero-actions{flex-direction:column;align-items:stretch}
+  .cta .btn{width:100%;text-align:center;padding:16px}
+  .sec-index{font-size:10px}
+  .testi-card{padding:26px 22px}
+  .testi-card blockquote{font-size:16.5px}
+  .faq-q{padding:22px 0;gap:14px}
+  .fcols{gap:34px}
+}
+
+/* La tabella di confronto diventa una pila di schede sotto i 760px:
+   niente scorrimento orizzontale, niente testo da 9px. */
+@media(max-width:760px){
+  .cmp-tablewrap{border:none;border-radius:0;overflow:visible}
+  .cmp{min-width:0;display:block}
+  .cmp thead{display:none}
+  .cmp tbody{display:block}
+  .cmp tbody tr{display:block;border:1px solid var(--line);border-radius:var(--r);background:var(--bg);margin-bottom:14px;overflow:hidden}
+  .cmp tbody tr:last-child{margin-bottom:0}
+  .cmp td{display:flex;align-items:flex-start;gap:14px;border-bottom:1px solid var(--line);padding:12px 16px;font-size:13px;line-height:1.5}
+  .cmp tbody tr td:last-child{border-bottom:none}
+  .cmp td.rowlab{display:block;background:var(--surface-2);font-size:15px;white-space:normal;padding:15px 16px;color:var(--text)}
+  .cmp td::before{content:attr(data-col);font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);flex:0 0 38%;padding-top:2px;line-height:1.5}
+  .cmp td.rowlab::before{content:none}
+  .cmp td.us{background:rgba(110,231,168,.07)}
+  .cmp td.us::before{color:var(--phosphor)}
+  .cmp-hint{display:none}
+  .cmp-note{text-align:left;line-height:1.6}
+}
+
+/* Con il menu aperto la barra in alto deve restare sopra, altrimenti
+   la X per chiudere finisce sotto il pannello e il menu non si chiude. */
+header{z-index:103}
+.mobile-menu{padding-top:96px}
+
 /* ===== REGISTRO PUBBLICO ===== */
 .reg-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:52px}
 .rst{background:var(--surface);padding:26px 22px}
@@ -457,6 +516,24 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
   .nav-cta{display:inline-block;font-size:11px;padding:9px 13px}
   .nav-right{gap:12px}
   .nav-login{font-size:11px}
+}
+
+@media(max-width:900px){
+  .reg-stats{margin-top:40px}
+  .rst{padding:20px 18px}
+  .rst-v{font-size:26px}
+  .rst.wide .rst-v{font-size:30px}
+  .reg-toolbar{margin:32px 0 18px;gap:14px}
+  .reg-search{min-width:100%}
+  .reg-search input{font-size:16px}
+  .rf{font-size:10.5px;padding:9px 12px}
+  .rc{padding:20px 18px}
+  .rc-t{font-size:19px}
+  .rc-r{font-size:14px}
+  .rc-top{gap:10px}
+  .reg-method{margin-top:48px;padding-top:32px}
+  .reg-method h3{font-size:22px}
+  .reg-method p{font-size:15px}
 }
 </style>
 </head>
@@ -543,7 +620,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 34px}
     </a>
     <div class="fcols">
       <div class="fcol"><h5>Prodotto</h5><a href="registro.html">Registro completo</a><a href="esempio.html">Report di esempio</a><a href="index.html#prezzi">Prezzi</a></div>
-      <div class="fcol"><h5>Azienda</h5><a href="index.html#contatti">Contatti</a><a href="area/">Accedi all'area</a></div>
+      <div class="fcol"><h5>Azienda</h5><a href="index.html#autore">Chi scrive</a><a href="index.html#contatti">Contatti</a><a href="area/">Accedi all'area</a></div>
       <div class="fcol"><h5>Legale</h5><a href="privacy.html">Privacy</a><a href="termini.html">Termini</a></div>
     </div>
   </div>
