@@ -1,0 +1,61 @@
+{
+  "_istruzioni": "QUESTO E' IL CUORE DEL REGISTRO PUBBLICO. Aggiungi qui ogni tesi, in ordine qualsiasi: la pagina ordina e conta da sola. Campi: id, titolo, ragionamento, tema, apertura (GG.MM.AA), orizzonte, stato (confermata|smentita|aperta), chiusura (data verdetto, vuoto se aperta), prezzo_apertura, prezzo_chiusura, strumento, nota (perche' e' andata cosi'). I contatori in cima alla pagina sono calcolati automaticamente da queste righe: non vanno scritti a mano, e cosi' non possono mai essere gonfiati.",
+  "tesi": [
+    {
+      "id": "pboc-oro-2605",
+      "titolo": "Floor aurifero da acquisti PBoC",
+      "ragionamento": "La domanda ufficiale cinese è programmatica e non segue i cicli Fed: il prezzo si sgancia dai tassi reali USA.",
+      "tema": "Metalli preziosi",
+      "apertura": "12.05.26",
+      "orizzonte": "180 gg",
+      "stato": "confermata",
+      "chiusura": "08.11.26",
+      "strumento": "XAU/USD",
+      "prezzo_apertura": "",
+      "prezzo_chiusura": "",
+      "nota": "[Sostituisci con i prezzi reali di apertura e chiusura e una riga sul perché il verdetto è questo.]"
+    },
+    {
+      "id": "terre-rare-midstream-2605",
+      "titolo": "Collo di bottiglia midstream sulle terre rare",
+      "ragionamento": "Il deficit non è nell'estrazione ma nella raffinazione: il premio sui processori occidentali si consolida.",
+      "tema": "Terre rare e critici",
+      "apertura": "26.05.26",
+      "orizzonte": "12 mesi",
+      "stato": "aperta",
+      "chiusura": "",
+      "strumento": "REMX",
+      "prezzo_apertura": "",
+      "prezzo_chiusura": "",
+      "nota": "Tesi ancora aperta. Nessun segnale finora la contraddice; l'orizzonte è lontano dalla scadenza."
+    },
+    {
+      "id": "wti-opec-0206",
+      "titolo": "Compressione WTI da eccesso di offerta OPEC+",
+      "ragionamento": "Taglio degli OSP sauditi all'Asia come segnale direzionale esplicito.",
+      "tema": "Energia",
+      "apertura": "02.06.26",
+      "orizzonte": "90 gg",
+      "stato": "smentita",
+      "chiusura": "31.08.26",
+      "strumento": "WTI",
+      "prezzo_apertura": "",
+      "prezzo_chiusura": "",
+      "nota": "Il ragionamento strutturale reggeva — i tagli agli OSP erano un segnale reale — ma l'escalation Iran-USA ha riportato il premio geopolitico sopra il fondamentale di offerta. Errore di tempistica su shock esogeno, non di analisi. [Verifica e sostituisci con i prezzi reali.]"
+    },
+    {
+      "id": "uranio-usa-1606",
+      "titolo": "Uranio arricchito, capacità USA",
+      "ragionamento": "Impegno pluriennale sul triplicamento della capacità: i primi segnali operativi anticipano la curva.",
+      "tema": "Energia",
+      "apertura": "16.06.26",
+      "orizzonte": "24 mesi",
+      "stato": "aperta",
+      "chiusura": "",
+      "strumento": "URA",
+      "prezzo_apertura": "",
+      "prezzo_chiusura": "",
+      "nota": "Tesi ancora aperta."
+    }
+  ]
+}
