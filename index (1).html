@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Thesyum — market intelligence with memory. Dated theses, verified against real prices, with a public verdict.">
+<title>Thesyum — Market intelligence, with memory</title>
+<link rel="alternate" hreflang="it" href="https://thesyum.com/index.html">
+<link rel="alternate" hreflang="en" href="https://thesyum.com/en/index.html">
+<link rel="alternate" hreflang="ar" href="https://thesyum.com/ar/index.html">
+<link rel="alternate" hreflang="x-default" href="https://thesyum.com/index.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%2308110F'/%3E%3Crect%20x='6'%20y='6'%20width='20'%20height='20'%20rx='2'%20stroke='%23E3EEE9'%20stroke-opacity='.35'%20stroke-width='1.4'/%3E%3Cline%20x1='6'%20y1='13.3'%20x2='26'%20y2='13.3'%20stroke='%23E3EEE9'%20stroke-opacity='.28'%20stroke-width='1.4'/%3E%3Cline%20x1='6'%20y1='18.7'%20x2='26'%20y2='18.7'%20stroke='%23E3EEE9'%20stroke-opacity='.28'%20stroke-width='1.4'/%3E%3Ccircle%20cx='11.2'%20cy='9.7'%20r='2.3'%20fill='%236EE7A8'/%3E%3Ccircle%20cx='11.2'%20cy='16'%20r='2.3'%20fill='%23E3B24A'/%3E%3Ccircle%20cx='11.2'%20cy='22.3'%20r='2.3'%20fill='%236EE7A8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08110F; --surface:#0E1B18; --surface-2:#132420;
+  --line:rgba(224,238,232,0.09); --line-strong:rgba(224,238,232,0.18);
+  --text:#E3EEE9; --dim:rgba(227,238,233,0.60); --faint:rgba(227,238,233,0.32);
+  --phosphor:#6EE7A8; --amber:#E3B24A; --rust:#C96A55; --r:2px;
+}
+.has-glow{position:relative}
+.has-glow::before{content:'';position:absolute;top:-180px;left:50%;width:900px;height:480px;transform:translateX(-50%);border-radius:50%;filter:blur(110px);opacity:.14;pointer-events:none;z-index:0}
+.glow-green::before{background:radial-gradient(circle, #6EE7A8 0%, transparent 70%)}
+.glow-amber::before{background:radial-gradient(circle, #E3B24A 0%, transparent 70%)}
+.has-glow>.wrap{position:relative;z-index:1}
+
+/* Wayfinding: numero di sezione */
+.sec-index{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);letter-spacing:.14em;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.sec-index::after{content:'';flex:0 0 34px;height:1px;background:var(--line-strong)}
+
+/* Barra di avanzamento scroll */
+.scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--phosphor),var(--amber));z-index:200;width:0%;transition:width .1s linear}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--phosphor);color:var(--bg)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 30px}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--phosphor)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ============ NAV ============ */
+header{position:fixed;inset:0 0 auto 0;z-index:99;background:rgba(8,17,15,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{display:flex;align-items:center;gap:11px;z-index:102}
+.logo svg{width:26px;height:26px;flex-shrink:0}
+.logo span{font-family:'Newsreader',serif;font-size:21px;letter-spacing:.03em}
+.nav-links{display:flex;gap:30px;font-size:13.5px;color:var(--dim)}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{font-family:'JetBrains Mono',monospace;font-size:12px;background:var(--phosphor);color:var(--bg);border:1px solid var(--phosphor);padding:10px 18px;border-radius:var(--r);font-weight:500;transition:.2s}
+.nav-cta:hover{background:#8df0bd;border-color:#8df0bd}
+.burger{display:none;background:none;border:none;cursor:pointer;z-index:102;padding:8px;margin-right:-8px}
+.burger span{display:block;width:22px;height:1.5px;background:var(--text);margin:5px 0;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:101;padding:110px 30px 40px;flex-direction:column;gap:6px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'Newsreader',serif;font-size:28px;padding:14px 0;border-bottom:1px solid var(--line);color:var(--text)}
+.mobile-menu .m-cta{margin-top:auto;font-family:'JetBrains Mono',monospace;font-size:13px;background:var(--phosphor);color:var(--bg);text-align:center;padding:16px;border-radius:var(--r);border-bottom:none;font-weight:500}
+
+/* ============ HERO ============ */
+.hero{padding:165px 0 20px}
+.hero h1{font-family:'Newsreader',serif;font-size:clamp(40px,5.2vw,68px);line-height:1.05;font-weight:400;letter-spacing:-.015em;margin:18px 0 24px;max-width:17ch}
+.hero h1 em{font-style:italic;color:var(--phosphor)}
+.hero .lede{font-size:17.5px;line-height:1.62;color:var(--dim);max-width:56ch}
+.hero-actions{display:flex;align-items:center;gap:20px;margin-top:32px;flex-wrap:wrap}
+.btn{background:var(--phosphor);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:12.5px;padding:14px 24px;border-radius:var(--r);font-weight:500;transition:.2s;display:inline-block;border:none;cursor:pointer}
+.btn:hover{background:#8df0bd;transform:translateY(-1px)}
+.ghost{font-size:13px;color:var(--dim);border-bottom:1px solid var(--line-strong);padding-bottom:2px}
+.ghost:hover{color:var(--text);border-color:var(--text)}
+
+/* ============ LEDGER ============ */
+.ledger{margin-top:64px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.ledger-head{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid var(--line);background:var(--surface-2);flex-wrap:wrap;gap:8px}
+.ledger-head .t{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.legend{display:flex;gap:18px;flex-wrap:wrap}
+.legend i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--faint);display:flex;align-items:center;gap:6px}
+.dot{width:6px;height:6px;border-radius:50%;display:inline-block;flex-shrink:0}
+.d-open{background:var(--amber)}.d-ok{background:var(--phosphor)}.d-no{background:var(--rust)}
+.row{display:grid;grid-template-columns:92px 1fr 132px 84px;gap:20px;padding:15px 22px;border-bottom:1px solid var(--line);align-items:center;font-size:13.5px}
+.row:last-of-type{border-bottom:none}
+.row .date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint)}
+.row .thesis{line-height:1.45;color:var(--dim)}
+.row .thesis b{color:var(--text);font-weight:500}
+.row .state{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:7px}
+.s-open{color:var(--amber)}.s-ok{color:var(--phosphor)}.s-no{color:var(--rust)}
+.row .horizon{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);text-align:right}
+.ledger-foot{padding:14px 22px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);background:var(--surface-2);border-top:1px solid var(--line);line-height:1.6}
+
+/* ============ SECTIONS ============ */
+section{padding:126px 0}
+.shead{max-width:680px;margin-bottom:60px}
+.shead .eyebrow{display:block;margin-bottom:14px}
+.shead h2{font-family:'Newsreader',serif;font-size:clamp(31px,3.6vw,46px);font-weight:400;line-height:1.14;letter-spacing:-.012em;max-width:19ch}
+.shead p{margin-top:18px;font-size:16.5px;line-height:1.68;color:var(--dim);max-width:56ch}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.split>div{background:var(--bg);padding:38px 32px}
+.split h3{font-family:'Newsreader',serif;font-size:22px;font-weight:400;margin-bottom:12px}
+.split p{font-size:14.5px;line-height:1.65;color:var(--dim)}
+.split .tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px;display:block}
+.tag-off{color:var(--faint)} .tag-on{color:var(--phosphor)}
+
+/* ============ CHAIN ============ */
+.chain{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:34px 30px}
+.chain-cap{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:26px}
+.link{display:flex;gap:20px;padding-bottom:24px;position:relative}
+.link:last-of-type{padding-bottom:0}
+.link:last-of-type .stem{display:none}
+.marker{position:relative;flex-shrink:0;width:20px;display:flex;justify-content:center}
+.node{width:9px;height:9px;border-radius:50%;background:var(--phosphor);margin-top:6px;z-index:2;position:relative}
+.node.hollow{background:var(--bg);border:1.5px solid var(--phosphor)}
+.stem{position:absolute;top:15px;bottom:-8px;width:1px;background:linear-gradient(var(--phosphor),rgba(110,231,168,.15))}
+.link-body{padding-bottom:4px}
+.link-k{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:5px}
+.link-t{font-size:15px;line-height:1.5;color:var(--text)}
+.link-t span{color:var(--dim)}
+.chain-out{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.chain-out .oz{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--phosphor)}
+.chain-out .od{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint)}
+
+/* ============ GUARDS ============ */
+.guards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.guard{background:var(--bg);padding:34px 28px}
+.guard .g-ic{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--phosphor);letter-spacing:.1em;display:block;margin-bottom:18px}
+.guard h3{font-family:'Newsreader',serif;font-size:20px;font-weight:400;margin-bottom:11px}
+.guard p{font-size:14px;line-height:1.62;color:var(--dim)}
+.guard .ex{margin-top:16px;padding:12px 14px;background:var(--surface);border-left:2px solid var(--amber);font-size:12.5px;line-height:1.55;color:var(--dim);font-style:italic}
+
+/* ============ TWO DOCS ============ */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.doc{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface)}
+.doc-h{padding:18px 24px;border-bottom:1px solid var(--line);background:var(--surface-2);display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.doc-h .n{font-family:'Newsreader',serif;font-size:19px}
+.doc-h .w{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--faint);letter-spacing:.1em;text-transform:uppercase}
+.doc-b{padding:24px}
+.doc-b .who{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--phosphor);margin-bottom:14px;letter-spacing:.06em}
+.doc-b p{font-size:14.5px;line-height:1.62;color:var(--dim);margin-bottom:18px}
+.doc-b ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.doc-b li{font-size:13.5px;color:var(--dim);padding-left:15px;position:relative;line-height:1.45}
+.doc-b li::before{content:'';position:absolute;left:0;top:7px;width:4px;height:4px;background:var(--phosphor);border-radius:50%}
+
+/* ============ ARCHIVE ============ */
+.arch{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.arch-txt p{font-size:16px;line-height:1.65;color:var(--dim);margin-bottom:20px}
+.chatbox{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.chat-h{padding:13px 18px;border-bottom:1px solid var(--line);background:var(--surface-2);font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.msgs{padding:20px 18px;display:flex;flex-direction:column;gap:14px}
+.msg{max-width:88%;padding:12px 15px;border-radius:var(--r);font-size:13.5px;line-height:1.55}
+.msg.me{align-self:flex-end;background:var(--surface-2);border:1px solid var(--line);color:var(--text)}
+.msg.sys{align-self:flex-start;background:rgba(110,231,168,.07);border:1px solid rgba(110,231,168,.22);color:var(--dim)}
+.msg.sys b{color:var(--text);font-weight:500}
+
+.trend{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:34px}
+.trend-h{display:grid;grid-template-columns:1fr 90px 90px 74px;gap:14px;padding:13px 20px;background:var(--surface-2);border-bottom:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint)}
+.trend-r{display:grid;grid-template-columns:1fr 90px 90px 74px;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line);font-size:13.5px;align-items:center;background:var(--surface)}
+.trend-r:last-child{border-bottom:none}
+.trend-r .num{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--dim)}
+.trend-r .ar{font-family:'JetBrains Mono',monospace;font-size:12.5px;text-align:right}
+.up{color:var(--phosphor)} .flat{color:var(--faint)} .down{color:var(--rust)}
+
+.sectors{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}
+.sector{border:1px solid var(--line);border-radius:var(--r);padding:12px 16px;font-size:13px;display:flex;align-items:center;gap:11px;background:var(--surface)}
+.sector .c{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--phosphor)}
+
+/* ============ METRICS ============ */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.metric{background:var(--surface);padding:28px 22px}
+.metric .v{font-family:'JetBrains Mono',monospace;font-size:28px;color:var(--phosphor);margin-bottom:6px}
+.metric .k{font-size:12.5px;color:var(--dim);line-height:1.45}
+
+/* ============ PLANS ============ */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.plan{border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;display:flex;flex-direction:column}
+.plan.hot{border-color:rgba(110,231,168,.45);background:linear-gradient(180deg,rgba(110,231,168,.05),transparent 45%)}
+.plan .pn{font-family:'Newsreader',serif;font-size:20px;margin-bottom:5px}
+.plan .pd{font-size:12.5px;color:var(--faint);margin-bottom:22px;line-height:1.5}
+.plan .pp{font-family:'JetBrains Mono',monospace;font-size:29px;margin-bottom:24px}
+.plan .pp span{font-size:12.5px;color:var(--faint)}
+.plan ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:28px;flex:1}
+.plan li{font-size:13.5px;color:var(--dim);padding-left:16px;position:relative;line-height:1.45}
+.plan li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;background:var(--phosphor);border-radius:50%}
+.plan .btn,.plan .alt{text-align:center}
+.alt{border:1px solid var(--line-strong);padding:13px 24px;border-radius:var(--r);font-family:'JetBrains Mono',monospace;font-size:12.5px;transition:.2s;display:inline-block}
+.alt:hover{border-color:var(--text)}
+
+/* ============ QUOTE ============ */
+.q{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.q blockquote{font-family:'Newsreader',serif;font-style:italic;font-size:clamp(23px,2.9vw,34px);line-height:1.36;max-width:820px}
+.q cite{display:block;margin-top:24px;font-style:normal;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim)}
+
+/* ============ CAROSELLO RECENSIONI ============ */
+.testi-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 6px 26px;margin:0 -6px;scrollbar-width:none}
+.testi-track::-webkit-scrollbar{display:none}
+.testi-card{flex:0 0 auto;width:min(480px,84vw);scroll-snap-align:start;border:1px solid var(--line);border-radius:3px;background:var(--surface);padding:30px 28px}
+.testi-card blockquote{font-family:'Newsreader',serif;font-style:italic;font-size:18px;line-height:1.55;color:var(--text);margin-bottom:20px}
+.testi-who{display:flex;align-items:center;gap:11px}
+.testi-avatar{width:34px;height:34px;border-radius:50%;background:var(--surface-2);border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-size:14px;color:var(--phosphor);flex-shrink:0}
+.testi-name{font-size:13px;color:var(--text);font-weight:600}
+.testi-role{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--faint);margin-top:2px}
+.testi-nav{display:flex;justify-content:center;gap:10px;margin-top:8px}
+.testi-dot{width:6px;height:6px;border-radius:50%;background:var(--line-strong);cursor:pointer;border:none;padding:0;transition:.2s}
+.testi-dot.active{background:var(--phosphor);width:18px;border-radius:3px}
+
+/* ============ CONTACT ============ */
+.contact{background:var(--surface)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.contact-txt h2{font-family:'Newsreader',serif;font-size:clamp(29px,3.3vw,42px);font-weight:400;line-height:1.16;margin:14px 0 18px}
+.contact-txt p{font-size:16px;line-height:1.65;color:var(--dim);margin-bottom:14px}
+.contact-note{margin-top:26px;padding:16px 18px;background:var(--bg);border:1px solid var(--line);border-radius:var(--r);font-family:'JetBrains Mono',monospace;font-size:11.5px;line-height:1.7;color:var(--faint)}
+.contact-note b{color:var(--phosphor);font-weight:500}
+.form{border:1px solid var(--line);border-radius:var(--r);background:var(--bg);padding:34px 30px}
+.field{margin-bottom:22px}
+.field label{display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);margin-bottom:9px}
+.field input,.field textarea,.field select{width:100%;background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--r);padding:14px 15px;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:15px;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236EE7A8' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;cursor:pointer}
+.field textarea{resize:vertical;min-height:96px}
+.phone-row{display:flex;gap:8px}
+.phone-row select{flex:0 0 110px}
+.phone-row input{flex:1}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--phosphor)}
+.field input::placeholder,.field textarea::placeholder{color:var(--faint)}
+.form .btn{width:100%;padding:16px;font-size:13px}
+.form-ok{display:none;text-align:center;padding:40px 10px}
+.form-ok .ok-ic{width:46px;height:46px;border:1.5px solid var(--phosphor);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:var(--phosphor);font-size:20px}
+.form-ok h3{font-family:'Newsreader',serif;font-size:23px;font-weight:400;margin-bottom:10px}
+.form-ok p{font-size:14px;color:var(--dim);line-height:1.6}
+.form-priv{margin-top:14px;font-size:11px;color:var(--faint);line-height:1.55;text-align:center}
+
+/* ============ CTA / FOOTER ============ */
+.cta{text-align:center;padding:130px 0}
+.cta h2{font-family:'Newsreader',serif;font-size:clamp(30px,4.4vw,52px);font-weight:400;max-width:17ch;margin:0 auto 28px;line-height:1.14}
+
+footer{border-top:1px solid var(--line);padding:52px 0 34px}
+.ftop{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:44px}
+.fcols{display:flex;gap:54px;flex-wrap:wrap}
+.fcol h5{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:15px}
+.fcol a{display:block;font-size:13px;color:var(--dim);margin-bottom:9px}
+.fcol a:hover{color:var(--text)}
+.fbot{display:flex;justify-content:space-between;padding-top:24px;border-top:1px solid var(--line);font-size:11.5px;color:var(--faint);flex-wrap:wrap;gap:10px}
+
+/* ============ PRODOTTO DAL VIVO — MOCKUP DISPOSITIVI ============ */
+.devices{position:relative;width:100%;max-width:900px;margin:8px auto 0;padding-bottom:44px}
+.devices::after{content:'';position:absolute;bottom:8px;left:8%;right:8%;height:36px;background:radial-gradient(ellipse,rgba(0,0,0,.5) 0%,transparent 72%);z-index:-1;filter:blur(4px)}
+.monitor-wrap{display:block;width:100%}
+.monitor{
+  width:100%;
+  background:linear-gradient(155deg,#2A302D 0%,#1A1F1D 18%,#141817 60%,#1D2321 100%);
+  border-radius:15px;
+  padding:13px 13px 20px;
+  box-shadow:0 55px 100px -30px rgba(0,0,0,.75), 0 2px 0 rgba(255,255,255,.06) inset, 0 0 0 1px rgba(0,0,0,.4);
+  position:relative;
+}
+.monitor::before{content:'';position:absolute;top:6px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);border-radius:50%}
+.monitor-screen{width:100%;aspect-ratio:16/10.6;background:var(--bg);border-radius:5px;overflow:hidden;position:relative;border:1px solid rgba(0,0,0,.6);box-shadow:0 0 0 1px rgba(255,255,255,.03) inset}
+.monitor-screen::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.05) 0%,transparent 22%,transparent 78%,rgba(255,255,255,.03) 100%);pointer-events:none;z-index:9}
+.monitor-cam{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:5px;height:5px;border-radius:50%;background:radial-gradient(circle,#3a3a3a,#0a0a0a);z-index:10}
+.monitor-stand-neck{width:96px;height:44px;background:linear-gradient(180deg,#2A302D,#15191700 120%),linear-gradient(90deg,#1A1F1D,#242B28,#1A1F1D);margin:0 auto;clip-path:polygon(32% 0,68% 0,100% 100%,0 100%);box-shadow:0 4px 10px rgba(0,0,0,.3)}
+.monitor-stand-base{width:210px;height:13px;background:linear-gradient(180deg,#242B28,#141817);border-radius:7px;margin:-2px auto 0;box-shadow:0 10px 20px rgba(0,0,0,.5),0 1px 0 rgba(255,255,255,.05) inset}
+
+.phone-wrap{
+  position:absolute;right:-4%;bottom:20px;
+  filter:drop-shadow(0 40px 60px rgba(0,0,0,.55));
+}
+.phone{
+  width:168px;
+  background:linear-gradient(155deg,#3a3d3b,#232725 40%,#171a19);
+  border-radius:34px;
+  padding:8px;
+  box-shadow:0 4px 0 rgba(255,255,255,.05) inset, 0 0 0 1px rgba(0,0,0,.5);
+  position:relative;
+}
+.phone::before{content:'';position:absolute;top:16px;left:4px;bottom:16px;width:1px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.18),transparent)}
+.phone-screen{width:100%;aspect-ratio:9/19.5;background:var(--bg);border-radius:27px;overflow:hidden;position:relative;border:1px solid rgba(0,0,0,.6)}
+.phone-screen::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.06) 0%,transparent 25%,transparent 75%,rgba(255,255,255,.04) 100%);pointer-events:none;z-index:9}
+.phone-island{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:58px;height:16px;background:#000;border-radius:9px;z-index:10;box-shadow:0 0 0 1px rgba(255,255,255,.04) inset}
+.phone-btn{position:absolute;width:2.5px;background:linear-gradient(90deg,#0a0a0a,#242725);border-radius:2px}
+.pb-1{left:-2.5px;top:74px;height:22px}.pb-2{left:-2.5px;top:104px;height:34px}.pb-3{right:-2.5px;top:92px;height:46px}
+
+.scr{width:100%;height:100%;overflow-y:auto;overflow-x:hidden}
+.scr::-webkit-scrollbar{width:4px}
+.scr::-webkit-scrollbar-thumb{background:var(--line-strong);border-radius:3px}
+
+.dv-rhead{padding:16px 18px 13px;border-bottom:1px solid var(--line)}
+.dv-logo{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.dv-logo svg{width:17px;height:17px}
+.dv-logo span{font-family:'Newsreader',serif;font-size:14px;letter-spacing:.03em}
+.dv-title{font-family:'Newsreader',serif;font-size:15px;font-weight:400;margin-bottom:6px;line-height:1.25}
+.dv-meta{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--faint)}
+.dv-meta b{color:var(--phosphor)}
+
+.dv-ctx-cap{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--phosphor);margin:13px 18px 3px}
+.dv-ctx-note{font-size:9px;color:var(--faint);font-style:italic;margin:0 18px 10px}
+.dv-ctx-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;padding:0 18px 16px}
+.dv-ctx-card{border:1px solid var(--line);border-radius:2px;background:var(--surface);padding:8px 8px 7px}
+.dv-ctx-name{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.03em;text-transform:uppercase;color:var(--faint);margin-bottom:5px;line-height:1.3}
+.dv-ctx-price{font-family:'JetBrains Mono',monospace;font-size:12px;margin-bottom:5px}
+.dv-ctx-deltas{display:flex;gap:5px;font-family:'JetBrains Mono',monospace;font-size:7px;color:var(--faint);margin-bottom:2px}
+.dv-up{color:var(--phosphor)} .dv-down{color:var(--rust)}
+.dv-20g{font-family:'JetBrains Mono',monospace;font-size:7px;color:var(--faint)}
+
+.dv-tesi-cap{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--amber);margin:16px 15px 9px;display:flex;align-items:center;gap:8px}
+.dv-tesi-cap::after{content:'';flex:1;height:1px;background:var(--line)}
+.dv-tesi-card{margin:0 15px 15px;border:1px solid var(--line);border-left:3px solid var(--rust);background:var(--surface);padding:14px 14px 16px}
+.dv-tesi-h{display:flex;gap:7px;margin-bottom:9px}
+.dv-tesi-arrow{color:var(--rust);font-size:10px;margin-top:3px}
+.dv-tesi-h h4{font-family:'Newsreader',serif;font-size:12px;font-weight:400;line-height:1.35}
+.dv-tesi-h h4 em{font-style:italic;color:var(--dim);font-size:9.5px}
+.dv-tesi-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.dv-ttag{font-family:'JetBrains Mono',monospace;font-size:6.5px;color:var(--faint);border:1px solid var(--line-strong);padding:2.5px 5px;border-radius:2px}
+.dv-ttag.prezzato{color:var(--amber);border-color:rgba(227,178,74,.35);background:rgba(227,178,74,.06)}
+.dv-tesi-lbl{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.07em;text-transform:uppercase;color:var(--phosphor);margin-bottom:4px}
+.dv-tesi-sec{margin-bottom:10px}
+.dv-tesi-sec p{font-size:9.5px;line-height:1.5;color:var(--dim)}
+.dv-bs-h{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.05em;text-transform:uppercase;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.dv-bs-dot{width:5px;height:5px;border-radius:50%}
+.dv-dot-g{background:var(--phosphor)} .dv-dot-r{background:var(--rust)}
+.dv-bs-h.g{color:var(--phosphor)} .dv-bs-h.r{color:var(--rust)}
+.dv-bs-list{list-style:none;display:flex;flex-direction:column;gap:5px}
+.dv-bs-list li{font-size:9px;color:var(--dim);padding-left:10px;position:relative;line-height:1.4}
+.dv-bs-list li::before{content:'–';position:absolute;left:0;color:var(--faint)}
+
+.dv-caption{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--faint);text-align:center;letter-spacing:.03em;margin-top:32px}
+.dv-caption b{color:var(--phosphor)}
+
+@media(max-width:900px){
+  .devices{max-width:440px;padding-bottom:0;margin-bottom:40px}
+  /* su mobile impilo monitor e telefono, centrati, invece di sovrapporli */
+  .phone-wrap{position:static;transform:none;margin:-28px auto 0;display:flex;justify-content:center}
+  .phone{transform:none}
+  .dv-ctx-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+  .devices{max-width:100%}
+  .phone{width:210px}
+  .phone-wrap{margin-top:-18px}
+}
+
+.rev{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}
+.rev.in{opacity:1;transform:none}
+
+/* ============ MOBILE ============ */
+@media(max-width:900px){
+  .wrap{padding:0 22px}
+  nav{height:64px}
+  .logo span{font-size:19px}
+  .nav-links{display:none}
+  .nav-cta{display:none}
+  .burger{display:block}
+
+  .hero{padding:118px 0 6px}
+  .hero h1{font-size:clamp(36px,10.5vw,46px);margin:16px 0 20px}
+  .hero .lede{font-size:16px}
+  .hero-actions{gap:16px;margin-top:28px}
+  .hero-actions .btn{width:100%;text-align:center;padding:16px}
+
+  section{padding:80px 0}
+  .shead{margin-bottom:42px}
+  .shead p{font-size:15px}
+
+  /* Registro come schede su mobile */
+  .ledger{margin-top:48px}
+  .ledger-head{flex-direction:column;align-items:flex-start;padding:14px 18px}
+  .row{grid-template-columns:1fr;gap:9px;padding:18px}
+  .row .date{order:1}
+  .row .thesis{order:2;font-size:14px}
+  .row .state{order:3}
+  .row .horizon{order:4;text-align:left}
+  .ledger-foot{padding:13px 18px;font-size:10.5px}
+
+  .split,.guards,.plans,.two,.metrics{grid-template-columns:1fr}
+  .split>div{padding:30px 24px}
+  .guard{padding:28px 24px}
+  .chain{padding:26px 20px}
+  .link{gap:15px;padding-bottom:20px}
+  .link-t{font-size:14px}
+  .chain-out{flex-direction:column;align-items:flex-start;gap:8px}
+
+  .arch{grid-template-columns:1fr;gap:34px}
+  .msg{max-width:94%;font-size:13px}
+
+  .trend-h,.trend-r{grid-template-columns:1fr 54px 54px 40px;gap:8px;padding:12px 14px}
+  .trend-r{font-size:12.5px}
+  .trend-h span:nth-child(2),.trend-h span:nth-child(3){font-size:9px}
+
+  .metric{padding:22px 20px}
+  .metric .v{font-size:24px}
+
+  .plan{padding:28px 24px}
+
+  .q blockquote{font-size:21px}
+
+  .contact-grid{grid-template-columns:1fr;gap:38px}
+  .form{padding:26px 20px}
+  .field input,.field textarea,.field select{font-size:16px} /* evita zoom iOS */
+  .phone-row select{flex:0 0 92px}
+
+  .cta{padding:90px 0}
+  .fbot{flex-direction:column;align-items:flex-start;gap:6px}
+}
+
+/* ===== FAQ ===== */
+.faq-wrap{max-width:820px}
+.faq-list{border-top:1px solid var(--line);margin-top:8px}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:26px 0;display:flex;justify-content:space-between;align-items:center;gap:18px;color:var(--text);font-family:'Newsreader',serif;font-size:clamp(17px,2.2vw,21px);font-weight:400;line-height:1.4}
+.faq-icon{flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--faint);display:flex;align-items:center;justify-content:center;color:var(--phosphor);font-size:17px;line-height:1;transition:border-color .25s}
+.faq-a{display:none;padding:0 0 28px;max-width:70ch}
+.faq-a p{font-size:15px;line-height:1.7;color:var(--dim);margin:0 0 12px}
+.faq-a p:last-child{margin-bottom:0}
+.faq-a em{color:var(--text);font-style:italic}
+.faq-a strong{color:var(--text);font-weight:500}
+
+/* ===== COMPARISON TABLE ===== */
+.cmp-sec{padding-top:20px}
+.cmp-tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:8px;border:1px solid var(--line);border-radius:var(--r)}
+.cmp{width:100%;border-collapse:collapse;min-width:640px}
+.cmp th,.cmp td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp thead th{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);font-weight:500;background:var(--surface);white-space:nowrap}
+.cmp thead th.us{color:var(--bg);background:var(--phosphor)}
+.cmp tbody tr:last-child td{border-bottom:none}
+.cmp .rowlab{font-family:'Space Grotesk',sans-serif;font-size:14px;color:var(--text);font-weight:500;white-space:nowrap}
+.cmp td.us{background:rgba(110,231,168,.06);color:var(--text);font-size:14px}
+.cmp td{font-size:13.5px;color:var(--dim)}
+.cmp .yes{color:var(--phosphor);font-weight:500}
+.cmp .no{color:var(--faint)}
+.cmp .partial{color:var(--amber)}
+.cmp-note{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);margin-top:14px;text-align:center;letter-spacing:.02em}
+.cmp-hint{display:none;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--faint);text-align:center;margin-top:10px}
+@media(max-width:760px){.cmp-hint{display:block}}
+
+.lang-switch{display:flex;align-items:center;gap:2px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);margin-right:4px}
+.lang-switch a{padding:4px 6px;border-radius:3px;transition:.15s;color:var(--faint)}
+.lang-switch a:hover{color:var(--text)}
+.lang-switch a.active{color:var(--phosphor);font-weight:500}
+.lang-switch .sep{color:var(--line-strong)}
+.mobile-lang{display:flex;gap:10px;font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--faint);margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+.mobile-lang a{padding:6px 10px;border:1px solid var(--line);border-radius:4px}
+.mobile-lang a.active{color:var(--phosphor);border-color:var(--phosphor)}
+@media(max-width:900px){.lang-switch{display:none}}
+</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1761070989356426');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1761070989356426&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<div class="scroll-progress" id="scrollBar"></div>
+
+<header><div class="wrap"><nav>
+  <div class="logo">
+    <svg viewBox="0 0 26 26" fill="none">
+      <rect x="1" y="1" width="24" height="24" stroke="#E3EEE9" stroke-opacity=".3"/>
+      <line x1="1" y1="9" x2="25" y2="9" stroke="#E3EEE9" stroke-opacity=".22"/>
+      <line x1="1" y1="17" x2="25" y2="17" stroke="#E3EEE9" stroke-opacity=".22"/>
+      <circle cx="7" cy="5" r="2" fill="#6EE7A8"/>
+      <circle cx="7" cy="13" r="2" fill="#E3B24A"/>
+      <circle cx="7" cy="21" r="2" fill="#6EE7A8"/>
+    </svg>
+    <span>Thesyum</span>
+  </div>
+  <div class="nav-links">
+    <a href="#registro">Registry</a>
+    <a href="#catena">Chains</a>
+    <a href="#difese">Safeguards</a>
+    <a href="#report">Reports</a>
+    <a href="#prezzi">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="lang-switch">
+    <a href="/index.html">IT</a><span class="sep">/</span><a href="/en/index.html" class="active">EN</a><span class="sep">/</span><a href="/ar/index.html">AR</a>
+  </div>
+  <a href="#contatti" class="nav-cta">Request a demo</a>
+  <button class="burger" aria-label="Open menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav></div></header>
+
+<div class="mobile-menu" id="mmenu">
+  <a href="#registro" onclick="toggleMenu()">Registry</a>
+  <a href="#catena" onclick="toggleMenu()">Chains</a>
+  <a href="#difese" onclick="toggleMenu()">Safeguards</a>
+  <a href="#report" onclick="toggleMenu()">Reports</a>
+  <a href="#prezzi" onclick="toggleMenu()">Pricing</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
+  <a href="#contatti" class="m-cta" onclick="toggleMenu()">Request a demo</a>
+  <div class="mobile-lang">
+    <a href="/index.html">IT</a><a href="/en/index.html" class="active">EN</a><a href="/ar/index.html">AR</a>
+  </div>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">Macro &amp; market intelligence</span>
+  <h1>The terminal reads the markets for you. You read only <em>what moves them</em>.</h1>
+  <p class="lede">Every morning Thesyum analyzes the sources that matter — macro, commodities, currencies, rates — discards the noise and keeps only the themes that move prices, with the chain of reasoning linking the news to the market. And every thesis stays on the record, verified over time against real prices: including the wrong ones.</p>
+  <div class="hero-actions">
+    <a href="../en/esempio.html" class="btn">Read a real report →</a>
+    <a href="#registro" class="ghost">See the registry ↓</a>
+  </div>
+
+  <div class="ledger rev" id="registro">
+    <div class="ledger-head">
+      <span class="t">Thesis registry · excerpt</span>
+      <div class="legend">
+        <i><span class="dot d-open"></span>open</i>
+        <i><span class="dot d-ok"></span>confirmed</i>
+        <i><span class="dot d-no"></span>denied</i>
+      </div>
+    </div>
+    <div class="row">
+      <span class="date">12.05.26</span>
+      <span class="thesis"><b>Gold floor from PBoC purchases.</b> Official Chinese demand is programmatic and doesn't follow Fed cycles: the price decouples from US real rates.</span>
+      <span class="state s-ok"><span class="dot d-ok"></span>Confirmed</span>
+      <span class="horizon">180 d</span>
+    </div>
+    <div class="row">
+      <span class="date">26.05.26</span>
+      <span class="thesis"><b>Rare earths midstream bottleneck.</b> The deficit isn't in mining but in refining: the premium on Western processors is consolidating.</span>
+      <span class="state s-open"><span class="dot d-open"></span>Open</span>
+      <span class="horizon">12 mo</span>
+    </div>
+    <div class="row">
+      <span class="date">02.06.26</span>
+      <span class="thesis"><b>WTI compression from OPEC+ oversupply.</b> Saudi OSP cut to Asia as an explicit directional signal.</span>
+      <span class="state s-no"><span class="dot d-no"></span>Denied</span>
+      <span class="horizon">90 d</span>
+    </div>
+    <div class="row">
+      <span class="date">16.06.26</span>
+      <span class="thesis"><b>Enriched uranium, US capacity.</b> Multi-year commitment to triple capacity: early operational signals are ahead of the curve.</span>
+      <span class="state s-open"><span class="dot d-open"></span>Open</span>
+      <span class="horizon">24 mo</span>
+    </div>
+    <div class="ledger-foot">No thesis is ever deleted, not even when it turns out to be wrong. It's the only way a track record can mean anything.</div>
+  </div>
+</div></section>
+
+<!-- PROBLEMA -->
+<section class="has-glow glow-green"><div class="wrap">
+  <div class="shead rev">
+    <span class="sec-index">02 / 10</span><span class="eyebrow">The problem</span>
+    <h2>Whoever sends you news never comes back to tell you if they were right.</h2>
+    <p>It's the structural trait of financial information: continuous flow, zero memory. Every morning starts over. Right calls get remembered out loud, wrong ones disappear from the archive — and you have no way to know if the service you pay for actually works.</p>
+  </div>
+  <div class="split rev">
+    <div>
+      <span class="tag tag-off">How it works elsewhere</span>
+      <h3>Flow without accountability</h3>
+      <p>Hundreds of headlines a day with no hierarchy. A view expressed in May is never mentioned again in September. No expiry date, no verdict, no way to measure quality over time.</p>
+    </div>
+    <div>
+      <span class="tag tag-on">How it works here</span>
+      <h3>A registry with a verdict</h3>
+      <p>Every thesis is born with a date, a horizon, and the logical chain behind it. At expiry it's assessed against real prices and filed as confirmed or denied. The archive stays browsable, errors included.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- CATENA -->
+<section id="catena"><div class="wrap">
+  <div class="shead rev">
+    <span class="sec-index">03 / 10</span><span class="eyebrow">The reasoning</span>
+    <h2>Not a score. A chain you can repeat to a client.</h2>
+    <p>Quantitative systems give you a number and don't tell you why. Here every thesis comes with its steps laid out in plain sight: you can check them, challenge them, or repeat them word for word on a call with a client.</p>
+  </div>
+
+  <div class="chain rev">
+    <div class="chain-cap">Chain of consequences · rare earths · 05.26.26</div>
+    <div class="link">
+      <div class="marker"><span class="node"></span><span class="stem"></span></div>
+      <div class="link-body">
+        <span class="link-k">Fact</span>
+        <p class="link-t">China blacklists MP Materials. <span>At the same time, a Lynas–JS Link deal for processing capacity in Malaysia.</span></p>
+      </div>
+    </div>
+    <div class="link">
+      <div class="marker"><span class="node hollow"></span><span class="stem"></span></div>
+      <div class="link-body">
+        <span class="link-k">Direct consequence</span>
+        <p class="link-t">The refining bottleneck outside China becomes visible. <span>Until now the market had been looking at mining.</span></p>
+      </div>
+    </div>
+    <div class="link">
+      <div class="marker"><span class="node hollow"></span><span class="stem"></span></div>
+      <div class="link-body">
+        <span class="link-k">Implication</span>
+        <p class="link-t">The deficit isn't in mining but <b>midstream</b>. <span>Opening new mines doesn't fix it: separation capacity and permanent magnets remain the constraint.</span></p>
+      </div>
+    </div>
+    <div class="link">
+      <div class="marker"><span class="node"></span></div>
+      <div class="link-body">
+        <span class="link-k">Thesis</span>
+        <p class="link-t">A structural premium on Western processors, unresolvable in the short term by any single player. <span>To monitor: Beijing's regulatory moves on exports of processed rare earths.</span></p>
+      </div>
+    </div>
+    <div class="chain-out">
+      <span class="oz">12-month horizon · status: open</span>
+      <span class="od">Contrarian check passed · not yet priced in</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- DIFESE -->
+<section id="difese" class="has-glow glow-amber"><div class="wrap">
+  <div class="shead rev">
+    <span class="sec-index">04 / 10</span><span class="eyebrow">The safeguards</span>
+    <h2>Three checks before a thesis goes out. Against risk number one: stories that sound good but aren't true.</h2>
+    <p>A system that tells a good story is as dangerous as one that gets the numbers wrong. Every thesis goes through three filters designed to stop narratives that are convincing but empty.</p>
+  </div>
+  <div class="guards rev">
+    <div class="guard">
+      <span class="g-ic">/ 01</span>
+      <h3>Contrarian check</h3>
+      <p>Before issuing a thesis, the system builds the opposing argument and tries to tear it down. If it doesn't hold, it doesn't go out. It's the defense against falling in love with your own narrative.</p>
+      <div class="ex">"Thesis discarded: the copper rally was explained by an already-known seasonal factor."</div>
+    </div>
+    <div class="guard">
+      <span class="g-ic">/ 02</span>
+      <h3>Was it already priced in?</h3>
+      <p>Every piece of news is checked against the real price movement in the window around its release. If the market had already priced it in, that's flagged instead of being sold as insight.</p>
+      <div class="ex">"Note: copper is already up 6% this past week. Likely priced in."</div>
+    </div>
+    <div class="guard">
+      <span class="g-ic">/ 03</span>
+      <h3>Skill or the market?</h3>
+      <p>When a thesis closes, the system checks whether the asset moved on its own or because the whole sector was rising. The first case counts toward the track record, the second doesn't.</p>
+      <div class="ex">"Gold rose, but the whole safe-haven complex rose more. Doesn't count as the system's credit."</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- DUE REPORT -->
+<section id="report"><div class="wrap">
+  <div class="shead rev">
+    <span class="sec-index">05 / 10</span><span class="eyebrow">Two documents, two jobs</span>
+    <h2>One to decide today. One to put in front of a client.</h2>
+    <p>They're different products for different needs, and they're written differently. Raw signals don't get forwarded to a client; a weekly summary isn't enough for someone actively trading.</p>
+  </div>
+  <div class="two rev">
+    <div class="doc">
+      <div class="doc-h"><span class="n">Daily note</span><span class="w">every morning</span></div>
+      <div class="doc-b">
+        <div class="who">For those who trade</div>
+        <p>Every morning, before the open. Technical, dense, with real prices next to every signal. It's the tool you use to decide what to do today.</p>
+        <ul>
+          <li>Hot themes with impact and relevance</li>
+          <li>Real prices aligned to the time of the news</li>
+          <li>Open and expiring signals</li>
+          <li>Macro database by theme, with trends</li>
+        </ul>
+      </div>
+    </div>
+    <div class="doc">
+      <div class="doc-h"><span class="n">Weekly summary</span><span class="w">Sunday evening</span></div>
+      <div class="doc-b">
+        <div class="who">For the advisor and their client</div>
+        <p>One single page, in plain, readable language. Meant to be forwarded to a client or used to prepare a Monday call.</p>
+        <ul>
+          <li>The two or three dominant themes of the week</li>
+          <li>The strongest chains of consequences</li>
+          <li>Verifications: confirmed and denied theses</li>
+          <li>What to watch in the next seven days</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ARCHIVIO -->
+<section><div class="wrap">
+  <div class="shead rev">
+    <span class="sec-index">06 / 10</span><span class="eyebrow">The archive</span>
+    <h2>Everything that's been catalogued, one question away.</h2>
+  </div>
+  <div class="arch">
+    <div class="arch-txt rev">
+      <p>Every analyzed news item stays in the archive with date, theme, summary, impact and source. No need to browse it: you ask it a question in plain language and it answers, pulling only from the relevant entries.</p>
+      <p>It's why the thesis registry works: without a queryable memory, checking a three-month-old prediction would be manual work nobody would do.</p>
+      <div class="sectors">
+        <span class="sector">Macro / central banks <span class="c">7 theses</span></span>
+        <span class="sector">Energy <span class="c">6 theses</span></span>
+        <span class="sector">Precious metals <span class="c">4 theses</span></span>
+        <span class="sector">Rare earths &amp; critical <span class="c">5 theses</span></span>
+        <span class="sector">Equities / sectors <span class="c">6 theses</span></span>
+        <span class="sector">Rates &amp; bonds <span class="c">4 theses</span></span>
+        <span class="sector">Currencies <span class="c">3 theses</span></span>
+        <span class="sector">Defense / Geopolitics <span class="c">4 theses</span></span>
+      </div>
+    </div>
+    <div class="chatbox rev">
+      <div class="chat-h">Queryable archive</div>
+      <div class="msgs">
+        <div class="msg me">Summarize rare earths from the last month</div>
+        <div class="msg sys">The month reads in two halves. In the first half China tightened its grip on exports of already-processed material — not raw rare earths, but what matters most: finished magnets. Right after, the Lynas–JS Link deal in Malaysia shifted attention for the first time from "who mines" to "who refines," which is the real bottleneck.<br><br>In the second half the market started pricing it in: three independent signals — capacity announced in the West, automotive clients stating they're looking for alternative suppliers, and an early rise in the premium on listed processors — all point in the same direction as the thesis opened on 05.26. Nothing has denied it so far, and the 12-month horizon is still far from expiry: <b>it's too early to call it won</b>, but the structure holds.</div>
+        <div class="msg me">What did you say about WTI in June?</div>
+        <div class="msg sys">Thesis from 06.02: WTI compression from OPEC+ oversupply, 90-day horizon. The reasoning was correct in its structural part — the Saudi OSP cuts were a real directional signal, not noise — but a shock arrived that no fundamental model could have foreseen: the Iran-US escalation pushed the geopolitical premium above the supply fundamental.<br><br>Verdict: <b>denied</b>, but not generically. I keep it distinct from an analytical error: here the reasoning held, it was the timing that broke over an exogenous event. That's the distinction the registry is built to surface, instead of hiding it behind a single "wrong".</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trend rev">
+    <div class="trend-h"><span>Theme</span><span>30 d</span><span>6 mo</span><span>Trend</span></div>
+    <div class="trend-r"><span>Central banks / real rates</span><span class="num">17</span><span class="num">81</span><span class="ar up">▲</span></div>
+    <div class="trend-r"><span>Rare earths &amp; magnets</span><span class="num">14</span><span class="num">38</span><span class="ar up">▲</span></div>
+    <div class="trend-r"><span>Gold &amp; safe havens</span><span class="num">11</span><span class="num">52</span><span class="ar up">▲</span></div>
+    <div class="trend-r"><span>Oil / OPEC+</span><span class="num">19</span><span class="num">96</span><span class="ar flat">■</span></div>
+    <div class="trend-r"><span>Equity sector rotation</span><span class="num">9</span><span class="num">44</span><span class="ar flat">■</span></div>
+    <div class="trend-r"><span>Agricultural / grains</span><span class="num">4</span><span class="num">29</span><span class="ar down">▼</span></div>
+  </div>
+</div></section>
+
+<!-- METRICHE -->
+<section style="padding-top:0"><div class="wrap">
+  <div class="metrics rev">
+    <div class="metric"><div class="v">184</div><div class="k">sources read every day</div></div>
+    <div class="metric"><div class="v">8</div><div class="k">market areas with dedicated coverage</div></div>
+    <div class="metric"><div class="v">3</div><div class="k">checks before a thesis goes out</div></div>
+    <div class="metric"><div class="v">100%</div><div class="k">of theses stay on record, even if denied</div></div>
+  </div>
+</div></section>
+
+<!-- CONFRONTO -->
+<section class="cmp-sec"><div class="wrap">
+  <div class="shead rev">
+    <span class="sec-index">07 / 10</span><span class="eyebrow">The comparison</span>
+    <h2>Where it stands, compared to what you already use.</h2>
+    <p class="sub">Every tool solves a piece of the problem. Thesyum is the only one built around verification over time &mdash; not just content production.</p>
+  </div>
+
+  <div class="cmp-tablewrap rev">
+    <table class="cmp">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th class="us">Thesyum</th>
+          <th>Professional<br>data terminal</th>
+          <th>Analysis<br>newsletter</th>
+          <th>Signal app<br>/ robo-advisor</th>
+          <th>News<br>feed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rowlab">Dated theses with expiry</td>
+          <td class="us"><span class="yes">Yes</span> &mdash; every thesis has a date and a horizon</td>
+          <td><span class="no">No</span> &mdash; raw data, no thesis</td>
+          <td><span class="partial">Sometimes</span> &mdash; no explicit expiry</td>
+          <td><span class="no">No</span> &mdash; only instant signals</td>
+          <td><span class="no">No</span></td>
+        </tr>
+        <tr>
+          <td class="rowlab">Verified verdict (errors included)</td>
+          <td class="us"><span class="yes">Yes</span> &mdash; confirmed / denied, on record</td>
+          <td><span class="no">No</span></td>
+          <td><span class="no">Rare</span> &mdash; errors disappear</td>
+          <td><span class="partial">Partial</span> &mdash; aggregate performance</td>
+          <td><span class="no">No</span></td>
+        </tr>
+        <tr>
+          <td class="rowlab">Browsable track record</td>
+          <td class="us"><span class="yes">Yes</span> &mdash; public archive, errors included</td>
+          <td><span class="no">No</span></td>
+          <td><span class="no">No</span></td>
+          <td><span class="partial">Sometimes</span></td>
+          <td><span class="no">No</span></td>
+        </tr>
+        <tr>
+          <td class="rowlab">Reasoning in plain sight (causal chain)</td>
+          <td class="us"><span class="yes">Yes</span> &mdash; every step repeatable</td>
+          <td><span class="no">No</span> &mdash; data, not reasoning</td>
+          <td><span class="partial">Varies</span></td>
+          <td><span class="no">No</span> &mdash; only the outcome, not the why</td>
+          <td><span class="no">No</span></td>
+        </tr>
+        <tr>
+          <td class="rowlab">"Already priced in" check</td>
+          <td class="us"><span class="yes">Yes</span> &mdash; checked against the real price</td>
+          <td><span class="no">No</span></td>
+          <td><span class="no">No</span></td>
+          <td><span class="no">No</span></td>
+          <td><span class="no">No</span></td>
+        </tr>
+        <tr>
+          <td class="rowlab">Daily news summary</td>
+          <td class="us"><span class="yes">Yes</span> &mdash; one note every morning</td>
+          <td><span class="partial">Raw</span> &mdash; to compile by hand</td>
+          <td><span class="no">Rare</span></td>
+          <td><span class="no">No</span></td>
+          <td><span class="yes">Yes</span> &mdash; but no summary</td>
+        </tr>
+        <tr>
+          <td class="rowlab">Weekly summary for the client</td>
+          <td class="us"><span class="yes">Yes</span> &mdash; readable, shareable</td>
+          <td><span class="no">No</span></td>
+          <td><span class="partial">Sometimes</span></td>
+          <td><span class="no">No</span></td>
+          <td><span class="no">No</span></td>
+        </tr>
+        <tr>
+          <td class="rowlab">Built for advisors</td>
+          <td class="us"><span class="yes">Yes</span> &mdash; to use with the client</td>
+          <td><span class="partial">Generic</span> &mdash; for traders</td>
+          <td><span class="partial">Varies</span></td>
+          <td><span class="no">No</span> &mdash; for the end investor</td>
+          <td><span class="no">No</span></td>
+        </tr>
+        <tr>
+          <td class="rowlab">Indicative cost</td>
+          <td class="us"><span class="yes">from &euro;49/mo</span></td>
+          <td>over &euro;2,000/mo</td>
+          <td>&euro;20&ndash;300/mo</td>
+          <td>variable / % of AUM</td>
+          <td>free &ndash; low</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cmp-hint">&#8592; scroll the table to see all columns</div>
+  <p class="cmp-note">Generic categories for illustrative purposes. No specific product is named or compared by name.</p>
+</div></section>
+
+<!-- PREZZI -->
+<section id="prezzi" class="has-glow glow-amber"><div class="wrap">
+  <div class="shead rev">
+    <span class="sec-index">08 / 10</span><span class="eyebrow">Access</span>
+    <h2>Three tiers, no minimum commitment.</h2>
+  </div>
+  <div class="plans rev">
+    <div class="plan">
+      <div class="pn">Weekly</div>
+      <div class="pd">The Sunday summary, with theses and verifications.</div>
+      <div class="pp">€49<span>/mese</span></div>
+      <ul>
+        <li>Full weekly summary</li>
+        <li>Access to the thesis registry</li>
+        <li>90-day archive</li>
+      </ul>
+      <a href="#contatti" class="alt">Start now</a>
+    </div>
+    <div class="plan hot">
+      <div class="pn">Daily</div>
+      <div class="pd">For those who trade and need to know before the open.</div>
+      <div class="pp">€99<span>/mese</span></div>
+      <ul>
+        <li>Daily note + weekly summary</li>
+        <li>Sector deep-dives</li>
+        <li>Queryable archive, unlimited</li>
+        <li>Full chains of consequences</li>
+      </ul>
+      <a href="#contatti" class="btn">Request a demo</a>
+    </div>
+    <div class="plan">
+      <div class="pn">Studio</div>
+      <div class="pd">For advisory networks and management teams.</div>
+      <div class="pp">Custom</div>
+      <ul>
+        <li>Everything in the Daily plan</li>
+        <li>Multiple users</li>
+        <li>Summary customized to portfolio exposure</li>
+        <li>Format shareable with the end client</li>
+      </ul>
+      <a href="#contatti" class="alt">Let's talk</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- RECENSIONI -->
+<section class="q"><div class="wrap">
+  <div class="shead rev">
+    <span class="eyebrow">Who's already using it</span>
+    <h2>Here's what people using Thesyum every day say about it.</h2>
+  </div>
+
+  <div class="testi-track rev" id="testiTrack">
+    <div class="testi-card">
+      <blockquote>"My name is the only thing I've built in twenty years. I won't put it under a forecast unless I can explain why I believe it. With Thesyum, when a client asks 'why', I have a real answer — not just a number on a screen."</blockquote>
+      <div class="testi-who">
+        <div class="testi-avatar">M</div>
+        <div><div class="testi-name">Marco</div><div class="testi-role">Financial advisor · independent network</div></div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <blockquote>"I used to spend an hour every morning reading twenty different sources to figure out if there was anything to tell a client. Now I spend that hour on the phone with them — which is the reason I do this job."</blockquote>
+      <div class="testi-who">
+        <div class="testi-avatar">S</div>
+        <div><div class="testi-name">Silvia</div><div class="testi-role">Private banker · banking group</div></div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <blockquote>"The first time I saw a thesis marked 'denied' instead of quietly disappearing, I knew I could trust it. A system that admits its mistakes is the only one worth listening to when it's right."</blockquote>
+      <div class="testi-who">
+        <div class="testi-avatar">L</div>
+        <div><div class="testi-name">Luca</div><div class="testi-role">Wealth manager · family office</div></div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <blockquote>"I have a client who's followed commodities for thirty years. The first time I sent him the note on rare earths and midstream, he called me back ten minutes later asking where I'd found it. I didn't tell him right away."</blockquote>
+      <div class="testi-who">
+        <div class="testi-avatar">G</div>
+        <div><div class="testi-name">Giulia</div><div class="testi-role">Financial advisor · independent practice</div></div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <blockquote>"I didn't need another newsletter to ignore. I needed something that would tell me when I was wrong, not just when I was right. This is the only place where I find both written with the same honesty."</blockquote>
+      <div class="testi-who">
+        <div class="testi-avatar">A</div>
+        <div><div class="testi-name">Andrea</div><div class="testi-role">Independent trader · commodities</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="testi-nav" id="testiNav"></div>
+</div></section>
+
+<!-- FAQ -->
+<section id="faq"><div class="wrap faq-wrap">
+  <div class="shead rev">
+    <span class="sec-index">09 / 10</span><span class="eyebrow">Before you start</span>
+    <h2>Frequently asked questions</h2>
+  </div>
+
+  <div class="faq-list rev">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span>If a thesis is wrong, does it disappear from the archive?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>No. That's exactly the point. Denied theses stay in the registry with the same visibility as confirmed ones &mdash; date, reasoning, verdict. There's no way to rewrite them, move them, or make them disappear.</p>
+        <p>Most analysis services live in an eternal present: right calls get remembered, wrong ones evaporate. This registry is designed to work the opposite way. A track record that only shows the wins isn't a track record &mdash; it's marketing.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span>Who generates the theses &mdash; an algorithm or an analyst?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>An AI system trained on financial logic &mdash; but that's not the distinction that matters. What matters is that every thesis starts from a cited piece of news, goes through a contrarian check (a second pass that tries to tear it down), and is verified against real prices at expiry. If it doesn't survive those filters, it doesn't go out.</p>
+        <p>No thesis is ever attributed to "an analyst" to build fake authority. The public track record is the only guarantee on offer &mdash; and it can be checked entry by entry.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span>Where does the news come from?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>The system reads over 180 sources every day: GDELT (which indexes more than 100,000 news outlets worldwide in real time), Google News with sector-targeted queries, and 23 RSS feeds from specialized outlets &mdash; energy, shipping, rare earths, defense, rates and currencies.</p>
+        <p>Corporate press releases are explicitly flagged and can't trigger a thesis &mdash; they're written to promote, not to inform. Prices are pulled independently from Yahoo Finance, written by the code, never generated by the AI.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span>What happens when an unforeseeable event upends a correct thesis?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>It's marked as denied &mdash; because the outcome was wrong, even if the reasoning wasn't. But the registry also carries the context note: if an analysis was structurally sound and an unforeseeable exogenous event broke it, that distinction is made explicit.</p>
+        <p>It's the difference between an analytical error and a timing error caused by something no fundamental model could have anticipated. The registry is built to surface that distinction &mdash; not to hide it behind a generic "wrong".</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span>Can I use the theses directly with clients?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>The daily note is built for those who trade &mdash; technical, dense, with prices next to the reasoning. It's not meant to be forwarded to a client as-is.</p>
+        <p>The weekly summary, on the other hand, is written in plain, readable language, with no jargon, and designed precisely to be shared &mdash; to prepare a Monday call, support a conversation about macro context, or document the reasoning behind a portfolio decision. Studio plan subscribers also get a version calibrated to their own clients' specific exposure.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span>Is it different from an analysis newsletter?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>Structurally, yes. A newsletter writes, publishes, and moves on. It never revisits what it said thirty days ago. It has no mechanism forcing it to.</p>
+        <p>Here every prediction is born with an expiry date and an explicit verification criterion. The system comes back on its own to close the verdict &mdash; confirmed, denied, neutral &mdash; and files it publicly. It's not a content stream: it's a registry with memory. The difference shows after three months, not after three minutes.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span>Is the Studio plan built for advisory firms?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">
+        <p>Yes &mdash; independent advisory practices, wealth management teams, family offices, networks of multiple professionals sharing research. The Studio plan includes multiple seats and a weekly summary calibrated to the specific exposure of the managed portfolio, in a format designed to be shared directly with the end client.</p>
+        <p>Details are worked out case by case. Write in through the contact form describing your team's structure &mdash; we'll reply within one business day with a tailored proposal, no obligation.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- CONTATTI -->
+<section class="contact" id="contatti"><div class="wrap">
+  <div class="contact-grid">
+    <div class="contact-txt rev">
+      <span class="sec-index">10 / 10</span><span class="eyebrow">Contact</span>
+      <h2>See the registry live.</h2>
+      <p>Leave your details and we'll write to set up a demo: twenty minutes where we open the real registry, the ongoing theses, and the verifications already closed — including the ones that went badly.</p>
+      <p>If you just want more information, say so in the message and we'll answer that instead.</p>
+      <div class="contact-note">
+        <b>No cold calls.</b> We reach out once by email (or phone, only if you leave one), at a normal pace. No automated sequences.
+      </div>
+    </div>
+
+    <form class="form rev" id="demoForm" action="https://formspree.io/f/mjgnrqpb" method="POST">
+      <div id="formFields">
+        <div class="field">
+          <label for="f-name">Full name</label>
+          <input type="text" id="f-name" name="nome" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input type="email" id="f-email" name="email" placeholder="name@yourfirm.com" required>
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+          <div class="phone-row">
+            <select id="f-prefix" name="prefisso">
+              <option value="+39">🇮🇹 +39</option>
+              <option value="+41">🇨🇭 +41</option>
+              <option value="+378">🇸🇲 +378</option>
+              <option value="+377">🇲🇨 +377</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+34">🇪🇸 +34</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+31">🇳🇱 +31</option>
+              <option value="+351">🇵🇹 +351</option>
+              <option value="+32">🇧🇪 +32</option>
+            </select>
+            <input type="tel" id="f-phone" name="telefono" placeholder="345 1234567">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-type">What are you interested in</label>
+          <select id="f-type" name="richiesta">
+            <option value="demo">Requesting a demo</option>
+            <option value="info">Getting more information</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">Message <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+          <textarea id="f-msg" name="messaggio" placeholder="E.g. I'm an advisor, I mostly follow energy and macro…"></textarea>
+        </div>
+        <button type="submit" class="btn">Send request</button>
+        <p class="form-priv">Your data is only used to reply to you. No automatic newsletter sign-up.</p>
+      </div>
+      <div class="form-ok" id="formOk">
+        <div class="ok-ic">✓</div>
+        <h3>Request sent</h3>
+        <p>We'll write within one business day<br>to the address you left.</p>
+      </div>
+    </form>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section class="cta"><div class="wrap rev">
+  <h2>Theses get written before. Not after.</h2>
+  <a href="#contatti" class="btn">Request a demo</a>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="ftop">
+    <div class="logo">
+      <svg viewBox="0 0 26 26" fill="none">
+        <rect x="1" y="1" width="24" height="24" stroke="#E3EEE9" stroke-opacity=".3"/>
+        <line x1="1" y1="9" x2="25" y2="9" stroke="#E3EEE9" stroke-opacity=".22"/>
+        <line x1="1" y1="17" x2="25" y2="17" stroke="#E3EEE9" stroke-opacity=".22"/>
+        <circle cx="7" cy="5" r="2" fill="#6EE7A8"/>
+        <circle cx="7" cy="13" r="2" fill="#E3B24A"/>
+        <circle cx="7" cy="21" r="2" fill="#6EE7A8"/>
+      </svg>
+      <span>Thesyum</span>
+    </div>
+    <div class="fcols">
+      <div class="fcol"><h5>Product</h5><a href="#registro">Registry</a><a href="#catena">Chains</a><a href="#report">Reports</a><a href="#prezzi">Pricing</a></div>
+      <div class="fcol"><h5>Company</h5><a href="#contatti">Contact</a></div>
+      <div class="fcol"><h5>Legal</h5><a href="privacy.html">Privacy</a><a href="termini.html">Terms</a></div>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Thesyum · a Fladynance product. All rights reserved.</span>
+    <span>Analisi indipendente. Non costituisce consulenza finanziaria.</span>
+  </div>
+</div></footer>
+
+<script>
+// Reveal on scroll
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>io.observe(el));
+
+// Barra di avanzamento scroll
+const scrollBar=document.getElementById('scrollBar');
+function updateScrollBar(){
+  const h=document.documentElement;
+  const pct=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+  scrollBar.style.width=pct+'%';
+}
+window.addEventListener('scroll',updateScrollBar,{passive:true});
+updateScrollBar();
+
+// Mobile menu
+function toggleMenu(){
+  document.getElementById('mmenu').classList.toggle('open');
+  document.querySelector('.burger').classList.toggle('open');
+  document.body.style.overflow=document.getElementById('mmenu').classList.contains('open')?'hidden':'';
+}
+
+// Carosello recensioni: pallini di navigazione
+(function(){
+  const track=document.getElementById('testiTrack');
+  const nav=document.getElementById('testiNav');
+  if(!track||!nav) return;
+  const cards=[...track.children];
+  cards.forEach((card,i)=>{
+    const dot=document.createElement('button');
+    dot.className='testi-dot'+(i===0?' active':'');
+    dot.setAttribute('aria-label','Recensione '+(i+1));
+    dot.addEventListener('click',()=>card.scrollIntoView({behavior:'smooth',inline:'start',block:'nearest'}));
+    nav.appendChild(dot);
+  });
+  const dots=[...nav.children];
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const idx=cards.indexOf(e.target);
+        dots.forEach(d=>d.classList.remove('active'));
+        if(dots[idx]) dots[idx].classList.add('active');
+      }
+    });
+  },{root:track,threshold:0.6});
+  cards.forEach(c=>io.observe(c));
+})();
+
+// Prefisso telefonico: preseleziona in base alla lingua del browser
+(function(){
+  const map={'it':'+39','fr':'+33','de':'+49','es':'+34','en-GB':'+44','en-US':'+1','pt':'+351','nl':'+31'};
+  const lang=navigator.language||'';
+  const prefixSelect=document.getElementById('f-prefix');
+  if(!prefixSelect) return;
+  let guess=map[lang] || map[lang.split('-')[0]];
+  if(guess){
+    const opt=[...prefixSelect.options].find(o=>o.value===guess);
+    if(opt) prefixSelect.value=guess;
+  }
+})();
+
+// Form: invio via Formspree senza lasciare la pagina
+document.getElementById('demoForm').addEventListener('submit',async function(ev){
+  ev.preventDefault();
+  const form=this;
+  const btn=form.querySelector('button[type=submit]');
+  btn.disabled=true; btn.textContent='Invio in corso…';
+  try{
+    const res=await fetch(form.action,{
+      method:'POST',
+      body:new FormData(form),
+      headers:{'Accept':'application/json'}
+    });
+    if(res.ok){
+      document.getElementById('formFields').style.display='none';
+      document.getElementById('formOk').style.display='block';
+    }else{throw new Error()}
+  }catch(e){
+    btn.disabled=false; btn.textContent='Invia la richiesta';
+    alert('Invio non riuscito. Riprova, o scrivici direttamente via email.');
+  }
+});
+
+// FAQ accordion
+function toggleFaq(btn){
+  var ans=btn.nextElementSibling, ic=btn.querySelector('.faq-icon');
+  var open=ans.style.display==='block';
+  document.querySelectorAll('.faq-a').forEach(function(a){a.style.display='none';});
+  document.querySelectorAll('.faq-icon').forEach(function(i){i.textContent='+';i.style.borderColor='var(--faint)';});
+  if(!open){ans.style.display='block';ic.textContent='\u2212';ic.style.borderColor='var(--phosphor)';}
+}
+</script>
+</body>
+</html>
