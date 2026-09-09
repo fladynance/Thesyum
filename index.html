@@ -85,11 +85,7 @@ section{position:relative}
 
 /* ===== TICKER STRIP ===== */
 .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--void);overflow:hidden;padding:0}
-.strip-track{display:flex;gap:56px;padding:18px 0;white-space:nowrap;animation:scroll 40s linear infinite;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--faint)}
-.strip-track span{display:inline-flex;align-items:center;gap:10px}
-.strip-track b{color:var(--dim);font-weight:500}
-.strip .up{color:var(--phos)}.strip .down{color:var(--rust)}
-@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.strip .tradingview-widget-container{min-height:46px}
 
 /* ===== FUNNEL (imbuto del rumore) ===== */
 .funnel{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:60px}
@@ -385,25 +381,32 @@ footer{border-top:1px solid var(--line);padding:54px 0 36px;background:var(--voi
   </div>
 </section>
 
-<!-- TICKER STRIP -->
+<!-- TICKER LIVE (TradingView) -->
 <div class="strip">
-  <div class="strip-track">
-    <span><b>WTI</b> 69.12 <i class="down">−2.3%</i></span>
-    <span><b>Oro</b> 4.147 <i class="up">+3.1%</i></span>
-    <span><b>Rame</b> 6.23 <i class="up">+2.2%</i></span>
-    <span><b>Terre rare</b> <i class="down">−12%</i></span>
-    <span><b>Gas</b> 3.27 <i class="up">+1.4%</i></span>
-    <span><b>Argento</b> 61.38 <i class="down">−11%</i></span>
-    <span><b>Grano</b> 612 <i class="up">+5.6%</i></span>
-    <span><b>DXY</b> 104.2 <i class="up">+0.4%</i></span>
-    <span><b>WTI</b> 69.12 <i class="down">−2.3%</i></span>
-    <span><b>Oro</b> 4.147 <i class="up">+3.1%</i></span>
-    <span><b>Rame</b> 6.23 <i class="up">+2.2%</i></span>
-    <span><b>Terre rare</b> <i class="down">−12%</i></span>
-    <span><b>Gas</b> 3.27 <i class="up">+1.4%</i></span>
-    <span><b>Argento</b> 61.38 <i class="down">−11%</i></span>
-    <span><b>Grano</b> 612 <i class="up">+5.6%</i></span>
-    <span><b>DXY</b> 104.2 <i class="up">+0.4%</i></span>
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        {"proName": "TVC:USOIL", "title": "WTI"},
+        {"proName": "TVC:GOLD", "title": "Gold"},
+        {"proName": "TVC:SILVER", "title": "Silver"},
+        {"proName": "CAPITALCOM:COPPER", "title": "Copper"},
+        {"proName": "FX:EURUSD", "title": "EUR/USD"},
+        {"proName": "TVC:DXY", "title": "Dollar"},
+        {"proName": "PYTH:US10Y", "title": "US 10Y"},
+        {"proName": "OANDA:SPX500USD", "title": "S&P 500"},
+        {"proName": "OANDA:NAS100USD", "title": "Nasdaq"},
+        {"proName": "INDEX:FTSEMIB", "title": "FTSE MIB"},
+        {"proName": "BINANCE:BTCUSDT", "title": "Bitcoin"}
+      ],
+      "showSymbolLogo": true,
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "colorTheme": "dark",
+      "locale": "it"
+    }
+    </script>
   </div>
 </div>
 
