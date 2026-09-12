@@ -1,1587 +1,5 @@
 [
  {
-  "key": "5dd62bf8d8375a4d",
-  "data": "2026-07-12",
-  "categoria": "ai_semiconduttori",
-  "tema_originale": "ai_data_center",
-  "sintesi": "Honda e altre aziende giapponesi pagano dipendenti per guidare adozione dell'AI.",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "Nikkei Asia",
-  "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/honda-other-japan-companies-in-pay-workers-to-spearhead-ai-use",
-  "importato_da": "fladynance"
- },
- {
-  "key": "8b7c1fbdb10103c7",
-  "data": "2026-07-12",
-  "categoria": "ai_semiconduttori",
-  "tema_originale": "semiconduttori",
-  "sintesi": "GPU Nvidia RTX 5070 Ti throttling a 107°C per applicazione TIM scadente.",
-  "impatto": "ribassista",
-  "rilevanza": "media",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/pc-components/gpus/hotspot-temperature-sensor-on-nvidias-blackwell-gaming-gpus-is-still-accessible-if-you-have-access-to-nvidias-internal-mods-tool-nvidia-rtx-5070-ti-caught-throttling-at-107-c-over-poor-tim-application",
-  "importato_da": "fladynance"
- },
- {
-  "key": "96c6b985d914656d",
-  "data": "2026-07-12",
-  "categoria": "macro",
-  "tema_originale": "mercati_azionari",
-  "sintesi": "Strategie di investimento durante crisi globali continue e prolungate.",
-  "impatto": "neutro",
-  "rilevanza": "media",
-  "fonte": "WSJ Markets",
-  "url": "https://www.wsj.com/finance/investing/how-to-invest-when-the-global-crises-never-stop-3c8cc542?mod=rss_markets_main",
-  "importato_da": "fladynance"
- },
- {
-  "key": "e3c8416a3274d8a3",
-  "data": "2026-07-12",
-  "categoria": "macro",
-  "tema_originale": "fiscalita_politica_economica",
-  "sintesi": "Autovelox nelle grandi città italiane: incassati oltre 300 milioni in cinque anni.",
-  "impatto": "neutro",
-  "rilevanza": "bassa",
-  "fonte": "ANSA Economia",
-  "url": "https://www.ansa.it/sito/notizie/economia/2026/07/12/in-5-anni-incassi-da-autovelox-per-oltre-300-milioni-nelle-grandi-citta_3a4b695a-c014-498c-80d4-5adfa7bb5481.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "2cdbc003b444e9c2",
-  "data": "2026-07-12",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "Iran attacca cinque nazioni del Golfo e chiude lo Stretto di Hormuz dopo raid USA.",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "Al Jazeera",
-  "url": "https://www.aljazeera.com/news/2026/7/12/iran-attacks-five-gulf-nations-shuts-hormuz-after-us-bombing-all-to-know?traffic_source=rss",
-  "importato_da": "fladynance"
- },
- {
-  "key": "267c1716ab1b22bd",
-  "data": "2026-07-12",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "Muore Lindsey Graham, senatore USA e uno dei più forti sostenitori di Israele.",
-  "impatto": "neutro",
-  "rilevanza": "media",
-  "fonte": "Al Jazeera",
-  "url": "https://www.aljazeera.com/news/2026/7/12/us-senator-lindsey-graham-passes-away?traffic_source=rss",
-  "importato_da": "fladynance"
- },
- {
-  "key": "153d194a3e822eab",
-  "data": "2026-07-12",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "Missili e droni iraniani colpiscono stati del Golfo dopo attacchi notturni USA.",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "Al Jazeera",
-  "url": "https://www.aljazeera.com/news/2026/7/12/missiles-and-drones-fired-at-gulf-states-after-night-of-us-strikes-on-iran?traffic_source=rss",
-  "importato_da": "fladynance"
- },
- {
-  "key": "e87435815e2962fa",
-  "data": "2026-07-12",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "Prezzi petrolio in calo ma inflazione da politiche Trump continua a peggiorare.",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "fool.com",
-  "url": "https://www.fool.com/investing/2026/07/11/oil-price-plunge-but-trumpflation-is-getting-worse/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "f78a88e40b54e555",
-  "data": "2026-07-12",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "Attacco russo colpisce zona vicino a una caffetteria in Ucraina, civili in fuga.",
-  "impatto": "neutro",
-  "rilevanza": "media",
-  "fonte": "BBC World",
-  "url": "https://www.bbc.co.uk/news/videos/c8r27drk1nxo?at_medium=RSS&at_campaign=rss",
-  "importato_da": "fladynance"
- },
- {
-  "key": "37f5eb76a1b8263c",
-  "data": "2026-07-12",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "Polonia promette memoriale per vittime del genocidio della Seconda Guerra Mondiale.",
-  "impatto": "neutro",
-  "rilevanza": "bassa",
-  "fonte": "BBC World",
-  "url": "https://www.bbc.co.uk/news/articles/cze94x4361po?at_medium=RSS&at_campaign=rss",
-  "importato_da": "fladynance"
- },
- {
-  "key": "f688e7b790a7401c",
-  "data": "2026-07-12",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "Guerra energetica in escalation tra California e amministrazione Trump.",
-  "impatto": "ribassista",
-  "rilevanza": "media",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Energy-General/The-Escalating-Energy-War-Between-California-and-the-White-House.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "8a77ead7e2c2d2ea",
-  "data": "2026-07-12",
-  "categoria": "macro",
-  "tema_originale": "mercati_azionari",
-  "sintesi": "Il prossimo bull market potrebbe essere trainato dal riassortimento delle scorte.",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Crude-Oil/The-Next-Bull-Market-Could-Be-Built-on-Inventory-Replenishment.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "bc0f1c50528002bb",
-  "data": "2026-07-12",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "Muore il senatore USA Lindsey Graham, alleato di Trump, per malattia improvvisa.",
-  "impatto": "neutro",
-  "rilevanza": "media",
-  "fonte": "BBC World",
-  "url": "https://www.bbc.co.uk/news/articles/cvgj25j6nmeo?at_medium=RSS&at_campaign=rss",
-  "importato_da": "fladynance"
- },
- {
-  "key": "40ea505d2df9b0e3",
-  "data": "2026-07-12",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "USA lancia nuovi attacchi sull'Iran; Teheran chiude lo Stretto di Hormuz.",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "Al Jazeera",
-  "url": "https://www.aljazeera.com/video/newsfeed/2026/7/12/us-forces-launch-new-strikes-on-iran-tehran-closes-strait-of-hormuz?traffic_source=rss",
-  "importato_da": "fladynance"
- },
- {
-  "key": "6796a81df5f372f3",
-  "data": "2026-07-12",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "USA intensifica raid su Iran mentre Teheran blocca lo Stretto di Hormuz.",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "BBC World",
-  "url": "https://www.bbc.co.uk/news/articles/cj9gkpp0dkeo?at_medium=RSS&at_campaign=rss",
-  "importato_da": "fladynance"
- },
- {
-  "key": "7c09f8a4ba2bc67f",
-  "data": "2026-07-12",
-  "categoria": "ai_semiconduttori",
-  "tema_originale": "ai_data_center",
-  "sintesi": "World AI Conference, politica monetaria Corea del Sud e dati economici cinesi in agenda.",
-  "impatto": "neutro",
-  "rilevanza": "media",
-  "fonte": "Nikkei Asia",
-  "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/world-ai-conference-south-korea-monetary-policy-china-economic-data",
-  "importato_da": "fladynance"
- },
- {
-  "key": "98d41d02fb733e47",
-  "data": "2026-07-15",
-  "categoria": "shipping_logistica",
-  "tema_originale": "shipping_logistica",
-  "sintesi": "Analisi delle tendenze e punti salienti del mercato shipping nel primo semestre 2026",
-  "impatto": "neutro",
-  "rilevanza": "alta",
-  "fonte": "Hellenic Shipping",
-  "url": "https://www.hellenicshippingnews.com/1h-2026-shipping-market-trends-highlights/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "bb093b0ec64af3ab",
-  "data": "2026-07-15",
-  "categoria": "agricole",
-  "tema_originale": "agricole_food",
-  "sintesi": "Tre novità da vedere e fare alla fiera Husker Harvest Days",
-  "impatto": "neutro",
-  "rilevanza": "bassa",
-  "fonte": "Farm Progress",
-  "url": "https://www.farmprogress.com/husker-harvest-days/3-new-things-you-must-see-and-do-at-husker-harvest-days",
-  "importato_da": "fladynance"
- },
- {
-  "key": "62b2c8c7426ccb81",
-  "data": "2026-07-15",
-  "categoria": "agricole",
-  "tema_originale": "agricole_food",
-  "sintesi": "Cinque minacce per la soia durante periodi di calore eccessivo",
-  "impatto": "ribassista",
-  "rilevanza": "media",
-  "fonte": "Farm Progress",
-  "url": "https://www.farmprogress.com/soybean/5-threats-to-soybeans-during-excessive-heat",
-  "importato_da": "fladynance"
- },
- {
-  "key": "7be4650ea897871b",
-  "data": "2026-07-15",
-  "categoria": "metalli_preziosi",
-  "tema_originale": "metalli_preziosi",
-  "sintesi": "Adrian Day identifica il principale driver dell'oro e setup rialzista sulle azioni aurifere",
-  "impatto": "rialzista",
-  "rilevanza": "alta",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/adrian-day-gold-market-forecast/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "dd06b7f93901e7ef",
-  "data": "2026-07-15",
-  "categoria": "metalli_preziosi",
-  "tema_originale": "metalli_preziosi",
-  "sintesi": "Alpha avvia perforazioni al progetto aurifero Aburna e identifica nuovi target",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/alpha-commences-drilling-at-aburna-gold-project-and-new-targets-identified/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "df3b46e0a8defcaa",
-  "data": "2026-07-15",
-  "categoria": "metalli_preziosi",
-  "tema_originale": "metalli_preziosi",
-  "sintesi": "Andean Precious Metals pubblica i risultati di produzione del secondo trimestre 2026",
-  "impatto": "neutro",
-  "rilevanza": "media",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/andean-precious-metals-reports-second-quarter-2026-production-results/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "c3eb4fe9b74b1bc0",
-  "data": "2026-07-15",
-  "categoria": "metalli_preziosi",
-  "tema_originale": "metalli_preziosi",
-  "sintesi": "Avanti raddoppia la flotta di perforazione a Misisi accelerando il più grande programma esplorativo",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/avanti-doubles-active-drill-fleet-at-misisi-as-company-accelerates-largest-exploration-program-in-project-history/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "b69e9c135137e89b",
-  "data": "2026-07-15",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "L'Azerbaigian accelera il corridoio centrale con accordi commerciali in Asia Centrale",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Geopolitics/Asia/Azerbaijan-Accelerates-Middle-Corridor-Push-With-Central-Asia-Trade-Deals.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "ba5df636f4fdafcf",
-  "data": "2026-07-15",
-  "categoria": "shipping_logistica",
-  "tema_originale": "shipping_logistica",
-  "sintesi": "L'indice Baltic Dry sale per il quarto giorno consecutivo",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "Hellenic Shipping",
-  "url": "https://www.hellenicshippingnews.com/baltic-dry-index-up-for-4th-day-2/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "26423ea59a604cfd",
-  "data": "2026-07-15",
-  "categoria": "shipping_logistica",
-  "tema_originale": "shipping_logistica",
-  "sintesi": "Rapporto settimanale di mercato Banchero Costa per la settimana 28 del 2026",
-  "impatto": "neutro",
-  "rilevanza": "media",
-  "fonte": "Hellenic Shipping",
-  "url": "https://www.hellenicshippingnews.com/banchero-costa-weekly-market-report-week-28-2026/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "276334ab6c28a2e3",
-  "data": "2026-07-15",
-  "categoria": "energia",
-  "tema_originale": "uranio_nucleare",
-  "sintesi": "Il Bangladesh punta al nucleare come test per le economie emergenti",
-  "impatto": "neutro",
-  "rilevanza": "media",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Alternative-Energy/Nuclear-Power/Bangladeshs-Nuclear-Power-Play-Is-a-Test-for-Emerging-Economies.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "e8050313459295e9",
-  "data": "2026-07-15",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "Il governatore della Bank of England avverte sui rischi del conflitto iraniano per la stabilità",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "Hellenic Shipping",
-  "url": "https://www.hellenicshippingnews.com/bank-of-england-governor-warns-on-iran-conflict-risks-to-stability/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "02a41ce6e0bef0fb",
-  "data": "2026-07-15",
-  "categoria": "shipping_logistica",
-  "tema_originale": "shipping_logistica",
-  "sintesi": "Boluda inaugura la sede di Rotterdam consolidando il Nord Europa come hub strategico",
-  "impatto": "rialzista",
-  "rilevanza": "bassa",
-  "fonte": "Hellenic Shipping",
-  "url": "https://www.hellenicshippingnews.com/boluda-inaugurates-rotterdam-headquarters-consolidating-northern-europe-as-a-key-strategic-hub-for-its-international-growth/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "e74710c78e26ee57",
-  "data": "2026-07-15",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "I futures sul Brent tornano in backwardation per il rischio di forniture dal Medio Oriente",
-  "impatto": "rialzista",
-  "rilevanza": "alta",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Latest-Energy-News/World-News/Brent-Futures-Flip-to-Backwardation-as-Middle-East-Supply-Risks-Return.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "e3fde86c1d1fbf36",
-  "data": "2026-07-15",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "Il Canada lega il nuovo oleodotto della costa ovest all'espansione delle sabbie bituminose",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Crude-Oil/Canada-Ties-New-West-Coast-Pipeline-to-Oil-Sands-Expansion.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "d59f9dda2ee3ca81",
-  "data": "2026-07-15",
-  "categoria": "metalli_preziosi",
-  "tema_originale": "metalli_preziosi",
-  "sintesi": "Cerrado Gold rivede i tempi per lo studio di fattibilità di Mont Sorcier per ottimizzazioni",
-  "impatto": "neutro",
-  "rilevanza": "bassa",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/cerrado-gold-elects-to-revise-timing-for-completion-of-the-mont-sorcier-feasibility-study-to-undertake-optimization-initiatives/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "374488c8272a16b6",
-  "data": "2026-07-15",
-  "categoria": "metalli_preziosi",
-  "tema_originale": "metalli_preziosi",
-  "sintesi": "La revisione dei dati di Chalice identifica ulteriore mineralizzazione aurifera",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/chalice-data-review-identifies-further-gold-mineralisation/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "bb1102988e48231a",
-  "data": "2026-07-15",
-  "categoria": "agricole",
-  "tema_originale": "agricole_food",
-  "sintesi": "Le modifiche alle normative sulla fosfina potrebbero disturbare la catena di approvvigionamento",
-  "impatto": "ribassista",
-  "rilevanza": "media",
-  "fonte": "Grain Central",
-  "url": "https://www.graincentral.com/news/changes-to-phosphine-use-couldd-disrupt-supply-chain/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "1532c35007134a1d",
-  "data": "2026-07-15",
-  "categoria": "shipping_logistica",
-  "tema_originale": "shipping_logistica",
-  "sintesi": "La Cina lancia il primo servizio settimanale di container artici verso l'Europa",
-  "impatto": "rialzista",
-  "rilevanza": "alta",
-  "fonte": "gCaptain",
-  "url": "https://gcaptain.com/china-launches-first-scheduled-weekly-arctic-container-service-to-europe/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "d452405a4c548cec",
-  "data": "2026-07-15",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "Le raffinerie cinesi crollano ai minimi pandemici mentre le importazioni di greggio collassano",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Latest-Energy-News/World-News/Chinas-Refinery-Runs-Crash-to-Pandemic-Lows-as-Crude-Imports-Collapse.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "c7dbe2777e84cda9",
-  "data": "2026-07-15",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "L'energia geotermica potrebbe salvare le città carbonifere tedesche in declino",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Alternative-Energy/Geothermal-Energy/Could-Geothermal-Energy-Rescue-Germanys-Fading-Coal-Towns.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "f45f5d5dbe5d60dc",
-  "data": "2026-07-15",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "Il cambio al dollaro di Dangote rivela il problema petrolifero più profondo della Nigeria",
-  "impatto": "neutro",
-  "rilevanza": "media",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Latest-Energy-News/World-News/Dangotes-Dollar-Shift-Reveals-Nigerias-Bigger-Oil-Problem.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "14ee5f2e5c0b34c5",
-  "data": "2026-07-15",
-  "categoria": "metalli_preziosi",
-  "tema_originale": "metalli_preziosi",
-  "sintesi": "EastPlats annuncia la nomina di un nuovo CFO e segretario aziendale",
-  "impatto": "neutro",
-  "rilevanza": "bassa",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/eastplats-announces-appointment-of-cfo-and-corporate-secretary/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "c9e20365ce26ae6d",
-  "data": "2026-07-15",
-  "categoria": "terre_rare_critici",
-  "tema_originale": "terre_rare",
-  "sintesi": "Frontier Lithium deposita i rendiconti finanziari di fine anno al 31 marzo 2026",
-  "impatto": "neutro",
-  "rilevanza": "bassa",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/frontier-lithium-files-year-end-march-31-2026-financial-statements/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "e53d138130dee8d8",
-  "data": "2026-07-15",
-  "categoria": "shipping_logistica",
-  "tema_originale": "shipping_logistica",
-  "sintesi": "Prospettive H2: colli di bottiglia e incertezza impatteranno il commercio chimico in Medio Oriente",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "Hellenic Shipping",
-  "url": "https://www.hellenicshippingnews.com/h2-outlook-shipping-bottlenecks-uncertainty-to-impact-middle-east-chemical-trade/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "ead7f0cd8665df03",
-  "data": "2026-07-15",
-  "categoria": "shipping_logistica",
-  "tema_originale": "shipping_logistica",
-  "sintesi": "Rapporto FOBAS: carburanti conformi ISO causano crescenti problemi operativi",
-  "impatto": "ribassista",
-  "rilevanza": "media",
-  "fonte": "Hellenic Shipping",
-  "url": "https://www.hellenicshippingnews.com/latest-fobas-fuel-quality-report-finds-iso-compliant-fuels-are-increasingly-causing-operational-problems/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "a0fe80aa66c4d1dc",
-  "data": "2026-07-15",
-  "categoria": "metalli_preziosi",
-  "tema_originale": "metalli_preziosi",
-  "sintesi": "Liberty Gold parteciperà alla conferenza virtuale per investitori in metalli preziosi il 22 luglio",
-  "impatto": "neutro",
-  "rilevanza": "bassa",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/liberty-gold-to-present-at-the-precious-metals-critical-minerals-virtual-investor-conference-july-22-2026/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "fbcf1e31a86f0b41",
-  "data": "2026-07-15",
-  "categoria": "metalli_preziosi",
-  "tema_originale": "metalli_preziosi",
-  "sintesi": "Mexican Gold Mining effettuerà un consolidamento azionario, cambio nome e chiusura finanziamento da 2,3 milioni",
-  "impatto": "neutro",
-  "rilevanza": "bassa",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/mexican-gold-mining-corp-to-effect-share-consolidation-and-name-change-and-announces-closing-of-2299000-subscription-receipt-financing/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "bd3cfe3ecfdf7754",
-  "data": "2026-07-15",
-  "categoria": "shipping_logistica",
-  "tema_originale": "shipping_logistica",
-  "sintesi": "L'attività di costruzione di nuove navi rimane robusta",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "Hellenic Shipping",
-  "url": "https://www.hellenicshippingnews.com/newbuilding-activity-going-strong/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "791a684cbde5289a",
-  "data": "2026-07-15",
-  "categoria": "metalli_preziosi",
-  "tema_originale": "metalli_preziosi",
-  "sintesi": "Nick Hodge prevede un nuovo rialzo per l'oro e indica il rame come jolly da monitorare",
-  "impatto": "rialzista",
-  "rilevanza": "alta",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/nick-hodge-uranium-market-forecast/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "06b66636eae6095d",
-  "data": "2026-07-15",
-  "categoria": "agricole",
-  "tema_originale": "agricole_food",
-  "sintesi": "Aperte le candidature per i prossimi Master Farmers del Missouri",
-  "impatto": "neutro",
-  "rilevanza": "bassa",
-  "fonte": "Farm Progress",
-  "url": "https://www.farmprogress.com/farm-business/nominations-open-for-missouri-s-next-master-farmers",
-  "importato_da": "fladynance"
- },
- {
-  "key": "dc7641855417c8ae",
-  "data": "2026-07-15",
-  "categoria": "metalli_preziosi",
-  "tema_originale": "metalli_preziosi",
-  "sintesi": "North Peak annuncia la proposta di proroga della scadenza dei warrant",
-  "impatto": "neutro",
-  "rilevanza": "bassa",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/north-peak-announces-proposed-extension-of-warrant-expiry-date/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "9db7f6ebe67f2915",
-  "data": "2026-07-15",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "I prezzi del petrolio salgono per il quarto giorno mentre l'Iran minaccia nuovi chokepoint energetici",
-  "impatto": "rialzista",
-  "rilevanza": "alta",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Oil-Prices/Oil-Prices-Climb-for-Fourth-Day-as-Iran-Threatens-New-Energy-Chokepoints.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "1d0ac6476ad05fdf",
-  "data": "2026-07-15",
-  "categoria": "metalli_preziosi",
-  "tema_originale": "metalli_preziosi",
-  "sintesi": "Prismo Metals riporta assay a Silver King con alti tenori di rame, molibdeno, argento, piombo e oro",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/prismo-metals-assay-results-at-silver-king-show-highs-of-1-73-copper-30-ppm-molybdenum-1362-g-t-silver-4-1-lead-and-1-3-g-t-gold/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "5fc0cd2fce393146",
-  "data": "2026-07-15",
-  "categoria": "agricole",
-  "tema_originale": "agricole_food",
-  "sintesi": "I raccolti invernali del Queensland nella media mentre si avvicina il raccolto nel Central Queensland",
-  "impatto": "neutro",
-  "rilevanza": "media",
-  "fonte": "Grain Central",
-  "url": "https://www.graincentral.com/news/qld-winter-crops-average-at-best-as-cq-harvest-nears/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "75825975aed0c94f",
-  "data": "2026-07-15",
-  "categoria": "agricole",
-  "tema_originale": "agricole_food",
-  "sintesi": "I Barksdale superano le sfide stagionali nella loro azienda agricola di arachidi",
-  "impatto": "neutro",
-  "rilevanza": "bassa",
-  "fonte": "Farm Progress",
-  "url": "https://www.farmprogress.com/peanut/seasonal-challenges-can-t-stop-barksdales-peanut-farm",
-  "importato_da": "fladynance"
- },
- {
-  "key": "a7b7ecbfd4ca35ea",
-  "data": "2026-07-15",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "Il prossimo rally del petrolio dipenderà più dalla Cina che dal Medio Oriente",
-  "impatto": "rialzista",
-  "rilevanza": "alta",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Crude-Oil/The-Next-Oil-Rally-May-Depend-On-China-Not-The-Middle-East.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "daf5901d87ea690e",
-  "data": "2026-07-15",
-  "categoria": "terre_rare_critici",
-  "tema_originale": "terre_rare",
-  "sintesi": "Titan Mining valida il flowsheet del concentratore di grafite a Kilbourne raggiungendo purezza battery-grade",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/titan-mining-validates-kilbourne-graphite-concentrator-flowsheet-and-achieves-battery-grade-purity/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "92b324b9e7fba7c5",
-  "data": "2026-07-15",
-  "categoria": "metalli_preziosi",
-  "tema_originale": "metalli_preziosi",
-  "sintesi": "Tocvan delinea un piano di sviluppo in fasi per la miniera pilota al progetto Gran Pilar oro-argento",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/tocvan-outlines-phased-development-plan-for-pilot-mine-operations-at-gran-pilar-gold-silver-project/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "fb8c109148665298",
-  "data": "2026-07-15",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "Il traffico nello Stretto di Hormuz crolla a 11 navi il 12 luglio dopo gli attacchi USA-Iran",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "Hellenic Shipping",
-  "url": "https://www.hellenicshippingnews.com/traffic-via-strait-of-hormuz-falls-to-11-ships-july-12-after-us-iran-attacks/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "162eb85f80f830e6",
-  "data": "2026-07-15",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "Trump abbandona il piano del pedaggio a Hormuz mentre il conflitto USA-Iran si approfondisce",
-  "impatto": "neutro",
-  "rilevanza": "alta",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Geopolitics/Middle-East/Trump-Scraps-Hormuz-Toll-Plan-as-US-Iran-Conflict-Deepens.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "656a4f93f3aa1fd9",
-  "data": "2026-07-15",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "Il pedaggio di Trump a Hormuz potrebbe sconvolgere il commercio energetico globale",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Crude-Oil/Trumps-Hormuz-Toll-Could-Upend-Global-Energy-Trade.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "c8cb52e2adc904e6",
-  "data": "2026-07-15",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "I prezzi della benzina USA potrebbero raggiungere 4 dollari al gallone entro pochi giorni",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Latest-Energy-News/World-News/US-Gasoline-Prices-Could-Hit-4-Per-Gallon-Within-Days.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "d8cb23cfb35b6af6",
-  "data": "2026-07-15",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "Le scorte USA di greggio e benzina continuano a diminuire",
-  "impatto": "rialzista",
-  "rilevanza": "alta",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Latest-Energy-News/World-News/US-Crude-Oil-Gasoline-Inventories-Still-Falling.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "efd64439f3cdfe05",
-  "data": "2026-07-15",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "L'Ucraina intensifica gli attacchi contro le petroliere russe nel Mar Nero",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Latest-Energy-News/World-News/Ukraine-Intensifies-Attacks-on-Russian-Tankers-in-the-Black-Sea.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "1e13c35e061a7791",
-  "data": "2026-07-15",
-  "categoria": "metalli_preziosi",
-  "tema_originale": "metalli_preziosi",
-  "sintesi": "West Red Lake Gold riporta ottimi progressi nel Q2 con aumento del 73% delle once estratte e 51% della produzione",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "INN Precious Metals",
-  "url": "https://investingnews.com/west-red-lake-gold-reports-strong-q2-operating-progress-with-73-increase-in-mined-ounces-and-51-higher-gold-production-over-q1-at-madsen-mine/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "b888d4b638df68da",
-  "data": "2026-07-15",
-  "categoria": "agricole",
-  "tema_originale": "agricole_food",
-  "sintesi": "Pianificare ora migliora le decisioni su fosforo e potassio per la stagione agricola",
-  "impatto": "neutro",
-  "rilevanza": "bassa",
-  "fonte": "Farm Progress",
-  "url": "https://www.farmprogress.com/management/why-planning-now-spurs-better-p-and-k-decisions",
-  "importato_da": "fladynance"
- },
- {
-  "key": "51611691d716a077",
-  "data": "2026-07-19",
-  "categoria": "macro",
-  "tema_originale": "fiscalita_politica_economica",
-  "sintesi": "Revisione statistica abbassa l'inflazione in un momento critico per i mercati.",
-  "impatto": "rialzista",
-  "rilevanza": "alta",
-  "fonte": "WSJ Markets",
-  "url": "https://www.wsj.com/economy/central-banking/pce-inflation-data-updates-ca7bfd61?mod=rss_markets_main",
-  "importato_da": "fladynance"
- },
- {
-  "key": "9e0553c6c63f7b86",
-  "data": "2026-07-19",
-  "categoria": "ai_semiconduttori",
-  "tema_originale": "ai_data_center",
-  "sintesi": "L'intelligenza artificiale potrebbe prevedere la prossima pandemia sanitaria.",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "Nikkei Asia",
-  "url": "https://asia.nikkei.com/opinion/ai-can-help-predict-the-next-pandemic",
-  "importato_da": "fladynance"
- },
- {
-  "key": "13e199ca8ba8dab3",
-  "data": "2026-07-19",
-  "categoria": "ai_semiconduttori",
-  "tema_originale": "semiconduttori",
-  "sintesi": "AMD Ryzen 7 7700X3D scende a 279 dollari giorni dopo il lancio ufficiale.",
-  "impatto": "neutro",
-  "rilevanza": "media",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/pc-components/cpus/amds-new-ryzen-7-7700x3d-plummets-to-usd279-days-after-launch-the-x3d-chip-rules-the-mid-range-at-its-discounted-price",
-  "importato_da": "fladynance"
- },
- {
-  "key": "b7ef9377448dd512",
-  "data": "2026-07-19",
-  "categoria": "agricole",
-  "tema_originale": "agricole_food",
-  "sintesi": "Le grandi aziende alimentari esauriscono le strategie con consumatori e investitori.",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "WSJ Markets",
-  "url": "https://www.wsj.com/business/retail/big-food-is-running-out-of-moves-with-shoppers-and-investors-5f4567e9?mod=rss_markets_main",
-  "importato_da": "fladynance"
- },
- {
-  "key": "4f5aa86cdc21340f",
-  "data": "2026-07-19",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "Il Canada inaugura nuovo oleodotto per ridurre dipendenza dalle rotte petrolifere USA.",
-  "impatto": "rialzista",
-  "rilevanza": "alta",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Crude-Oil/Canada-Unveils-New-Pipeline-to-Cut-Reliance-on-US-Oil-Routes.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "0d66c902252570fa",
-  "data": "2026-07-19",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "Il gasolio in Italia si avvicina a 2,7 euro al litro per il caro-carburanti.",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "ANSA Economia",
-  "url": "https://www.ansa.it/sito/notizie/economia/2026/07/18/caro-carburanti-il-gasolio-sfiora-27-euro-al-litro_e946ba16-f147-46e3-bbe6-5f641562d2ac.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "ba6a400c6e1e50df",
-  "data": "2026-07-19",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "La Cina come importatore swing ammortizza i picchi del mercato petrolifero globale.",
-  "impatto": "neutro",
-  "rilevanza": "alta",
-  "fonte": "Nikkei Asia",
-  "url": "https://asia.nikkei.com/business/energy/china-s-role-as-swing-importer-cushions-oil-market-spike",
-  "importato_da": "fladynance"
- },
- {
-  "key": "edbf5060d7674bb6",
-  "data": "2026-07-19",
-  "categoria": "shipping_logistica",
-  "tema_originale": "shipping_logistica",
-  "sintesi": "Petroliera noleggiata da Exxon attaccata da droni vicino a terminale del Mar Nero.",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "gCaptain",
-  "url": "https://gcaptain.com/exxon-chartered-oil-tanker-attacked-by-drones-near-black-sea-terminal/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "af36e130ea60868e",
-  "data": "2026-07-19",
-  "categoria": "macro",
-  "tema_originale": "fiscalita_politica_economica",
-  "sintesi": "Orsini: export italiano cresciuto del 3,4%, obiettivo 700 miliardi di euro raggiungibile.",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "ANSA Economia",
-  "url": "https://www.ansa.it/sito/notizie/economia/2026/07/18/orsini-export-italiano-34-obiettivo-700-miliardi-possibile_3ac8d9b3-e14f-4950-885e-c6d9902c3370.html",
-  "importato_da": "fladynance"
- },
- {
-  "key": "d736823756910bf9",
-  "data": "2026-07-19",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "Russia lancia il più grande attacco missilistico balistico su Kyiv dall'inizio della guerra.",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "Al Jazeera",
-  "url": "https://www.aljazeera.com/news/2026/7/19/russia-launches-largest-ballistic-missile-attack-on-kyiv-since-start-of-war?traffic_source=rss",
-  "importato_da": "fladynance"
- },
- {
-  "key": "8313a996e502b0bd",
-  "data": "2026-07-19",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "Una petroliera sanzionata perde petrolio nelle acque vicino all'Oman.",
-  "impatto": "ribassista",
-  "rilevanza": "alta",
-  "fonte": "gCaptain",
-  "url": "https://gcaptain.com/sanctioned-tanker-is-leaking-oil-near-oman/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "127e3f6a90a39d89",
-  "data": "2026-07-19",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "Migliaia di camion trasportano petrolio iracheno attraverso la Siria, eredità di Hormuz.",
-  "impatto": "neutro",
-  "rilevanza": "media",
-  "fonte": "gCaptain",
-  "url": "https://gcaptain.com/thousands-of-trucks-haul-iraqs-oil-through-syria-in-sign-of-hormuz-legacy/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "e99c90d77103cd14",
-  "data": "2026-07-19",
-  "categoria": "difesa_geopolitica",
-  "tema_originale": "geopolitica_sanzioni",
-  "sintesi": "Venezia protesta per l'arrivo in superyacht dell'ambasciatore USA Fertitta.",
-  "impatto": "neutro",
-  "rilevanza": "bassa",
-  "fonte": "gCaptain",
-  "url": "https://gcaptain.com/venice-protests-greet-u-s-ambassador-fertittas-arrival-on-superyacht/",
-  "importato_da": "fladynance"
- },
- {
-  "key": "3b8195cea5b3cbfc",
-  "data": "2026-07-19",
-  "categoria": "energia",
-  "tema_originale": "energia_petrolio_gas",
-  "sintesi": "Cosa sono le microreti energetiche e perché stanno diventando sempre più diffuse.",
-  "impatto": "rialzista",
-  "rilevanza": "media",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Energy-General/What-Is-a-Microgrid-How-They-Work-and-Why-Theyre-Suddenly-Everywhere.html",
-  "importato_da": "fladynance"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Tenaris Q2 Profit Falls to US$477m on Hormuz Closure",
-  "fonte": "riotimesonline.com",
-  "url": "https://www.riotimesonline.com/tenaris-q2-profit-falls-hormuz-closure/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Lowest price for E85 gas in DuPage County at $2 . 29 in week ending Aug . 1",
-  "fonte": "dupagepolicyjournal.com",
-  "url": "https://dupagepolicyjournal.com/lowest-price-for-e85-gas-in-dupage-county-at-2-29-in-week-ending-aug-1"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Midstream Companies Expand Natural Gas Pipelines as LNG & AI Demand Grows - ETF Database",
-  "fonte": "ETF Database",
-  "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRGhCbFQyUXJsZzhydHJjNXVZOU1mZG5vbUtsTzNLMnNFM2JhX0J4N0hfV2JKRGlZR3BuUE5tSTlkLTUzOFBIUWhZSEVqVXRTX3ZiRkU2ajhWazh3M0dnY3FHcGpPeWVHLXFyZEV1VWpUenB2UmNGbGtoSzFVcTBCNEg4TjZvQ1E1VGFjaGlSdkNkOUFPWGFLV1J3?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Transgaz-Argent LNG MOU advances US gas route to Central and Eastern Europe - Offshore-Energy.biz",
-  "fonte": "Offshore-Energy.biz",
-  "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNeXk3N0xhUnQ5QzdFM2JmaV9LbTczTk4xRXNZampXZEx4VWRwLXJCM1ZhVHpaTGowQmJIWldZcEl3dzludGNLb1dKeXdzOVFlaWQzaXFTOWd1bnoxNzY0eFVnTl9FWkJHSDVoMnQ4SEMyVDUyTGswNlY4MEwxemZuYmdJQXhpY29seW96SXpkWjd0dC1TanB1VXBOZG9PVUx2QzQzSlVvUExZV3Vr?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Gas crisis eases as LNG supply increases - daily-sun.com",
-  "fonte": "daily-sun.com",
-  "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBJTzlVeU5UV3FlQzJmRndfTWdMemJIZTdBRWhVSDJ6OVZ3bjN3bEsycmloUWtBc1J3ZWdEWkl6SkNXeWwxeXBRUVo3QW9Nal80aV9qaC1jYTE?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "ASP Isotopes Secures Five-Year LNG Offtake for Virginia Gas Project - ChemAnalyst",
-  "fonte": "ChemAnalyst",
-  "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNRDZxYnUzTEVrei0ta21KVGhWTnRzY3RDSWdhQTZMUG0ycUsxUTI1STJfM2dNYTZpeTBfM1ZuS2Rzc2J0NHFnSmZsNUlrMGpuUUJPTUQycjRiXzE2dnBTWUN4NzdkSXJIVG9vSDRmUVlnNHViZ0pSYnpXdmZZV05IaS1sMVdESl9mb25Ka1o1eXJrVzR5T2NxdEQxRWxoTUIxTmhmamdIUHpuSGxwZTVyc1A1U08?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Romania's Transgaz intends to become shareholder in Argent LNG - SeeNews",
-  "fonte": "SeeNews",
-  "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORXJrR1FDMUx3WUo4aWxqdEZQY1V5MkI2NnZYTWpReUttSTNvdnlFdHhJSDlSUVdyVkw1d3FtdkFFYW1NbjFFUVNjckNjZDhPR2FIY2c4VzhGUnp1dFhmN2hrdFBWcjRTc0FNUzRMVTFnMGhjcGJCMjlNSDVTTzgxRTlsc0N2eTlUcnlfZXFqMkNiMUJyNnZZN2lB?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Scoop: Amazon Is Behind One of the Largest Planned Gas Power Plants in the US - Distilled | Michael Thomas",
-  "fonte": "Distilled | Michael Thomas",
-  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5xWnVPSFRnenJKU1R3VU1CRGZJc0hDUUJ4cm8yMDhkbVN5Ql91NWNINGJCVk9zMFR5MVJUQUpQZU5FT1NkeFM4bkFNR0FzRmdGNWZvbS1hdUlqRmF3TGlZTlZsUmVnXzE1OUVQNl90Tkk?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Oil Traders Stay Bearish Despite Deepening Middle East Disruptions",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Oil-Prices/Oil-Traders-Stay-Bearish-Despite-Deepening-Middle-East-Disruptions.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "EU Locks In Plan To Triple Energy Storage Capacity By 2030",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Energy-General/EU-Locks-In-Plan-To-Triple-Energy-Storage-Capacity-By-2030.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Energy Affordability Trumps Climate in US Midterm Races",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Energy-General/Energy-Affordability-Trumps-Climate-in-US-Midterm-Races.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Russia’s Labor Shortage Worsens as Central Asian Workers Stay Away",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Energy-General/Russias-Labor-Shortage-Worsens-as-Central-Asian-Workers-Stay-Away.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Citi Lifts Brent Outlook but Still Sees Oil Falling in 2027",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Latest-Energy-News/World-News/Citi-Lifts-Brent-Outlook-but-Still-Sees-Oil-Falling-in-2027.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "US Oil Drillers Add Rigs",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Energy-General/US-Oil-Drillers-Add-Rigs.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Is Iran Preparing to Permanently Block the Strait of Hormuz?",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Energy-General/Is-Iran-Preparing-to-Permanently-Block-the-Strait-of-Hormuz.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "ADNOC Reports 15 Vessel Attacks as Hormuz Risks Mount",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Latest-Energy-News/World-News/ADNOC-Reports-15-Vessel-Attacks-as-Hormuz-Risks-Mount.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Libya Aims to Boost Oil Production to 2 Million Bpd by Early 2030s",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Latest-Energy-News/World-News/Libya-Aims-to-Boost-Oil-Production-to-2-Million-Bpd-by-Early-2030s.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Saudi Arabia’s $5 Oil Detour Is Expensive—and Worth It",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Crude-Oil/Saudi-Arabias-5-Oil-Detour-Is-Expensiveand-Worth-It.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Iran Debates Hormuz Wording as Trump Says Deal’s ‘Moving Along’",
-  "fonte": "gCaptain",
-  "url": "https://gcaptain.com/iran-debates-hormuz-wording-as-trump-says-deals-moving-along/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Vessel Traffic Through Hormuz Dwindles This Week As Markets Watch Iran-Oman Talks",
-  "fonte": "gCaptain",
-  "url": "https://gcaptain.com/vessel-traffic-through-hormuz-dwindles-this-week-as-markets-watch-iran-oman-talks/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Top Democrat proposes killing tax breaks for overseas oil production",
-  "fonte": "CNBC Top",
-  "url": "https://www.cnbc.com/2026/08/07/martin-heinrich-tax-breaks-overseas-oil-production.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Rockstar Energy founder builds Celsius stake, wants to take over as CEO",
-  "fonte": "CNBC Top",
-  "url": "https://www.cnbc.com/2026/08/07/rockstar-energy-founder-celsius-stake-ceo.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Oil Analysts Stumped by the Case of the Missing Barrels",
-  "fonte": "WSJ Markets",
-  "url": "https://www.wsj.com/finance/stocks/oil-analysts-stumped-by-the-case-of-the-missing-barrels-e4c364e6?mod=rss_markets_main"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "India commits $8.8bn to deep-sea oil exploration to cut Mideast reliance",
-  "fonte": "Nikkei Asia",
-  "url": "https://asia.nikkei.com/business/energy/india-commits-8.8bn-to-deep-sea-oil-exploration-to-cut-mideast-reliance"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "The Week in Alt Fuels: Net-zero battlelines",
-  "fonte": "HellenicShipping",
-  "url": "https://www.hellenicshippingnews.com/the-week-in-alt-fuels-net-zero-battlelines/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Le scorte di gas salgono al 76,55% in Italia, Europa al 58%",
-  "fonte": "ANSA Economia",
-  "url": "https://www.ansa.it/sito/notizie/economia/2026/08/07/le-scorte-di-gas-salgono-al-7655-in-italia-europa-al-58_458e3c92-883a-4e9f-9a9b-93fdbfb9c5a8.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Russia set to export record oil volumes from western ports in June, sources say - Reuters",
-  "fonte": "Reuters",
-  "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRmF0dTVyVFk0cF9BZTJ1cDRmcHNPMU1RNGwydUZpR3FGOXNqUzFBc1g5QWZ5b0piSDA3NUg2QnQxRjBHcU9BUHJQcE5fVmFmV0tWcHJ6dEJUU19EWjhvZ1ZRVVU5dGFvV1hhSF8xZE5FWGwtdWFqR0xGWkdFMHVPbUJ1SVFDRUZweHBVYXpibXFMa2lmNFFwWXB0TWJ3WlJDVHFpeXVZRDczV3c5a0l5QkxqZ1cxa2NaUTVR?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Light ends: China export revival outweighs refinery outage concerns - Quantum Commodity Intelligence",
-  "fonte": "Quantum Commodity Intelligence",
-  "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQLVRmZ3BLcjgzM0Z0bmVabW5aaTB1T2xSRWFlVkxwQndBb0drTk9ZbHhLbjdmYjNwZVdCYUVUM0ZJMHU2QnNSQXprWU90X25VRVlyNnFEeEhfY0FFbXcwRVNlaTJCMndoYmZJNThJbDBXZ0dXakZ6Zm9lM0FoM3U1Ni1ySDZCbk5jWjBDRjBsOXVNUlpaNGNHczd3cmpjSml1SkI0RWEzNVJ2NlJLM1E?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Il prezzo del gas è poco mosso sotto i 56 euro al megawattora",
-  "fonte": "ANSA Economia",
-  "url": "https://www.ansa.it/sito/notizie/economia/2026/08/07/il-prezzo-del-gas-e-poco-mosso-sotto-i-56-euro-al-megawattora_4cd77346-52d4-4858-a5b7-3e0244890512.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "FuelEU Maritime: early lessons from the first year of compliance",
-  "fonte": "HellenicShipping",
-  "url": "https://www.hellenicshippingnews.com/fueleu-maritime-early-lessons-from-the-first-year-of-compliance/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "Borsa: l'Europa conferma rialzo con lente sul petrolio, Milano piatta",
-  "fonte": "ANSA Economia",
-  "url": "https://www.ansa.it/sito/notizie/economia/2026/08/07/borsa-leuropa-conferma-rialzo-con-lente-sul-petrolio-milano-piatta_b28ee3d9-e221-4213-ac7e-056e6d07c552.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "energia",
-  "titolo": "US overtakes Gulf as India biggest LPG supplier after Hormuz disruptions : Report",
-  "fonte": "timesofindia.indiatimes.com",
-  "url": "https://timesofindia.indiatimes.com/business/india-business/us-overtakes-gulf-as-indias-biggest-lpg-supplier-after-hormuz-disruptions-report/articleshow/133034895.cms"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "China Has Been Buying Gold for 20 Straight Months. Now It’s Moving It. - GoldSilver",
-  "fonte": "GoldSilver",
-  "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQM1VDY3R3RlBYVEcyZGtLVW5hNl9nbHlNd1pqQjllM2EzbXhCNERvbldiNTFHZWxsbzRld1NDVDhpd3lTU1JRYVlqUEVNTmdWT2hEZ2xTMzM0WjMxUDd3UjRRZnAwM2FmRmVWLW5UYlVrclFTR0xYRW1hZ1VNMndnUWJ6ZVQxTHEwdjZn?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "PBOC boosts gold buying with largest monthly purchase since 2023 - KITCO",
-  "fonte": "KITCO",
-  "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQVExheTF1dHBKVU5BTGVUa0dDNUszMGoyNEx2ZElUNHRlZHZNczdoYWp5U1Jlb1ZFMlR3S0JKME82MzNHbUR1UTJFZXZuZVlQMDRFYUU5ZElka2lGTlZodjRWMER2bmpjZUx3a0JiZ1VqeVRBdXprLTdZRnVscTBwY1RRMkQtbjVjczhnakYwUHIzWDBXRzJCVURmb05SUzJJ?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "Gold price today: August 7, 2026 - thestreet.com",
-  "fonte": "thestreet.com",
-  "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBibHJSSGo3Z2VfYmR0R2VYYmtXOXk3T2NfQnk1WUFWc0lkeWNSTWtnSXF6clFiWGNYTm95R0x2Uk9weFZuVnVhMmJwcTVxTEF0N0RHTGFwUFMwWDdSV1VLNlRBYWtRU0g4ZFByaUxOd1V1emJacGVISjBMeGJsdw?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "As the price of gold, which reached its historical peak, stabilized, central banks in each country b.. - 매일경제",
-  "fonte": "매일경제",
-  "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1VNmptTXRLaEF4XzFZWXpfNU1ZZFBKaU1sdXV2aW9YdGhzcUZKTy1RZzdVOXZuZFg3eWdDOHhNN3hJc1ZGWWpweVd3YUV6R2c?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "Central Banks Just Bought Record Gold While Investors Dumped It. I’ve Been Investing for 45 Years — Here’s What the Smart Money Knows - Money Talks News",
-  "fonte": "Money Talks News",
-  "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOSDQyZEpPblgzNjBOMVA2RWVaMVRYTjgweTNDZV9ObzBpQjkxUkFoYXNYWGFqT1pJX3RkRnJKN1dsTlk0Y0xIdmFHUVpPRzFJaXdWM3ZtamlvdmJpcXo1MnVuUnhrT3lhSUlselpyaHVBRHU1bnBaZzd5X01GcVdCTTZzUnd1eDNVdUdTS2RWZ3ozeHhNMkRwSXdqM0l5YXQ0WlktZXprSzdYUlB4eWMtMmVHWWhqY1RmbkZiazZscUhzNldjaVVDUklaNElubFQ5MVFQZTJYeDZJcElMRHI2bnFrUTUtVUwtaVJnUVR3?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "Silver: Solar demand headwinds emerge – Commerzbank - FXStreet",
-  "fonte": "FXStreet",
-  "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxON2xJSE11bHFleVFNM0xiNUNfNzl0dldYNUJzUWpIbU1vVjBSZHBSWkxzcENyOExaZWo5VnkyOFA2VjZoRFhDSUFsUm43OUU3ZzBDc2ZnT3JjYUw2N1FJM1BLbGxnQ2VIVDZKV29IcmpoSzdmODVwZm5rY2VhZDRHUzZkNHpxdENHVEpXanFwbkFMMmVKQ1E?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "B2Gold wins Mali permit after guidance cut",
-  "fonte": "Mining.com",
-  "url": "https://www.mining.com/b2gold-wins-mali-permit-after-guidance-cut/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "Gold miners surge more than 20% in breakout week",
-  "fonte": "Mining.com",
-  "url": "https://www.mining.com/gold-miners-surge-more-than-20-in-breakout-week/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "Gold, silver prices surge as US economy sheds 23,000 jobs",
-  "fonte": "Mining.com",
-  "url": "https://www.mining.com/gold-silver-prices-surge-as-us-economy-sheds-23000-jobs/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "NevGold Announces Change of Auditor and Continuance to British Columbia",
-  "fonte": "INN PreciousMet",
-  "url": "https://investingnews.com/nevgold-announces-change-of-auditor-and-continuance-to-british-columbia/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "Visible Gold Announces Stock Option Grant",
-  "fonte": "INN PreciousMet",
-  "url": "https://investingnews.com/visible-gold-announces-stock-option-grant/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "Fed’s Hawkish Hold Splits Metals: Gold Gains, Silver Falls",
-  "fonte": "INN PreciousMet",
-  "url": "https://investingnews.com/feds-hawkish-hold-splits-metals/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "Landini, se si muore ancora sul lavoro è il fallimento del modello di impresa",
-  "fonte": "ANSA Economia",
-  "url": "https://www.ansa.it/sito/notizie/economia/2026/08/07/landini-se-si-muore-ancora-sul-lavoro-e-il-fallimento-del-modello-di-impresa_a199ada7-580f-44a0-adf0-b7c81bbee720.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "PBOC extends gold-buying streak to 21 months as forex reserves rise - China Daily",
-  "fonte": "China Daily",
-  "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1WUVBiTmJPVnlXQnVpZmFxeGhURXZvM1ZUaGUxUGFReFdwNkNOUHdPVzNQR24xTUtBUlM0RlVsWlpnM21nWFFoVTBRVk1EbnRPNUxSVFFyT3N2X0xxUmo3c3lrRXlIY2tWOUdyWnJsSkJfaGV1a25xYnZINGtodw?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "Oro balza ai massimi da due mesi dopo dati sul lavoro Usa, +3% a 4.372 dollari",
-  "fonte": "ANSA Economia",
-  "url": "https://www.ansa.it/sito/notizie/economia/2026/08/07/oro-balza-ai-massimi-da-due-mesi-dopo-dati-sul-lavoro-usa_c553ae41-f2eb-4aed-aa7f-64c1fe2b51f1.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "The smart way to invest in gold right now as the dollar slips",
-  "fonte": "MarketWatch",
-  "url": "https://www.marketwatch.com/story/the-smart-way-to-invest-in-gold-right-now-as-the-dollar-slips-22fdf3b2?mod=mw_rss_topstories"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "Newcore Gold Files Pre-Feasibility Study Technical Report for the Enchi Gold Project, Ghana",
-  "fonte": "INN PreciousMet",
-  "url": "https://investingnews.com/newcore-gold-files-pre-feasibility-study-technical-report-for-the-enchi-gold-project-ghana/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "Granada Gold Mine Announces Filing of NI 43-101 Technical Report for The Granada Gold Project, Quebec, with Updated Resource Estimate",
-  "fonte": "INN PreciousMet",
-  "url": "https://investingnews.com/granada-gold-mine-announces-filing-of-ni-43-101-technical-report-for-the-granada-gold-project-quebec-with-updated-resource-estimate/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_preziosi",
-  "titolo": "Gold bugs spend $180 million betting all's clear for metal as bond yields stall",
-  "fonte": "CNBC Top",
-  "url": "https://www.cnbc.com/2026/08/07/gold-bugs-spend-180-million-betting-alls-clear-for-metal-as-bond-yields-stall.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "metalli_industriali",
-  "titolo": "Why the US remains ‘fragmented’ in a critical copper clash against China - South China Morning Post",
-  "fonte": "South China Morning Post",
-  "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPNnhpa3o4QXk3dDFHWWhjSGhJcjQzajd5RzlkamZCaHZYbnBGSmF4S1p6VFlwazIwUnhMekNaOUhIZVc0UzAwdUhWclhQUUVXaVRCMDd0OG45N2ZmTnN1UUxDUmxPSWNYMFplbVJqNE02NElrTGVlTF9BZG1lOU5URlRCdnR2N0hqSjRwbHoyYTBlRmRiVUo2SjhIcnMwSzhJU1hGR1Z2Tzc0TEhPTnJiczVJR3lrUGZPbVZXZEthOFVVYTTSAcMBQVVfeXFMTk40NmpsYlV3WjVVTGhzYTFMdjQxOWlab29xTmY2MVVwNmVjM2pObzJZWW9UUTlCLWZoRU9BUUItY0wwdC1udTRpY294SHpQZW4ydXQzcE1Xcldvb0ZVcnB6ZFNoVDFYcTZGQmR0TVhxRml0cEdxNU40WHZBUlFCX2x5ZVhUdUVyN0NETUx3NzdEODZqblllZGwyVy1XSVRjNXE4SmlZZkdlN1RtRG00cDhrVXAzNHRGUkxIc1RIeUxiandJ?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "terre_rare_critici",
-  "titolo": "China’s Rare Earth Strategy Is Forcing a U.S. Manufacturing Revolution - Yahoo Finance",
-  "fonte": "Yahoo Finance",
-  "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPcDRrdkZSbUFIdElwTlhTSFpaMHBUSTU0THltR2V3bElQVk1ZZGVzXzZDWDlLemJaV3BtbzVudkRfTDhRcXV4Y3gxa3VfRTJvYTlmT2ZSeTg0UldMVzhha2IwZXJJUEVvaGdtZ0FoQVB1M2ZkRU1OXzk5RzZVQ3QybXlvaGRDN1gyVjBxMmxNWnZXYTZL?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "terre_rare_critici",
-  "titolo": "Niron Magnetics lands conditional $150M Department of War funding commitment",
-  "fonte": "Mining.com",
-  "url": "https://www.mining.com/niron-magnetics-lands-conditional-150m-department-of-war-funding-commitment/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "terre_rare_critici",
-  "titolo": "Op-ed: The battle for critical minerals is won at the port, not the mine",
-  "fonte": "Mining.com",
-  "url": "https://www.mining.com/op-ed-the-battle-for-critical-minerals-is-won-at-the-port-not-the-mine/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "terre_rare_critici",
-  "titolo": "China’s Jan-July rare-earth exports fall 10%; China Rare Earth Group sees ‘upward’ market conditions - Global Times",
-  "fonte": "Global Times",
-  "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1nVHM1SU9ONzdyUUJBOFN2QzNJZFBxLUhWcmtfUE41dUJ4VFFwT3hCZjJ2VmZkU2pJeS1telU3U0VSb3M4ZjRvejNOSE1JTExwU2ZvdWY2S1FpTU9sam9GMzN3?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "agricole",
-  "titolo": "Submerged Indonesian village re-emerges as drought lowers water levels",
-  "fonte": "AlJazeera",
-  "url": "https://www.aljazeera.com/video/newsfeed/2026/8/8/08-08-2026-indonesia-drought-sv?traffic_source=rss"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "agricole",
-  "titolo": "Puerto Rico rations water as severe drought leaves reservoirs depleted",
-  "fonte": "AlJazeera",
-  "url": "https://www.aljazeera.com/video/newsfeed/2026/8/8/puerto-rico-rations-water-as-severe-drought-leaves-reservoirs-depleted?traffic_source=rss"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Xeneta Weekly Ocean Container Shipping Market Update : Spot rates split sharply this week",
-  "fonte": "hellenicshippingnews.com",
-  "url": "https://www.hellenicshippingnews.com/xeneta-weekly-ocean-container-shipping-market-update-spot-rates-split-sharply-this-week/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "China rare-earth exports to Japan, US plunge after restrictions - Nikkei Asia",
-  "fonte": "Nikkei Asia",
-  "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQaktXeEdTcTdPVGFZVVZwYlNkOFVvS1dDSHU3YmktMWtZMG1pbUhNdzhydmgxa2NqZGR6Z0swUEJ1dlhMeldzUjh1TUNoVHhDWUtlSkpjeVlvOC0wMVlRVDROUmFZUmZIRm1ZT0NtVUsyakRSUFBIeWRiMFkyZWhERzJkMHE1X19jTEs2Y1VIRG83a2twclN5WUE1akZabHRWODYyZ1Mwc3U?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "India's Reliance books supertanker at record freight price to lift Iraqi crude - Reuters",
-  "fonte": "Reuters",
-  "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPcV9fbmJ5TGpFbXUyNV9LeEFLSFQzelU2a2l3eThONUFwLVFZTHF3SThzdDE2WDcwSlVyVThSbGxIOHQ1aW4xZjAyN29KaUctVVdOU2s4ZkZtUXhTbVdfTHg4dUY5V2oxNWVJR2pTTU1CbnJidUE2azVRbUJldnh5aWxzbVVJbGpzdmsxb3pRZjJsYV9SMTdMSWRoTENQS0w0OEFwME9RNGllcVhTcXZOcjgyN3FHbXNfWHRfaDdET2U?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Fast Red Sea shipping line linking 4 Saudi, regional ports: Folk Maritime tells Al-Eqtisadiah - Arab News",
-  "fonte": "Arab News",
-  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA4Nm9zNFo4cnQ2T29yN0hBTnJfaGRPR0trV3NuaWpBdzN5ejV0aFFOSWQ4WGhFYXdBUk41NVVTa2YwckxIRmt2anZIVzN3ZzhleFN3TUFicWdVcFhrOWc0SXpPWWs?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "ADNOC Buys 11 Supertankers for $1.3 Billion to Expand Export Fleet",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Latest-Energy-News/World-News/ADNOC-Buys-11-Supertankers-for-13-Billion-to-Expand-Export-Fleet.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Tankers: India’s Crude Oil Imports Marginally Lower So Far in 2026",
-  "fonte": "HellenicShipping",
-  "url": "https://www.hellenicshippingnews.com/tankers-indias-crude-oil-imports-marginally-lower-so-far-in-2026/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Dark Tanker Transits Dominate Hormuz Since 14 July",
-  "fonte": "HellenicShipping",
-  "url": "https://www.hellenicshippingnews.com/dark-tanker-transits-dominate-hormuz-since-14-july/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Best Oasis Weekly Recycling Market Report, 07 August 2026",
-  "fonte": "HellenicShipping",
-  "url": "https://www.hellenicshippingnews.com/best-oasis-weekly-recycling-market-report-07-august-2026/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Mitsui O.S.K. Lines Expects Strong Capesize Dry Bulk Demand",
-  "fonte": "HellenicShipping",
-  "url": "https://www.hellenicshippingnews.com/mitsui-o-s-k-lines-expects-strong-capesize-dry-bulk-demand/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Gibson tanker report – Black Sea Blues",
-  "fonte": "HellenicShipping",
-  "url": "https://www.hellenicshippingnews.com/gibson-tanker-report-black-sea-blues/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Affinity Tanker Weekly, 7 August 2026",
-  "fonte": "HellenicShipping",
-  "url": "https://www.hellenicshippingnews.com/affinity-tanker-weekly-7-august-2026/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Pacific Basin Reports a US$105 Million Net Profit and Continued Market Outperformance",
-  "fonte": "HellenicShipping",
-  "url": "https://www.hellenicshippingnews.com/pacific-basin-reports-a-us105-million-net-profit-and-continued-market-outperformance/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Drewry: World Container Index Moved Higher Last Week",
-  "fonte": "HellenicShipping",
-  "url": "https://www.hellenicshippingnews.com/drewry-world-container-index-moved-higher-last-week/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Songa Product and Chemical Tankers IV AS v Gardsea Shipping Inc [2026]",
-  "fonte": "HellenicShipping",
-  "url": "https://www.hellenicshippingnews.com/songa-product-and-chemical-tankers-iv-as-v-gardsea-shipping-inc-2026/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "MSC Baltic III Wreck Being Pulled Ashore in Newfoundland",
-  "fonte": "gCaptain",
-  "url": "https://gcaptain.com/msc-baltic-iii-wreck-being-pulled-ashore-in-newfoundland/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "U.S. Container Import Peak Winds Down After Tariff-Driven Rush",
-  "fonte": "gCaptain",
-  "url": "https://gcaptain.com/u-s-container-import-peak-winds-down-after-tariff-driven-rush/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "UAE’s Adnoc Buys $1.3 Billion of Tankers as Oil Exports Boom",
-  "fonte": "gCaptain",
-  "url": "https://gcaptain.com/uaes-adnoc-buys-1-3-billion-of-tankers-as-oil-exports-boom/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "New parcel surcharge helps Postal Service reach $20B in revenue",
-  "fonte": "FreightWaves",
-  "url": "https://www.freightwaves.com/news/new-parcel-surcharge-helps-postal-service-reach-20b-in-revenue"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "CargoNet reports $304.6M in losses, Scott Cornell says Q2 theft drop is no trend yet",
-  "fonte": "FreightWaves",
-  "url": "https://www.freightwaves.com/news/cargonet-reports-304-6m-in-losses-scott-cornell-says-q2-theft-drop-is-no-trend-yet"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Mexico plans major expansion of busiest cross-border truck crossing",
-  "fonte": "FreightWaves",
-  "url": "https://www.freightwaves.com/news/mexico-plans-major-expansion-of-busiest-cross-border-truck-crossing"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Indiana truck inspections sideline more than 1,100 drivers and vehicles",
-  "fonte": "FreightWaves",
-  "url": "https://www.freightwaves.com/news/indiana-truck-inspections-sideline-more-than-1100-drivers-and-vehicles"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Truck enforcement sweeps sideline 30 drivers, 49 vehicles across US, Canada",
-  "fonte": "FreightWaves",
-  "url": "https://www.freightwaves.com/news/truck-enforcement-sweeps-sideline-30-drivers-49-vehicles-across-us-canada"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Asia ocean line in $135M expansion of US box terminal",
-  "fonte": "FreightWaves",
-  "url": "https://www.freightwaves.com/news/asia-ocean-line-in-135m-expansion-of-us-box-terminal"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Why 47.5 is a scary number for East Coast ports",
-  "fonte": "FreightWaves",
-  "url": "https://www.freightwaves.com/news/why-47-5-is-a-scary-number-for-east-coast-ports"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "US courts clear way for deportations of South Sudan, Myanmar nationals",
-  "fonte": "AlJazeera",
-  "url": "https://www.aljazeera.com/news/2026/8/8/us-courts-clear-way-for-deportations-of-south-sudan-myanmar-nationals?traffic_source=rss"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Trump shifts blame to Republicans for waning support from public",
-  "fonte": "AlJazeera",
-  "url": "https://www.aljazeera.com/video/newsfeed/2026/8/8/trump-shifts-blame-to-republicans-for-waning-support-from-public?traffic_source=rss"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Cassidy supports Todd Blanche, rescuing Trump's embattled attorney general pick",
-  "fonte": "CNBC Top",
-  "url": "https://www.cnbc.com/2026/08/07/blanche-ag-trump-cassidy-senate-confirmation.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Prediction markets take center stage in latest round of quarterly earnings reports",
-  "fonte": "CNBC Top",
-  "url": "https://www.cnbc.com/2026/08/07/prediction-markets-take-center-stage-in-latest-quarterly-earnings.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "India bunker fuel demand falls in July on weather disruptions, supply issues",
-  "fonte": "HellenicShipping",
-  "url": "https://www.hellenicshippingnews.com/india-bunker-fuel-demand-falls-in-july-on-weather-disruptions-supply-issues/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Transpacific Container Rates Rally as Europe’s Peak Season Fades",
-  "fonte": "gCaptain",
-  "url": "https://gcaptain.com/transpacific-container-rates-rally-as-europes-peak-season-fades/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Transition Trucking Award names 2026 Elite 11 semifinalists",
-  "fonte": "FreightWaves",
-  "url": "https://www.freightwaves.com/news/transition-trucking-elite-11"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Miinor change in truck job numbers, bigger shift in warehouses",
-  "fonte": "FreightWaves",
-  "url": "https://www.freightwaves.com/news/miinor-change-in-truck-job-numbers-bigger-shift-in-warehouses"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "GMS Week 32 – Corridor Opens, Conditions Apply",
-  "fonte": "HellenicShipping",
-  "url": "https://www.hellenicshippingnews.com/gms-week-32-corridor-opens-conditions-apply/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "ADNOC Says Three Vessels Attacked This Week as Hormuz Shipping Remains Severely Disrupted",
-  "fonte": "gCaptain",
-  "url": "https://gcaptain.com/adnoc-says-three-vessels-attacked-this-week-as-hormuz-shipping-remains-severely-disrupted/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "shipping_logistica",
-  "titolo": "Cambodia deep-water port cashes in on Thai border closure",
-  "fonte": "Nikkei Asia",
-  "url": "https://asia.nikkei.com/business/transportation/cambodia-deep-water-port-cashes-in-on-thai-border-closure"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "ai_semiconduttori",
-  "titolo": "Data centers are actually making your electric bill cheaper—but sinking AI demand could change that - Fortune",
-  "fonte": "Fortune",
-  "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOcGc5TEw0YTdCQlhVT1V5cFVaMkw3bEtpMHF4MzFtSld0eHhDQlVpTHUtRm5sWExVVkFvMWpQM3pmWm04VUxBN1pnaGxaRlhjbGYybXN4RjE2VHY5bjNFMHlsdGthcHB1MHk2a2RZVlVWLXFCWUFDWS1wdkVETkVITk0xNTlOei1PV05CMi1mcnp3Z21sMFJJWXlIeUFHZ1E?oc=5"
- },
- {
   "data": "2026-08-08",
   "categoria": "ai_semiconduttori",
   "titolo": "China Is Betting on Quantum Tech to Fix Its Power Grid",
@@ -35383,5 +33801,1202 @@
   "titolo": "L'euro è stabile sul dollaro a 1,1610, in calo sullo yen",
   "fonte": "ANSA Economia",
   "url": "https://www.ansa.it/sito/notizie/economia/2026/09/11/leuro-e-stabile-sul-dollaro-a-11610-in-calo-sullo-yen_c5fe307d-92f9-4445-83f1-f55929ae2adf.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Venezuela : Oil Output Plateaus , Zionist - linked Colombian Mogul Gets Prime Crude Concession",
+  "fonte": "venezuelanalysis.com",
+  "url": "https://venezuelanalysis.com/news/venezuela-oil-output-plateaus-zionist-linked-colombian-mogul-gets-prime-crude-concession/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Saudi oil pipeline shut down after attack triggers fires",
+  "fonte": "edition.cnn.com",
+  "url": "https://edition.cnn.com/2026/09/11/politics/saudi-arabian-oil-pipeline-hit-by-projectiles-triggering-fires"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Saudi oil production crashes to 35 - year low as Middle East war disrupts global energy routes",
+  "fonte": "weeklyblitz.net",
+  "url": "https://weeklyblitz.net/2026/09/12/saudi-oil-production-crashes-to-35-year-low-as-middle-east-war-disrupts-global-energy-routes/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Lowest E15 gas price in DuPage County hits $3 . 74 for week ending Sept . 5",
+  "fonte": "dupagepolicyjournal.com",
+  "url": "https://dupagepolicyjournal.com/lowest-e15-gas-price-in-dupage-county-hits-3-74-for-week-ending-sept-5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Saudi Arabia Critical Oil Bypass Comes Under Threat",
+  "fonte": "finance.yahoo.com",
+  "url": "https://finance.yahoo.com/energy/articles/saudi-arabia-critical-oil-bypass-160500195.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "At $100 Oil , the Deal Flow Moved to Pipelines and Producing Wells",
+  "fonte": "standard-freeholder.com",
+  "url": "https://www.standard-freeholder.com/press-releases/pr-newswire/at-100-oil-the-deal-flow-moved-to-pipelines-and-producing-wells/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Lobito Refinery Strike Over Salaries in Angola",
+  "fonte": "riotimesonline.com",
+  "url": "https://www.riotimesonline.com/lobito-refinery-strike-salaries-angola-2026/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Canadian LNG Developers Gain New Opening With Ukraine Supply Talks - Natural Gas Intelligence",
+  "fonte": "Natural Gas Intelligence",
+  "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQTC1SMlgwOXBOelE0ekVDTFljTHVlTHRJUDlxUmxHSzl4d2lidVFOU2NwT2laSGZkUWxlMjgyNDhDT0RpcHN5OUt6OURBNkxEbTJyQkhGRTh5LUVqUVZHclRHc1hlQjUzRm1tZkZMT2J1M2Vqd0JGVHo2R0xoTFdzakN3QjdFX2lxdWN2dTMyRG9oZWtvVGhqc0FfczFWMWlFWnc?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Weekly European gas prices gain 13% on LNG supply, shipping concerns - Anadolu Ajansı",
+  "fonte": "Anadolu Ajansı",
+  "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZlVhRUNDTlZVRVZ4a2RrZTF3U1VKSjExVzcxQVNjVEpHVjBLWDFtMUdJRkVITGo4Z2dEU25DbDcwY2ZKUEhRWXlmTlJ0cktOdXRuSHhnMDVIdzJOYm44VlRsSTZENUVHVnJfWVdWemNrenRvZlJzY2s3N3FEMjhlbmlHR0JnbVBLcU1OMTNfeWxBZ2c2d193eHo0NjNvMlp5SDF5NHZZWnBCVm1sem5ob0FRQTVhTkYzS0Vqbmsxbw?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Qatar turns to US for long-term LNG supplies - Daily Observer",
+  "fonte": "Daily Observer",
+  "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9vX0szdmVKZmt0VHVUV2hRY0MtRDNMd2trdERsOXBWaFBvZkJvOWlFb0VqWG5kRFE5QTFMTlQyVmQweVB5TzhMMndR?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Materie prime, la guerra in Iran non scuote i mercati: salgono solo petrolio e gas - La Discussione",
+  "fonte": "La Discussione",
+  "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOazNsYkc0bzdUcnlRWm96aVJ2S1UzVWRSdEtFRk1obnlzTHlLV244R3BUVU9uOTQwTVVnd1JBY05yTHkxa2JFd3BUVk9GcTRPOVQzSWF5eEo2VXZ5Ry1VdHViS21tX3BnUFo2aHM3QURJbTFocVFqZlgwX3dVWHNmcWNWa290ZFBVMWpPemxNXy1XTTFqQ3pscC1B?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Prezzi benzina, gas e diesel: tutti gli aumenti legati alla guerra in Iran - Sky TG24",
+  "fonte": "Sky TG24",
+  "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQeERCN2dpSkEzNlRkc1dqNVV1NlFuNzNnRHNpSE84QzktNUhRTGRQOHAwb2V6YlRxYnhrUWg3NmtPaFVWcjh1YlZDTldQZkxmNWNVaW50ZTVxZGNCNExXaFhmMjFLWGRNTHptUVFIOUJWM1FLNTkyTkRIaDFldzl5Q1B2VVB5ZkVUWUx0MmV0eDJsaFVCZWFmdQ?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "U.S. Oil Rig Count Rises as Oil Tops $100",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Energy/Crude-Oil/US-Oil-Rig-Count-Rises-as-Oil-Tops-100.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Drone Strikes Hit Saudi Arabia’s Vital East-West Oil Pipeline",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Latest-Energy-News/World-News/Drone-Strikes-Hit-Saudi-Arabias-Vital-East-West-Oil-Pipeline.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "IEA Sees 5.7 Million Bpd Oil Supply Plunge as Gulf Recovery Slips to 2027",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Latest-Energy-News/World-News/IEA-Sees-57-Million-Bpd-Oil-Supply-Plunge-as-Gulf-Recovery-Slips-to-2027.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Debunking the Viral Claim That America Has Only 14 Days of Oil Left",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Energy/Crude-Oil/Debunking-the-Viral-Claim-That-America-Has-Only-14-Days-of-Oil-Left.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Jeff Currie Sees $5 Gasoline Before Midterms",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Energy/Energy-General/Jeff-Currie-Sees-5-Gasoline-Before-Midterms.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Houthis Advance on Bab al-Mandeb as Saudi Oil Route Comes Under Threat",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Energy/Energy-General/Houthis-Advance-on-Bab-al-Mandeb-as-Saudi-Oil-Route-Comes-Under-Threat.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "US Department of Energy grants $73M to advance domestic mining technology",
+  "fonte": "Mining.com",
+  "url": "https://www.mining.com/us-department-of-energy-grants-73m-to-advance-domestic-mining-technology/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "APPEC: Tankers transit Hormuz in the dark as oil flows persist",
+  "fonte": "HellenicShipping",
+  "url": "https://www.hellenicshippingnews.com/appec-tankers-transit-hormuz-in-the-dark-as-oil-flows-persist/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "U.S.-Facilitated Hormuz Transits Help Lift Gulf Crude Exports Above 10 Million Bpd",
+  "fonte": "gCaptain",
+  "url": "https://gcaptain.com/u-s-facilitated-hormuz-transits-help-lift-gulf-crude-exports-above-10-million-bpd/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Wealth Holdings grows MPP pipeline with up to six more newbuilds in China",
+  "fonte": "Splash247",
+  "url": "https://splash247.com/wealth-holdings-grows-mpp-pipeline-with-up-to-six-more-newbuilds-in-china/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Saudi Arabia shuts key oil pipeline after drone attack launched from Iraq",
+  "fonte": "BBC World",
+  "url": "https://www.bbc.co.uk/news/articles/c62m933465eo?at_medium=RSS&at_campaign=rss"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Saudi Arabia shut down East-West crude oil pipeline after multiple attacks by drones from Iraq",
+  "fonte": "CNBC Top",
+  "url": "https://www.cnbc.com/2026/09/11/saudi-arabia-shut-down-east-west-crude-oil-pipeline.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "I went to Caracas for Venezuela’s new oil deals. Here’s what stood out",
+  "fonte": "CNBC Top",
+  "url": "https://www.cnbc.com/2026/09/11/the-inside-story-on-the-historic-us-venezuela-oil-deal-and-how-it-will-work.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Tesla could transform the trucking business — and capitalize on high diesel prices",
+  "fonte": "MarketWatch",
+  "url": "https://www.marketwatch.com/story/tesla-could-transform-the-trucking-business-and-capitalize-on-high-diesel-prices-e4c48d79?mod=mw_rss_topstories"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Mitsui, Tokyo Gas join Japan power market players to talk long-term trading",
+  "fonte": "Nikkei Asia",
+  "url": "https://asia.nikkei.com/business/energy/mitsui-tokyo-gas-join-japan-power-market-players-to-talk-long-term-trading"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Vostok Oil: One Tanker, Four Trillion Rubles",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Energy/Energy-General/Vostok-Oil-One-Tanker-Four-Trillion-Rubles.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Borsa: l'Europa chiude in rialzo col petrolio, Francoforte +0,8%",
+  "fonte": "ANSA Economia",
+  "url": "https://www.ansa.it/sito/notizie/economia/2026/09/11/borsa-leuropa-chiude-in-rialzo-col-petrolio-francoforte-08_c5bff5a5-87ee-4116-8c31-2f758e34e880.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Brien Lundin: Gold, Bonds Sending Warning — Here's What's Next",
+  "fonte": "INN PreciousMet",
+  "url": "https://investingnews.com/brien-lundin-gold-market-forecast/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Proxygas, da sistema Ets2 160 euro all'anno in più per le famiglie",
+  "fonte": "ANSA Economia",
+  "url": "https://www.ansa.it/sito/notizie/economia/2026/09/11/proxygas-da-sistema-ets2-160-euro-allanno-in-piu-per-le-famiglie_46cbbbe8-b354-4c14-9e65-261eca73893c.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Fresh momentum for Net-Zero Framework gains",
+  "fonte": "HellenicShipping",
+  "url": "https://www.hellenicshippingnews.com/fresh-momentum-for-net-zero-framework-gains/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Trump's Grid Battery Ban Leaves Developers Guessing",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Energy/Energy-General/Trumps-Grid-Battery-Ban-Leaves-Developers-Guessing.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "THE AI DATA CENTRE OPPORTUNITY: How Will Alberta Approve the Incredible Demand for Electricity From AI Data Centres? - Yogi Schulz - EnergyNow",
+  "fonte": "EnergyNow",
+  "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOT29tU3VHNG05TlRYOWZLcmJGT0JmVmV4ODIwbFFUVkdvS3lFVEdTQThZNnZ5UkdMNEd1Q19lRGZiQ2ItemdQVzQ5X0Jqb2licy15ZlJLcEROU09vb2FTWm1TNWtmdm5ZM3FaWk5JRkYtbDlFT1JvN00tNEN3clFpeFlyNVBfMDBEUEQ3Z0JMSXE3Nk5CaGZ1YkpvOXZOUklTdlZra2dhTDQ4UU9KcXNsQ3BjazhzSmQxQkczTWxCRDFCVWFMMkN4dzM5aE5aRjRyd0E?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Mimit, al self la benzina sale a 2,1 euro, il gasolio a 2,208 euro",
+  "fonte": "ANSA Economia",
+  "url": "https://www.ansa.it/sito/notizie/economia/2026/09/12/mimit-al-self-la-benzina-sale-a-21-euro-il-gasolio-a-2208-euro_885d9f70-8fde-40f0-b0c3-f285fd93b75a.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "German gas supply diversification ensures imports, but at a price, Equinor says - Reuters",
+  "fonte": "Reuters",
+  "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOOTFEU28tMFYxNmlMamZKRlFIX0U0dU1rWVRacEp2cDhnRC1UQWFuTkFnQ1EzZlBicG9NMkwtVFlwbUs3QzFjZk02dkxJLWc1R3AzeENRRDVHa2hOV0lFOWZuazZVZ2RCaDUtOVNuaHUtM0RiMFp5OUdYYjdROG04X2o5OU91b05mU3d4bVRVQTZRRHVpdUpPQVc5ZkxjY19LVmEtdkZ4dEVaU1lBVWhMaHZBMUZ0ZWowaTMwdA?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "UK Business Calls For Scrapping Taxes on Electricity Bills",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Latest-Energy-News/World-News/UK-Business-Calls-For-Scrapping-Taxes-on-Electricity-Bills.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "Cramer’s week ahead: Falling oil could help stocks but Fed is the next big test",
+  "fonte": "CNBC Top",
+  "url": "https://www.cnbc.com/2026/09/11/cramers-week-ahead-falling-oil-fed.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "ADNOC, XRG Deepen European LNG Ties Through German Agreements - News and Statistics - IndexBox",
+  "fonte": "IndexBox",
+  "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaDZQeHA3Tlo0cVZMWWwyWC1rN1lDbjdKb1hzNXJtS0loT04tb2pLUnlkYU5oT3J1eWxnNjJWYjFZenZ1TUdmSU1lZ01heS1XU1dHZEl0WU9qN0FkSi11ZXFsS0RJbXRfWEdsYUNhZC1hZVVpeng5SWpHdWRPRkZYc1drbDFKYnhZMDY2dTk0YWZZQ3NNUVlLUGFWMA?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "energia",
+  "titolo": "EU Imports More Yamal LNG as Russian Arctic Trade Tilts Toward Europe",
+  "fonte": "gCaptain",
+  "url": "https://gcaptain.com/eu-imports-more-yamal-lng-as-russian-arctic-trade-tilts-toward-europe/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "metalli_preziosi",
+  "titolo": "النائب أسامة كمال بعد ارتفاع أسعار خام برنت : لا أتوقع اقتراب الحكومة من أسعار المحروقات .. الحالة الاقتصادية ليست في أفضل حالاتها",
+  "fonte": "shorouknews.com",
+  "url": "https://www.shorouknews.com/news/view.aspx?cdate=11092026&id=41f117c8-9141-4083-bf2f-5b05513c0824"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "metalli_preziosi",
+  "titolo": "18 consecutive months and running: China’s central bank extends Gold-buying spree - FXStreet",
+  "fonte": "FXStreet",
+  "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQaUNIdFR0RW1aOERpLU5tcXNhNmpzYXZrZktIMHZVMkhqWTRSeXozb21VYXlpMTNFWDYydmdlMGRRUzNrbWk3VU1CMlRsUlNWaXRIM04yWVZVX1M3NEhuTjZjTUNkb29CdFVZQ0E3RS1rbzU2WUFpcEFVTXpBbVl4S3BZYVZ0UGlSMW1tSTdlNFp0UWxyM1dicnp4b1c1VmRuQndrbWczWlIwU08xMG56U1owNjk1R0huUGM0ZmRaOA?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "metalli_preziosi",
+  "titolo": "Industrial demand spurs silver, platinum to challenge gold’s lead - AsianInvestor",
+  "fonte": "AsianInvestor",
+  "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPc3IyX01vc1JWdWdwQV9ta2tzVTR3aXV6T3kyRUdJN0NkbGVUQ1ZVNWt4OG80Z18zcUVwQmhralpXRUluZTFyNy01VG52SlhsRHJ5Rmg3VnRBVGF6M21XN2t6eE1lWFRDU2hTaGlPVk91TU9OTzBfNkxrekVjdTU5bVhNdC1OMFpYallGcExjVEl4QkwzSjBCQnc0ekR6bFBXOGs0anNDYmc1ck5C?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "metalli_preziosi",
+  "titolo": "Gold (XAUUSD), Silver, Platinum Forecasts – Gold Rebounds As Oil Markets Dive 5.5% - FXEmpire",
+  "fonte": "FXEmpire",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPWWhKLVpJS3dhT2V4WUprX1pEWFVDTDlCd05hb3lZdVdGY3lvNl84RVkwVzFrSVg5SWlxYXg3WTFrUGNIZUVqeWl6V2J0R1h3MFNjRUVTRWlzX3cyUXNRdkNhQ1RpNGtMRjdjVkFibldpdFRUeU9pWUtaSVhSNWhsVEo1Ukp2T1F4Z1JsQkwwTFphWnhTelBOVnViSkp6TzU4M3lRdm1wSkxOekljWE1uV0E1ZjlDbHJPVXMwaWpyQjctZG9l?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "metalli_preziosi",
+  "titolo": "Canagold's New Polaris Gold-Antimony Project Included in Canada Investment Summit Prospectus",
+  "fonte": "INN PreciousMet",
+  "url": "https://investingnews.com/canagold-s-new-polaris-gold-antimony-project-included-in-canada-investment-summit-prospectus/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "metalli_preziosi",
+  "titolo": "Argo Completes Sale of Rockstar Gold Project Royalty for $250,000",
+  "fonte": "INN PreciousMet",
+  "url": "https://investingnews.com/argo-completes-sale-of-rockstar-gold-project-royalty-for-250000/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "metalli_industriali",
+  "titolo": "Husilerin Babülmendepteki kontrolü enerji piyasaları için risk",
+  "fonte": "bloomberght.com",
+  "url": "https://www.bloomberght.com/husilerin-babulmendep-teki-kontrolu-enerji-piyasalari-icin-risk-3788040"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "metalli_industriali",
+  "titolo": "Glencore, Mercuria compete for Venezuela aluminum smelter deal",
+  "fonte": "Mining.com",
+  "url": "https://www.mining.com/glencore-mercuria-compete-for-venezuela-aluminum-smelter-deal/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "metalli_industriali",
+  "titolo": "EU scrutiny of Anglo-MMG nickel deal tests China stance",
+  "fonte": "Mining.com",
+  "url": "https://www.mining.com/eu-scrutiny-of-anglo-mmg-nickel-deal-tests-china-stance/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "metalli_industriali",
+  "titolo": "Getting to Zero Coalition calls on IMO Member States to secure an investable Net-Zero Framework",
+  "fonte": "HellenicShipping",
+  "url": "https://www.hellenicshippingnews.com/getting-to-zero-coalition-calls-on-imo-member-states-to-secure-an-investable-net-zero-framework/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "terre_rare_critici",
+  "titolo": "U.S.-China Summit Will Hinge on Critical Minerals - Mesabi Tribune",
+  "fonte": "Mesabi Tribune",
+  "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPbklVWmpmRTdKNllpVUJrUFBVMGthb19SUGduaUtBLTVrQ0tGWmdkSkNzaV8tNVR3SjNwYTF3TUtlczRKNGFTaHBGVnhHdG1Cc2lUMDdpZ1JvVmJXY2lUTHRtY19nVzRUamJsMVdPelAycDVJTHplSUdDTGhQM2p4OU55MHc4cXRGME9BcUUtcVFSXzdLbE1WQlpHMWxhWF9PcUlvMUh3ZHhyVml6aVN5QnhJeXRKdENpbVY2b1A5M1hBRl9sSTZvQTRtTjRuV25Wem5IUUxfOXNLbzdrcGc?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "terre_rare_critici",
+  "titolo": "US share of South Korea's rare earth imports more than doubles amid China export controls - 헤럴드경제",
+  "fonte": "헤럴드경제",
+  "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE8tZFdBV0pmdjA5cXhkQWViM3UwX2R2b2hjbDNZS3l2S3hjR0FGdTVVa0pvVjVjZzZxelV5akJnTEZESmZuTUQxS1V5ZHNmME0yZTBxQVhkTQ?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "terre_rare_critici",
+  "titolo": "USA Rare Earth breaks ground at $1.2B magnet manufacturing facility in South Carolina",
+  "fonte": "Mining.com",
+  "url": "https://www.mining.com/usa-rare-earth-breaks-ground-at-1-2b-rare-earth-magnet-manufacturing-facility-in-south-carolina/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "terre_rare_critici",
+  "titolo": "Steadright Critical Minerals Inc. to Acquire up to 75% Interest in the Péribonka Ree-Niobium Carbonatite Project, Saguenay-Lac-St-Jean Region, Québec",
+  "fonte": "INN RareEarth",
+  "url": "https://investingnews.com/steadright-critical-minerals-inc-to-acquire-up-to-75-interest-in-the-peribonka-ree-niobium-carbonatite-project-saguenay-lac-st-jean-region-quebec/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "terre_rare_critici",
+  "titolo": "Save 20% on this 144-in-1 screwdriver set, perfect for hobbyists and PC builders under $40 — epic starter toolkit ships with electric and precision drivers, along with 120 magnetic bits and 22 mainten",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/desktops/pc-building/save-20-percent-on-this-144-in-1-screwdriver-set-perfect-for-hobbyists-and-pc-builders-under-usd40-epic-starter-toolkit-ships-with-electric-and-precision-drivers-along-with-120-magnetic-bits-and-22-maintenance-tools"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "terre_rare_critici",
+  "titolo": "Hands On: Sharge's Disk Pro 2 Ultra is a compact, magnetic DIY SSD dock with active cooling, 80W passthrough charging, and HDMI 2.1, supporting up to 8TB drives",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/pc-components/external-ssds/hands-on-sharges-disk-pro-2-ultra"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "terre_rare_critici",
+  "titolo": "GoldHaven Confirms Favourable Critical Minerals Geological Settings Across 123,900-Hectare Brazil Portfolio",
+  "fonte": "INN PreciousMet",
+  "url": "https://investingnews.com/goldhaven-confirms-favourable-critical-minerals-geological-settings-across-123900-hectare-brazil-portfolio/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "agricole",
+  "titolo": "Will the corn and soybean rally continue in September? - hpj.com",
+  "fonte": "hpj.com",
+  "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxORXhUYTc2R2VyWEJQc3dTaFhCSWtrTnduVFRKMzk4UEd6RjVtMGVlRUlQRWR6X3J3Vk5qU3pWdXJDNDhObVZaWVQtaTdHZ1NsZ3pwNUVnVzloQU96cjlmN2Fxc3dIbXNKZE5EZDFMTEE0V051VlFBZDNydHBaaTNGeWNiOW9yQzVu?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "agricole",
+  "titolo": "Corn Belt Ends August With Sharp Contrasts, Setting Up an Uneven 2026 Harvest - agrolatam.com",
+  "fonte": "agrolatam.com",
+  "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPNjg2WTlZbHZZWXBhb2g4Z295NFN6b3pDZGpyUmcxOWEzOE1JdWtRRkd0NkJueWs5Um1HaHVYTHEzU0Y4UHNjQXQtcFlaRHVQQWw5c3A4S2YzT0I4UVZrbVhnejY5NFBQLUJENWVDamlkem9NMmJWc3dlTnN1b05TNGdn?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "„ Armata în șlapi  a cucerit coasta Mării Roșii . Rebelii Houthi vor să controleze Poarta Lacrimilor . Saudiții pierd rute - cheie de export",
+  "fonte": "antena3.ro",
+  "url": "https://www.antena3.ro/externe/armata-in-slapi-arunca-in-aer-pretul-titeiului-poarta-lacrimilor-e-sub-presiunea-rebelilor-sauditii-pierd-rute-cruciale-de-export-802969.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Oil tanker rates hit record highs following Iran, US shipping attacks - Reuters",
+  "fonte": "Reuters",
+  "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMm5mMEFxdUdWVkQ3Q3J0WlJnN1J1Ti01OEZiMjlKMjRPT0JMRnF6OTJrbjA1TFJ4dzVveUoxX0NsbUNyMUtYX040QzNOSWlfcWhiMEc5WWZVUEtGS1VaRDF2b3NCTzNPLXRRN2JYSzZXYURPZTdWNDA4c1hoRW1mZ3B1SGFiXzltQldPUTlKSERIeXpIQk5RaDU3Z2otUXZXV2NZMGhCanNFcWJLZ3B4aXk4X0xTS0FsV0Vteg?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Strait of Hormuz, Red Sea Disruptions Send BWET ETF to All-Time Highs as Tanker Rates Surge - Benzinga",
+  "fonte": "Benzinga",
+  "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOVVlKdUNGdlBfRlNBNnp1RHpxdmstYjhFMTl4WkZ1MU0xM3JwREs2M2xUaXV5RHhVc1BuMWxZNVZHMDBkWVFRUVcweVNCYVNIYS1CZ3l4ZzlGZE9XSG90UFlVSnBhM1ZpaEVVTDJLOEV0bWVkS1pTOF91TDVxOUp0bHFlRmxyYldydkpXX1BPU1ladkp0SXB0dF9rM3RQX1hYZ0tnLTFfU0hjcHVZMUlrUGlKcXVpRDRrbGJhbnoxRDN3ZDBBVDVvYUhHWk50TU50YzhwRGtvZ0RJOWd5WkFVNQ?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Tanker Freight Rates Hit Record 4.5 Times Benchmark as Middle East War Costs Ripple Through Oil Markets - finance.biggo.com",
+  "fonte": "finance.biggo.com",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1OeEstaVY2SWZNWHE4SWZGVjJodTVIRGFoSzE1ZU5lUDNXSGtJSUZRSW1zNUg2VmppZUZoa0tqakxDcVpKa3IxeWpEOExsbWxmdUZLT0p5aXhiYldJcnVrNmlHWmxCam00aEF4NVNkTFBOUFhXTWc?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Baltic dry bulk freight index falls to lowest in over a week",
+  "fonte": "HellenicShipping",
+  "url": "https://www.hellenicshippingnews.com/baltic-dry-bulk-freight-index-falls-to-lowest-in-over-a-week/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Tanker Market: Rates on the Rise During August",
+  "fonte": "HellenicShipping",
+  "url": "https://www.hellenicshippingnews.com/tanker-market-rates-on-the-rise-during-august/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "How port call activity can reveal a changing trade route",
+  "fonte": "HellenicShipping",
+  "url": "https://www.hellenicshippingnews.com/how-port-call-activity-can-reveal-a-changing-trade-route/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Shipping capacity is returning to Red Sea while rates from China to Jeddah and Khor al Fakkan break Covid-19 records",
+  "fonte": "HellenicShipping",
+  "url": "https://www.hellenicshippingnews.com/shipping-capacity-is-returning-to-red-sea-while-rates-from-china-to-jeddah-and-khor-al-fakkan-break-covid-19-records/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Best Oasis Weekly Recycling Market Report, 11 September 2026",
+  "fonte": "HellenicShipping",
+  "url": "https://www.hellenicshippingnews.com/best-oasis-weekly-recycling-market-report-11-september-2026/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Affinity Tanker Weekly, 11 September 2026",
+  "fonte": "HellenicShipping",
+  "url": "https://www.hellenicshippingnews.com/affinity-tanker-weekly-11-september-2026/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Advanced Shipping & Trading – WEEKLY SHIPPING MARKET REPORT WEEK 37 2026",
+  "fonte": "HellenicShipping",
+  "url": "https://www.hellenicshippingnews.com/advanced-shipping-trading-weekly-shipping-market-report-week-37-2026/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Iran-backed Houthis seize key port in Yemen, advance on another vital oil choke point",
+  "fonte": "HellenicShipping",
+  "url": "https://www.hellenicshippingnews.com/iran-backed-houthis-seize-key-port-in-yemen-advance-on-another-vital-oil-choke-point/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Gibson tanker report – Africa’s Refining Pipeline",
+  "fonte": "HellenicShipping",
+  "url": "https://www.hellenicshippingnews.com/gibson-tanker-report-africas-refining-pipeline/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Strong Imports Push Port of Long Beach to Busiest August on Record",
+  "fonte": "gCaptain",
+  "url": "https://gcaptain.com/strong-imports-push-port-of-long-beach-to-busiest-august-on-record/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Asyad doubles down on charter-backed MR newbuilds",
+  "fonte": "Splash247",
+  "url": "https://splash247.com/asyad-doubles-down-on-charter-backed-mr-newbuilds/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Flexport beats Peloton’s $33.7m FMC claim",
+  "fonte": "Splash247",
+  "url": "https://splash247.com/flexport-beats-pelotons-33-7m-fmc-claim/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Korea Line locks in $31m Zhejiang bulker charter",
+  "fonte": "Splash247",
+  "url": "https://splash247.com/korea-line-locks-in-31m-zhejiang-bulker-charter/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "California, FMCSA argue non-domiciled CDL halt in court",
+  "fonte": "FreightWaves",
+  "url": "https://www.freightwaves.com/news/california-fmcsa-argue-non-domiciled-cdl-halt-in-court"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "DHL augments facility’s parcel capacity in northwest Germany",
+  "fonte": "FreightWaves",
+  "url": "https://www.freightwaves.com/news/dhl-augments-facilitys-parcel-capacity-in-northwest-germany"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Shell, FAW test immersion-cooled batteries to improve truck performance",
+  "fonte": "FreightWaves",
+  "url": "https://www.freightwaves.com/news/shell-faw-test-immersion-cooled-batteries-to-improve-truck-performance"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Spartan Logistics expands warehouse footprint through acquisition",
+  "fonte": "FreightWaves",
+  "url": "https://www.freightwaves.com/news/spartan-logistics-expands-warehouse-footprint-through-acquisition"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "CooperVision contact lens shipment stranded on disabled Amazon cargo jet",
+  "fonte": "FreightWaves",
+  "url": "https://www.freightwaves.com/news/coopervision-contact-lens-shipment-stranded-on-disabled-amazon-cargo-jet"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Houthis claim major advance in Yemen and tighten grip on Red Sea shipping lane",
+  "fonte": "BBC World",
+  "url": "https://www.bbc.co.uk/news/articles/c23x72yx2rvo?at_medium=RSS&at_campaign=rss"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Marvell is sitting on an incredibly ‘sticky’ business that could help it unlock a $30 billion opportunity",
+  "fonte": "MarketWatch",
+  "url": "https://www.marketwatch.com/story/marvell-is-sitting-on-an-incredibly-sticky-business-that-could-help-it-unlock-a-30-billion-opportunity-caa6c83f?mod=mw_rss_topstories"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Dogs sniff out explosives to help protect Narita Airport",
+  "fonte": "Nikkei Asia",
+  "url": "https://asia.nikkei.com/business/transportation/dogs-sniff-out-explosives-to-help-protect-narita-airport"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Seoul's Incheon airport, now busiest global hub, looks to sell know-how",
+  "fonte": "Nikkei Asia",
+  "url": "https://asia.nikkei.com/business/transportation/seoul-s-incheon-airport-now-busiest-global-hub-looks-to-sell-know-how"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Supertanker Rates Hit $800,000 a Day as Gulf Tensions Escalate",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Energy/Energy-General/Supertanker-Rates-Hit-800000-a-Day-as-Gulf-Tensions-Escalate.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Yemen’s Houthis Reach Strategic Island at Mouth of Vital Shipping Lane",
+  "fonte": "gCaptain",
+  "url": "https://gcaptain.com/yemens-houthis-reach-strategic-island-at-mouth-of-vital-shipping-lane/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "World Shipping Council Calls for IMO Action on Lithium Battery Cargo Safety Gap",
+  "fonte": "gCaptain",
+  "url": "https://gcaptain.com/world-shipping-council-calls-for-imo-action-on-lithium-battery-cargo-safety-gap/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "China scales battery-swapping shipping with 89-vessel order",
+  "fonte": "Splash247",
+  "url": "https://splash247.com/china-scales-battery-swapping-shipping-with-89-vessel-order/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "DEA seizes over 2,000 pounds of meth in cabbage freight shipment in South Texas",
+  "fonte": "FreightWaves",
+  "url": "https://www.freightwaves.com/news/dea-seizes-over-2000-pounds-of-meth-in-cabbage-freight-shipment-in-south-texas"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Uber Freight warns tight capacity could fuel Q4 freight rate surge",
+  "fonte": "FreightWaves",
+  "url": "https://www.freightwaves.com/news/uber-freight-warns-tight-capacity-could-fuel-q4-freight-rate-surge"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "IMO Urged to Give Shipping Clear Investment Signal on Net Zero Pathway",
+  "fonte": "gCaptain",
+  "url": "https://gcaptain.com/imo-urged-to-give-shipping-clear-investment-signal-on-net-zero-pathway/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "Shipowners face growing financial risk from delayed EUA transfers, says EmissionLink",
+  "fonte": "HellenicShipping",
+  "url": "https://www.hellenicshippingnews.com/shipowners-face-growing-financial-risk-from-delayed-eua-transfers-says-emissionlink/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "shipping_logistica",
+  "titolo": "GMS Week 37 – ROUTES TIGHTEN, BIDS RISE!",
+  "fonte": "HellenicShipping",
+  "url": "https://www.hellenicshippingnews.com/gms-week-37-routes-tighten-bids-rise/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "ai_semiconduttori",
+  "titolo": "House to vote on bill targeting data center power costs - The American Bazaar",
+  "fonte": "The American Bazaar",
+  "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQbVFoWFoxRlZpX3EzaEFSMGNiSUZqU3N5UFpXTXpDMEt5NkQxenQtTUVsNFB4YV9ydnNISVhldEpKb1B6SVVOSVNpQlE1RGNyZXNMT2J1VW5sSzE1TGhmWEQzMnduMXRHcWs3cmdPQVRrTkdscWtBOWNuRXdRWm02SmpNMW12dzY0TXUzVHhCYmpSOUV6LW44?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Massachusetts ties data center permits to clean energy, grid costs - TechTarget",
+  "fonte": "TechTarget",
+  "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSDFaOW40ZV9CRWVsVzhCYXc3UGVKNE5nWFpJS3pTMkhoMlhRRzNiZjNaMU4ybk9YMGc4R1BXRFhxckE4Y2ZHTEdfdE5NaVpxRGVuU1FSTUhYVzhyVjVMUlZrTFZEX1E1YldtNnY5SDlhX0lyUXNvREJsUUoyODdjeU1pRG5RUmtBdjNfazhCMS1xbFljWkFPZk9rS2VXamkwMV9RMU8zTnFzYmxPNVVCVXY3cEh0TkxzeDh5aTBLV1k1QQ?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "ai_semiconduttori",
+  "titolo": "AI Data Centers Need Enormous Amounts of Power: These 5 Dividend Stocks Provide It - 24/7 Wall St.",
+  "fonte": "24/7 Wall St.",
+  "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQR3lWM2hDUGxGWEhLQ0VCdGFPUDlzS3h2TktlRTBSRzV2bS1HRnpSY2JJaEYxVGNJMktEb3BHTEVPNUlXTDNJbVFZRUFTbmdSZ2owN201dGxFNHdWWFdseGE0U0otYm1oSXQ1SXVydHowbWd1LWctUnk5c25nNWZ2eGhoX2l5TlQzVlU3TWFrYV94eVJQeHVDWTlwT3NrQnJlTWIzZUs4RjVyMnY0UVZaVjBTY2NnaUlPczNBVFBFb05qZFk?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Data centers can vanish from the grid in seconds; reliability rules need to catch up - utilitydive.com",
+  "fonte": "utilitydive.com",
+  "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQenFZV2VvTkxzSmtoMWgyaW4zSG1yd0pLdzFpNmsyUjFmcnVTQWp5OW5sYmRfOUp4NUtZbHFSRlpnMmRfYkwxXzVvTy1yMS1kS0RnTGRlUVZhUW15Ni1pYW8xYnNnVG9JSGRaNThUM3ptbHZqUnZiT25tWFZGOHE1NmZxb1I5eHRETjZJcWFnMUJxR1JIWUE?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Oracle shook off fears about AI spending, but its stock still loses ground",
+  "fonte": "MarketWatch",
+  "url": "https://www.marketwatch.com/story/oracle-shares-are-climbing-after-results-what-wall-street-analysts-are-saying-now-0d4517ae?mod=mw_rss_topstories"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Salesforce’s stock has been riding a wave of AI optimism. Here’s what Wall Street wants to see next.",
+  "fonte": "MarketWatch",
+  "url": "https://www.marketwatch.com/story/salesforces-stock-has-been-riding-a-wave-of-ai-optimism-heres-what-wall-street-wants-to-see-next-72f20e95?mod=mw_rss_topstories"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Bandai finds right recipe to turn toothbrushes into Gundam models",
+  "fonte": "Nikkei Asia",
+  "url": "https://asia.nikkei.com/business/media-entertainment/bandai-finds-right-recipe-to-turn-toothbrushes-into-gundam-models"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "ai_semiconduttori",
+  "titolo": "UAE Rethinks 5-Gigawatt AI Campus After Iran Targets US Assets in Gulf",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Latest-Energy-News/World-News/UAE-Rethinks-5-Gigawatt-AI-Campus-After-Iran-Targets-US-Assets-in-Gulf.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Desktop graphics card shipments hit four-year high of 12.5 million despite increasing prices — Nvidia takes 90% share as gamers rush to beat looming price spikes",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/pc-components/gpus/desktop-graphics-card-shipments-hit-four-year-high-of-12-5-million-despite-increasing-prices-nvidia-takes-90-percent-share-as-gamers-rush-to-beat-looming-price-spikes"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "ai_semiconduttori",
+  "titolo": "At IFA 2026, computing chased the high and low ends — AI and budget-focused machines left little for the rest of us",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/laptops/at-ifa-2026-computing-chased-the-high-and-low-ends-ai-and-budget-focused-machines-left-little-for-the-rest-of-us"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Back up the garbage truck: A look at how AI will impact margins in AI",
+  "fonte": "ForexLive",
+  "url": "https://investinglive.com/news/back-of-the-garbage-truck-a-look-at-how-ai-will-impact-margins-in-ai/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Why propulsion could be the critical piece in Golden Dome’s architecture",
+  "fonte": "BreakingDefense",
+  "url": "https://breakingdefense.com/2026/09/why-propulsion-could-be-the-critical-piece-in-golden-domes-architecture/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Volvo Trucks completes rollout of ‘lock and leave’ software update system",
+  "fonte": "FreightWaves",
+  "url": "https://www.freightwaves.com/news/volvo-trucks-completes-rollout-of-lock-and-leave-software-update-system"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "ai_semiconduttori",
+  "titolo": "China-modified Nvidia RTX 5090 with massive 96GB of memory appears on Alibaba for less than $4,000 — 3x more VRAM at 65% the cost of the original",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/pc-components/gpus/china-modified-nvidia-rtx-5090-with-massive-96gb-of-memory-appears-on-alibaba-for-less-than-usd4-000-3x-more-vram-at-65-percent-the-cost-of-the-original"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Trilogy Metals Closes US$35.6 Million Strategic Equity Investment by the U.S. Department of War",
+  "fonte": "INN PreciousMet",
+  "url": "https://investingnews.com/trilogy-metals-closes-us-35-6-million-strategic-equity-investment-by-the-u-s-department-of-war/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Canstar Announces Proposed Extension of Incentive Warrants",
+  "fonte": "INN PreciousMet",
+  "url": "https://investingnews.com/canstar-announces-proposed-extension-of-incentive-warrants/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Sanctioned Chinese supercomputer maker stripped of IO500 benchmark crown, Intel-powered Aurora retakes the lead — record-breaking ParaStor F9000 storage system doesn't meet reproducibility requirement",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/tech-industry/supercomputers/sanctioned-chinese-supercomputer-maker-stripped-of-io500-benchmark-crown-intel-powered-aurora-retakes-the-lead-record-breaking-parastor-f9000-storage-system-doesnt-meet-reproducibility-requirements"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "GameStop is reopening recently closed stores despite massive retail cuts — select locations return nationwide starting September 11",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/tech-industry/gamestop-is-reopening-recently-closed-stores-despite-massive-retail-cuts-select-locations-return-nationwide-starting-september-11"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Hardware-accurate NeoGeo AES+ delayed to late 2027 due to memory shortage — decision driven by surging demand and AI-driven RAM crunch",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/video-games/retro-gaming/neogeo-aes-console-remake-delayed-for-nearly-a-year-decision-driven-by-ram-shortage-and-unexpected-popularity"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Thermalright TR-KG750 750W power supply review: HKC-built KG unit with a Thermalright badge for $91",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/pc-components/power-supplies/thermalright-tr-kg750-750w-power-supply-review"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Snag a huge $1,000 saving on this RTX 5090 OLED gaming laptop from HP, now $3,699 — 16-inch HyperX rig delivers 1600p gaming with ultra-fast 240Hz refresh rate, coupled with 32GB DDR5 RAM and a 2TB SS",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/laptops/gaming-laptops/snag-a-huge-usd1-000-saving-on-this-rtx-5090-oled-gaming-laptop-from-hp-now-usd3-699-16-inch-hyperx-rig-delivers-1600p-gaming-with-ultra-fast-240hz-refresh-rate-coupled-with-32gb-ddr5-ram-and-a-2tb-ssd"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Windows 11 can now reinstall itself from the cloud — Cloud Rebuild revives dead systems without secondary boot media, wipes broken installation and downloads a fresh copy of the OS",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/software/windows/windows-11-can-now-reinstall-itself-from-the-cloud-cloud-rebuild-revives-dead-systems-without-secondary-boot-media-wipes-broken-installation-and-downloads-a-fresh-copy-of-the-os"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Anthropic says Claude thwarted bioweapon research from state-sponsored actors — covert accounts used U.S. proxies to attempt to engineer deadlier viruses, tried to evade identification and regional bl",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-says-claude-thwarted-bioweapon-research-from-state-sponsored-actors-covert-accounts-used-u-s-proxies-to-attempt-to-engineer-deadlier-viruses-tried-to-evade-identification-and-regional-blocks"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Russian plot to sabotage undersea cables with 'secret weapon' foiled by NATO — clandestine op uncovers training exercise simulating deployment against infrastructure in Norway",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/tech-industry/russian-plot-to-sabotage-undersea-cables-with-secret-weapon-foiled-by-nato-clandestine-op-uncovers-training-exercise-simulating-deployment-against-infrastructure-in-norway"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Pentagon looks to AI to identify space and missile threats",
+  "fonte": "DefenseNews",
+  "url": "https://www.defensenews.com/industry/techwatch/2026/09/11/pentagon-looks-to-ai-to-identify-space-and-missile-threats/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Saudi crown prince sought US military help with Houthis, sources say",
+  "fonte": "DefenseNews",
+  "url": "https://www.defensenews.com/news/pentagon-congress/2026/09/11/saudi-crown-prince-sought-us-military-help-with-houthis-sources-say/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Polish prime minister: Poland to develop its own Starlink",
+  "fonte": "DefenseNews",
+  "url": "https://www.defensenews.com/global/europe/2026/09/11/polish-prime-minister-poland-to-develop-its-own-starlink/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "US refutes claims that Iran captured Saildrone USV",
+  "fonte": "DefenseNews",
+  "url": "https://www.defensenews.com/industry/techwatch/2026/09/11/us-refutes-claims-that-iran-captured-saildrone-usv/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "German military eyes cruise missiles from Covenant, a surprise vendor setting up shop",
+  "fonte": "DefenseNews",
+  "url": "https://www.defensenews.com/global/europe/2026/09/11/german-military-eyes-cruise-missiles-from-covenant-a-surprise-vendor-setting-up-shop/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "India puts domestic industry at heart of new military equipment orders",
+  "fonte": "DefenseNews",
+  "url": "https://www.defensenews.com/global/asia-pacific/2026/09/11/india-puts-domestic-industry-at-heart-of-new-military-equipment-orders/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Concurrent attacks across multiple domains force rethinking of air-and-missile-defense",
+  "fonte": "BreakingDefense",
+  "url": "https://breakingdefense.com/2026/09/concurrent-attacks-across-multiple-domains-force-rethinking-of-air-and-missile-defense/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Support for Patriot air-and-missile defense is a case study for the industrial base",
+  "fonte": "BreakingDefense",
+  "url": "https://breakingdefense.com/2026/09/support-for-patriot-air-and-missile-defense-is-a-case-study-for-the-industrial-base/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Pentagon eyeing tech testbed expansion along US-Mexico border",
+  "fonte": "BreakingDefense",
+  "url": "https://breakingdefense.com/2026/09/pentagon-eyeing-tech-testbed-expansion-along-us-mexico-border/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Canada, Ukraine to jointly produce defense tech, part of ‘100-year partnership’",
+  "fonte": "BreakingDefense",
+  "url": "https://breakingdefense.com/2026/09/canada-ukraine-to-jointly-produce-defense-tech-part-of-100-year-partnership/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "CEO of Ukraine’s Fire Point: Freyja anti-ballistic missile program seeks ‘best players’",
+  "fonte": "BreakingDefense",
+  "url": "https://breakingdefense.com/2026/09/ceo-of-ukraines-fire-point-freyja-anti-ballistic-missile-program-seeks-best-players/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "What we’re watching for at AFA 2026",
+  "fonte": "BreakingDefense",
+  "url": "https://breakingdefense.com/2026/09/what-were-watching-for-at-afa-2026/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Space Force picks Texas as US home for trinational DARC space radar network",
+  "fonte": "BreakingDefense",
+  "url": "https://breakingdefense.com/2026/09/space-force-picks-texas-as-us-home-for-trinational-darc-space-radar-network/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Beyond prototypes: Army readies operational NGC2 tech for I Corps",
+  "fonte": "BreakingDefense",
+  "url": "https://breakingdefense.com/2026/09/beyond-prototypes-army-readies-operational-ngc2-tech-for-i-corps/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "BRICS summit opens in New Delhi amid wars, global tensions, tariffs",
+  "fonte": "AlJazeera",
+  "url": "https://www.aljazeera.com/news/2026/9/12/brics-summit-opens-in-new-delhi-amid-wars-global-tensions-tariffs?traffic_source=rss"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "‘War on terror’: How 9/11 changed the language of conflict",
+  "fonte": "AlJazeera",
+  "url": "https://www.aljazeera.com/news/2026/9/12/war-on-terror-how-9-11-changed-the-language-of?traffic_source=rss"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Chileans clash over 9/11 military coup legacy",
+  "fonte": "AlJazeera",
+  "url": "https://www.aljazeera.com/video/newsfeed/2026/9/12/chileans-clash-over-9-11-military-coup?traffic_source=rss"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "China’s Xi lands in India for BRICS summit overshadowed by wars",
+  "fonte": "AlJazeera",
+  "url": "https://www.aljazeera.com/news/2026/9/12/chinas-xi-heads-to-india-for-brics-summit-overshadowed-by-wars?traffic_source=rss"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "North Korea fires ballistic missiles off eastern coast, Seoul says",
+  "fonte": "AlJazeera",
+  "url": "https://www.aljazeera.com/news/2026/9/12/north-korea-fires-ballistic-missiles-off-eastern-coast-seoul-says?traffic_source=rss"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Lightning Houthi advance in Yemen may bring dangerous new dimension to Iran war",
+  "fonte": "BBC World",
+  "url": "https://www.bbc.co.uk/news/articles/c3v4zgzr1kxo?at_medium=RSS&at_campaign=rss"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Iran, Russia condemn Western economic sanctions and urge BRICS bloc to deepen economic ties",
+  "fonte": "CNBC Top",
+  "url": "https://www.cnbc.com/2026/09/11/iran-russia-brics-sanctions-energy.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "New $11bn canal underscores China's turn toward Southeast Asia",
+  "fonte": "Nikkei Asia",
+  "url": "https://asia.nikkei.com/spotlight/big-in-asia/new-11bn-canal-underscores-china-s-turn-toward-southeast-asia"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Japan eyes subsidies to create emergency capacity for drones, ammunition",
+  "fonte": "Nikkei Asia",
+  "url": "https://asia.nikkei.com/politics/defense/japan-eyes-subsidies-to-create-emergency-capacity-for-drones-ammunition"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "White House Weighs Defense Production Act as U.S. Refineries Maxed Out",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Latest-Energy-News/World-News/White-House-Weighs-Defense-Production-Act-as-US-Refineries-Maxed-Out.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "After suspicious incidents, European group urges ‘vigilance’ for defense firms",
+  "fonte": "BreakingDefense",
+  "url": "https://breakingdefense.com/2026/09/after-suspicious-incidents-european-group-urges-vigilance-for-defense-firms/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Yemen's Iran-backed Houthis have completed the takeover of Bab el-Mandeb Strait",
+  "fonte": "ForexLive",
+  "url": "https://investinglive.com/news/yemen-s-iran-backed-houthis-have-completed-the-takeover-of-bab-el-mandeb-strait/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Now is the wrong time for the Pentagon to pull back from Europe",
+  "fonte": "BreakingDefense",
+  "url": "https://breakingdefense.com/2026/09/now-is-the-wrong-time-for-the-pentagon-to-pull-back-from-europe/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Week Ahead for FX, Bonds: All Eyes on Fed Rate Decision - WSJ",
+  "fonte": "WSJ",
+  "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOT2FWUnZ2OXJzNkR6VEpTYXhoMDZ2Mm1VYkZ3N1NCT051SHk2S1FxbnNIcGtBam1pNGN5M2lCazQwMFV5UHBNQUVERTVyTHd5VmFHaXBmRWdRVG9IY0gzWWNkT1Q5cXl3VUw2eVFkeVc2ZVA2R1JTcnA0NE5BU1BjUWI2dTVTMXQ0cURjTGw0N0t3cERhdnNfMHlvbW80MGZ5aVhRRWFZX3Fadw?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Fed rate hike in September is all but guaranteed after CPI report, economists say - CBS News",
+  "fonte": "CBS News",
+  "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9Ud29Ta19GLUJlYVVyaGlnRTJoUHlRenFfQUhkNjBGZVBDR25hbWNMU0l1UXdlcXRvREJpbVdwSmQ3dUpaZk9IWWJCMk5QQXZZT21UM2diLWFSX19wQktyVkNOeFo4VHV1bkR1Mk1jdTNFekhmbzUw?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Fed rate hike odds surge to 90% on monthly jump in core prices - Yahoo Finance",
+  "fonte": "Yahoo Finance",
+  "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQSmJyWnJFSG1GbXlkWkRuSUdOcFNoZ2xWUjB4MWFIYXNKbWkwY3BvMFhyM0NHSGF2d0tPQWFONVUzTFdYdkdYWk1EaFZlemJYelZ5ZUdHWl9WVlJNa0tzZXFxdUpRYWNhTEpPb1F6bUppYXlydW5TQVdGTTVxVl9PeEtzYks0SUFnWFNzXzRfSzJaWTlWcnE2YnhMTldWZHVWRlh5allpWTh2ZXV4cU9lQ3ZSRndHMzZKQUJTTTBWd1h2OWM?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Fed rate-hike case builds as inflation fails to cool - Reuters",
+  "fonte": "Reuters",
+  "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOU2R5eFJ0eFBfbWR4dnNKaUdDZC1MTVY5aWYxc3BlaUY1S2ZMM0xwaFhMbEh1cWtsSFhFVGk5eEE4NkRTb3FxREhvbkpKVjdXdVY1VHhNT2NaUkhUNmEtSzdoQno5aWFRUGpWS0ZBMXcwUEFKSHFOVF9jcFJQSExCbjBYaU5JNTdMdlladkpZdkp2TURmcW94ZkxtV1dwbTR3TkJhUXlmc1A?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Fed's Warsh faces new pressure to hike rates after inflation heats up - Politico",
+  "fonte": "Politico",
+  "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNYU9wQUQ2MjZzdlVka3B4SlU2LWY1X2IzSlEzR2lsbDZ6d1ZYblhETHp6MGUxbC1tQWo4OEdzSzlVOXFkQmNxZVpCYXpfTzk1cEh4WDhsWUV3c1Jsc2FPNVRZMm5YX2kzSTY5MmNJSkU0ako3Wks1QlJvMmtxMzVqN2VWZnpXd1ZpZGxZ?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Experts Predict No Fed Rate Cut Next Week: What It Means - Newsweek",
+  "fonte": "Newsweek",
+  "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOT2gxejhKMWQ2Z0xyRmJyNUxieFRZUmtQZXcyazh5REJjRExVN1VINFZmZVhiZkxXRVp4TmoxWWlWQWRrVktrcDM1TmtRRkltcDZPM1pNOXFFcGlnaEpKenpyM0IyNXVMT3dVMU90ZnU3bnZ1WTduMDJxcy11OExIZWNiVGh0aU0?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Wall Street week ahead: Federal Reserve decision on interest rates, retail sales update - Newsday",
+  "fonte": "Newsday",
+  "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNclhBSEdLR0p2OUlTdWh3bnZ6WVNBMHo3dzZ2dVBweXpVMjNSdGJhQ1I5X1hSM1E0anR2QVl2RUFuN0Z2Z0s4Wkd1T0hQNXlETTVkVVQyZk1TTzBCZXNkU3EtXzFDVk9FT2o0dExsV3l0TVdfdmZVbE9lRTZEYlVidHB2dmROZ2M?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Will the Central Bank raise interest rates at its upcoming meeting? - Egypt Independent",
+  "fonte": "Egypt Independent",
+  "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPc3lkZW9JS1B2Nmt4TE4yWXQtOVl5X1d3MnQzWHhLQ1FoN2Z0elMwTWpNbWt1QkZwMWtoc21reHNsd2ZlYUhncVlMckNTMUZJUWh3cHBCbldGRWtCS1FXSHFSaXJ3UzRaY29STHdWLVN1OENIYlRZS2hrdk15dVAtZnhTMVg1eC1ZS2djM0pJNWRfZ3NBVTlaaElleklURTJyelE?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Forecasting the upcoming week: What if the ECB… and US CPI…? - FXStreet",
+  "fonte": "FXStreet",
+  "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPaGF6VnhyX3lKMThwN2pvRmg2RXk5RWxWYWZINmh1V0lwNlAzcng1ZXl5d0pSaGZkUnhzUkZjRlV2c25ubXNqMlRIQnNsV3VVNHdTQmRZaWJacU1NWHR1cFlydm5UZW13MHFnSjFsUzFzNXR5cEE0R2xkbmpaM0ZyTmd2OXJOV2E4Nlh4VDNFdXJweUd5bjh4dnVIRjd6c2ViWG5KbnBB?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "French inflation confirmed to fall in June, easing pressure on the ECB - investingLive",
+  "fonte": "investingLive",
+  "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBOM01VNHpBU0pVc0Rwcm5wWXRFRFozREI4RzVMbE9rQXlRVzhXWV91QldVdldKMGl5aWV4ODBCNG5jTjRfOVAxcDZJTmFBOWVWMTZ1WVBHOGE4MjkxazJMZDdFb0s2N2dqdndneDBlWXIyZjU2cG9CSU5vcw?oc=5"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "investingLive Americas FX news wrap 11 Sept: US CPI raises odds for Fed rate hike",
+  "fonte": "ForexLive",
+  "url": "https://investinglive.com/news/investinglive-americas-fx-news-wrap-11-sept-us-cpi-keeps-fed-raises-odds-for-fed-rate-hike/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "US August Federal budget deficit $167 billion vs $404 billion expected",
+  "fonte": "ForexLive",
+  "url": "https://investinglive.com/news/us-august-federal-budget-deficit-167-billion-vs-404-billion-expected/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "UMich September consumer sentiment 47.8 vs 51.0 expected",
+  "fonte": "ForexLive",
+  "url": "https://investinglive.com/news/umich-september-consumer-sentiment-47-8-vs-51-0-expected/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Some anniversaries aren’t meant to be celebrated. They are simply remembered and never forgotten.",
+  "fonte": "ForexLive",
+  "url": "https://investinglive.com/news/some-anniversaries-aren-t-meant-to-be-celebrated-they-are-simply-remembered-and-never-forgotten/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "investingLive European news wrap: The calm before the storm?",
+  "fonte": "ForexLive",
+  "url": "https://investinglive.com/news/investinglive-european-news-wrap-the-calm-before-the-storm/"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Agencies seek comment on proposed third-party risk management guidance and issue statement on community bank engagement with core service providers",
+  "fonte": "Federal Reserve",
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260911a.htm"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Death toll from Philippines ferry fire climbs to 35, with dozens still missing",
+  "fonte": "BBC World",
+  "url": "https://www.bbc.co.uk/news/articles/cwyz755yeg9o?at_medium=RSS&at_campaign=rss"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Arrest made over the death of black woman found hanged from tree in Mississippi",
+  "fonte": "BBC World",
+  "url": "https://www.bbc.co.uk/news/articles/cqjkejq5750o?at_medium=RSS&at_campaign=rss"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Five minutes to steal a Renoir: Why museum thefts are becoming bolder across Europe",
+  "fonte": "BBC World",
+  "url": "https://www.bbc.co.uk/news/articles/c804dvky833o?at_medium=RSS&at_campaign=rss"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Here’s the inflation breakdown for August 2026 — in one chart",
+  "fonte": "CNBC Top",
+  "url": "https://www.cnbc.com/2026/09/11/cpi-inflation-breakdown-august-2026.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "The Fed could raise interest rates three times. Here’s where the market could face the stiffest test.",
+  "fonte": "MarketWatch",
+  "url": "https://www.marketwatch.com/story/the-fed-could-raise-interest-rates-three-times-heres-where-the-market-could-face-the-stiffest-test-757872a1?mod=mw_rss_topstories"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Stock Market News, Sept 11, 2026: Dow Rallies; Inflation Report Boosts Odds of Rate Hike",
+  "fonte": "WSJ Markets",
+  "url": "https://www.wsj.com/livecoverage/stock-market-cpi-inflation-09-11-2026?mod=rss_markets_main"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Wall Street Cheers Clarity on Fed Outlook—Even if It Means Higher Rates",
+  "fonte": "WSJ Markets",
+  "url": "https://www.wsj.com/finance/investing/wall-street-cheers-clarity-on-fed-outlookeven-if-it-means-higher-rates-2f80fd5f?mod=rss_markets_main"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Inflation Comes In Hot",
+  "fonte": "WSJ Markets",
+  "url": "https://www.wsj.com/finance/stocks/inflation-comes-in-hot-edd23be2?mod=rss_markets_main"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "Lo spread Btp-Bund chiude in calo a 85 punti, tregua sui rendimenti",
+  "fonte": "ANSA Economia",
+  "url": "https://www.ansa.it/sito/notizie/economia/2026/09/11/lo-spread-btp-bund-chiude-in-calo-a-85-punti-tregua-sui-rendimenti_3651bed7-d4e7-4125-94ef-07bddb680fd8.html"
+ },
+ {
+  "data": "2026-09-12",
+  "categoria": "valute_fx",
+  "titolo": "UK Interest Rates Could Rise Four Times Over the Next Year",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Energy/Energy-General/UK-Interest-Rates-Could-Rise-Four-Times-Over-the-Next-Year.html"
  }
 ]
