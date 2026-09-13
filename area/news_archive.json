@@ -1,405 +1,6 @@
 [
  {
   "data": "2026-08-08",
-  "categoria": "ai_semiconduttori",
-  "titolo": "China Is Betting on Quantum Tech to Fix Its Power Grid",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Energy-General/China-Is-Betting-on-Quantum-Tech-to-Fix-Its-Power-Grid.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "ai_semiconduttori",
-  "titolo": "Protesters haul a guillotine to city council meeting about a potential AI data center, company rep cornered by protestors — ‘ it no longer felt safe to stay,’ developer escorted out by police",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/tech-industry/data-centers/protesters-haul-a-guillotine-to-city-council-meeting-about-a-potential-ai-data-center-company-rep-cornered-by-protestors-it-no-longer-felt-safe-to-stay-developer-escorted-out-by-police"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "ai_semiconduttori",
-  "titolo": "Nvidia sells RTX 50-series GPUs at MSRP during QuakeCon 2026 — graphics cards sold at launch prices more than a year after release are now considered an attraction",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/pc-components/gpus/nvidia-sells-rtx-50-series-gpus-at-msrp-during-quakecon-2026-graphics-cards-sold-at-launch-prices-more-than-a-year-after-release-are-now-considered-an-attraction"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "ai_semiconduttori",
-  "titolo": "Anthropic co-designing custom AI inference chips to bypass costly Nvidia GPUs — Samsung reported as manufacturing partner for Claude maker",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/tech-industry/anthropic-to-build-its-own-co-designed-custom-ai-accelerator-for-inferencing-workloads-samsung-reported-to-be-partnering-with-the-claude-ai-maker-for-manufacturing"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "ai_semiconduttori",
-  "titolo": "Thai PM vows to introduce stricter gun laws after eight killed in shooting",
-  "fonte": "BBC World",
-  "url": "https://www.bbc.co.uk/news/articles/cdewx6rew04o?at_medium=RSS&at_campaign=rss"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "ai_semiconduttori",
-  "titolo": "I was standing in front of my teacher when she was shot, Thai pupil says",
-  "fonte": "BBC World",
-  "url": "https://www.bbc.co.uk/news/articles/c07rxz03034o?at_medium=RSS&at_campaign=rss"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "ai_semiconduttori",
-  "titolo": "Chesky says Airbnb will spend ‘a lot more’ on AI as earnings beat and stock surges 15%",
-  "fonte": "CNBC Top",
-  "url": "https://www.cnbc.com/2026/08/07/chesky-airbnb-ai-earnings.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "ai_semiconduttori",
-  "titolo": "Palantir’s stock stages best week since 2024 — showing it’s no longer an ‘AI loser’",
-  "fonte": "MarketWatch",
-  "url": "https://www.marketwatch.com/story/palantirs-stock-stages-best-week-since-2024-showing-its-no-longer-an-ai-loser-2fc6c32b?mod=mw_rss_topstories"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "ai_semiconduttori",
-  "titolo": "Two reasons why Nvidia’s stock saw its biggest weekly surge in more than a year",
-  "fonte": "MarketWatch",
-  "url": "https://www.marketwatch.com/story/two-reasons-why-nvidias-stock-saw-its-biggest-weekly-surge-in-more-than-a-year-644875c8?mod=mw_rss_topstories"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "ai_semiconduttori",
-  "titolo": "Scientist says RAM pricing has risen to normalized 2007 levels, AI shortage undid 20 years of progress in a matter of months — memory prices had been falling exponentially for decades",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/pc-components/ram/scientist-says-ram-pricing-has-reverted-to-normalized-2007-levels-memory-prices-have-been-falling-exponentially-for-decades-but-the-ai-shortage-undid-20-years-of-progress-in-a-matter-of-months"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "ai_semiconduttori",
-  "titolo": "AI trade boom offsets Middle East conflict",
-  "fonte": "HellenicShipping",
-  "url": "https://www.hellenicshippingnews.com/ai-trade-boom-offsets-middle-east-conflict/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "ai_semiconduttori",
-  "titolo": "Elon Musk's massive Terafab chip-making facility starts to take shape — 100 million square feet of manufacturing space and $16.8B initial capital investment",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/tech-industry/semiconductors/terafab-starts-to-take-shape-100-million-square-feet-of-manufacturing-space-and-usd16-8b-initial-capital-investment"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "ai_semiconduttori",
-  "titolo": "Claude Opus 5 mistakenly deletes dev’s entire profile directory during routine backup, responds with 'Sorry, typo' — AI tool mistakes user's home directory as temporary backup, proceeds to wipe everyt",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-opus-5-mistakenly-deletes-devs-entire-profile-directory-ai-tool-mistakes-users-home-directory-as-temporary-backup-proceeds-to-wipe-everything-to-undo-error"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "ai_semiconduttori",
-  "titolo": "Amazon cracks down on 'CPU waste' among engineers as agentic AI crunch intensifies — CPU demand makes low-utilization EC2 instances a hot commodity [Updated]",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/pc-components/cpus/amazon-cracks-down-on-cpu-waste-among-engineers-as-agentic-ai-crunch-intensifies-cpu-demand-makes-low-utilization-ec2-instances-a-hot-commodity"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "ADNOC : Iran war attacks on vessels significantly impacting operations",
-  "fonte": "arabnews.com",
-  "url": "https://www.arabnews.com/node/2653802/middle-east"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Iran grip on trade is a potent weapon , but it has an expiry date | US - Israel war on Iran",
-  "fonte": "aljazeera.com",
-  "url": "https://www.aljazeera.com/opinions/2026/8/7/irans-grip-on-trade-is-a-potent-weapon-but-it-has-an-expiry-date"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "The Disintegration of the U . S . Military Under Trump and Beyond",
-  "fonte": "washingtonmonthly.com",
-  "url": "https://washingtonmonthly.com/2026/08/07/disintegration-us-military-under-trump/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Gwardar Resources",
-  "fonte": "INN PreciousMet",
-  "url": "https://investingnews.com/stocks/asx-grs/gwardar-resources/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "This week on Tom's Hardware Premium: August 7, 2026 — Inside China's lithography efforts, co-packaged optics get a spotlight, and Samsung debuts next-gen memory tech",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/tech-industry/this-week-on-toms-hardware-premium-august-7-2026-inside-chinas-lithography-efforts-co-packaged-optics-get-a-spotlight-and-samsung-debuts-next-gen-memory-tech"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Grab an entire RTX 5090 PC for just $380 more than the standalone graphics card — save $1,550 off Alienware's Area-51 gaming rig",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/desktops/gaming-pcs/grab-an-entire-rtx-5090-pc-for-just-usd380-more-than-the-standalone-graphics-card-save-usd1-550-off-alienwares-area-51-gaming-rig"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Introducing Bench 2.0 — a revamped benchmark analyzer, exclusively for Tom's Hardware Premium subscribers",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/pc-components/introducing-bench-2-0-a-revamped-benchmark-analyzer-exclusively-for-toms-hardware-premium-subscribers"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "HyperX Omen Max 16 review: All bark and no bite",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/laptops/gaming-laptops/hyperx-omen-max-16-review"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Apple revealed the first Mac Pro 20 years ago today — its Intel Xeon-powered flagship desktop took the reins from the Power Mac G5",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/desktops/apple-revealed-the-first-mac-pro-20-years-ago-today-its-intel-xeon-powered-flagship-desktop-took-the-reins-from-the-power-mac-g5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "MSI's magnificent 32-inch 4K OLED gaming monitor returns to its lowest-ever price of $599 — save $130 on the MAG 321UPXB, the perfect 240Hz upgrade",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/monitors/gaming-monitors/msis-magnificent-32-inch-4k-oled-gaming-monitor-returns-to-its-lowest-ever-price-of-usd599-save-usd130-on-the-mag-321upxb-the-perfect-240hz-upgrade"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Save $370 on this 1440p gaming PC with an RTX 5060 Ti 16GB — formidable ABS Cyclone Aqua rig ships with 20-core Intel Core i7-14700F, 16GB DDR5 and a 1TB SSD, now only $1,329.99",
-  "fonte": "Tom's Hardware",
-  "url": "https://www.tomshardware.com/desktops/gaming-pcs/save-usd370-on-this-1440p-gaming-pc-with-an-rtx-5060-ti-16gb-formidable-abs-cyclone-aqua-rig-ships-with-20-core-intel-core-i7-14700f-16gb-ddr5-and-a-1tb-ssd-now-only-usd1-329-99"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "How North Korean forces are bolstering Russia’s war against Ukraine",
-  "fonte": "DefenseNews",
-  "url": "https://www.defensenews.com/global/europe/2026/08/07/how-north-korean-forces-are-bolstering-russias-war-against-ukraine/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Rheinmetall says ramping up ATACMS output will take time as US rebuilds stocks",
-  "fonte": "DefenseNews",
-  "url": "https://www.defensenews.com/industry/techwatch/2026/08/07/rheinmetall-says-ramping-up-atacms-output-will-take-time-as-us-rebuilds-stocks/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "The state of DoD Zero Trust: Progress toward target level",
-  "fonte": "BreakingDefense",
-  "url": "https://breakingdefense.com/2026/08/the-state-of-dod-zero-trust-progress-toward-target-level/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "GDIT scores $1.3 billion National Guard IT contract",
-  "fonte": "BreakingDefense",
-  "url": "https://breakingdefense.com/2026/08/gdit-scores-1-3-billion-national-guard-it-contract/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Senate confirms nominees for Pentagon comptroller, space acquisition and NRO chief",
-  "fonte": "BreakingDefense",
-  "url": "https://breakingdefense.com/2026/08/senate-confirms-nominees-for-pentagon-comptroller-space-acquisition-and-nro-chief/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "EU lays out $18B satellite constellation plan, with Spanish firm winning key role",
-  "fonte": "BreakingDefense",
-  "url": "https://breakingdefense.com/2026/08/eu-lays-out-18b-satellite-constellation-plan-with-spanish-firm-winning-key-role/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Updating Navy warships at the speed of software",
-  "fonte": "BreakingDefense",
-  "url": "https://breakingdefense.com/2026/08/updating-navy-warships-at-the-speed-of-software/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Schiess confirmed as third Space Force chief",
-  "fonte": "BreakingDefense",
-  "url": "https://breakingdefense.com/2026/08/schiess-confirmed-as-third-space-force-chief/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "US Senate passes Russia sanctions that could hurt India and China",
-  "fonte": "AlJazeera",
-  "url": "https://www.aljazeera.com/video/newsfeed/2026/8/8/07-08-sv-us-sanctions-russia-us?traffic_source=rss"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Sudan’s war threatens an ‘entire generation’s’ future, UN warns",
-  "fonte": "AlJazeera",
-  "url": "https://www.aljazeera.com/news/2026/8/8/sudans-war-threatens-an-entire-generations-future-un-warns?traffic_source=rss"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "US Senate passes sweeping Russian energy sanctions bill amid Ukraine war",
-  "fonte": "AlJazeera",
-  "url": "https://www.aljazeera.com/economy/2026/8/8/us-senate-passes-sweeping-russian-energy-sanctions-bill-amid-ukraine-war?traffic_source=rss"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Child among three killed in Russian missile attacks near Kyiv",
-  "fonte": "BBC World",
-  "url": "https://www.bbc.co.uk/news/articles/cz7dy8gq99eo?at_medium=RSS&at_campaign=rss"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "'I ran because I knew I would die': Russian drones target medics in Ukraine",
-  "fonte": "BBC World",
-  "url": "https://www.bbc.co.uk/news/articles/c3r073eqvrjo?at_medium=RSS&at_campaign=rss"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "‘SaaSpocalypse’ debate intensifies as software stocks swing wildly",
-  "fonte": "CNBC Top",
-  "url": "https://www.cnbc.com/2026/08/07/saaspocalypse-debate-intensifies-as-software-stocks-swing-wildly.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Russia sanctions bill honoring Lindsey Graham breezes through Senate, heads to House",
-  "fonte": "CNBC Top",
-  "url": "https://www.cnbc.com/2026/08/07/russia-sanctions-bill-lindsey-graham-senate.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "New Intelligence Warns Russia May Provoke NATO Amid Dwindling U.S. Munitions",
-  "fonte": "WSJ Markets",
-  "url": "https://www.wsj.com/finance/investing/new-intelligence-warns-russia-may-provoke-nato-amid-dwindling-u-s-munitions-68f497c7?mod=rss_markets_main"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Japan's capital plans underground missile shelter near Tokyo Station",
-  "fonte": "Nikkei Asia",
-  "url": "https://asia.nikkei.com/politics/defense/japan-s-capital-plans-underground-missile-shelter-near-tokyo-station"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "DRC probes how 5,000 tonnes of uranium ‘leaked’ into cobalt exports",
-  "fonte": "Mining.com",
-  "url": "https://www.mining.com/drc-probes-how-5000-tonnes-of-uranium-leaked-into-cobalt-exports/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Trojan Gold Announces Management Change and Update to Proposed Business Combination with Tashota Resources and Strike Copper",
-  "fonte": "INN PreciousMet",
-  "url": "https://investingnews.com/trojan-gold-announces-management-change-and-update-to-proposed-business-combination-with-tashota-resources-and-strike-copper/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Ukraine Faces a Growing Air Defense Crisis as Patriot Supplies Dwindle",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Geopolitics/Europe/Ukraine-Faces-a-Growing-Air-Defense-Crisis-as-Patriot-Supplies-Dwindle.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Pentagon wants ‘expanding options’ for nuclear weapons, officials say",
-  "fonte": "BreakingDefense",
-  "url": "https://breakingdefense.com/2026/08/pentagon-wants-expanding-options-for-nuclear-weapons-officials-say/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Iran war live: Trilateral Mecca defence pact signed, as Hormuz deal looms",
-  "fonte": "AlJazeera",
-  "url": "https://www.aljazeera.com/news/liveblog/2026/8/8/iran-war-live-trilateral-mecca-defence-pact-signed-as-hormuz-deal-looms?traffic_source=rss"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Saudi Arabia, Pakistan and Turkey to Sign Defense Deal",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Latest-Energy-News/World-News/Saudi-Arabia-Pakistan-and-Turkey-to-Sign-Defense-Deal.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Sunrise Energy Metals’ scandium project gets $400M conditional loan from US Department of War",
-  "fonte": "Mining.com",
-  "url": "https://www.mining.com/sunrise-energy-metals-scandium-project-gets-400m-conditional-loan-from-us-department-of-war/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Norway’s $2.3-Trillion Fund Opposes SEC Idea to Rescind Climate Reporting",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Latest-Energy-News/World-News/Norways-23-Trillion-Fund-Opposes-SEC-Idea-to-Rescind-Climate-Reporting.html"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Army opens ranges in US, Morocco to speed interceptor testing, development",
-  "fonte": "BreakingDefense",
-  "url": "https://breakingdefense.com/2026/08/army-opens-ranges-in-us-morocco-to-speed-interceptor-testing-development/"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "difesa_geopolitica",
-  "titolo": "Sault steel firm vies for federal defence procurement contract - CTV News",
-  "fonte": "CTV News",
-  "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUDZMN0F5SEwzcjdWb3otYW1pNTZDWklTeEFybTdlTE1ZdTJsR2oxVXM2X1pXSTNycU0tUGU0d0FQVXVrbzYtS1NQbjIyWU1oeFVXZ0dndGZVVllFSjN6T0Y1RnRHVHNQdVMzTXdaWk9jQjZvX3EwS1F1NzdNZXh1THdpRHFwbjJaUWVBS1dkT1c5OUJTUXhmeUlVT25pQWJZSWp2N1Q2blIwYkc0bC04c1p3bjVIVWxzUW5RUA?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "valute_fx",
-  "titolo": "The Fed was expected to hike interest rates in September. Don't bet on that now, economists say. - CBS News",
-  "fonte": "CBS News",
-  "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOWkV3WmFpUmlEQlBFQ2hBNzk2eUx2d3RSZjlTT044WXc3Rjl5Mm53SmJqdnZFTHRPVmF2VFlKTUdQZjQ2LXdTU01TS0c5VDJBWjFrNnQwVHc4QnVidzgtSVFiYzZlc19fcXlyUVEzMk1lWHdmUkg5c2VTT2JJbnQtNDh2NFlGQmtUMU1TM1NIOXpYU0lCVTYxNA?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "valute_fx",
-  "titolo": "Fed policymakers leave rates unchanged amid elevated uncertainty - Fox Business",
-  "fonte": "Fox Business",
-  "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTExVeEdERGhMVDBMc3JpZWRUV2Y1c2kydDVZUDhUWmZQeTY3eFIxZmdhTkpUTm5YU3B4OWFWMk9FOFJVclV2NmxVNFVseWtFV3VSUXp6WEhqcDdUcHBOVHF1Vmx2dzFsYkdOYmxMdjU1YWFQb0pnU05ORE93MlJCU0UtSFhPME50Q0xYSTFKbDTSAZYBQVVfeXFMTXpUb2JydDJVeWxZZ0tzRzZkZDctckVCc3hlZzVobTZoTTZGUmF0VVcwc2ZOaGZCNHVtSDk0NDZLQm9ZQlRnQjdPTnBHdXB1TnVXUnVFTGVUM2JoTVpUVlFkRXJGWXNqbURMUXdwUDRHMFpidTEwTU14VGVDNzQ1b0MxYV96RXhJQUNwNHNNLTR5cDhBRGV3?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "valute_fx",
-  "titolo": "Column: The Fed needs to start listening to normal people - The Virginian-Pilot",
-  "fonte": "The Virginian-Pilot",
-  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPTFA0UmxoMlNETjdLQ09PdmZfSFFvemJnTXhRc2o2dWphU2dEWUFyT3hSejRDbUlwR0RGdUpYZ05BRUxST25sdTRQUWwxbWNET2cwSk5OOWdrbXV0czA2Q1hlbjdnX183RjJGVVdHeUJjZVFMaUN5bzRrWGdfWXpUOGZtYWhOeXJsQTl1VGwwZkNkQlI3N3JYMWd4TVc?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "valute_fx",
-  "titolo": "Newsquawk Week in Focus: US CPI, OPEC, AAPL WWDC, BoC, ECB, UK GDP and Chinese inflation - tradingview.com",
-  "fonte": "tradingview.com",
-  "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNNlBUM1E2REtzbVcwOVY5WWhoRVBNbzBIM0tXbndmRUhpVlpQbXA3NnJlNS1UbFdTZHkzNEFDZzFDR3h4VkI3U0N4c2pCYjNEQ2Z5TklHRUNYeTI3MEVNXy1TalhqaXVPd1RpZnBOcGVLR0g5QkYyQ0JaR3UtVUdNdGt5Ym84cVNCRlF4QUsxYjhKUWhvaHp6UnAwcGlXcjFkc2NxOEQ1UzVVQlFSaGgxbzNibndsNzJrc1Q2QjRHd1BqYTZCSllVVmdxOVprQi1lcEVBMEhXa1l3QQ?oc=5"
- },
- {
-  "data": "2026-08-08",
-  "categoria": "valute_fx",
-  "titolo": "The Week Ahead: US inflation, Oracle earnings, ECB rate decision - CMC Markets",
-  "fonte": "CMC Markets",
-  "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQM2FibENQMVRBWG5DYjUydlpXVTE1Yy10TjlIbTJSTFl6aGF3M0xLVGxSTkpzMHYzX2F2dC1zQmpSekNMV2Y4TENZT3FVbDkxYzgzLXNmT3BxX1A1ZGJKTUQ2Z01raW5VQVlycUs0SGxqR2pHaVRxSTRJaGozV0RIcWs0aEZwZ01NZ3F2TU5WV0NDdjQ3Q19IOWN6Umt4dXJUMmlrSjljcDVwVENPV09uR2tR?oc=5"
- },
- {
-  "data": "2026-08-08",
   "categoria": "valute_fx",
   "titolo": "Rosatom Says Seven Chinese Vessels Will Sail to Europe via Russia’s Arctic Route",
   "fonte": "gCaptain",
@@ -34998,5 +34599,404 @@
   "titolo": "UK Interest Rates Could Rise Four Times Over the Next Year",
   "fonte": "OilPrice",
   "url": "https://oilprice.com/Energy/Energy-General/UK-Interest-Rates-Could-Rise-Four-Times-Over-the-Next-Year.html"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "energia",
+  "titolo": "Iran Standoff Forces US to Redirect 100 Ships Through Oil Chokepoint",
+  "fonte": "newsweek.com",
+  "url": "https://www.newsweek.com/iran-standoff-forces-us-to-redirect-100-ships-through-oil-chokepoint-12435605"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "energia",
+  "titolo": "Oil Posts Biggest Weekly Gain Since July  | Peak Oil News and Message Boards",
+  "fonte": "peakoil.com",
+  "url": "https://peakoil.com/consumption/oil-posts-biggest-weekly-gain-since-july"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "energia",
+  "titolo": "The Illusion of Redundancy : Why Oil Markets Are Misreading Gulf Supply Risk",
+  "fonte": "middleeastmonitor.com",
+  "url": "https://www.middleeastmonitor.com/20260912-the-illusion-of-redundancy-why-oil-markets-are-misreading-gulf-supply-risk/"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "energia",
+  "titolo": "EQT (EQT) Wins Lithuania LNG Supply Deal Through 2036 - simplywall.st",
+  "fonte": "simplywall.st",
+  "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOT0tTY25TNnFNejU5d0tla05TNUlvREE0eDZyc2JJakNTS0FqdEY0T3lTbS1mNHNhOHNJWjdfVlBYcnhaUGNCTE5Ceks0cmUzX2huc1hOTDUwa2pyeE81WS16SDYwYXRUWXJpTE5UQlR1OWNoUV9nTWxVbTcybGZOWkdtRWJScUk1enNXVXVqbTc4UU9iWTFZTlI3blVCbnE0MDB0cUVnVjU0YXB20gGyAUFVX3lxTE9DVVd5RDVETGtfdXV6UDAwWXpSTDg1Z0xZSWtvSmZKS09wNEZTQUU0SllzdEFGc3VSMUZOeXZuN2xQTzJXdDNERmkyYVlqVWNzcC1Md2pUMjhRdGZ1czJrS1VoSU13SlR5Rm9BZWxhNlZtaV9kS2V1bzZ3MjM4VzNfSEtzMzN6SlNUbENGbTI5eUY3X2xRQjZiTUlNaDVlanJYMHRDTWxZaThCeFk3Ql9rN1E?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "energia",
+  "titolo": "UAE, Germany Seal Energy, AI Partnerships Enabling €5 Bn Investment - egyptoil-gas.com",
+  "fonte": "egyptoil-gas.com",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPMklKb0RWVVg4RE9OV2ZuemMxZUhCcVJieGlwUWhWLTZUTENlTU96bmVkQkVVVzRjOVBkQ3pzZWJsQ2RnbG93a3VqRVN1QnlEclAycUR4Qlo4WHZQc3duLXpmcmtQb2tuU0JMcGpLU3hsaTkwd0xpaWpGM21mWlhQNENUOXZTcW9uX2pvT3h1d3V5OUczNW9xRHlQRU0?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "energia",
+  "titolo": "Stolen Electricity is Powering Illegal Crypto Farms Across the Globe",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Energy/Energy-General/Stolen-Electricity-is-Powering-Illegal-Crypto-Farms-Across-the-Globe.html"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "energia",
+  "titolo": "The Race to Solve Nuclear Energy’s Biggest Problem",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Alternative-Energy/Nuclear-Power/The-Race-to-Solve-Nuclear-Energys-Biggest-Problem.html"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "energia",
+  "titolo": "Iran’s Security Crackdown Runs Into Resistance From Within",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Energy/Energy-General/Irans-Security-Crackdown-Runs-Into-Resistance-From-Within.html"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "energia",
+  "titolo": "Why More Homes Are Switching From Gas to Heat Pumps",
+  "fonte": "OilPrice",
+  "url": "https://oilprice.com/Energy/Energy-General/Why-More-Homes-Are-Switching-From-Gas-to-Heat-Pumps.html"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "energia",
+  "titolo": "Iraq seizes drone-launching platform used for targeting Saudi oil pipeline",
+  "fonte": "AlJazeera",
+  "url": "https://www.aljazeera.com/news/2026/9/13/iraq-seizes-drone-launching-platform-used-for-targeting-saudi-oil-pipeline?traffic_source=rss"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "energia",
+  "titolo": "Oil's roundtrip back to $100. Why China could determine what happens next",
+  "fonte": "CNBC Top",
+  "url": "https://www.cnbc.com/2026/09/12/oils-roundtrip-back-to-100-why-china-could-determine-what-happens-next.html"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "metalli_preziosi",
+  "titolo": "Gold Market Weekly: The Buyers Who Don’t Need a Price Target - The Dark Side Of The Boom",
+  "fonte": "The Dark Side Of The Boom",
+  "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNQlloSmhjTG13OUlNcENDRzlvOFlLQnY4RFB0dU9FRWFWcEY5WUxTbGxxLW1pSk9IX3ZCNFRfdjdrNFY3S0FRbHZ3dVdnZUQyUHYyR1hvZ1lMLUNDNTNmUWJ6QVUxWUhseTBrRUdYdkt0U250WFA3aERCek5KM3dDT1RJTQ?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "metalli_preziosi",
+  "titolo": "Gold Holds Near $4,380. The Fed Decides Sept 16. - GoldSilver",
+  "fonte": "GoldSilver",
+  "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPMnZZVHFKTF9pcklMOHFEeWZHN3NabkNVc0I3bFRoYVE3NE9uYWpJT2x2anVtSnN0cGVzc2FFOGV1d3FZQTN5Wlk3ZzN6TDdaVTBQTHlpd2xWNWlHNE42dkVFUDJoeEF4V21MSjZFWnNBaDBSSXhCdzM1NTVKU1RKUGtZVk1FZw?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "metalli_preziosi",
+  "titolo": "Gold Erases Early Rally as WGC Reports First-Half Central Bank Buying at Lowest Since 2022 | Gold News - BullionVault",
+  "fonte": "BullionVault",
+  "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQbVdVRzlxdzF4Q1BrNnBkMkRWRmdHSmRKOU9lbHZ4T1I3MTM5X1BvQXg2dXVJZ0gyemJiTE4wWHE5OFFFUjlPVlJpSFh3SmRGOFhQRFdScVROM1ZFbDlHdVRjdjZrMDUzZUxIdW9JLWY5YlNaRHpBLTc1RmtUdVNURWh0LS1iYktqTTFrREhfbmVKN0k3enBZQ2Y5MWs4V00?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "metalli_preziosi",
+  "titolo": "Why Spain’s new Sahrawi citizenship law matters to Morocco",
+  "fonte": "AlJazeera",
+  "url": "https://www.aljazeera.com/news/2026/9/13/why-spains-new-sahrawi-citizenship-law-matters-to-morocco?traffic_source=rss"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "metalli_industriali",
+  "titolo": "India Builds Copper Smelters It Cannot Feed, Locking in Imports Past 2035 - Crux Investor",
+  "fonte": "Crux Investor",
+  "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNc2M0WGsxNW85N2FpNTJ5cl9xUmtCV1pCTm9FSm1WSVYxTk1CTnRxTjZ1UXVPQy1rZ1dnWjlvdzFNTzZKRjJkR09VVGVKWnhIXzlLaGh4Q3dKNmxNWUNhSDVDbVZvWjJxU29DcmJoaERVUG9Rcl9LVEZMLTJuaVAwbDRLYlBKZ3hyenlocktfeHpJSWpQYmNLaEtsc3Exd2xfM0VlcEtkWDBtMXc?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "metalli_industriali",
+  "titolo": "Singapore built a pilot plant that uses discarded orange, lemon and pineapple peels to dissolve valuable metals out of shredded lithium-ion batteries — the underlying process recovered roughly 90 perc",
+  "fonte": "Space Daily",
+  "url": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxONGFrMkEwd2RKMlNXTVVmMk12bS1OVjdrNWx4Ung0UkQtMU9nNUdZR1pXbE0tTDRPTklYQ2szNXVrTS1mMl9OaGJWeGVlNFZpdmM1VXVJNGJDT3pKblViZXlsLXVOeXRKLVpFTlkwbmU4b211dDBmbjVQTjNiOGJoUkZDWUJGNWJnU19VblE5MXVSMnBtWUhKdWNacmRRZkxWODBuNmJ0Q09POGdXczJnOFZUNWgxR2hQT2laTXg1TW5uYUltQU9Jb2h1RldJTmlsNWRObU9KNzBqcTZvZmZNNFpodFRacS1EbFFSeWtvWndHZmdBdnc4X3paN2NialhEaGVHZkQ0R3BHekM1WXBrbU41d3JTTnFKVm1mc2ZqWE1hVmRKQ0c4NWxoNnlYVURIdkNkN0NlZG1NcFk?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "metalli_industriali",
+  "titolo": "French officials investigate if malicious act caused train derailment",
+  "fonte": "BBC World",
+  "url": "https://www.bbc.co.uk/news/articles/c33kp533nn6o?at_medium=RSS&at_campaign=rss"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "metalli_industriali",
+  "titolo": "Cramer: This market has eerie parallels with 2018. Here's what investors should do",
+  "fonte": "CNBC Top",
+  "url": "https://www.cnbc.com/2026/09/11/cramer-market-eerie-parallels-2018-what-it-means-for-investors.html"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "agricole",
+  "titolo": "Missouri Crops Face a Split 2026 Outlook as Drought Spreads Before Harvest - AgroLatam",
+  "fonte": "AgroLatam",
+  "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPVWJBeHRQaUdzWTZzanE3U0dUOWltenRSQUxjREtwWHFmQk43RmdwYzRMcWxtS1FFbjVCY19CVjJnaFhzOUdCaXF6Y3diOW9ETDFvbWNMQU55Skdaa0sxeUtVNThaX2o3SlhwYkFieFl3WnhpeTl6WXhLVHVXTzVrUk1EQU5xX2FHb1hVNHNCNA?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "agricole",
+  "titolo": "Heat, Drought Take Toll on Kansas Corn Crop - Successful Farming",
+  "fonte": "Successful Farming",
+  "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQeG5BUGE5MUdMeVVJdVFncHN2YUJQSC1tSG1Ub0xMTXgzaU8tUTh4dWJtUWFaU0c4TjYxTG5RU0pwQzhJZV9ic05yUnF3RjBOeXViTDZhTVlmVmkzaDFIbUJMT2dJYVZjeUZERVhVODA1bGQ3akFjbTl4NFZyVDBsVnVnSTJldw?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "agricole",
+  "titolo": "What’s Going on With Missouri Crops? - Successful Farming",
+  "fonte": "Successful Farming",
+  "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE12bkpkMTFBMDl2UXh1b0FHSWZRdXZzX3MzcFdDTnZYRVo5TWhzMlRuQVJIN3QtTmhhQktYOXlLaC1Od3NXel8xTzhrS1R1OUpoVFNXRHhGNW5WVGlpek9UVG1jOTVNcVNfTTlGU1ZNa3IzdlhNaGZ2NEpuT1M?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "shipping_logistica",
+  "titolo": "Imperial Petroleum ( NASDAQ : IMPP ) Announces Quarterly Earnings Results",
+  "fonte": "tickerreport.com",
+  "url": "https://www.tickerreport.com/banking-finance/13582815/imperial-petroleum-nasdaqimpp-announces-quarterly-earnings-results.html"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "shipping_logistica",
+  "titolo": "Imports and inventories stabilize in 2026, but for how long",
+  "fonte": "FreightWaves",
+  "url": "https://www.freightwaves.com/news/imports-and-inventories-stabilize-in-2026-but-for-how-long"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "shipping_logistica",
+  "titolo": "Yemen’s Houthis seize strategic Mayun Island in Red Sea",
+  "fonte": "AlJazeera",
+  "url": "https://www.aljazeera.com/video/newsfeed/2026/9/13/yemens-houthis-seize-strategic-mayun-island-in-red-sea?traffic_source=rss"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "shipping_logistica",
+  "titolo": "Afghan woman deported from US in first use of 'alien terrorist' court",
+  "fonte": "BBC World",
+  "url": "https://www.bbc.co.uk/news/articles/c3eqpd9zgl9o?at_medium=RSS&at_campaign=rss"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "ai_semiconduttori",
+  "titolo": "[ 안광섭 AI 진테제 ] 미 정부 사이버보안 권고문이 의미하는 것",
+  "fonte": "zdnet.co.kr",
+  "url": "https://zdnet.co.kr/view/?no=20260913095614"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "ai_semiconduttori",
+  "titolo": "New Jersey's largest planned AI data center accused of running 45 unpermitted generators - The Cool Down",
+  "fonte": "The Cool Down",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZEdGMjRlZ0ZGU0pMME1WUEtuOGJEaUk5NFJDZGtLWHZsek9IYmRPc2pod3phN04xcEpGY2RTNFpra0k4XzNuREx4QWJYY1dwNlZYQzNOZ0xMN1ZXQ0U4bXZ0VjZRY2RLd0ZySmx1cHpoSkNLNGwzTWo1WExHUzNvRmkyMzd4UHBlODFlVHNvcEM1NzVHLUotWnpmVWg?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Data centers forced off grid during heat waves - Spotlight PA",
+  "fonte": "Spotlight PA",
+  "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPWTNUeG5pX0dqWVhkejEwcTVBcjNoMFZLRERtM2VvVDVZUmFiVG5tS2RObGNkWEhaR0ZRam83T3ZYMnZITU1ibWRySHFMYkNSbUo5a3Z2VC1TcWxNeHlveVFBenhRaHNRSlJ6ZmlHbVpnMV91bG1lUmNvQ2x1SkhlWmNOWVFYTUZZbWYtYWtTNFV0M2FwLW1Na1dZa2thUnVZYldEbnlIZmVjbVRSY0hSZQ?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Anthropic boss Dario Amodei calls for AI development to slow down",
+  "fonte": "BBC World",
+  "url": "https://www.bbc.co.uk/news/articles/c14dpgm0rg4o?at_medium=RSS&at_campaign=rss"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "ai_semiconduttori",
+  "titolo": "AI staff 'genuinely frightened' for humanity's future, ex-Anthropic researcher tells BBC",
+  "fonte": "BBC Business",
+  "url": "https://www.bbc.co.uk/news/articles/c1kx0gyje9wo?at_medium=RSS&at_campaign=rss"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Sub-$100 smartphones becoming a rarity as AI memory prices soar",
+  "fonte": "CNBC Top",
+  "url": "https://www.cnbc.com/2026/09/11/cheap-china-smartphones-rare-memory-ai-costs.html"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Elon Musk backs Anthropic’s call to slow down AI progress before rogue bots take over the entire internet",
+  "fonte": "MarketWatch",
+  "url": "https://www.marketwatch.com/story/elon-musk-backs-anthropics-call-to-slow-down-ai-progress-before-rogue-bots-take-over-the-entire-internet-46f12d98?mod=mw_rss_topstories"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Altman: 'Ipo OpenAI nel 2027, ci concentreremo sulla sicurezza'",
+  "fonte": "ANSA Economia",
+  "url": "https://www.ansa.it/sito/notizie/economia/2026/09/13/altman-ipo-openai-nel-2027-ci-concentreremo-sulla-sicurezza_36bf11fa-34ee-4a23-93fd-5b8dc38db3f4.html"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Fujitsu to export AI chips built on supercomputer tech to US, Asia",
+  "fonte": "Nikkei Asia",
+  "url": "https://asia.nikkei.com/business/tech/semiconductors/fujitsu-to-export-ai-chips-built-on-supercomputer-tech-to-us-asia"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Milei decidió a favor de Mendoza en el conflicto con La Pampa por las regalías hidroeléctricas de la represa Los Nihuiles",
+  "fonte": "diariolaopinion.com.ar",
+  "url": "https://diariolaopinion.com.ar/nacionales/milei-decidio-a-favor-de-mendoza-en-el-conflicto-con-la-pampa-por-las-regalias-hidroelectricas-de-la-represa-los-nihuiles.htm"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Defense Procurement Agency contracts UAH 333.6B worth of drones for army in H1 2026 - Ukrinform",
+  "fonte": "Ukrinform",
+  "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNaUZuSk9pcWRHSEhHSGpfeThyM2szN2Y3SU1EYWJIZi1KaWkwV2ZZX0k3S3RHTlpCMXl6NjJaNy1KeUxTRTlZcHVKaXRsemVoX21YZ096YzdQQi1wSkxhSGUyTFpSMWM4c0NxbkowbEIzMXlDSDNNNzlUOVhYMzFaMWQ3Q0NobGNGOC0wV1ZPUkFHdlgyZ1JSV1lmOGl2NHU5Mnh4cnU0bUpxUWphSTZfTVZXWkk4djN0Ulo2a2l4OG5vRTZZajJSWDc1azE?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "difesa_geopolitica",
+  "titolo": "China announces 'countermeasures' after US trade sanctions - CNA",
+  "fonte": "CNA",
+  "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQVS0tVkFXSVJrU2F5cmI3OUxrYW1IUzh4U1FYaHBocXFiMFJPSi1XQnAxZnIxZWNpSjYxMDhsWmlSeGdVcENxejVzbWFuY3p6SGIzUERyc1ExUzB4RnYyeXJTS3RDbktKSU9pbGx5bmZJZFZxaVhmSUhOV0xVS1VXRWV3SndNT3ZGS3psTXJNSFBjbkN5UTc0TVhRUUlCdnpacngta1Jaa3dZUW5FalFyODVCZkR0YzA?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Iran and Houthi rebels used Anthropic's Claude AI to target US warships and build hypersonic missiles — Houthi rebels also used the bot to code ballistic missile guidance systems",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/iran-and-houthi-rebels-used-anthropics-claude-ai-to-target-us-warships-and-build-hypersonic-missiles-houthi-rebels-also-used-the-bot-to-code-ballistic-missile-guidance-systems"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "difesa_geopolitica",
+  "titolo": "US Customs supervisor busted for stealing Core i7 CPUs, RAM, and hard drives from Homeland Security PCs, damage estimated at $105,800 — stolen tech swapped with inferior hardware and cashed out on New",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/pc-components/us-customs-supervisor-busted-for-stealing-core-i7-cpus-ram-and-hard-drives-from-homeland-security-pcs-stolen-tech-swapped-with-inferior-hardware-and-cashed-out-on-newegg"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "difesa_geopolitica",
+  "titolo": "IKEA releases new Skyrim mod that adds gloriously mundane Kallax shelving unit as your newest companion — free collab provides a drab flatpack answer to your loot woes",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/video-games/pc-gaming/ikea-releases-new-skyrim-mod-that-adds-gloriously-mundane-kallax-shelving-unit-as-your-newest-companion-free-collab-provides-a-drab-flatpack-answer-to-your-loot-woes"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Iran could potentially reverse-engineer captured US underwater drone — several Iranian embassies mock US over capture, Navy claims lost Anduril vehicle was defective and unclassified",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/tech-industry/drones/iran-could-potentially-reverse-engineer-captured-u-s-underwater-drone-several-iranian-embassies-mock-us-over-capture-as-u-s-military-downplays-the-situation"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Kioxia Exceria Pro G2 2TB SSD Review — Speed built to last",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/pc-components/ssds/kioxia-exceria-pro-g2-2tb-ssd-review"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Wiki documents at least 44 instances in which Sony says you own your games as digital games ownership lawsuit progresses — project is direct assault on Sony's claim in recent ownership lawsuit",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/video-games/playstation/consumer-rights-wiki-documents-at-least-44-instances-in-which-sony-says-you-own-your-games-project-is-direct-assault-on-sonys-claim-in-recent-ownership-lawsuit"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Iran’s Pezeshkian: ‘We are not at war with Saudi Arabia’",
+  "fonte": "AlJazeera",
+  "url": "https://www.aljazeera.com/video/newsfeed/2026/9/13/13-09-clip-pezeshkian-iran-not-at-war-with-saudis-ir?traffic_source=rss"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "difesa_geopolitica",
+  "titolo": "'Skimpflation' warning as tinned mackerel alternative hits more supermarket shelves",
+  "fonte": "BBC Business",
+  "url": "https://www.bbc.co.uk/news/articles/crm9xk9eg88o?at_medium=RSS&at_campaign=rss"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "difesa_geopolitica",
+  "titolo": "‘I still don’t have my MRI’: My health insurer canceled my plan without warning. Is that legal?",
+  "fonte": "MarketWatch",
+  "url": "https://www.marketwatch.com/story/i-still-dont-have-my-mri-my-health-insurer-canceled-my-plan-without-warning-is-that-legal-02143710?mod=mw_rss_topstories"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Il governo studia nuovo ecobonus al 65% per infissi e condizionatori",
+  "fonte": "ANSA Economia",
+  "url": "https://www.ansa.it/sito/notizie/economia/2026/09/13/il-governo-studia-nuovo-ecobonus-al-65-per-infissi-e-condizionatori_85047a3a-8a90-4fbf-993d-e0a519b312ec.html"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Japan's Nidec to exit Cambodia production over Thailand border conflict",
+  "fonte": "Nikkei Asia",
+  "url": "https://asia.nikkei.com/politics/international-relations/thailand-cambodia-conflict/japan-s-nidec-to-exit-cambodia-production-over-thailand-border-conflict"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "difesa_geopolitica",
+  "titolo": "BRICS joint declaration calls for 'maximum restraint' in Iran war",
+  "fonte": "Nikkei Asia",
+  "url": "https://asia.nikkei.com/politics/international-relations/brics-joint-declaration-calls-for-maximum-restraint-in-iran-war"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "valute_fx",
+  "titolo": "Bitcoin - Prognose : Kommt die 100 . 000 - Dollar - Marke 2026 zurück ?",
+  "fonte": "finanzen.net",
+  "url": "https://www.finanzen.net/ratgeber/news/bitcoin-ueber-80-000-dollar-kommt-die-100-000er-marke-zurueck-12-09-2026-01/"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "valute_fx",
+  "titolo": "PREPLAVIĆE BOJIŠTE  Kina otišla ubedljivo najdalje u pripremi humanoidnih robota za borbu : SAD nisu ni blizu !",
+  "fonte": "telegraf.rs",
+  "url": "https://www.telegraf.rs/vesti/svet/4392219-preplavice-bojiste-kina-otisla-ubedljivo-najdalje-u-pripremi-humanoidnih-robota-za-borbu-sad-nisu-ni-blizu"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "valute_fx",
+  "titolo": "Analysis: Hot inflation data sets up a Fed rate hike. What happens if Warsh wavers - CNBC",
+  "fonte": "CNBC",
+  "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPUTZyQXZidTZGdVYxeXZXSW0zUmpaREhLeWVUa0dlOEFrUUlnSlN3WmhDQkNiaUJYb29XWDV6eFg4NktmSDJ1M1F3cUIyOU1FbUNwU2VnaXcwRFQ4MUJTQWxGTjk4d1NLYmdfN2FiV2lFd0V2NkEwRWVOUTl0MVF6WnVHeXFXd29nNnRnall30gGTAUFVX3lxTFBhVENSMnExZUdsNFppdExrZHo5TzVoV0VIckoxMVJlTG8xM1NBNEJiQmozT051UllUNVNpSEJ0U3c1MzJWYVF1OU11ZWl4M0RxZi03THNYU19UYTQwRTVkYjhzR0tfcVppTWtIR1FWcTRuc1R5YmpMeUFpYjNueEVWMkRrY184NlpmUTdQY1lidHBscw?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "valute_fx",
+  "titolo": "Bavaria Inflation Ticks Up to 2.9% in August, Matching Broader German Trend - CryptoRank",
+  "fonte": "CryptoRank",
+  "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1DVVF4NnJieU4wbWRrTXNYV2NmTFZDY3BPT2d1M0IxLUw3bHl1MEw2M2hqamhFX3VZWHc3WkVCY0pwY1ZCeWNuMGtpNzBDUkZGQVNmOWl2cnNQRHhRLTZValhocWlMXzd0cktnYk9nZVhmSjc0aVVJ?oc=5"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "valute_fx",
+  "titolo": "Inflation is outpacing wage growth again, squeezing Americans’ paychecks",
+  "fonte": "CNBC Top",
+  "url": "https://www.cnbc.com/2026/09/12/inflation-is-outpacing-wage-growth-again-squeezing-americans-paychecks.html"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "valute_fx",
+  "titolo": "Lagarde auspica una 'Europa più sovrana', fra voci di discesa in campo",
+  "fonte": "ANSA Economia",
+  "url": "https://www.ansa.it/sito/notizie/economia/2026/09/12/lagarde-auspica-una-europa-piu-sovrana-fra-voci-di-discesa-in-campo_f0c3809b-145d-461d-99ba-199d436c7bac.html"
+ },
+ {
+  "data": "2026-09-13",
+  "categoria": "valute_fx",
+  "titolo": "BOJ meeting, Semicon India, Hong Kong's first five-year plan",
+  "fonte": "Nikkei Asia",
+  "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/boj-meeting-semicon-india-hong-kong-s-first-five-year-plan"
  }
 ]
