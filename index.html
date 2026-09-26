@@ -395,9 +395,9 @@ section { border-top: 1px solid var(--border); }
   padding: 96px 0;
 }
 .priced-scroll {
-  overflow-x: auto;
   border: 1px solid var(--border);
   border-radius: 12px;
+  overflow: hidden;
 }
 .priced-table {
   width: 100%;
@@ -647,13 +647,12 @@ section { border-top: 1px solid var(--border); }
   padding: 96px 0;
 }
 .confronto-wrap {
-  overflow-x: auto;
   border: 1px solid var(--border);
   border-radius: 12px;
+  overflow: hidden;
 }
 .confronto-table {
   width: 100%;
-  min-width: 600px;
   border-collapse: collapse;
 }
 .confronto-table th {
@@ -1082,9 +1081,25 @@ footer {
   .cta-actions .btn-primary,
   .cta-actions .btn-ghost { text-align: center; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
-  .priced-table { font-size: 13px; }
-  .priced-table td, .priced-table th { padding: 12px 10px; }
   .hide-mobile { display: none; }
+  /* priced-in table → stacked cards on mobile */
+  .priced-table thead { display: none; }
+  .priced-table tbody tr {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .priced-table td { padding: 0; border: none; }
+  .priced-action { text-align: left; }
+  /* confronto table → abbreviate columns */
+  .confronto-table th:nth-child(3),
+  .confronto-table td:nth-child(3) { display: none; }
+  .confronto-table th,
+  .confronto-table td { padding: 10px 12px; font-size: 13px; }
+  .confronto-table th:first-child { width: auto; }
+
   .funnel-arrow { font-size: 18px; padding: 4px 0; }
   .funnel-n { font-size: 40px; }
   .chain-row { flex-wrap: wrap; gap: 6px; }
@@ -1139,7 +1154,7 @@ footer {
       <div>
         <span class="eyebrow">Intelligence finanziaria quotidiana</span>
         <h1 class="hero-h1">Leggi il mercato<br>prima degli altri.<br><em>Ogni mattina.</em></h1>
-        <p class="hero-sub">Thesyum analizza 180+ fonti macro e di flusso ogni giorno e ti consegna tre segnali azionabili con contesto, direzione e priorità. In 4 minuti.</p>
+        <p class="hero-sub">Thesyum analizza 180+ fonti macro e di flusso ogni giorno e ti consegna i segnali più importanti con contesto, direzione e priorità. In 4 minuti.</p>
         <div class="hero-ctas">
           <a href="#contatti" class="btn-primary">Inizia gratis 14 giorni →</a>
           <a href="#come-funziona" class="btn-ghost">Come funziona</a>
@@ -1197,7 +1212,7 @@ footer {
         {"description":"VIX","proName":"CBOE:VIX"}
       ],
       "showSymbolLogo": false,
-      "isTransparent": true,
+      "isTransparent": false,
       "displayMode": "adaptive",
       "colorTheme": "dark",
       "locale": "it"
@@ -1215,8 +1230,8 @@ footer {
         <div class="stat-label">Fonti macro e di flusso analizzate ogni giorno</div>
       </div>
       <div class="stat-cell">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Segnali azionabili con priorità chiara</div>
+        <div class="stat-num">↑</div>
+        <div class="stat-label">Segnali più importanti della giornata, con priorità chiara</div>
       </div>
       <div class="stat-cell">
         <div class="stat-num">4 min</div>
@@ -1235,7 +1250,7 @@ footer {
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">Come funziona</span>
-      <h2 class="section-h2">Da 180 fonti a 3 segnali.<br>Ogni mattina alle 7:00.</h2>
+      <h2 class="section-h2">Da 180 fonti ai segnali<br>che contano. Ogni mattina.</h2>
       <p class="section-lead">Non è una newsletter. È un sistema di filtraggio che elimina il rumore e isola ciò che può muovere i portafogli nelle prossime 24–72 ore.</p>
     </div>
     <div class="funnel-track">
@@ -1445,9 +1460,9 @@ footer {
       <div class="ricevi-card">
         <span class="ricevi-badge">Quotidiano · 07:00</span>
         <h3 class="ricevi-title">Thesyum Daily Note</h3>
-        <p class="ricevi-desc">Il briefing mattutino con i tre segnali della giornata. Ogni segnale include classificazione Priced In, catena di effetti e finestra temporale di validità.</p>
+        <p class="ricevi-desc">Il briefing mattutino con i segnali più importanti della giornata. Ogni segnale include classificazione Priced In, catena di effetti e finestra temporale di validità.</p>
         <ul class="ricevi-bullets">
-          <li>3 segnali classificati (Non Prezzata / Parz. / Già)</li>
+          <li>Segnali classificati (Non Prezzata / Parz. / Già)</li>
           <li>Contesto macro di 72h per ogni segnale</li>
           <li>Propagazione per asset class con direzione</li>
           <li>Finestra temporale di validità dell'opportunità</li>
@@ -1475,8 +1490,8 @@ footer {
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">Confronto</span>
-      <h2 class="section-h2">Perché Thesyum<br>e non Bloomberg?</h2>
-      <p class="section-lead">Bloomberg Terminal è uno strumento potente — se hai un team di analisti e €24k l'anno da spendere. Thesyum fa il lavoro di filtraggio per te.</p>
+      <h2 class="section-h2">Perché Thesyum<br>e non il resto?</h2>
+      <p class="section-lead">I terminal professionali sono strumenti potenti — se hai un team di analisti e €24k l'anno da spendere. Thesyum fa il lavoro di filtraggio per te.</p>
     </div>
     <div class="confronto-wrap">
       <table class="confronto-table">
@@ -1484,7 +1499,7 @@ footer {
           <tr>
             <th>Caratteristica</th>
             <th class="highlight">Thesyum</th>
-            <th>Bloomberg</th>
+            <th>Terminal Pro</th>
             <th>Newsletter generica</th>
           </tr>
         </thead>
@@ -1593,7 +1608,7 @@ footer {
         <hr class="plan-divider">
         <ul class="plan-features">
           <li><span class="pchk">✓</span> Daily Note ogni mattina alle 7:00</li>
-          <li><span class="pchk">✓</span> 3 segnali classificati Priced In</li>
+          <li><span class="pchk">✓</span> Segnali classificati Priced In</li>
           <li><span class="pchk">✓</span> Catena di effetti per asset class</li>
           <li><span class="px">✗</span> Weekly Report strategico</li>
           <li><span class="px">✗</span> Archivio storico segnali</li>
@@ -1613,7 +1628,7 @@ footer {
         <hr class="plan-divider">
         <ul class="plan-features">
           <li><span class="pchk">✓</span> Daily Note ogni mattina alle 7:00</li>
-          <li><span class="pchk">✓</span> 3 segnali classificati Priced In</li>
+          <li><span class="pchk">✓</span> Segnali classificati Priced In</li>
           <li><span class="pchk">✓</span> Catena di effetti per asset class</li>
           <li><span class="pchk">✓</span> Weekly Report strategico</li>
           <li><span class="pchk">✓</span> Archivio storico 12 mesi</li>
@@ -1632,7 +1647,7 @@ footer {
         <hr class="plan-divider">
         <ul class="plan-features">
           <li><span class="pchk">✓</span> Daily Note ogni mattina alle 7:00</li>
-          <li><span class="pchk">✓</span> 3 segnali classificati Priced In</li>
+          <li><span class="pchk">✓</span> Segnali classificati Priced In</li>
           <li><span class="pchk">✓</span> Catena di effetti per asset class</li>
           <li><span class="pchk">✓</span> Weekly Report strategico</li>
           <li><span class="pchk">✓</span> Archivio storico illimitato</li>
