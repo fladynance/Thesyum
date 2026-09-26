@@ -202,10 +202,8 @@ section { border-top: 1px solid var(--border); }
 #hero::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(closest-side at 72% 30%, rgba(92,245,160,.16), transparent 70%),
-    radial-gradient(closest-side at 12% 85%, rgba(63,216,255,.10), transparent 70%);
+  inset: -10% -10% 0 -10%;
+  background: radial-gradient(closest-side at 78% 22%, rgba(92,245,160,.14), transparent 72%);
   pointer-events: none;
 }
 #hero::after {
@@ -213,14 +211,20 @@ section { border-top: 1px solid var(--border); }
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-  background-size: 44px 44px;
-  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, #000 30%, transparent 78%);
-          mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, #000 30%, transparent 78%);
+    linear-gradient(rgba(140,160,200,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(140,160,200,.06) 1px, transparent 1px);
+  background-size: 38px 38px;
+  -webkit-mask-image: radial-gradient(ellipse 100% 80% at 60% 30%, #000 20%, transparent 80%);
+          mask-image: radial-gradient(ellipse 100% 80% at 60% 30%, #000 20%, transparent 80%);
+  animation: gridDrift 24s linear infinite;
   pointer-events: none;
 }
+@keyframes gridDrift {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 38px 38px, 38px 38px; }
+}
 #hero .container { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: reduce) { #hero::after { animation: none; } }
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -239,10 +243,6 @@ section { border-top: 1px solid var(--border); }
 }
 .hero-h1 em {
   font-style: normal;
-  background: var(--grad);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
   color: var(--gold);
 }
 .hero-pill {
@@ -408,6 +408,43 @@ section { border-top: 1px solid var(--border); }
 .nc-label.mid { color: var(--mid); }
 .nc-label.bad { color: var(--bad); }
 .nc-text { font-size: 13px; color: var(--t2); line-height: 1.55; }
+/* live chart inside product panel */
+.nc-chart {
+  position: relative;
+  padding: 16px 20px 10px;
+  border-bottom: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(92,245,160,.04), transparent),
+    repeating-linear-gradient(0deg, transparent 0 17px, rgba(255,255,255,.02) 17px 18px);
+}
+.nc-chart-top {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 8px;
+}
+.nc-symbol { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--t1); letter-spacing: .04em; }
+.nc-symbol .nc-tag { color: var(--t3); font-weight: 500; margin-left: 6px; }
+.nc-price { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--ok); }
+.nc-price::before { content: "▲ "; font-size: 8px; }
+.nc-chart svg { display: block; width: 100%; height: 76px; overflow: visible; }
+.spark-area { fill: rgba(92,245,160,.10); }
+.spark-line {
+  fill: none; stroke: var(--gold); stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px rgba(92,245,160,.5));
+  stroke-dasharray: 1000; stroke-dashoffset: 1000;
+  animation: sparkDraw 2.4s cubic-bezier(.6,.05,.2,1) forwards;
+}
+@keyframes sparkDraw { to { stroke-dashoffset: 0; } }
+.spark-dot {
+  fill: var(--gold);
+  animation: sparkDot 1.6s ease-in-out infinite;
+  transform-box: fill-box; transform-origin: center;
+}
+@keyframes sparkDot { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) {
+  .spark-line { animation: none; stroke-dashoffset: 0; }
+  .spark-dot { animation: none; }
+}
 
 /* ── TICKER ─────────────────────────────────────────────── */
 #ticker-wrap {
@@ -511,11 +548,7 @@ section { border-top: 1px solid var(--border); }
   font-family: var(--serif);
   font-size: clamp(32px, 3.5vw, 44px);
   font-weight: 600;
-  background: var(--grad);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: var(--gold);
+  color: var(--t1);
   line-height: 1;
   margin-bottom: 8px;
   font-variant-numeric: tabular-nums;
@@ -1382,6 +1415,17 @@ footer {
           <div class="note-card-header">
             <span class="nc-title">Thesyum Daily Note</span>
             <span class="nc-date" id="nc-date">—</span>
+          </div>
+          <div class="nc-chart">
+            <div class="nc-chart-top">
+              <span class="nc-symbol">S&amp;P 500 <span class="nc-tag">· sessione</span></span>
+              <span class="nc-price">+0,42%</span>
+            </div>
+            <svg viewBox="0 0 600 76" preserveAspectRatio="none" aria-hidden="true">
+              <path class="spark-area" d="M0,58 L46,52 L92,60 L138,44 L184,50 L230,36 L276,42 L322,28 L368,34 L414,22 L460,28 L506,16 L552,20 L600,10 L600,76 L0,76 Z"/>
+              <path class="spark-line" pathLength="1000" d="M0,58 L46,52 L92,60 L138,44 L184,50 L230,36 L276,42 L322,28 L368,34 L414,22 L460,28 L506,16 L552,20 L600,10"/>
+              <circle class="spark-dot" cx="600" cy="10" r="4"/>
+            </svg>
           </div>
           <div class="note-card-body">
             <div class="nc-row">
