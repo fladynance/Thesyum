@@ -374,22 +374,22 @@ section { border-top: 1px solid var(--border); }
 #ticker-wrap {
   position: relative;
   display: flex;
-  align-items: center;
-  background: var(--void);
+  align-items: stretch;
+  background: var(--bg);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  overflow: hidden;
 }
 .ticker-live {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
   flex-shrink: 0;
-  padding: 0 18px;
-  height: 100%;
+  padding: 15px 20px;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: .14em;
+  letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--gold);
   background: var(--void);
@@ -400,27 +400,53 @@ section { border-top: 1px solid var(--border); }
   width: 7px; height: 7px;
   border-radius: 50%;
   background: var(--gold);
-  box-shadow: 0 0 0 0 var(--gold);
   animation: tickerPulse 1.8s infinite;
 }
 @keyframes tickerPulse {
-  0%   { box-shadow: 0 0 0 0 rgba(92,245,160,.55); }
-  70%  { box-shadow: 0 0 0 7px rgba(92,245,160,0); }
+  0%   { box-shadow: 0 0 0 0 rgba(92,245,160,.6); }
+  70%  { box-shadow: 0 0 0 8px rgba(92,245,160,0); }
   100% { box-shadow: 0 0 0 0 rgba(92,245,160,0); }
 }
 .ticker-flow {
   position: relative;
   flex: 1;
   min-width: 0;
-  line-height: 0;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
-          mask-image: linear-gradient(90deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+  overflow: hidden;
 }
-#ticker-wrap .tradingview-widget-container,
-#ticker-wrap .tradingview-widget-container__widget { width: 100%; }
+.ticker-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  animation: tickerScroll 48s linear infinite;
+}
+#ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.tk-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 9px;
+  padding: 15px 26px;
+  font-family: var(--mono);
+  font-size: 13px;
+  border-right: 1px solid var(--border);
+}
+.tk-name { color: var(--t2); font-weight: 500; letter-spacing: .02em; }
+.tk-val  { color: var(--t1); font-weight: 700; font-variant-numeric: tabular-nums; }
+.tk-chg  { font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.tk-chg.up   { color: var(--ok); }
+.tk-chg.down { color: var(--bad); }
+.tk-chg::before { margin-right: 2px; }
+.tk-chg.up::before   { content: "▲"; font-size: 8px; }
+.tk-chg.down::before { content: "▼"; font-size: 8px; }
 @media (max-width: 480px) {
-  .ticker-live { padding: 0 12px; font-size: 9px; letter-spacing: .1em; }
+  .ticker-live { padding: 12px 14px; font-size: 10px; letter-spacing: .1em; }
   .ticker-live .lbl { display: none; }
+  .tk-item { padding: 12px 18px; font-size: 12px; }
+  .ticker-track { animation-duration: 32s; }
 }
 
 /* ── STATS ──────────────────────────────────────────────── */
@@ -1335,30 +1361,9 @@ footer {
 
 <!-- TICKER -->
 <div id="ticker-wrap">
-  <div class="ticker-live"><span class="pulse"></span><span class="lbl">Mercati Live</span></div>
+  <div class="ticker-live"><span class="pulse"></span><span class="lbl">Mercati</span></div>
   <div class="ticker-flow">
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-      {
-        "symbols": [
-          {"proName":"FOREXCOM:SPXUSD","title":"S&P 500"},
-          {"proName":"FOREXCOM:NSXUSD","title":"NASDAQ 100"},
-          {"proName":"FX_IDC:EURUSD","title":"EUR/USD"},
-          {"proName":"BITSTAMP:BTCUSD","title":"Bitcoin"},
-          {"description":"Gold","proName":"TVC:GOLD"},
-          {"description":"WTI Oil","proName":"TVC:USOIL"},
-          {"description":"US 10Y","proName":"TVC:US10Y"},
-          {"description":"VIX","proName":"CBOE:VIX"}
-        ],
-        "showSymbolLogo": false,
-        "isTransparent": true,
-        "displayMode": "adaptive",
-        "colorTheme": "dark",
-        "locale": "it"
-      }
-      </script>
-    </div>
+    <div class="ticker-track" id="ticker-track"></div>
   </div>
 </div>
 
@@ -2023,6 +2028,31 @@ function toggleFaq(btn) {
   if (!el) return;
   var d = new Date();
   el.textContent = d.toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' });
+})();
+
+(function() {
+  var track = document.getElementById('ticker-track');
+  if (!track) return;
+  var items = [
+    ['S&P 500',    '5.632,10',  '+0,42%', 'up'],
+    ['Nasdaq 100', '20.145,80', '+0,68%', 'up'],
+    ['FTSE MIB',   '34.210',    '-0,21%', 'down'],
+    ['DAX',        '18.720',    '+0,29%', 'up'],
+    ['EUR/USD',    '1,0842',    '+0,15%', 'up'],
+    ['Bitcoin',    '68.420',    '+2,10%', 'up'],
+    ['Oro',        '2.512,30',  '+0,34%', 'up'],
+    ['WTI',        '74,15',     '-1,05%', 'down'],
+    ['US 10Y',     '4,182%',    '+0,03',  'up'],
+    ['VIX',        '15,24',     '-3,40%', 'down']
+  ];
+  function build() {
+    return items.map(function(i) {
+      return '<span class="tk-item"><span class="tk-name">' + i[0] + '</span>' +
+             '<span class="tk-val">' + i[1] + '</span>' +
+             '<span class="tk-chg ' + i[3] + '">' + i[2] + '</span></span>';
+    }).join('');
+  }
+  track.innerHTML = build() + build();
 })();
 
 (function() {
