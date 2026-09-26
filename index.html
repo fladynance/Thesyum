@@ -425,7 +425,18 @@ section { border-top: 1px solid var(--border); }
 .nc-symbol .nc-tag { color: var(--t3); font-weight: 500; margin-left: 6px; }
 .nc-price { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--ok); }
 .nc-price::before { content: "▲ "; font-size: 8px; }
-.nc-chart svg { display: block; width: 100%; height: 76px; overflow: visible; }
+.nc-chart svg { display: block; width: 100%; height: 72px; }
+.nc-caption {
+  display: flex; align-items: center; gap: 7px;
+  margin-top: 8px;
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: .03em; color: var(--t3);
+}
+.nc-cap-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold); box-shadow: 0 0 6px var(--gold);
+  flex-shrink: 0;
+}
 .spark-area { fill: rgba(92,245,160,.10); }
 .spark-line {
   fill: none; stroke: var(--gold); stroke-width: 2;
@@ -559,57 +570,6 @@ section { border-top: 1px solid var(--border); }
   line-height: 1.4;
 }
 
-/* ── HEATMAP ────────────────────────────────────────────── */
-#heatmap { background: var(--void); padding: 96px 0; }
-.heat-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 6px;
-}
-.heat-tile {
-  position: relative;
-  min-height: 78px;
-  padding: 12px 13px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--s1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
-  transition: transform .18s ease, border-color .18s ease;
-}
-.heat-tile::after {
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,.06) 50%, transparent 60%);
-  transform: translateX(-120%);
-}
-.heat-tile:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.18); }
-.heat-tile:hover::after { transform: translateX(120%); transition: transform .7s ease; }
-.ht-sym { font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--t2); letter-spacing: .03em; }
-.ht-bottom { display: flex; align-items: baseline; justify-content: space-between; gap: 6px; }
-.ht-val { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--t1); font-variant-numeric: tabular-nums; }
-.ht-d { font-family: var(--mono); font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.heat-tile.up1 { background: rgba(48,209,88,.07); }
-.heat-tile.up2 { background: rgba(48,209,88,.16); border-color: rgba(48,209,88,.25); }
-.heat-tile.dn1 { background: rgba(255,69,58,.07); }
-.heat-tile.dn2 { background: rgba(255,69,58,.15); border-color: rgba(255,69,58,.25); }
-.up1 .ht-d, .up2 .ht-d { color: var(--ok); }
-.dn1 .ht-d, .dn2 .ht-d { color: var(--bad); }
-.flat .ht-d { color: var(--t3); }
-.heat-note {
-  margin-top: 18px;
-  text-align: center;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: .06em;
-  color: var(--t3);
-}
-@media (max-width: 860px) { .heat-grid { grid-template-columns: repeat(4, 1fr); } }
-@media (max-width: 560px) { .heat-grid { grid-template-columns: repeat(2, 1fr); gap: 5px; } .heat-tile { min-height: 68px; } }
-
 /* ── SECTION COMMON ─────────────────────────────────────── */
 .section-header {
   max-width: 640px;
@@ -740,134 +700,48 @@ section { border-top: 1px solid var(--border); }
   background: var(--void);
   padding: 96px 0;
 }
-.chain-grid {
+.chain-flow {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
-.chain-steps { display: flex; flex-direction: column; }
-.chain-step {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 0 16px;
-  padding-bottom: 32px;
+.chain-node {
+  position: relative;
+  padding: 26px 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: linear-gradient(180deg, var(--s2), var(--s1));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+  transition: transform .25s ease, border-color .25s ease;
 }
-.chain-step:last-child { padding-bottom: 0; }
-.chain-line-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.chain-node:hover { transform: translateY(-4px); border-color: rgba(92,245,160,.4); }
+.chain-node:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -14px; top: 42px;
+  transform: translateX(50%);
+  color: var(--t3);
+  font-size: 16px;
+  z-index: 1;
 }
 .chain-num {
   position: relative;
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  background: var(--s1);
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  background: rgba(92,245,160,.08);
   border: 1px solid rgba(92,245,160,.35);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--gold);
-  flex-shrink: 0;
-  box-shadow: 0 0 0 4px rgba(92,245,160,.05), 0 0 16px rgba(92,245,160,.12);
+  margin-bottom: 18px;
+  box-shadow: 0 0 16px rgba(92,245,160,.12);
 }
-.chain-connector {
-  width: 2px;
-  flex: 1;
-  background: linear-gradient(180deg, rgba(92,245,160,.5), rgba(92,245,160,.08));
-  margin-top: 8px;
-  min-height: 24px;
-}
-.chain-step:last-child .chain-connector { display: none; }
-.chain-content { padding-top: 8px; }
-.chain-title { font-weight: 600; font-size: 15px; color: var(--t1); margin-bottom: 6px; }
+.chain-title { font-weight: 600; font-size: 15px; color: var(--t1); margin-bottom: 8px; }
 .chain-text { font-size: 14px; color: var(--t2); line-height: 1.6; }
-/* propagation panel */
-.chain-visual {
-  position: relative;
-  background: linear-gradient(180deg, var(--s2), var(--s1));
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  padding: 22px 24px 24px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 24px 60px rgba(0,0,0,.4);
-}
-.cv-head {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 12px;
-  padding-bottom: 16px; margin-bottom: 8px;
-  border-bottom: 1px solid var(--border);
-}
-.cv-trigger {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--mono); font-size: 12px; font-weight: 700;
-  color: var(--t1); letter-spacing: .02em;
-}
-.cv-spark {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--gold); box-shadow: 0 0 10px var(--gold);
-  animation: tickerPulse 1.8s infinite;
-}
-.cv-date { font-family: var(--mono); font-size: 11px; color: var(--t3); white-space: nowrap; }
-.cv-scale {
-  display: flex; justify-content: space-between;
-  font-family: var(--mono); font-size: 9px; letter-spacing: .1em;
-  color: var(--t3); text-transform: uppercase;
-  padding: 6px 0 10px;
-}
-.cv-row {
-  display: grid;
-  grid-template-columns: 116px 1fr 58px;
-  align-items: center;
-  gap: 14px;
-  padding: 9px 0;
-}
-.cv-asset { display: flex; flex-direction: column; gap: 3px; }
-.cv-name { font-size: 13px; font-weight: 600; color: var(--t1); }
-.cv-tagm {
-  font-family: var(--mono); font-size: 9px; font-weight: 700;
-  letter-spacing: .05em; text-transform: uppercase;
-}
-.cv-tagm.ok  { color: var(--ok); }
-.cv-tagm.mid { color: var(--mid); }
-.cv-tagm.bad { color: var(--bad); }
-.cv-bar {
-  position: relative; height: 10px;
-  background: rgba(255,255,255,.03);
-  border-radius: 5px;
-}
-.cv-bar::before {
-  content: ""; position: absolute; left: 50%; top: -3px; bottom: -3px;
-  width: 1px; background: rgba(255,255,255,.12);
-}
-.cv-fill {
-  position: absolute; top: 0; bottom: 0;
-  width: var(--w, 0%);
-  border-radius: 5px;
-  transform: scaleX(0);
-  animation: cvGrow .75s cubic-bezier(.5,0,.2,1) both;
-}
-.cv-fill.pos { left: 50%; transform-origin: left; background: var(--ok); box-shadow: 0 0 10px rgba(48,209,88,.5); }
-.cv-fill.neg { right: 50%; transform-origin: right; background: var(--bad); box-shadow: 0 0 10px rgba(255,69,58,.5); }
-.cv-fill.flat { left: 50%; transform-origin: left; background: var(--t3); }
-.cv-row:nth-child(2) .cv-fill { animation-delay: .05s; }
-.cv-row:nth-child(3) .cv-fill { animation-delay: .15s; }
-.cv-row:nth-child(4) .cv-fill { animation-delay: .25s; }
-.cv-row:nth-child(5) .cv-fill { animation-delay: .35s; }
-.cv-row:nth-child(6) .cv-fill { animation-delay: .45s; }
-.cv-row:nth-child(7) .cv-fill { animation-delay: .55s; }
-@keyframes cvGrow { to { transform: scaleX(1); } }
-.cv-val {
-  font-family: var(--mono); font-size: 12px; font-weight: 700;
-  text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap;
-}
-.cv-val.pos { color: var(--ok); }
-.cv-val.neg { color: var(--bad); }
-.cv-val.flat { color: var(--t3); }
-@media (prefers-reduced-motion: reduce) { .cv-fill { animation: none; transform: scaleX(1); } }
 
 /* ── PER CHI ────────────────────────────────────────────── */
 #per-chi {
@@ -1385,7 +1259,8 @@ footer {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .funnel-track { grid-template-columns: 1fr; }
   .funnel-arrow { transform: rotate(90deg); text-align: center; padding: 8px 0; }
-  .chain-grid { grid-template-columns: 1fr; gap: 48px; }
+  .chain-flow { grid-template-columns: 1fr 1fr; }
+  .chain-node:not(:last-child)::after { display: none; }
   .perchi-grid { grid-template-columns: 1fr; }
   .ricevi-grid { grid-template-columns: 1fr; }
   .testi-grid { grid-template-columns: 1fr; }
@@ -1426,17 +1301,16 @@ footer {
   }
   .priced-table td { padding: 0; border: none; }
   .priced-action { text-align: left; }
-  /* confronto table → abbreviate columns */
-  .confronto-table th:nth-child(3),
-  .confronto-table td:nth-child(3) { display: none; }
+  /* confronto table → drop the generic-newsletter column, keep Thesyum vs Terminal Pro */
+  .confronto-table th:nth-child(4),
+  .confronto-table td:nth-child(4) { display: none; }
   .confronto-table th,
-  .confronto-table td { padding: 10px 12px; font-size: 13px; }
+  .confronto-table td { padding: 10px 11px; font-size: 12px; }
   .confronto-table th:first-child { width: auto; }
 
   .funnel-arrow { font-size: 18px; padding: 4px 0; }
   .funnel-n { font-size: 40px; }
-  .cv-row { grid-template-columns: 96px 1fr 52px; gap: 10px; }
-  .cv-name { font-size: 12px; }
+  .chain-flow { grid-template-columns: 1fr; }
   .note-card-body { padding: 14px; }
   .nc-text { font-size: 12px; }
   .section-h2 { font-size: 26px; }
@@ -1503,14 +1377,14 @@ footer {
           </div>
           <div class="nc-chart">
             <div class="nc-chart-top">
-              <span class="nc-symbol">S&amp;P 500 <span class="nc-tag">· sessione</span></span>
+              <span class="nc-symbol">S&amp;P 500 <span class="nc-tag">· andamento di oggi</span></span>
               <span class="nc-price">+0,42%</span>
             </div>
             <svg viewBox="0 0 600 76" preserveAspectRatio="none" aria-hidden="true">
               <path class="spark-area" d="M0,58 L46,52 L92,60 L138,44 L184,50 L230,36 L276,42 L322,28 L368,34 L414,22 L460,28 L506,16 L552,20 L600,10 L600,76 L0,76 Z"/>
               <path class="spark-line" pathLength="1000" d="M0,58 L46,52 L92,60 L138,44 L184,50 L230,36 L276,42 L322,28 L368,34 L414,22 L460,28 L506,16 L552,20 L600,10"/>
-              <circle class="spark-dot" cx="600" cy="10" r="4"/>
             </svg>
+            <div class="nc-caption"><span class="nc-cap-dot"></span>Contesto di mercato · i 3 segnali operativi qui sotto ↓</div>
           </div>
           <div class="note-card-body">
             <div class="nc-row">
@@ -1570,19 +1444,6 @@ footer {
         <div class="stat-label">Rinnova dopo il primo mese</div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- HEATMAP -->
-<section id="heatmap">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Copertura</span>
-      <h2 class="section-h2">Ogni asset class,<br>sotto controllo.</h2>
-      <p class="section-lead">Azioni, tassi, valute, commodity e crypto — monitorati di continuo e classificati per rilevanza operativa. Un colpo d'occhio, prima dell'apertura.</p>
-    </div>
-    <div class="heat-grid" id="heat-grid"></div>
-    <div class="heat-note">— snapshot illustrativo · aggiornato in tempo reale nella piattaforma —</div>
   </div>
 </section>
 
@@ -1671,89 +1532,31 @@ footer {
 <!-- CHAIN OF EFFECTS -->
 <section id="chain">
   <div class="container">
-    <div class="chain-grid">
-      <div>
-        <span class="eyebrow">Chain of Effects</span>
-        <h2 class="section-h2" style="text-align:left;margin-bottom:16px">Capisci le cascate,<br>non solo il titolo.</h2>
-        <p class="section-lead" style="text-align:left;margin-bottom:40px;max-width:none">Ogni segnale include la catena di effetti: come un evento macro si propaga attraverso le asset class, i settori e i singoli strumenti.</p>
-        <div class="chain-steps">
-          <div class="chain-step">
-            <div class="chain-line-col">
-              <div class="chain-num">1</div>
-              <div class="chain-connector"></div>
-            </div>
-            <div class="chain-content">
-              <div class="chain-title">Evento macro identificato</div>
-              <div class="chain-text">Il dato o l'evento viene contestualizzato rispetto alle aspettative del mercato, non in assoluto.</div>
-            </div>
-          </div>
-          <div class="chain-step">
-            <div class="chain-line-col">
-              <div class="chain-num">2</div>
-              <div class="chain-connector"></div>
-            </div>
-            <div class="chain-content">
-              <div class="chain-title">Classificazione Priced In</div>
-              <div class="chain-text">Si determina quanto il mercato ha già incorporato l'informazione nei prezzi correnti.</div>
-            </div>
-          </div>
-          <div class="chain-step">
-            <div class="chain-line-col">
-              <div class="chain-num">3</div>
-              <div class="chain-connector"></div>
-            </div>
-            <div class="chain-content">
-              <div class="chain-title">Propagazione per asset class</div>
-              <div class="chain-text">Si mappa l'impatto su equity, obbligazioni, valute e commodity con direzione e intensità.</div>
-            </div>
-          </div>
-          <div class="chain-step">
-            <div class="chain-line-col">
-              <div class="chain-num">4</div>
-            </div>
-            <div class="chain-content">
-              <div class="chain-title">Segnale azionabile</div>
-              <div class="chain-text">Output finale: un'azione specifica con finestra temporale e livello di priorità.</div>
-            </div>
-          </div>
-        </div>
+    <div class="section-header">
+      <span class="eyebrow">Chain of Effects</span>
+      <h2 class="section-h2">Capisci le cascate,<br>non solo il titolo.</h2>
+      <p class="section-lead">Ogni segnale include la catena di effetti: come un evento macro si propaga attraverso le asset class, i settori e i singoli strumenti — con direzione e intensità.</p>
+    </div>
+    <div class="chain-flow">
+      <div class="chain-node">
+        <div class="chain-num">1</div>
+        <div class="chain-title">Evento macro identificato</div>
+        <div class="chain-text">Il dato o l'evento viene contestualizzato rispetto alle aspettative del mercato, non in assoluto.</div>
       </div>
-      <div class="chain-visual">
-        <div class="cv-head">
-          <span class="cv-trigger"><span class="cv-spark"></span>Trigger: Pivot Fed anticipato</span>
-          <span class="cv-date">12 Nov · 14:00</span>
-        </div>
-        <div class="cv-scale"><span>◄ ribasso</span><span>impatto atteso 24–72h</span><span>rialzo ►</span></div>
-        <div class="cv-row">
-          <div class="cv-asset"><span class="cv-name">S&amp;P 500</span><span class="cv-tagm ok">Non prezzata</span></div>
-          <div class="cv-bar"><div class="cv-fill pos" style="--w:38%"></div></div>
-          <div class="cv-val pos">+1,0%</div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-asset"><span class="cv-name">Small Cap · IWM</span><span class="cv-tagm ok">Non prezzata</span></div>
-          <div class="cv-bar"><div class="cv-fill pos" style="--w:46%"></div></div>
-          <div class="cv-val pos">+1,5%</div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-asset"><span class="cv-name">US 10Y</span><span class="cv-tagm mid">Parz. prezzata</span></div>
-          <div class="cv-bar"><div class="cv-fill pos" style="--w:30%"></div></div>
-          <div class="cv-val pos">−15bp</div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-asset"><span class="cv-name">EUR/USD</span><span class="cv-tagm ok">Non prezzata</span></div>
-          <div class="cv-bar"><div class="cv-fill pos" style="--w:24%"></div></div>
-          <div class="cv-val pos">+0,6%</div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-asset"><span class="cv-name">Gold · XAU</span><span class="cv-tagm bad">Già prezzata</span></div>
-          <div class="cv-bar"><div class="cv-fill neg" style="--w:10%"></div></div>
-          <div class="cv-val neg">−0,3%</div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-asset"><span class="cv-name">WTI Crude</span><span class="cv-tagm bad">Già prezzata</span></div>
-          <div class="cv-bar"><div class="cv-fill flat" style="--w:3%"></div></div>
-          <div class="cv-val flat">Neutro</div>
-        </div>
+      <div class="chain-node">
+        <div class="chain-num">2</div>
+        <div class="chain-title">Classificazione Priced In</div>
+        <div class="chain-text">Si determina quanto il mercato ha già incorporato l'informazione nei prezzi correnti.</div>
+      </div>
+      <div class="chain-node">
+        <div class="chain-num">3</div>
+        <div class="chain-title">Propagazione per asset class</div>
+        <div class="chain-text">Si mappa l'impatto su equity, obbligazioni, valute e commodity con direzione e intensità.</div>
+      </div>
+      <div class="chain-node">
+        <div class="chain-num">4</div>
+        <div class="chain-title">Segnale azionabile</div>
+        <div class="chain-text">Output finale: un'azione specifica con finestra temporale e livello di priorità.</div>
       </div>
     </div>
   </div>
@@ -2252,28 +2055,6 @@ function toggleFaq(btn) {
     }).join('');
   }
   track.innerHTML = build() + build();
-})();
-
-(function() {
-  var grid = document.getElementById('heat-grid');
-  if (!grid) return;
-  var assets = [
-    ['S&P 500','5.632','+0,42','up1'], ['Nasdaq','20.146','+0,68','up1'], ['Dow Jones','42.310','+0,21','up1'],
-    ['FTSE MIB','34.210','-0,21','dn1'], ['DAX','18.720','+0,29','up1'], ['Euro Stoxx','4.985','+0,18','up1'],
-    ['Nikkei','39.480','+1,10','up2'], ['US 10Y','4,18%','+0,03','up1'], ['Bund 10Y','2,24%','-0,01','flat'],
-    ['BTP 10Y','3,58%','+0,05','up1'], ['EUR/USD','1,0842','+0,15','up1'], ['USD/JPY','149,3','+0,34','up1'],
-    ['GBP/USD','1,2688','-0,08','dn1'], ['Oro','2.512','+0,34','up1'], ['Argento','29,4','+0,90','up1'],
-    ['WTI','74,15','-1,05','dn2'], ['Brent','78,20','-0,88','dn1'], ['Rame','4,21','+0,42','up1'],
-    ['Nat Gas','2,18','-2,10','dn2'], ['Bitcoin','68.420','+2,10','up2'], ['Ethereum','2.540','+1,70','up2'],
-    ['Solana','168,4','+3,40','up2'], ['VIX','15,24','-3,40','dn2'], ['DXY','101,8','+0,12','up1']
-  ];
-  grid.innerHTML = assets.map(function(a) {
-    return '<div class="heat-tile ' + a[3] + '">' +
-             '<div class="ht-sym">' + a[0] + '</div>' +
-             '<div class="ht-bottom"><span class="ht-val">' + a[1] + '</span>' +
-             '<span class="ht-d">' + a[2] + '%</span></div>' +
-           '</div>';
-  }).join('');
 })();
 
 (function() {
