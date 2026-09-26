@@ -84,7 +84,12 @@ section { border-top: 1px solid var(--border); }
   font-weight: 600;
   letter-spacing: -.01em;
   color: var(--t1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
 }
+.nav-logo svg { flex-shrink: 0; }
 .nav-logo span { color: var(--gold); }
 .nav-links {
   display: flex;
@@ -1103,7 +1108,7 @@ footer {
 <nav id="nav">
   <div class="container">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">The<span>syum</span></a>
+      <a href="#" class="nav-logo"><svg viewBox="0 0 26 26" fill="none" width="26" height="26"><rect x="1" y="1" width="24" height="24" stroke="#EAF3EE" stroke-opacity=".3"/><line x1="1" y1="9" x2="25" y2="9" stroke="#EAF3EE" stroke-opacity=".22"/><line x1="1" y1="17" x2="25" y2="17" stroke="#EAF3EE" stroke-opacity=".22"/><circle cx="7" cy="5" r="2" fill="#5CF5A0"/><circle cx="7" cy="13" r="2" fill="#FF9F0A"/><circle cx="7" cy="21" r="2" fill="#5CF5A0"/></svg>The<span>syum</span></a>
       <ul class="nav-links">
         <li><a href="#come-funziona">Come funziona</a></li>
         <li><a href="#priced-in">Priced In</a></li>
@@ -1800,7 +1805,7 @@ footer {
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="nav-logo">The<span>syum</span></span>
+        <span class="nav-logo"><svg viewBox="0 0 26 26" fill="none" width="26" height="26"><rect x="1" y="1" width="24" height="24" stroke="#EAF3EE" stroke-opacity=".3"/><line x1="1" y1="9" x2="25" y2="9" stroke="#EAF3EE" stroke-opacity=".22"/><line x1="1" y1="17" x2="25" y2="17" stroke="#EAF3EE" stroke-opacity=".22"/><circle cx="7" cy="5" r="2" fill="#5CF5A0"/><circle cx="7" cy="13" r="2" fill="#FF9F0A"/><circle cx="7" cy="21" r="2" fill="#5CF5A0"/></svg>The<span>syum</span></span>
         <p class="footer-tagline">Intelligence finanziaria quotidiana per consulenti e trader che gestiscono capitale reale.</p>
       </div>
       <div class="footer-col">
