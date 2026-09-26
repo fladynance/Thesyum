@@ -18,8 +18,8 @@
   --t1:     #E4E9F2;
   --t2:     #8A95AB;
   --t3:     #4A5266;
-  --gold:   #C8913C;
-  --gold-l: #E0AC5A;
+  --gold:   #5CF5A0;
+  --gold-l: #7FFCB8;
   --ok:     #30D158;
   --mid:    #FF9F0A;
   --bad:    #FF453A;
@@ -389,12 +389,14 @@ section { border-top: 1px solid var(--border); }
   background: var(--bg);
   padding: 96px 0;
 }
+.priced-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
 .priced-table {
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
 }
 .priced-table thead th {
   background: var(--s2);
@@ -605,8 +607,8 @@ section { border-top: 1px solid var(--border); }
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--gold);
-  background: rgba(200,145,60,.1);
-  border: 1px solid rgba(200,145,60,.2);
+  background: rgba(92,245,160,.1);
+  border: 1px solid rgba(92,245,160,.2);
   padding: 4px 10px;
   border-radius: 4px;
   margin-bottom: 20px;
@@ -1076,7 +1078,22 @@ footer {
   .cta-actions .btn-ghost { text-align: center; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .priced-table { font-size: 13px; }
-  .priced-table td, .priced-table th { padding: 12px 12px; }
+  .priced-table td, .priced-table th { padding: 12px 10px; }
+  .hide-mobile { display: none; }
+  .funnel-arrow { font-size: 18px; padding: 4px 0; }
+  .funnel-n { font-size: 40px; }
+  .chain-row { flex-wrap: wrap; gap: 6px; }
+  .cr-delta { min-width: auto; }
+  .note-card-body { padding: 14px; }
+  .nc-text { font-size: 12px; }
+  .section-h2 { font-size: 26px; }
+  .perchi-card, .ricevi-card, .form-wrap { padding: 24px 20px; }
+  .testi-card { padding: 20px; }
+  .prezzi-grid { max-width: none; }
+  .plan-amount { font-size: 40px; }
+  .chain-visual { padding: 20px 16px; }
+  .cr-name { font-size: 13px; }
+  .cr-status { font-size: 10px; padding: 3px 7px; }
 }
 </style>
 </head>
@@ -1246,12 +1263,13 @@ footer {
       <h2 class="section-h2">Non tutte le notizie<br>sono opportunità.</h2>
       <p class="section-lead">Thesyum classifica ogni evento in tre categorie. Sai sempre se stai agendo su un'opportunità reale o inseguendo qualcosa già incorporato nei prezzi.</p>
     </div>
+    <div class="priced-scroll">
     <table class="priced-table">
       <thead>
         <tr>
           <th>Classificazione</th>
           <th>Significato</th>
-          <th>Esempio</th>
+          <th class="hide-mobile">Esempio</th>
           <th>Azione tipica</th>
         </tr>
       </thead>
@@ -1262,7 +1280,7 @@ footer {
             <div class="priced-name">Opportunità aperta</div>
             <div class="priced-desc">Il mercato non ha ancora incorporato questa informazione</div>
           </td>
-          <td style="font-size:13px;color:var(--t2)">Pivot Fed prima del previsto, non ancora nei futures</td>
+          <td class="hide-mobile" style="font-size:13px;color:var(--t2)">Pivot Fed prima del previsto, non ancora nei futures</td>
           <td class="priced-action">Analizza e agisci entro 48h</td>
         </tr>
         <tr>
@@ -1271,7 +1289,7 @@ footer {
             <div class="priced-name">Opportunità ridotta</div>
             <div class="priced-desc">Il mercato ha assorbito parte dell'impatto, edge limitato</div>
           </td>
-          <td style="font-size:13px;color:var(--t2)">Inflazione PCE sopra consenso per il 3° mese</td>
+          <td class="hide-mobile" style="font-size:13px;color:var(--t2)">Inflazione PCE sopra consenso per il 3° mese</td>
           <td class="priced-action">Valuta il rischio residuo</td>
         </tr>
         <tr>
@@ -1280,11 +1298,12 @@ footer {
             <div class="priced-name">Nessun edge</div>
             <div class="priced-desc">L'informazione è completamente incorporata — agire ora significa inseguire</div>
           </td>
-          <td style="font-size:13px;color:var(--t2)">Tensioni geopolitiche già nel prezzo del petrolio</td>
+          <td class="hide-mobile" style="font-size:13px;color:var(--t2)">Tensioni geopolitiche già nel prezzo del petrolio</td>
           <td class="priced-action">Evita. Attendi il prossimo ciclo</td>
         </tr>
       </tbody>
     </table>
+    </div>
   </div>
 </section>
 
