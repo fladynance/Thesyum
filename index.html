@@ -760,10 +760,11 @@ section { border-top: 1px solid var(--border); }
   align-items: center;
 }
 .chain-num {
+  position: relative;
   width: 40px; height: 40px;
   border-radius: 50%;
   background: var(--s1);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(92,245,160,.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -772,11 +773,12 @@ section { border-top: 1px solid var(--border); }
   font-weight: 700;
   color: var(--gold);
   flex-shrink: 0;
+  box-shadow: 0 0 0 4px rgba(92,245,160,.05), 0 0 16px rgba(92,245,160,.12);
 }
 .chain-connector {
-  width: 1px;
+  width: 2px;
   flex: 1;
-  background: var(--border);
+  background: linear-gradient(180deg, rgba(92,245,160,.5), rgba(92,245,160,.08));
   margin-top: 8px;
   min-height: 24px;
 }
@@ -784,54 +786,88 @@ section { border-top: 1px solid var(--border); }
 .chain-content { padding-top: 8px; }
 .chain-title { font-weight: 600; font-size: 15px; color: var(--t1); margin-bottom: 6px; }
 .chain-text { font-size: 14px; color: var(--t2); line-height: 1.6; }
+/* propagation panel */
 .chain-visual {
-  background: var(--s1);
+  position: relative;
+  background: linear-gradient(180deg, var(--s2), var(--s1));
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px;
+  border-radius: var(--r-md);
+  padding: 22px 24px 24px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 24px 60px rgba(0,0,0,.4);
 }
-.chain-vis-title {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-}
-.chain-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
+.cv-head {
+  display: flex; align-items: center; justify-content: space-between;
   gap: 12px;
+  padding-bottom: 16px; margin-bottom: 8px;
+  border-bottom: 1px solid var(--border);
 }
-.chain-row:last-child { border-bottom: none; }
-.cr-name { font-size: 14px; color: var(--t1); font-weight: 500; flex: 1; }
-.cr-status {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  padding: 4px 9px;
-  border-radius: 4px;
-  white-space: nowrap;
+.cv-trigger {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 12px; font-weight: 700;
+  color: var(--t1); letter-spacing: .02em;
 }
-.cr-status.ok  { background: rgba(48,209,88,.12);  color: var(--ok); }
-.cr-status.mid { background: rgba(255,159,10,.12); color: var(--mid); }
-.cr-status.bad { background: rgba(255,69,58,.12);  color: var(--bad); }
-.cr-delta {
-  font-family: var(--mono);
-  font-size: 13px;
-  font-weight: 500;
-  min-width: 64px;
-  text-align: right;
-  font-variant-numeric: tabular-nums;
+.cv-spark {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gold); box-shadow: 0 0 10px var(--gold);
+  animation: tickerPulse 1.8s infinite;
 }
-.cr-delta.pos { color: var(--ok); }
-.cr-delta.neg { color: var(--bad); }
+.cv-date { font-family: var(--mono); font-size: 11px; color: var(--t3); white-space: nowrap; }
+.cv-scale {
+  display: flex; justify-content: space-between;
+  font-family: var(--mono); font-size: 9px; letter-spacing: .1em;
+  color: var(--t3); text-transform: uppercase;
+  padding: 6px 0 10px;
+}
+.cv-row {
+  display: grid;
+  grid-template-columns: 116px 1fr 58px;
+  align-items: center;
+  gap: 14px;
+  padding: 9px 0;
+}
+.cv-asset { display: flex; flex-direction: column; gap: 3px; }
+.cv-name { font-size: 13px; font-weight: 600; color: var(--t1); }
+.cv-tagm {
+  font-family: var(--mono); font-size: 9px; font-weight: 700;
+  letter-spacing: .05em; text-transform: uppercase;
+}
+.cv-tagm.ok  { color: var(--ok); }
+.cv-tagm.mid { color: var(--mid); }
+.cv-tagm.bad { color: var(--bad); }
+.cv-bar {
+  position: relative; height: 10px;
+  background: rgba(255,255,255,.03);
+  border-radius: 5px;
+}
+.cv-bar::before {
+  content: ""; position: absolute; left: 50%; top: -3px; bottom: -3px;
+  width: 1px; background: rgba(255,255,255,.12);
+}
+.cv-fill {
+  position: absolute; top: 0; bottom: 0;
+  width: var(--w, 0%);
+  border-radius: 5px;
+  transform: scaleX(0);
+  animation: cvGrow .75s cubic-bezier(.5,0,.2,1) both;
+}
+.cv-fill.pos { left: 50%; transform-origin: left; background: var(--ok); box-shadow: 0 0 10px rgba(48,209,88,.5); }
+.cv-fill.neg { right: 50%; transform-origin: right; background: var(--bad); box-shadow: 0 0 10px rgba(255,69,58,.5); }
+.cv-fill.flat { left: 50%; transform-origin: left; background: var(--t3); }
+.cv-row:nth-child(2) .cv-fill { animation-delay: .05s; }
+.cv-row:nth-child(3) .cv-fill { animation-delay: .15s; }
+.cv-row:nth-child(4) .cv-fill { animation-delay: .25s; }
+.cv-row:nth-child(5) .cv-fill { animation-delay: .35s; }
+.cv-row:nth-child(6) .cv-fill { animation-delay: .45s; }
+.cv-row:nth-child(7) .cv-fill { animation-delay: .55s; }
+@keyframes cvGrow { to { transform: scaleX(1); } }
+.cv-val {
+  font-family: var(--mono); font-size: 12px; font-weight: 700;
+  text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.cv-val.pos { color: var(--ok); }
+.cv-val.neg { color: var(--bad); }
+.cv-val.flat { color: var(--t3); }
+@media (prefers-reduced-motion: reduce) { .cv-fill { animation: none; transform: scaleX(1); } }
 
 /* ── PER CHI ────────────────────────────────────────────── */
 #per-chi {
@@ -1399,8 +1435,8 @@ footer {
 
   .funnel-arrow { font-size: 18px; padding: 4px 0; }
   .funnel-n { font-size: 40px; }
-  .chain-row { flex-wrap: wrap; gap: 6px; }
-  .cr-delta { min-width: auto; }
+  .cv-row { grid-template-columns: 96px 1fr 52px; gap: 10px; }
+  .cv-name { font-size: 12px; }
   .note-card-body { padding: 14px; }
   .nc-text { font-size: 12px; }
   .section-h2 { font-size: 26px; }
@@ -1408,9 +1444,7 @@ footer {
   .testi-card { padding: 20px; }
   .prezzi-grid { max-width: none; }
   .plan-amount { font-size: 40px; }
-  .chain-visual { padding: 20px 16px; }
-  .cr-name { font-size: 13px; }
-  .cr-status { font-size: 10px; padding: 3px 7px; }
+  .chain-visual { padding: 18px 16px; }
 }
 </style>
 </head>
@@ -1685,36 +1719,40 @@ footer {
         </div>
       </div>
       <div class="chain-visual">
-        <div class="chain-vis-title">Esempio: Pivot Fed — 12 Nov</div>
-        <div class="chain-row">
-          <div class="cr-name">US Equity (S&amp;P 500)</div>
-          <span class="cr-status ok">Non prezzata</span>
-          <div class="cr-delta pos">+0.8–1.2%</div>
+        <div class="cv-head">
+          <span class="cv-trigger"><span class="cv-spark"></span>Trigger: Pivot Fed anticipato</span>
+          <span class="cv-date">12 Nov · 14:00</span>
         </div>
-        <div class="chain-row">
-          <div class="cr-name">US Treasury 10Y</div>
-          <span class="cr-status mid">Parz.</span>
-          <div class="cr-delta pos">−12–18bp</div>
+        <div class="cv-scale"><span>◄ ribasso</span><span>impatto atteso 24–72h</span><span>rialzo ►</span></div>
+        <div class="cv-row">
+          <div class="cv-asset"><span class="cv-name">S&amp;P 500</span><span class="cv-tagm ok">Non prezzata</span></div>
+          <div class="cv-bar"><div class="cv-fill pos" style="--w:38%"></div></div>
+          <div class="cv-val pos">+1,0%</div>
         </div>
-        <div class="chain-row">
-          <div class="cr-name">EUR/USD</div>
-          <span class="cr-status ok">Non prezzata</span>
-          <div class="cr-delta pos">+0.4–0.7%</div>
+        <div class="cv-row">
+          <div class="cv-asset"><span class="cv-name">Small Cap · IWM</span><span class="cv-tagm ok">Non prezzata</span></div>
+          <div class="cv-bar"><div class="cv-fill pos" style="--w:46%"></div></div>
+          <div class="cv-val pos">+1,5%</div>
         </div>
-        <div class="chain-row">
-          <div class="cr-name">Gold (XAU/USD)</div>
-          <span class="cr-status bad">Già prezzata</span>
-          <div class="cr-delta neg">0 / −0.3%</div>
+        <div class="cv-row">
+          <div class="cv-asset"><span class="cv-name">US 10Y</span><span class="cv-tagm mid">Parz. prezzata</span></div>
+          <div class="cv-bar"><div class="cv-fill pos" style="--w:30%"></div></div>
+          <div class="cv-val pos">−15bp</div>
         </div>
-        <div class="chain-row">
-          <div class="cr-name">WTI Crude Oil</div>
-          <span class="cr-status bad">Già prezzata</span>
-          <div class="cr-delta neg">Neutro</div>
+        <div class="cv-row">
+          <div class="cv-asset"><span class="cv-name">EUR/USD</span><span class="cv-tagm ok">Non prezzata</span></div>
+          <div class="cv-bar"><div class="cv-fill pos" style="--w:24%"></div></div>
+          <div class="cv-val pos">+0,6%</div>
         </div>
-        <div class="chain-row">
-          <div class="cr-name">Small Cap (IWM)</div>
-          <span class="cr-status ok">Non prezzata</span>
-          <div class="cr-delta pos">+1.2–1.8%</div>
+        <div class="cv-row">
+          <div class="cv-asset"><span class="cv-name">Gold · XAU</span><span class="cv-tagm bad">Già prezzata</span></div>
+          <div class="cv-bar"><div class="cv-fill neg" style="--w:10%"></div></div>
+          <div class="cv-val neg">−0,3%</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-asset"><span class="cv-name">WTI Crude</span><span class="cv-tagm bad">Già prezzata</span></div>
+          <div class="cv-bar"><div class="cv-fill flat" style="--w:3%"></div></div>
+          <div class="cv-val flat">Neutro</div>
         </div>
       </div>
     </div>
