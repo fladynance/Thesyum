@@ -1,0 +1,244 @@
+/* ============================================================
+   THESYUM · COMMODITY INTELLIGENCE — report design system
+   Shared stylesheet for every macro_*.html daily report.
+   Matches the Terminale (area/index.html) phosphor aesthetic.
+   Edit this one file to restyle all reports at once.
+   ============================================================ */
+
+:root{
+  --void:#06100E; --bg:#08130F; --panel:#0C1A16; --panel-2:#0F221C;
+  --line:rgba(224,238,232,0.10); --line-hot:rgba(110,231,168,0.35);
+  --text:#E6F1EC; --dim:rgba(230,241,236,0.62); --faint:rgba(230,241,236,0.34);
+  --phosphor:#6EE7A8; --phosphor-dim:#3d8a63; --amber:#E3B24A; --rust:#C96A55;
+  --glow:0 0 0 1px rgba(110,231,168,0.15), 0 0 26px -6px rgba(110,231,168,0.28);
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --sans:'Space Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--void);color:var(--text);
+  font-family:var(--sans);font-size:15px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  max-width:840px;margin:0 auto;padding:0 26px 96px;position:relative;
+  overflow-x:hidden;
+}
+/* phosphor grid + top glow */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(110,231,168,0.022) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(110,231,168,0.022) 1px,transparent 1px);
+  background-size:46px 46px;
+  -webkit-mask-image:radial-gradient(ellipse 90% 55% at 50% 0%,#000 30%,transparent 82%);
+          mask-image:radial-gradient(ellipse 90% 55% at 50% 0%,#000 30%,transparent 82%);
+}
+body::after{
+  content:'';position:fixed;top:0;left:0;right:0;height:340px;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 70% 100% at 50% -10%,rgba(110,231,168,0.10),transparent 70%);
+}
+body>*{position:relative;z-index:1}
+::selection{background:var(--phosphor);color:var(--void)}
+a{color:var(--phosphor);text-decoration:none}
+b,strong{color:var(--text);font-weight:600}
+
+/* ---- MASTHEAD (brandbar) ---------------------------------- */
+.brandbar{
+  display:flex;align-items:center;gap:16px;
+  margin:0 -26px 32px;padding:22px 26px;
+  border-bottom:1px solid var(--line);
+}
+.brand-logo{display:flex;align-items:center;flex:none}
+.brand-logo img{display:none!important}         /* hide legacy raster logo */
+.brand-logo::before{                            /* real Thesyum registry mark */
+  content:'';width:34px;height:34px;flex:none;border-radius:8px;
+  background:#06100E url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20x='6'%20y='6'%20width='20'%20height='20'%20rx='2'%20stroke='%23E3EEE9'%20stroke-opacity='.4'%20stroke-width='1.4'/%3E%3Cline%20x1='6'%20y1='13.3'%20x2='26'%20y2='13.3'%20stroke='%23E3EEE9'%20stroke-opacity='.3'%20stroke-width='1.4'/%3E%3Cline%20x1='6'%20y1='18.7'%20x2='26'%20y2='18.7'%20stroke='%23E3EEE9'%20stroke-opacity='.3'%20stroke-width='1.4'/%3E%3Ccircle%20cx='11.2'%20cy='9.7'%20r='2.3'%20fill='%236EE7A8'/%3E%3Ccircle%20cx='11.2'%20cy='16'%20r='2.3'%20fill='%23E3B24A'/%3E%3Ccircle%20cx='11.2'%20cy='22.3'%20r='2.3'%20fill='%236EE7A8'/%3E%3C/svg%3E") center/22px no-repeat;
+  border:1px solid var(--line-hot);box-shadow:var(--glow);
+}
+.brandbar>div:not(.brand-logo){display:flex;flex-direction:column;justify-content:center;min-width:0}
+/* mono product tag pinned top-right */
+.brandbar::after{
+  content:'COMMODITY INTELLIGENCE';margin-left:auto;align-self:center;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.26em;
+  color:var(--phosphor-dim);white-space:nowrap;
+}
+
+/* ---- HEADER / TITLES -------------------------------------- */
+h1{
+  font-family:var(--serif);font-weight:500;font-size:29px;line-height:1.14;
+  letter-spacing:.005em;color:#fff;margin:0;
+}
+.sub{
+  color:var(--dim);font-family:var(--mono);font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;margin-top:12px;
+}
+h2{
+  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--phosphor);
+  margin:52px 0 18px;padding-bottom:11px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+}
+h2::before{content:'';width:7px;height:7px;background:var(--phosphor);flex:none;
+  box-shadow:0 0 9px var(--phosphor);align-self:center}
+h2 .gloss{font-family:var(--sans);text-transform:none;letter-spacing:0;font-weight:400;
+  font-size:12px;color:var(--faint)}
+.gloss{color:var(--faint)}
+
+/* ---- GLOSSARY (details/summary) --------------------------- */
+details{
+  margin:24px 0 6px;border:1px solid var(--line);border-radius:12px;
+  background:linear-gradient(180deg,var(--panel),var(--bg));overflow:hidden;
+}
+summary{
+  cursor:pointer;list-style:none;padding:16px 20px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--phosphor);display:flex;align-items:center;gap:10px;
+}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'+';font-size:15px;color:var(--phosphor);line-height:1}
+details[open] summary::before{content:'\2013'}
+details[open] summary{border-bottom:1px solid var(--line)}
+details>div{padding:18px 20px;font-size:13.5px;line-height:1.7;color:var(--dim)}
+details>div b{color:var(--phosphor);font-weight:600}
+
+/* ---- CARDS ------------------------------------------------ */
+.card{
+  background:linear-gradient(180deg,var(--panel),var(--bg));
+  border:1px solid var(--line);border-left:3px solid var(--phosphor-dim);
+  border-radius:12px;padding:22px 24px;margin-bottom:16px;
+  transition:border-color .22s ease,box-shadow .22s ease,transform .22s ease;
+}
+.card:hover{border-color:var(--line-hot);box-shadow:var(--glow)}
+.card:has(.dir-rialzo){border-left-color:var(--phosphor)}
+.card:has(.dir-ribasso){border-left-color:var(--rust)}
+.card.scenario{border-left-color:var(--amber)}
+
+.thesis-title{
+  font-family:var(--serif);font-size:19px;font-weight:500;line-height:1.42;color:#fff;
+  display:flex;gap:9px;align-items:baseline;
+}
+.thesis-title .gloss{font-family:var(--sans);font-size:12.5px;color:var(--faint)}
+.dir-rialzo{color:var(--phosphor);font-weight:700}
+.dir-ribasso{color:var(--rust);font-weight:700}
+
+.meta{
+  color:var(--dim);font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;
+  text-transform:uppercase;margin:13px 0 6px;display:flex;flex-wrap:wrap;
+  gap:7px 12px;align-items:center;
+}
+.catbadge{
+  display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;
+  /* per-sector color/background comes inline from the report */
+}
+.tag{
+  display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.02em;
+  color:var(--dim);padding:2px 9px;border:1px solid var(--line);border-radius:999px;
+}
+.tag.warn{background:rgba(227,178,74,.12);color:var(--amber);border-color:rgba(227,178,74,.3)}
+.tag .gloss{display:none}
+
+.eyebrow{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--phosphor);font-weight:700;margin:16px 0 4px;
+}
+.eyebrow.dark{color:var(--faint)}
+.eyebrow .gloss{text-transform:none;letter-spacing:0;font-weight:400}
+.block{font-size:14.5px;line-height:1.65;color:rgba(230,241,236,.86)}
+.block+.eyebrow{margin-top:15px}
+
+/* who wins / who loses */
+.who{
+  display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;padding-top:16px;
+  border-top:1px solid var(--line);
+}
+.who>div{
+  flex:1;min-width:220px;font-size:13.5px;background:rgba(12,26,22,.5);
+  border:1px solid var(--line);border-radius:10px;padding:14px 16px;
+}
+.who b{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;margin-bottom:9px}
+.who .plus b,.plus>b{color:var(--phosphor)}
+.who .minus b,.minus>b{color:var(--rust)}
+.who ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.who li{position:relative;padding-left:18px;color:var(--dim);line-height:1.5}
+.plus li::before{content:'+';position:absolute;left:0;color:var(--phosphor);font-weight:700}
+.minus li::before{content:'\2013';position:absolute;left:0;color:var(--rust);font-weight:700}
+
+.note{
+  background:var(--panel-2);border:1px solid var(--line);border-left:2px solid var(--phosphor-dim);
+  border-radius:10px;padding:13px 16px;margin:14px 0;font-size:13.5px;color:var(--dim);line-height:1.6;
+}
+
+/* ---- TABLES (market / macro indicators / pagella) --------- */
+table{width:100%;border-collapse:collapse;margin:6px 0 8px;font-size:13.5px}
+thead th{
+  font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--phosphor);text-align:left;
+  padding:10px 12px;border-bottom:1px solid var(--line-hot);white-space:nowrap;
+}
+tbody td{padding:11px 12px;border-bottom:1px solid var(--line);color:var(--dim);vertical-align:top}
+tbody tr:hover td{background:var(--panel)}
+tbody td:first-child{color:var(--text);font-weight:500}
+td .dir-rialzo,td .dir-ribasso{font-family:var(--mono);font-weight:700}
+
+/* ---- MARKET PRICES (Contesto di mercato) ------------------ */
+.mkt{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:11px;margin:6px 0 4px}
+.mkt-tile{
+  background:linear-gradient(180deg,var(--panel),var(--bg));
+  border:1px solid var(--line);border-left:3px solid var(--phosphor-dim);
+  border-radius:11px;padding:14px 16px;transition:border-color .2s;
+  /* border-left-color set inline per sector */
+}
+.mkt-tile:hover{border-color:var(--line-hot)}
+.mkt-name{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);line-height:1.3}
+.mkt-price{font-family:var(--mono);font-size:23px;font-weight:500;color:#fff;margin:6px 0 10px;line-height:1}
+.mkt-var{display:flex;gap:6px 14px;flex-wrap:wrap;font-family:var(--mono);font-size:10.5px;color:var(--faint)}
+.mkt-var>span{display:inline-flex;gap:5px;align-items:baseline;white-space:nowrap}
+.up{color:var(--phosphor);font-weight:600}
+.down{color:var(--rust);font-weight:600}
+
+/* ---- OUTCOME BADGES (pagella) ----------------------------- */
+[class^="esito-"],[class*=" esito-"]{
+  display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;padding:2px 10px;border-radius:999px;border:1px solid;
+}
+.esito-confermata{color:var(--phosphor);border-color:rgba(110,231,168,.4);background:rgba(110,231,168,.1)}
+.esito-smentita{color:var(--rust);border-color:rgba(201,106,85,.4);background:rgba(201,106,85,.1)}
+.esito-neutra{color:var(--dim);border-color:var(--line);background:rgba(230,241,236,.04)}
+
+/* ---- MISC ------------------------------------------------- */
+.mono{font-family:var(--mono)}
+.plus{color:var(--phosphor)}
+.minus{color:var(--rust)}
+.legend{font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.04em;margin:10px 0}
+hr{border:none;border-top:1px solid var(--line);margin:26px 0}
+
+/* ---- FOOTER ----------------------------------------------- */
+.footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line)}
+.footer-text{font-size:11.5px;line-height:1.7;color:var(--faint)}
+.footer-brand{
+  font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--phosphor-dim);margin-top:12px;
+}
+
+/* ---- RESPONSIVE ------------------------------------------- */
+@media(max-width:640px){
+  body{padding:0 16px 72px}
+  .brandbar{margin:0 -16px;padding:12px 16px}
+  .brandbar::after{display:none}
+  h1{font-size:26px}
+  .who>div{min-width:100%}
+  h2{margin-top:40px}
+}
+
+/* ---- PRINT / PDF EXPORT ----------------------------------- */
+@media print{
+  html,body{background:var(--void)}
+  body::before,body::after{display:none}
+  .brandbar{position:static;backdrop-filter:none}
+  .card,.who>div,details{break-inside:avoid}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+}
