@@ -2,27 +2,6 @@
  {
   "data": "2026-08-30",
   "categoria": "shipping_logistica",
-  "titolo": "DOE Opens $500M Funding Opportunity for Battery Materials Processing, Manufacturing and Recycling - Holland & Knight",
-  "fonte": "Holland & Knight",
-  "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxONUFKR2M1YVZLeEo1dEEtWTJNTjZHT21wNndQUDJDcnlJRkNMNnp2cERVU2w0ZEg2eE0xOFBydlVQMGVEbmtGaEJ2SWFZYllKOU92aDBiSDlCQlREbF9XUmo0ZGdQakt2STBxLW9fV1Q0emoxQy10cTRtdV94SnlZeGFjS3JjbGRMelRFVFhFMGJybXRRNFBwUHBwTG95Q2QxQ0t5VzF4LURZTW4yT3ZnbTBzTTE3V1U2aXBxYjlQUQ?oc=5"
- },
- {
-  "data": "2026-08-30",
-  "categoria": "shipping_logistica",
-  "titolo": "Crippling port delays at Jeddah disrupt project cargo schedules - Journal of Commerce",
-  "fonte": "Journal of Commerce",
-  "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPUDNqWWNWS2FRUm01UThhOG1zNXN2RUl2bl9CRnZDRDRuM0JiRm40WDNYV3ZZb1lRTnU2by1FaFJpd05UUGtzclRPOW5IQ2dOTVJna0otbjh0NHRiMU8tUTZ4ZzNsRnROOVBKNmdOb2JOUkhMRHgyTDhMT0pWNWk0S1N5ZTdiVE5Lb2RWX0owby1yU0pNb3pTMnlmNkFEdjNF?oc=5"
- },
- {
-  "data": "2026-08-30",
-  "categoria": "shipping_logistica",
-  "titolo": "Panama Canal Congestion Drives Gas Tankers To Unusual Routes",
-  "fonte": "gCaptain",
-  "url": "https://gcaptain.com/panama-canal-congestion-drives-gas-tankers-to-unusual-routes/"
- },
- {
-  "data": "2026-08-30",
-  "categoria": "shipping_logistica",
   "titolo": "Supply driven trucking market cycle explained in the data",
   "fonte": "FreightWaves",
   "url": "https://www.freightwaves.com/news/supply-driven-trucking-market-cycle-explained-in-the-data"
@@ -34998,5 +34977,26 @@
   "titolo": "Borsa: in Europa il settore auto è il peggiore da inizio anno",
   "fonte": "ANSA Economia",
   "url": "https://www.ansa.it/sito/notizie/economia/2026/10/03/borsa-in-europa-il-settore-auto-e-il-peggiore-da-inizio-anno_b5e1031b-1245-4250-a124-a6435811748a.html"
+ },
+ {
+  "data": "2026-10-04",
+  "categoria": "energia",
+  "titolo": "Russia’s nuclear plants are ageing. Who will pay to dismantle them?",
+  "fonte": "AlJazeera",
+  "url": "https://www.aljazeera.com/opinions/2026/10/4/russias-nuclear-plants-are-ageing-who-will-pay-to-dismantle-them?traffic_source=rss"
+ },
+ {
+  "data": "2026-10-04",
+  "categoria": "energia",
+  "titolo": "Pichetto, il nucleare arriverà fra 15 anni ma è la scelta del futuro",
+  "fonte": "ANSA Economia",
+  "url": "https://www.ansa.it/sito/notizie/economia/2026/10/04/pichetto-il-nucleare-arrivera-fra-15-anni-ma-e-la-scelta-del-futuro_d2a58542-7192-4365-8dc7-1677801ca8a0.html"
+ },
+ {
+  "data": "2026-10-04",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Open-source tool designs LEGO builds with more than 2,000 real pieces",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/open-source-tool-designs-lego-builds-with-more-than-2-000-real-pieces-their-programs-output-detailed-cad-files-but-no-models-have-been-built-yet"
  }
 ]
