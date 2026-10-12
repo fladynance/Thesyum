@@ -1,6 +1,12 @@
 [
   {
     "tipo": "giornaliero",
+    "data": "2026-10-12",
+    "titolo": "Report giornaliero · 12/10/2026",
+    "url": "macro_20261012.html"
+  },
+  {
+    "tipo": "giornaliero",
     "data": "2026-10-11",
     "titolo": "Report giornaliero · 11/10/2026",
     "url": "macro_20261011.html"
