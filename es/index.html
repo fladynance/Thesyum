@@ -190,6 +190,23 @@ section { border-top: 1px solid var(--border); }
   padding: 14px;
   border-radius: 8px;
 }
+.nav-lang {
+  font-family: var(--mono);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.nav-links .nav-lang a { color: var(--t3); padding: 0 3px; }
+.nav-links .nav-lang a.on { color: var(--gold); font-weight: 700; }
+.nav-links .nav-lang a:hover { color: var(--t1); }
+.mobile-menu .nav-lang {
+  display: flex;
+  gap: 2px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.mobile-menu .nav-lang a { padding: 0 4px; color: var(--t2); }
+.mobile-menu .nav-lang a.on { color: var(--gold); font-weight: 700; }
 
 /* ── HERO ───────────────────────────────────────────────── */
 #hero {
@@ -1334,6 +1351,7 @@ footer {
         <li><a href="#priced-in">Priced In</a></li>
         <li><a href="#prezzi">Precios</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li><span class="nav-lang"><a href="../index.html">IT</a>/<a href="../en/index.html">EN</a>/<a href="../ar/index.html">AR</a>/<a href="../fr/index.html">FR</a>/<a href="index.html" class="on">ES</a></span></li>
         <li><a href="#contatti" class="btn-nav">Empezar</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
@@ -1348,6 +1366,7 @@ footer {
       <li><a href="#prezzi" onclick="toggleMenu()">Precios</a></li>
       <li><a href="#faq" onclick="toggleMenu()">FAQ</a></li>
     </ul>
+    <div class="nav-lang"><a href="../index.html">IT</a>/<a href="../en/index.html">EN</a>/<a href="../ar/index.html">AR</a>/<a href="../fr/index.html">FR</a>/<a href="index.html" class="on">ES</a></div>
     <a href="#contatti" class="btn-full" onclick="toggleMenu()">Empezar →</a>
   </div>
 </nav>
