@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Thesyum lit les marchés pour vous : il filtre le bruit, vous donne uniquement les nouvelles qui font bouger les prix et vous dit lesquelles le marché a déjà intégrées. Pour les conseillers et les traders.">
+<title>Thesyum — Market intelligence, avec mémoire</title>
+<link rel="alternate" hreflang="it" href="https://thesyum.com/index.html">
+<link rel="alternate" hreflang="en" href="https://thesyum.com/en/index.html">
+<link rel="alternate" hreflang="ar" href="https://thesyum.com/ar/index.html">
+<link rel="alternate" hreflang="fr" href="https://thesyum.com/fr/index.html">
+<link rel="alternate" hreflang="es" href="https://thesyum.com/es/index.html">
+<link rel="alternate" hreflang="x-default" href="https://thesyum.com/index.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%2308110F'/%3E%3Crect%20x='6'%20y='6'%20width='20'%20height='20'%20rx='2'%20stroke='%23E3EEE9'%20stroke-opacity='.35'%20stroke-width='1.4'/%3E%3Cline%20x1='6'%20y1='13.3'%20x2='26'%20y2='13.3'%20stroke='%23E3EEE9'%20stroke-opacity='.28'%20stroke-width='1.4'/%3E%3Cline%20x1='6'%20y1='18.7'%20x2='26'%20y2='18.7'%20stroke='%23E3EEE9'%20stroke-opacity='.28'%20stroke-width='1.4'/%3E%3Ccircle%20cx='11.2'%20cy='9.7'%20r='2.3'%20fill='%236EE7A8'/%3E%3Ccircle%20cx='11.2'%20cy='16'%20r='2.3'%20fill='%23E3B24A'/%3E%3Ccircle%20cx='11.2'%20cy='22.3'%20r='2.3'%20fill='%236EE7A8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#050D0B; --bg:#08130F; --bg-warm:#0A1712; --panel:#0C1A16; --panel-2:#112420;
+  --line:rgba(224,238,232,0.09); --line-2:rgba(224,238,232,0.16); --line-hot:rgba(110,231,168,0.34);
+  --text:#EAF3EE; --dim:rgba(234,243,238,0.62); --faint:rgba(234,243,238,0.34);
+  --phos:#6EE7A8; --phos-deep:#3d8a63; --amber:#E3B24A; --rust:#C96A55;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--phos);color:var(--void)}
+.mono{font-family:'JetBrains Mono',monospace}
+.serif{font-family:'Newsreader',serif}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ===== NAV ===== */
+header{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(5,13,11,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:11px}
+.logo svg{width:26px;height:26px}
+.logo span{font-family:'Newsreader',serif;font-size:21px;letter-spacing:.02em}
+.nav-links{display:flex;gap:28px;font-size:14px;color:var(--dim)}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.lang{display:flex;gap:6px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint)}
+.lang a.on{color:var(--phos)}
+.nav-cta{font-family:'JetBrains Mono',monospace;font-size:12px;background:var(--phos);color:var(--void);padding:10px 18px;border-radius:3px;font-weight:700;transition:.2s}
+.nav-cta:hover{background:#8ff0bd}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{width:22px;height:1.6px;background:var(--text);transition:.3s}
+.mobile-menu{display:none;position:fixed;inset:68px 0 0;background:var(--void);z-index:99;padding:32px 28px;flex-direction:column;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'Newsreader',serif;font-size:26px;padding:16px 0;border-bottom:1px solid var(--line)}
+.mobile-menu .m-cta{margin-top:20px;background:var(--phos);color:var(--void);text-align:center;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:14px;border:none}
+@media(max-width:920px){.nav-links,.nav-right .lang{display:none}.burger{display:flex}}
+
+/* ===== SECTION SCAFFOLDING ===== */
+section{position:relative}
+.sec-pad{padding:120px 0}
+.bg-void{background:var(--void)}
+.bg-base{background:var(--bg)}
+.bg-warm{background:var(--bg-warm)}
+.glow{position:absolute;pointer-events:none;border-radius:50%;filter:blur(120px);opacity:.5;z-index:0}
+.glow-g{background:radial-gradient(circle,rgba(110,231,168,.16),transparent 70%)}
+.glow-a{background:radial-gradient(circle,rgba(227,178,74,.12),transparent 70%)}
+.inner{position:relative;z-index:1}
+
+.klabel{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--phos-deep);margin-bottom:20px}
+.stitle{font-family:'Newsreader',serif;font-weight:400;font-size:clamp(30px,4.4vw,50px);line-height:1.1;letter-spacing:-.01em;max-width:20ch}
+.ssub{font-size:17px;line-height:1.65;color:var(--dim);max-width:56ch;margin-top:20px}
+
+/* ===== HERO ===== */
+.hero{padding:150px 0 90px;position:relative;overflow:hidden}
+.hero .glow{width:800px;height:520px;top:-160px;left:50%;transform:translateX(-40%)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;color:var(--phos);border:1px solid var(--line-hot);padding:8px 16px;border-radius:100px;margin-bottom:32px;background:rgba(110,231,168,.05)}
+.hero-eyebrow .pip{width:6px;height:6px;border-radius:50%;background:var(--phos);box-shadow:0 0 8px var(--phos);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:'Newsreader',serif;font-weight:400;font-size:clamp(42px,6.4vw,82px);line-height:1.02;letter-spacing:-.02em;max-width:16ch}
+.hero h1 .hi{font-style:italic;color:var(--phos)}
+.hero-lede{font-size:19px;line-height:1.6;color:var(--dim);max-width:52ch;margin-top:28px}
+.hero-lede b{color:var(--text);font-weight:500}
+.hero-actions{display:flex;align-items:center;gap:20px;margin-top:40px;flex-wrap:wrap}
+.btn{background:var(--phos);color:var(--void);font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:16px 28px;border-radius:3px;transition:.2s;display:inline-block;border:none;cursor:pointer}
+.btn:hover{background:#8ff0bd;transform:translateY(-2px)}
+.btn-ghost{font-size:14px;color:var(--dim);border-bottom:1px solid var(--line-2);padding-bottom:3px}
+.btn-ghost:hover{color:var(--text);border-color:var(--phos)}
+
+/* audience chips */
+.aud{display:flex;gap:12px;margin-top:52px;flex-wrap:wrap}
+.aud-chip{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--dim);border:1px solid var(--line);border-radius:100px;padding:10px 18px;background:var(--panel)}
+.aud-chip svg{width:16px;height:16px;color:var(--phos)}
+
+/* ===== TICKER STRIP ===== */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--void);overflow:hidden;padding:0}
+.strip .tradingview-widget-container{min-height:46px}
+
+/* ===== FUNNEL (imbuto del rumore) ===== */
+.funnel{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:60px}
+.funnel-visual{position:relative;min-height:340px;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
+.funnel-stage{position:relative;border:1px solid var(--line);border-radius:6px;background:var(--panel);padding:18px 22px;text-align:center}
+.funnel-stage .fnum{font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:700;color:var(--text)}
+.funnel-stage .flab{font-size:12.5px;color:var(--faint);margin-top:4px}
+.funnel-s1{width:100%}
+.funnel-s2{width:66%;margin:0 auto;border-color:var(--line-2)}
+.funnel-s2 .fnum{color:var(--amber)}
+.funnel-s3{width:38%;margin:0 auto;border-color:var(--line-hot);background:rgba(110,231,168,.06);box-shadow:0 0 30px -8px rgba(110,231,168,.3)}
+.funnel-s3 .fnum{color:var(--phos)}
+.funnel-arrow{text-align:center;color:var(--phos-deep);font-size:18px}
+.funnel-txt h3{font-family:'Newsreader',serif;font-weight:400;font-size:28px;line-height:1.2;margin-bottom:16px}
+.funnel-txt p{font-size:15.5px;line-height:1.7;color:var(--dim);margin-bottom:14px}
+.funnel-txt p b{color:var(--text);font-weight:500}
+
+/* ===== BENEFIT CARDS ===== */
+.benefits{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:auto auto;gap:16px;margin-top:56px}
+.bcard{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:32px 30px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:200px}
+.bcard::after{content:'';position:absolute;width:200px;height:200px;border-radius:50%;filter:blur(80px);opacity:.14;pointer-events:none}
+.bcard.g::after{background:var(--phos);top:-60px;right:-60px}
+.bcard.a::after{background:var(--amber);bottom:-60px;left:-40px}
+.bcard-top{display:flex;align-items:center;gap:12px;margin-bottom:auto;position:relative;z-index:1}
+.bcard-ic{width:38px;height:38px;border-radius:10px;background:rgba(110,231,168,.12);color:var(--phos);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bcard-ic svg{width:19px;height:19px}
+.bcard-ic.amber{background:rgba(227,178,74,.12);color:var(--amber)}
+.bcard-tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.bcard-v{font-family:'Newsreader',serif;font-size:clamp(48px,6vw,68px);line-height:.95;color:var(--phos);margin:24px 0 12px;position:relative;z-index:1}
+.bcard-v .u{font-size:26px;color:var(--dim);font-style:italic}
+.bcard.a .bcard-v{color:var(--amber)}
+.bcard-k{font-size:14.5px;line-height:1.55;color:var(--dim);position:relative;z-index:1}
+.bcard-k b{color:var(--text);font-weight:500}
+/* la prima card e' larga (hero della griglia) */
+.bcard.feature{grid-row:span 2;justify-content:flex-start}
+.bcard.feature .bcard-v{font-size:clamp(60px,8vw,92px);margin-top:36px}
+.bcard.feature .bcard-k{font-size:16px;margin-top:8px;max-width:26ch}
+@media(max-width:820px){
+  .benefits{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .bcard.feature{grid-row:span 1;grid-column:span 2}
+}
+@media(max-width:520px){
+  .benefits{grid-template-columns:1fr}
+  .bcard.feature{grid-column:span 1}
+  .bcard{min-height:auto}
+}
+
+/* ===== BEFORE / AFTER ===== */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
+.ba-col{border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.ba-col.before{background:var(--panel)}
+.ba-col.after{background:linear-gradient(160deg,rgba(110,231,168,.07),var(--panel) 60%);border-color:var(--line-hot)}
+.ba-head{padding:20px 24px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.ba-col.before .ba-head{color:var(--faint)}
+.ba-col.after .ba-head{color:var(--phos)}
+.ba-dot{width:8px;height:8px;border-radius:50%}
+.ba-col.before .ba-dot{background:var(--rust)}
+.ba-col.after .ba-dot{background:var(--phos)}
+.ba-body{padding:26px 24px}
+.ba-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--dim)}
+.ba-row:last-child{border-bottom:none}
+.ba-row .t{font-family:'JetBrains Mono',monospace;font-weight:500}
+.ba-col.before .ba-row .t{color:var(--rust)}
+.ba-col.after .ba-row .t{color:var(--phos)}
+@media(max-width:760px){.ba{grid-template-columns:1fr}}
+
+/* ===== SEMAFORO PREZZATO ===== */
+.priced{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.priced-card{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:30px 26px;position:relative;overflow:hidden}
+.priced-card .beam{position:absolute;top:0;left:0;right:0;height:3px}
+.pc-red .beam{background:var(--rust)}
+.pc-amber .beam{background:var(--amber)}
+.pc-green .beam{background:var(--phos)}
+.priced-card .sig{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:20px}
+.pc-red .sig{background:rgba(201,106,85,.14);color:var(--rust)}
+.pc-amber .sig{background:rgba(227,178,74,.14);color:var(--amber)}
+.pc-green .sig{background:rgba(110,231,168,.14);color:var(--phos)}
+.priced-card h4{font-family:'Newsreader',serif;font-weight:500;font-size:19px;margin-bottom:10px}
+.priced-card p{font-size:14px;line-height:1.6;color:var(--dim)}
+@media(max-width:820px){.priced{grid-template-columns:1fr}}
+
+/* ===== CATENA (chain) ===== */
+.chain{margin-top:52px;border:1px solid var(--line);border-radius:10px;background:var(--panel);overflow:hidden}
+.chain-head{padding:20px 26px;background:var(--panel-2);border-bottom:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;color:var(--faint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.chain-head .tema{color:var(--phos)}
+.chain-flow{padding:36px 30px;display:flex;flex-direction:column;gap:0}
+.chain-node{display:flex;gap:20px;position:relative;padding-bottom:30px}
+.chain-node:last-child{padding-bottom:0}
+.chain-marker{flex-shrink:0;width:44px;display:flex;flex-direction:column;align-items:center}
+.chain-badge{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;flex-shrink:0}
+.cn1 .chain-badge{background:rgba(234,243,238,.08);color:var(--text)}
+.cn2 .chain-badge{background:rgba(227,178,74,.12);color:var(--amber)}
+.cn3 .chain-badge{background:rgba(201,106,85,.12);color:var(--rust)}
+.cn4 .chain-badge{background:rgba(110,231,168,.14);color:var(--phos)}
+.chain-stem{width:2px;flex:1;background:linear-gradient(var(--line-hot),var(--line));margin-top:6px}
+.chain-body{padding-top:9px}
+.chain-k{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+.chain-t{font-size:16px;line-height:1.5;color:var(--text)}
+.chain-t span{color:var(--dim)}
+
+/* ===== SPLIT BUYER ===== */
+.split-b{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:56px}
+.split-side{background:var(--panel);padding:44px 38px}
+.split-side.trader{background:linear-gradient(180deg,rgba(110,231,168,.05),var(--panel) 50%)}
+.split-ic{width:48px;height:48px;border-radius:12px;background:var(--panel-2);display:flex;align-items:center;justify-content:center;margin-bottom:24px;color:var(--phos)}
+.split-ic svg{width:24px;height:24px}
+.split-side h3{font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin-bottom:8px}
+.split-role{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--phos-deep);margin-bottom:22px}
+.split-list{list-style:none;display:flex;flex-direction:column;gap:16px}
+.split-list li{display:flex;gap:13px;font-size:15px;line-height:1.5;color:var(--dim)}
+.split-list li b{color:var(--text);font-weight:500}
+.split-list .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(110,231,168,.14);color:var(--phos);display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px}
+@media(max-width:760px){.split-b{grid-template-columns:1fr}}
+
+/* ===== WORLD DATA ===== */
+.world{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:56px}
+.world-txt h3{font-family:'Newsreader',serif;font-weight:400;font-size:30px;line-height:1.2;margin-bottom:16px}
+.world-txt p{font-size:15.5px;line-height:1.7;color:var(--dim);margin-bottom:14px}
+.world-txt p b{color:var(--text);font-weight:500}
+.world-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.wchip{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:16px 14px}
+.wchip .wc-region{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+.wchip .wc-val{font-family:'JetBrains Mono',monospace;font-size:17px;color:var(--text)}
+.wchip .wc-tag{font-size:11px;color:var(--phos-deep);margin-top:3px}
+.wchip.live{border-color:var(--line-hot)}
+.wchip.live .wc-val{color:var(--phos)}
+@media(max-width:760px){.world{grid-template-columns:1fr;gap:34px}}
+
+/* ===== COMPARISON TABLE (mantenuta) ===== */
+.cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:52px;border:1px solid var(--line);border-radius:10px}
+.cmp{width:100%;border-collapse:collapse;min-width:720px}
+.cmp th,.cmp td{padding:17px 20px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp thead th{font-family:'Space Grotesk',sans-serif;font-size:12.5px;color:var(--dim);font-weight:600;background:var(--panel-2)}
+.cmp thead th.us{color:var(--void);background:var(--phos)}
+.cmp tbody tr:last-child td{border-bottom:none}
+.cmp .rowlab{font-size:14px;color:var(--text);font-weight:500;white-space:nowrap}
+.cmp td.us{background:rgba(110,231,168,.06);color:var(--text);font-size:13.5px}
+.cmp td{font-size:13px;color:var(--dim)}
+.cmp .yes{color:var(--phos);font-weight:600}
+.cmp .no{color:var(--faint)}
+.cmp .partial{color:var(--amber)}
+.cmp-hint{display:none;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--faint);text-align:center;margin-top:12px}
+@media(max-width:760px){.cmp-hint{display:block}}
+.cmp-note{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);margin-top:16px;text-align:center}
+
+/* ===== PRICING ===== */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.plan{border:1px solid var(--line);border-radius:10px;padding:34px 30px;display:flex;flex-direction:column;background:var(--panel)}
+.plan.hot{border-color:var(--line-hot);background:linear-gradient(180deg,rgba(110,231,168,.06),var(--panel) 45%);position:relative}
+.plan.hot::before{content:'Le plus choisi';position:absolute;top:-11px;left:30px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;background:var(--phos);color:var(--void);padding:4px 12px;border-radius:100px;font-weight:700}
+.plan .pn{font-family:'Newsreader',serif;font-size:22px;margin-bottom:6px}
+.plan .pd{font-size:13px;color:var(--faint);margin-bottom:24px;line-height:1.5;min-height:38px}
+.plan .pp{font-family:'Newsreader',serif;font-size:38px;margin-bottom:26px}
+.plan .pp span{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--faint)}
+.plan ul{list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:30px;flex:1}
+.plan li{font-size:14px;color:var(--dim);padding-left:24px;position:relative;line-height:1.45}
+.plan li::before{content:'✓';position:absolute;left:0;color:var(--phos);font-size:13px}
+.plan .p-cta{text-align:center;padding:14px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:700;transition:.2s}
+.plan .p-cta.solid{background:var(--phos);color:var(--void)}
+.plan .p-cta.solid:hover{background:#8ff0bd}
+.plan .p-cta.outline{border:1px solid var(--line-2);color:var(--dim)}
+.plan .p-cta.outline:hover{border-color:var(--phos);color:var(--phos)}
+@media(max-width:820px){.plans{grid-template-columns:1fr}}
+
+/* ===== FAQ ===== */
+.faq{max-width:820px;margin:52px auto 0}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:26px 0;display:flex;justify-content:space-between;align-items:center;gap:18px;color:var(--text);font-family:'Newsreader',serif;font-size:clamp(17px,2.2vw,21px);font-weight:400;line-height:1.4}
+.faq-icon{flex-shrink:0;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--faint);display:flex;align-items:center;justify-content:center;color:var(--phos);font-size:18px;transition:.25s}
+.faq-a{display:none;padding:0 0 28px;max-width:70ch}
+.faq-a p{font-size:15px;line-height:1.7;color:var(--dim);margin-bottom:12px}
+.faq-a p:last-child{margin-bottom:0}
+.faq-a b{color:var(--text);font-weight:500}
+
+/* ===== CTA FINALE ===== */
+.final{text-align:center;padding:130px 0}
+.final .glow{width:600px;height:400px;top:0;left:50%;transform:translateX(-50%)}
+.final h2{font-family:'Newsreader',serif;font-weight:400;font-size:clamp(32px,5vw,58px);line-height:1.08;max-width:18ch;margin:0 auto 24px}
+.final h2 .hi{font-style:italic;color:var(--phos)}
+.final p{font-size:16px;color:var(--dim);max-width:48ch;margin:0 auto 34px}
+
+/* ===== FOOTER ===== */
+footer{border-top:1px solid var(--line);padding:54px 0 36px;background:var(--void)}
+.ftop{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:44px}
+.fcols{display:flex;gap:56px;flex-wrap:wrap}
+.fcol h5{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:15px}
+.fcol a{display:block;font-size:13.5px;color:var(--dim);margin-bottom:10px}
+.fcol a:hover{color:var(--text)}
+.fbot{display:flex;justify-content:space-between;padding-top:26px;border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--faint);flex-wrap:wrap;gap:10px}
+
+
+/* ===== DUE DOCUMENTI ===== */
+.docs2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:56px}
+.doc2{border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow:hidden}
+.doc2.week{background:linear-gradient(180deg,rgba(110,231,168,.05),var(--panel) 45%);border-color:var(--line-hot)}
+.doc2-h{padding:22px 26px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.doc2-h .n{font-family:'Newsreader',serif;font-size:21px}
+.doc2-h .w{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.doc2-b{padding:26px}
+.doc2-who{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.05em;color:var(--phos-deep);margin-bottom:16px}
+.doc2-b p{font-size:14.5px;line-height:1.65;color:var(--dim);margin-bottom:20px}
+.doc2-b ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.doc2-b li{font-size:14px;color:var(--dim);padding-left:22px;position:relative;line-height:1.45}
+.doc2-b li::before{content:'';position:absolute;left:2px;top:8px;width:5px;height:5px;background:var(--phos);border-radius:50%}
+@media(max-width:760px){.docs2{grid-template-columns:1fr}}
+
+/* ===== FORM ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:52px}
+.contact-txt p{font-size:16px;line-height:1.65;color:var(--dim);margin-bottom:14px}
+.contact-txt p b{color:var(--text);font-weight:500}
+.contact-note{margin-top:26px;padding:18px 20px;background:var(--panel);border:1px solid var(--line);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:11.5px;line-height:1.7;color:var(--faint)}
+.contact-note b{color:var(--phos);font-weight:500}
+.form{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:34px 30px}
+.field{margin-bottom:22px}
+.field label{display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:9px}
+.field input,.field textarea,.field select{width:100%;background:var(--bg);border:1px solid var(--line-2);border-radius:6px;padding:14px 15px;color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:15px;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236EE7A8' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;cursor:pointer}
+.field textarea{resize:vertical;min-height:90px}
+.phone-row{display:flex;gap:8px}
+.phone-row select{flex:0 0 108px}
+.phone-row input{flex:1}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--phos)}
+.field input::placeholder,.field textarea::placeholder{color:var(--faint)}
+.form .btn{width:100%;padding:16px;font-size:13px}
+.form-ok{display:none;text-align:center;padding:40px 10px}
+.form-ok .ok-ic{width:46px;height:46px;border:1.5px solid var(--phos);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:var(--phos);font-size:20px}
+.form-ok h3{font-family:'Newsreader',serif;font-size:23px;font-weight:400;margin-bottom:10px}
+.form-ok p{font-size:14px;color:var(--dim);line-height:1.6}
+.form-priv{margin-top:14px;font-size:11px;color:var(--faint);line-height:1.55;text-align:center}
+@media(max-width:760px){.contact-grid{grid-template-columns:1fr;gap:36px}}
+
+.rev{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.rev.in{opacity:1;transform:none}
+
+@media(max-width:760px){
+  .sec-pad{padding:80px 0}
+  .funnel,.world{grid-template-columns:1fr;gap:34px}
+  .funnel-visual{height:auto;gap:14px}
+  .funnel-stage{padding:16px 18px}
+  .funnel-stage .fnum{font-size:26px}
+  .funnel-s2{width:78%}
+  .funnel-s3{width:56%}
+  .hero{padding:120px 0 70px}
+}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><nav>
+  <a href="index.html" class="logo">
+    <svg viewBox="0 0 26 26" fill="none"><rect x="1" y="1" width="24" height="24" stroke="#EAF3EE" stroke-opacity=".3"/><line x1="1" y1="9" x2="25" y2="9" stroke="#EAF3EE" stroke-opacity=".22"/><line x1="1" y1="17" x2="25" y2="17" stroke="#EAF3EE" stroke-opacity=".22"/><circle cx="7" cy="5" r="2" fill="#6EE7A8"/><circle cx="7" cy="13" r="2" fill="#E3B24A"/><circle cx="7" cy="21" r="2" fill="#6EE7A8"/></svg>
+    <span>Thesyum</span>
+  </a>
+  <div class="nav-links">
+    <a href="#come-funziona">Comment ça marche</a>
+    <a href="#per-chi">Pour qui</a>
+    <a href="#confronto">Comparatif</a>
+    <a href="#prezzi">Tarifs</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang"><a href="../index.html">IT</a>/<a href="../en/index.html">EN</a>/<a href="../ar/index.html">AR</a>/<a href="index.html" class="on">FR</a>/<a href="../es/index.html">ES</a></div>
+    <a href="#contatti" class="nav-cta">Demander une démo</a>
+  </div>
+  <button class="burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav></div></header>
+
+<div class="mobile-menu" id="mmenu">
+  <a href="#come-funziona" onclick="toggleMenu()">Comment ça marche</a>
+  <a href="#per-chi" onclick="toggleMenu()">Pour qui</a>
+  <a href="#confronto" onclick="toggleMenu()">Comparatif</a>
+  <a href="#prezzi" onclick="toggleMenu()">Tarifs</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
+  <a href="#contatti" class="m-cta" onclick="toggleMenu()">Demander une démo</a>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="hero bg-void">
+  <div class="glow glow-g"></div>
+  <div class="wrap inner">
+    <span class="hero-eyebrow"><span class="pip"></span>Macro &amp; market intelligence</span>
+    <h1>Les nouvelles qui font bouger les marchés. <span class="hi">Avant qu'elles ne les fassent bouger.</span></h1>
+    <p class="hero-lede">Chaque matin, Thesyum lit plus de 180 sources, écarte le bruit et ne vous laisse que ce qui fait vraiment bouger les prix — avec la chaîne d'effets et un verdict clair : <b>déjà intégré par le marché, ou êtes-vous encore à temps ?</b> Pour le conseiller qui doit avoir la réponse prête, et pour le trader qui ne peut pas arriver deuxième.</p>
+    <div class="hero-actions">
+      <a href="../esempio.html" class="btn">Lire un vrai rapport</a>
+      <a href="#come-funziona" class="btn-ghost">Voir comment ça marche ↓</a>
+    </div>
+    <div class="aud">
+      <span class="aud-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Pour les conseillers financiers</span>
+      <span class="aud-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>Pour les traders actifs</span>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER LIVE (TradingView) -->
+<div class="strip">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        {"proName": "TVC:USOIL", "title": "WTI"},
+        {"proName": "TVC:GOLD", "title": "Gold"},
+        {"proName": "TVC:SILVER", "title": "Silver"},
+        {"proName": "CAPITALCOM:COPPER", "title": "Copper"},
+        {"proName": "FX:EURUSD", "title": "EUR/USD"},
+        {"proName": "TVC:DXY", "title": "Dollar"},
+        {"proName": "PYTH:US10Y", "title": "US 10Y"},
+        {"proName": "OANDA:SPX500USD", "title": "S&P 500"},
+        {"proName": "OANDA:NAS100USD", "title": "Nasdaq"},
+        {"proName": "INDEX:FTSEMIB", "title": "FTSE MIB"},
+        {"proName": "BINANCE:BTCUSDT", "title": "Bitcoin"}
+      ],
+      "showSymbolLogo": true,
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "colorTheme": "dark",
+      "locale": "fr"
+    }
+    </script>
+  </div>
+</div>
+
+<!-- IL PROBLEMA + IMBUTO -->
+<section class="sec-pad bg-base" id="come-funziona">
+  <div class="wrap inner">
+    <div class="klabel rev">Le problème qu'il résout</div>
+    <h2 class="stitle rev">Chaque jour sortent des milliers de nouvelles. Trois font bouger vos marchés.</h2>
+    <p class="ssub rev">Le reste est du bruit qui vous vole temps et attention. Thesyum fait le travail de lecture à votre place et ne vous laisse que ce qui compte vraiment.</p>
+
+    <div class="funnel">
+      <div class="funnel-visual rev">
+        <div class="funnel-stage funnel-s1"><div class="fnum">180+</div><div class="flab">sources lues chaque matin</div></div>
+        <div class="funnel-arrow">↓</div>
+        <div class="funnel-stage funnel-s2"><div class="fnum">~40</div><div class="flab">actualités potentiellement pertinentes</div></div>
+        <div class="funnel-arrow">↓</div>
+        <div class="funnel-stage funnel-s3"><div class="fnum">3</div><div class="flab">thèmes qui font bouger les prix aujourd'hui</div></div>
+      </div>
+      <div class="funnel-txt rev">
+        <h3>De l'océan de nouvelles à ce qui compte.</h3>
+        <p>Le système lit plus de 180 sources — agences, titres spécialisés, flux dédiés — et les compare aux mouvements de prix réels.</p>
+        <p><b>Il écarte ce qui est du bruit</b> et ne garde que les nouvelles ayant une réelle capacité à faire bouger les marchés, en vous indiquant pour chacune si l'impact attendu est élevé ou faible.</p>
+        <p>Ce qui reste est une note brève et dense, que vous lisez en cinq minutes au lieu de deux heures.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAT BANDS: il beneficio in numeri -->
+<section class="sec-pad bg-warm">
+  <div class="glow glow-g" style="width:500px;height:300px;top:20%;right:-100px"></div>
+  <div class="wrap inner">
+    <div class="klabel rev">Le bénéfice, concrètement</div>
+    <h2 class="stitle rev">Ce que vous gagnez n'est pas un rapport. C'est du temps et de l'avance.</h2>
+    <div class="benefits rev">
+      <div class="bcard feature g">
+        <div class="bcard-top">
+          <span class="bcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <span class="bcard-tag">Temps récupéré</span>
+        </div>
+        <div class="bcard-v">~2<span class="u">h</span></div>
+        <div class="bcard-k">économisées <b>chaque matin</b>. Nous lisons les sources pour vous : vous récupérez le temps que vous brûliez auparavant à parcourir agences, newsletters et flux. Du temps qui revient au client, ou à l'analyse de la position.</div>
+      </div>
+      <div class="bcard g">
+        <div class="bcard-top">
+          <span class="bcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></span>
+          <span class="bcard-tag">Zéro dispersion</span>
+        </div>
+        <div class="bcard-v">1<span class="u">note</span></div>
+        <div class="bcard-k">à la place de <b>vingt onglets ouverts</b> et de newsletters à écouler.</div>
+      </div>
+      <div class="bcard a">
+        <div class="bcard-top">
+          <span class="bcard-ic amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></span>
+          <span class="bcard-tag">Avance</span>
+        </div>
+        <div class="bcard-v">−1<span class="u">étape</span></div>
+        <div class="bcard-k">de retard sur le marché : vous savez <b>en premier</b> si une nouvelle est déjà intégrée dans les prix.</div>
+      </div>
+      <div class="bcard g">
+        <div class="bcard-top">
+          <span class="bcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span>
+          <span class="bcard-tag">Couverture</span>
+        </div>
+        <div class="bcard-v">9</div>
+        <div class="bcard-k">zones de marché surveillées <b>en parallèle</b>, chaque jour.</div>
+      </div>
+      <div class="bcard g">
+        <div class="bcard-top">
+          <span class="bcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></span>
+          <span class="bcard-tag">Aucune surprise</span>
+        </div>
+        <div class="bcard-v">0<span class="u">imprévu</span></div>
+        <div class="bcard-k">nouvelles qui <b>percutent</b> votre stratégie sans préavis.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEMAFORO GIA PREZZATO -->
+<section class="sec-pad bg-base">
+  <div class="wrap inner">
+    <div class="klabel rev">La question que vous vous posez toujours</div>
+    <h2 class="stitle rev">« Le marché l'a-t-il déjà intégrée, ou suis-je encore à temps ? »</h2>
+    <p class="ssub rev">Pour chaque nouvelle, Thesyum compare le mouvement de prix réel dans la fenêtre où elle sort. Vous savez ainsi tout de suite où vous en êtes — avant d'entrer.</p>
+    <div class="priced">
+      <div class="priced-card pc-green rev">
+        <span class="beam"></span>
+        <div class="sig">✓</div>
+        <h4>Pas encore intégrée</h4>
+        <p>Le marché n'a pas encore réagi. C'est l'espace où une thèse a encore de la valeur — et où un trader peut entrer à temps.</p>
+      </div>
+      <div class="priced-card pc-amber rev">
+        <span class="beam"></span>
+        <div class="sig">≈</div>
+        <h4>Partiellement intégrée</h4>
+        <p>Une partie du mouvement a déjà eu lieu. La marge subsiste, mais plus étroite que ce que le titre laisse penser.</p>
+      </div>
+      <div class="priced-card pc-red rev">
+        <span class="beam"></span>
+        <div class="sig">✕</div>
+        <h4>Déjà intégrée</h4>
+        <p>Le marché a déjà absorbé la nouvelle. Entrer maintenant signifie arriver tard, par FOMO. Thesyum vous le dit avant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATENA DI REAZIONE -->
+<section class="sec-pad bg-warm" id="catena">
+  <div class="glow glow-a" style="width:460px;height:320px;top:10%;left:-120px"></div>
+  <div class="wrap inner">
+    <div class="klabel rev">Les effets en chaîne</div>
+    <h2 class="stitle rev">Une nouvelle n'est jamais seule. Thesyum suit le fil jusqu'à votre portefeuille.</h2>
+    <p class="ssub rev">Il ne vous donne pas juste le titre. Il reconstruit la chaîne de conséquences — effet direct, effet caché, qui en profite et qui en pâtit — pour que vous compreniez l'impact réel en un coup d'œil.</p>
+    <div class="chain rev">
+      <div class="chain-head">
+        <span>Chaîne de conséquences · exemple réel</span>
+        <span class="tema">terres rares · horizon 12 mois</span>
+      </div>
+      <div class="chain-flow">
+        <div class="chain-node cn1">
+          <div class="chain-marker"><div class="chain-badge">01</div><div class="chain-stem"></div></div>
+          <div class="chain-body"><div class="chain-k">La nouvelle</div><p class="chain-t">La Chine restreint l'export de terres rares transformées. <span>Un titre que tout le monde lit.</span></p></div>
+        </div>
+        <div class="chain-node cn2">
+          <div class="chain-marker"><div class="chain-badge">02</div><div class="chain-stem"></div></div>
+          <div class="chain-body"><div class="chain-k">Effet direct</div><p class="chain-t">Les quelques raffineries hors de Chine deviennent <span>stratégiques : le goulot d'étranglement n'est pas l'extraction, c'est le traitement.</span></p></div>
+        </div>
+        <div class="chain-node cn3">
+          <div class="chain-marker"><div class="chain-badge">03</div><div class="chain-stem"></div></div>
+          <div class="chain-body"><div class="chain-k">Effet caché</div><p class="chain-t">Qui dépend des aimants permanents — véhicules électriques, défense — <span>fait face à un risque d'approvisionnement que le marché n'a pas encore intégré.</span></p></div>
+        </div>
+        <div class="chain-node cn4">
+          <div class="chain-marker"><div class="chain-badge">→</div></div>
+          <div class="chain-body"><div class="chain-k">La thèse, avec verdict</div><p class="chain-t">Prime structurelle sur les transformateurs occidentaux. <span>Impact attendu : élevé. À vérifier à 12 mois contre le prix réel.</span></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PER CHI: split buyer -->
+<section class="sec-pad bg-base" id="per-chi">
+  <div class="wrap inner">
+    <div class="klabel rev">Pour qui c'est pensé</div>
+    <h2 class="stitle rev">Deux métiers différents. Le même besoin : ne pas arriver deuxième.</h2>
+    <div class="split-b">
+      <div class="split-side consulente rev">
+        <div class="split-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Le conseiller financier</h3>
+        <div class="split-role">Réseaux, cabinets indépendants, banquiers privés</div>
+        <ul class="split-list">
+          <li><span class="ck">✓</span><span><b>Vous arrivez préparé à chaque appel.</b> Quand le client demande « pourquoi le marché a-t-il baissé ? », vous avez la réponse prête, avec le raisonnement derrière.</span></li>
+          <li><span class="ck">✓</span><span><b>Une heure par jour qui revient entre vos mains.</b> Nous lisons les sources. Vous passez ce temps là où il compte : avec le client.</span></li>
+          <li><span class="ck">✓</span><span><b>Du matériel à partager.</b> La synthèse hebdomadaire est écrite dans un français clair, prête à transmettre à ceux que vous gérez.</span></li>
+        </ul>
+      </div>
+      <div class="split-side trader rev">
+        <div class="split-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg></div>
+        <h3>Le trader actif</h3>
+        <div class="split-role">Discrétionnaire ou systématique</div>
+        <ul class="split-list">
+          <li><span class="ck">✓</span><span><b>Vous entrez à temps, pas par FOMO.</b> Vous savez tout de suite si une nouvelle est déjà intégrée ou s'il reste de la marge, avant d'ouvrir la position.</span></li>
+          <li><span class="ck">✓</span><span><b>Votre stratégie n'est pas prise au dépourvu.</b> Statistique ou discrétionnaire, vous savez quelles nouvelles pourraient entrer en conflit avec ce que vous aviez prévu.</span></li>
+          <li><span class="ck">✓</span><span><b>Zéro dispersion.</b> Pas de vingt onglets ouverts : une lecture structurée avant l'ouverture, et vous savez où regarder.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORLD DATA / CPI -->
+<section class="sec-pad bg-warm">
+  <div class="glow glow-g" style="width:480px;height:300px;bottom:0;right:-100px"></div>
+  <div class="wrap inner">
+    <div class="klabel rev">Les données sous la surface</div>
+    <h2 class="stitle rev">Chaque nouvelle est lue au regard des données réelles du monde.</h2>
+    <div class="world">
+      <div class="world-txt rev">
+        <h3>Pas seulement le titre. Le contexte macro, en temps réel.</h3>
+        <p>Si une nouvelle touche l'inflation, les taux ou la croissance, Thesyum la compare automatiquement aux données officielles — IPC, taux des banques centrales, emploi — des États-Unis, de la zone euro, du Royaume-Uni, du Japon.</p>
+        <p><b>Ces données sont surveillées en continu.</b> Ainsi, une thèse ne naît pas dans le vide : elle naît en sachant où se trouvent vraiment les fondamentaux, dans chaque partie du monde que la nouvelle pourrait toucher.</p>
+      </div>
+      <div class="world-grid rev">
+        <div class="wchip live"><div class="wc-region">USA · IPC</div><div class="wc-val">3.1%</div><div class="wc-tag">surveillé</div></div>
+        <div class="wchip"><div class="wc-region">Fed funds</div><div class="wc-val">4.50%</div><div class="wc-tag">taux</div></div>
+        <div class="wchip live"><div class="wc-region">Zone € · IPCH</div><div class="wc-val">2.4%</div><div class="wc-tag">surveillé</div></div>
+        <div class="wchip"><div class="wc-region">Dépôt BCE</div><div class="wc-val">3.25%</div><div class="wc-tag">taux</div></div>
+        <div class="wchip"><div class="wc-region">UK · Gilt 10 ans</div><div class="wc-val">4.1%</div><div class="wc-tag">rendements</div></div>
+        <div class="wchip live"><div class="wc-region">JP · JGB 10 ans</div><div class="wc-val">1.0%</div><div class="wc-tag">surveillé</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DUE DOCUMENTI -->
+<section class="sec-pad bg-base">
+  <div class="wrap inner">
+    <div class="klabel rev">Ce que vous recevez</div>
+    <h2 class="stitle rev">L'une pour décider aujourd'hui. L'autre à mettre devant un client.</h2>
+    <p class="ssub rev">Deux documents différents pour deux besoins différents. Les signaux bruts ne se transmettent pas à un client ; une synthèse hebdomadaire ne suffit pas à qui opère chaque jour.</p>
+    <div class="docs2 rev">
+      <div class="doc2">
+        <div class="doc2-h"><span class="n">Note quotidienne</span><span class="w">chaque matin</span></div>
+        <div class="doc2-b">
+          <div class="doc2-who">Pour qui opère</div>
+          <p>Avant l'ouverture. Technique, dense, avec les prix réels à côté de chaque signal. C'est l'outil avec lequel vous décidez quoi faire aujourd'hui.</p>
+          <ul>
+            <li>Thèmes chauds avec impact et pertinence</li>
+            <li>Prix réels alignés sur l'heure de la nouvelle</li>
+            <li>Si la nouvelle est déjà intégrée ou non</li>
+            <li>Chaîne d'effets pour chaque thèse</li>
+          </ul>
+        </div>
+      </div>
+      <div class="doc2 week">
+        <div class="doc2-h"><span class="n">Synthèse hebdomadaire</span><span class="w">dimanche soir</span></div>
+        <div class="doc2-b">
+          <div class="doc2-who">Pour le conseiller et son client</div>
+          <p>Une seule page, dans un français clair. Pensée pour être transmise à un client ou utilisée pour préparer un appel du lundi.</p>
+          <ul>
+            <li>Les deux ou trois thèmes dominants de la semaine</li>
+            <li>Les chaînes de conséquences les plus solides</li>
+            <li>Vérifications : thèses confirmées et démenties</li>
+            <li>Ce qu'il faut surveiller dans les sept jours suivants</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFRONTO (mantenuto) -->
+<section class="sec-pad bg-base" id="confronto">
+  <div class="wrap inner">
+    <div class="klabel rev">La comparaison</div>
+    <h2 class="stitle rev">Ce qu'est Thesyum. Et ce qu'il n'est pas.</h2>
+    <p class="ssub rev">Chaque outil résout une partie du problème. Thesyum est le seul construit autour de la vérification dans le temps — pas seulement de la production de contenu.</p>
+    <div class="cmp-wrap rev">
+      <table class="cmp">
+        <thead><tr>
+          <th>&nbsp;</th>
+          <th class="us">Thesyum</th>
+          <th>Terminal de données<br>professionnel</th>
+          <th>Newsletter<br>d'analyse</th>
+          <th>App de signaux<br>/ robo-advisor</th>
+          <th>Flux de<br>nouvelles</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="rowlab">Filtre le bruit pour vous</td><td class="us"><span class="yes">Oui</span> — seulement ce qui fait bouger les prix</td><td><span class="no">Non</span> — données brutes</td><td><span class="partial">Parfois</span></td><td><span class="no">Non</span></td><td><span class="no">Non</span> — tout, sans hiérarchie</td></tr>
+          <tr><td class="rowlab">Indique si déjà intégré par le marché</td><td class="us"><span class="yes">Oui</span></td><td><span class="no">Non</span></td><td><span class="no">Non</span></td><td><span class="no">Non</span></td><td><span class="no">Non</span></td></tr>
+          <tr><td class="rowlab">Impact de la nouvelle : élevé ou faible</td><td class="us"><span class="yes">Oui</span> — explicite sur chaque thèse</td><td><span class="no">Non</span></td><td><span class="partial">Implicite</span></td><td><span class="partial">Signal seulement</span></td><td><span class="no">Non</span></td></tr>
+          <tr><td class="rowlab">Chaîne d'effets (pas seulement le titre)</td><td class="us"><span class="yes">Oui</span></td><td><span class="no">Non</span></td><td><span class="partial">Variable</span></td><td><span class="no">Non</span></td><td><span class="no">Non</span></td></tr>
+          <tr><td class="rowlab">Verdict vérifié dans le temps (même les erreurs)</td><td class="us"><span class="yes">Oui</span> — au registre public</td><td><span class="no">Non</span></td><td><span class="no">Rare</span></td><td><span class="partial">Partiel</span></td><td><span class="no">Non</span></td></tr>
+          <tr><td class="rowlab">Données macro mondiales intégrées (IPC, taux)</td><td class="us"><span class="yes">Oui</span></td><td><span class="partial">Oui (à prix élevé)</span></td><td><span class="no">Non</span></td><td><span class="no">Non</span></td><td><span class="no">Non</span></td></tr>
+          <tr><td class="rowlab">Synthèse partageable avec le client</td><td class="us"><span class="yes">Oui</span></td><td><span class="no">Non</span></td><td><span class="partial">Parfois</span></td><td><span class="no">Non</span></td><td><span class="no">Non</span></td></tr>
+          <tr><td class="rowlab">Coût indicatif</td><td class="us"><span class="yes">à partir de 49€/mois</span></td><td>plus de 2 000€/mois</td><td>20–300€/mois</td><td>variable</td><td>gratuit – faible</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cmp-hint">← faites défiler le tableau pour voir toutes les colonnes</div>
+    <p class="cmp-note">Catégories génériques à titre illustratif. Aucun produit spécifique n'est cité par son nom.</p>
+  </div>
+</section>
+
+<!-- PREZZI -->
+<section class="sec-pad bg-warm" id="prezzi">
+  <div class="wrap inner">
+    <div class="klabel rev">Accès</div>
+    <h2 class="stitle rev">Trois niveaux, aucun engagement de durée.</h2>
+    <div class="plans">
+      <div class="plan rev">
+        <div class="pn">Hebdomadaire</div>
+        <div class="pd">La synthèse du dimanche, avec thèses et vérifications.</div>
+        <div class="pp">49€<span>/mois</span></div>
+        <ul><li>Synthèse hebdomadaire complète</li><li>Accès au registre des thèses</li><li>Archive de 90 jours</li></ul>
+        <a href="#contatti" class="p-cta outline">Commencer maintenant</a>
+      </div>
+      <div class="plan hot rev">
+        <div class="pn">Quotidien</div>
+        <div class="pd">Pour qui opère et doit savoir avant l'ouverture.</div>
+        <div class="pp">99€<span>/mois</span></div>
+        <ul><li>Note quotidienne + synthèse hebdomadaire</li><li>Analyses approfondies par secteur</li><li>Archive consultable, illimitée</li><li>Chaînes de conséquences complètes</li></ul>
+        <a href="#contatti" class="p-cta solid">Demander une démo</a>
+      </div>
+      <div class="plan rev">
+        <div class="pn">Studio</div>
+        <div class="pd">Pour les réseaux de conseil et les équipes de gestion.</div>
+        <div class="pp">Sur mesure</div>
+        <ul><li>Tout le plan Quotidien</li><li>Utilisateurs multiples</li><li>Synthèse personnalisée par portefeuille</li><li>Format partageable avec le client</li></ul>
+        <a href="#contatti" class="p-cta outline">Parlons-en</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec-pad bg-base" id="faq">
+  <div class="wrap inner">
+    <div class="klabel rev" style="text-align:center">Avant de commencer</div>
+    <h2 class="stitle rev" style="max-width:none;text-align:center;margin:0 auto">Questions fréquentes</h2>
+    <div class="faq rev">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Combien de temps me fait-il vraiment gagner ?</span><span class="faq-icon">+</span></button><div class="faq-a"><p>Le temps que vous passez aujourd'hui à parcourir sources, newsletters et flux pour comprendre ce qui compte : en moyenne <b>une heure et demie à deux heures chaque matin</b>. Thesyum fait ce travail avant l'ouverture et vous le livre dans une note que vous lisez en cinq minutes.</p><p>Ce n'est pas seulement du temps économisé : c'est du temps déplacé là où il crée de la valeur — avec le client, ou dans l'analyse de la position.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Comment sait-il si une nouvelle est déjà intégrée ?</span><span class="faq-icon">+</span></button><div class="faq-a"><p>Pour chaque nouvelle pertinente, le système compare le mouvement de prix réel de l'actif ou du secteur dans la fenêtre temporelle autour de sa sortie. Si le marché a déjà bougé, <b>c'est signalé explicitement</b> plutôt que d'être vendu comme une intuition fraîche.</p><p>C'est la différence entre entrer à temps et entrer par FOMO quand le mouvement a déjà eu lieu.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Qu'entendez-vous par « impact élevé ou faible » ?</span><span class="faq-icon">+</span></button><div class="faq-a"><p>Chaque thèse arrive avec une estimation explicite de la capacité de la nouvelle à faire bouger les marchés. <b>Toutes les nouvelles n'ont pas le même poids</b> : certaines sont structurelles, d'autres sont du bruit qui semble important mais ne fait pas bouger les prix. Nous vous le disons, pour que vous sachiez à quoi accorder de l'importance.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>D'où viennent les nouvelles et les données ?</span><span class="faq-icon">+</span></button><div class="faq-a"><p>Plus de 180 sources chaque jour : GDELT (qui indexe plus de 100 000 titres mondiaux en temps réel), Google News avec des requêtes ciblées par secteur, et des flux RSS spécialisés. Les données macro — IPC, taux, emploi — proviennent de sources officielles (FRED) et <b>sont surveillées en continu</b> pour les États-Unis, la zone euro, le Royaume-Uni et le Japon.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Si une thèse est erronée, disparaît-elle ?</span><span class="faq-icon">+</span></button><div class="faq-a"><p>Non — et c'est bien là l'essentiel. Chaque thèse a une date et un horizon, et à l'échéance elle est vérifiée contre le prix réel. Les thèses démenties <b>restent au registre avec la même visibilité</b> que celles confirmées. Un historique qui ne montre que les succès n'est pas un historique : c'est du marketing.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>Est-ce du conseil financier ?</span><span class="faq-icon">+</span></button><div class="faq-a"><p>Non. Thesyum fait de la <b>recherche et de l'information de marché</b>, pas du conseil personnalisé. Il ne recommande pas d'acheter ou de vendre des instruments spécifiques et ne tient pas compte de votre situation. Les décisions restent les vôtres, ou celles du professionnel qui les prend. C'est un outil qui vous fait arriver informé, pas un substitut à votre jugement.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATTI + FORM -->
+<section class="sec-pad bg-void" id="contatti">
+  <div class="glow glow-g" style="width:600px;height:400px;top:-100px;left:50%;transform:translateX(-50%)"></div>
+  <div class="wrap inner">
+    <div class="contact-grid">
+      <div class="contact-txt rev">
+        <div class="klabel">Demander une démo</div>
+        <h2 class="stitle" style="font-size:clamp(28px,3.8vw,42px)">Le marché n'attend pas. Vous non plus ne devriez pas.</h2>
+        <p style="margin-top:20px">Laissez vos coordonnées et nous vous écrivons pour fixer une démo : <b>vingt minutes</b> pendant lesquelles nous ouvrons le registre réel, les thèses en cours et les vérifications déjà closes — y compris celles qui ont mal tourné.</p>
+        <p>Si vous voulez simplement plus d'informations, indiquez-le dans le message et nous y répondrons.</p>
+        <div class="contact-note">
+          <b>Aucun appel à froid.</b> Nous vous contactons une fois par email (ou par téléphone, seulement si vous le laissez), sans précipitation. Pas de séquences automatiques.
+        </div>
+      </div>
+      <form class="form rev" id="demoForm" action="https://formspree.io/f/mjgnrqpb" method="POST">
+        <div id="formFields">
+          <div class="field">
+            <label for="f-name">Nom et prénom</label>
+            <input type="text" id="f-name" name="nome" placeholder="Votre nom" required>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" placeholder="nom@cabinet.fr" required>
+          </div>
+          <div class="field">
+            <label for="f-phone">Téléphone <span style="text-transform:none;letter-spacing:0">(facultatif)</span></label>
+            <div class="phone-row">
+              <select id="f-prefix" name="prefisso">
+                <option value="+39">🇮🇹 +39</option>
+                <option value="+41">🇨🇭 +41</option>
+                <option value="+44">🇬🇧 +44</option>
+                <option value="+33">🇫🇷 +33</option>
+                <option value="+49">🇩🇪 +49</option>
+                <option value="+34">🇪🇸 +34</option>
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+971">🇦🇪 +971</option>
+              </select>
+              <input type="tel" id="f-phone" name="telefono" placeholder="06 12 34 56 78">
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-type">Ce qui vous intéresse</label>
+            <select id="f-type" name="richiesta">
+              <option value="demo">Demander une démo</option>
+              <option value="info">Obtenir plus d'informations</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg">Message <span style="text-transform:none;letter-spacing:0">(facultatif)</span></label>
+            <textarea id="f-msg" name="messaggio" placeholder="Ex. je suis conseiller, je suis surtout l'énergie et la macro…"></textarea>
+          </div>
+          <button type="submit" class="btn">Envoyer la demande</button>
+          <p class="form-priv">Les données sont utilisées uniquement pour vous répondre. Aucune inscription automatique à une newsletter.</p>
+        </div>
+        <div class="form-ok" id="formOk">
+          <div class="ok-ic">✓</div>
+          <h3>Demande envoyée</h3>
+          <p>Nous vous écrivons dans un jour ouvré<br>à l'adresse que vous avez laissée.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div class="ftop">
+    <div class="logo">
+      <svg viewBox="0 0 26 26" fill="none"><rect x="1" y="1" width="24" height="24" stroke="#EAF3EE" stroke-opacity=".3"/><line x1="1" y1="9" x2="25" y2="9" stroke="#EAF3EE" stroke-opacity=".22"/><line x1="1" y1="17" x2="25" y2="17" stroke="#EAF3EE" stroke-opacity=".22"/><circle cx="7" cy="5" r="2" fill="#6EE7A8"/><circle cx="7" cy="13" r="2" fill="#E3B24A"/><circle cx="7" cy="21" r="2" fill="#6EE7A8"/></svg>
+      <span>Thesyum</span>
+    </div>
+    <div class="fcols">
+      <div class="fcol"><h5>Produit</h5><a href="../registro.html">Registre</a><a href="../esempio.html">Rapport d'exemple</a><a href="#prezzi">Tarifs</a></div>
+      <div class="fcol"><h5>Entreprise</h5><a href="#contatti">Contact</a><a href="../area/">Se connecter</a></div>
+      <div class="fcol"><h5>Légal</h5><a href="privacy.html">Confidentialité</a><a href="termini.html">Conditions</a></div>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Thesyum · un produit Fladynance. Tous droits réservés.</span>
+    <span>Analyse indépendante. Ne constitue pas un conseil financier.</span>
+  </div>
+</div></footer>
+
+<script>
+function toggleMenu(){document.getElementById('mmenu').classList.toggle('open')}
+function toggleFaq(btn){
+  var a=btn.nextElementSibling, ic=btn.querySelector('.faq-icon');
+  var open=a.style.display==='block';
+  document.querySelectorAll('.faq-a').forEach(x=>x.style.display='none');
+  document.querySelectorAll('.faq-icon').forEach(x=>{x.textContent='+';x.style.borderColor='';x.style.transform=''});
+  if(!open){a.style.display='block';ic.textContent='−';ic.style.borderColor='var(--phos)';}
+}
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>io.observe(el));
+
+// Form: invio via Formspree senza lasciare la pagina
+var df=document.getElementById('demoForm');
+if(df){df.addEventListener('submit',async function(ev){
+  ev.preventDefault();
+  var btn=this.querySelector('button[type=submit]');
+  btn.disabled=true; btn.textContent='Envoi en cours…';
+  try{
+    var res=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+    if(res.ok){document.getElementById('formFields').style.display='none';document.getElementById('formOk').style.display='block';}
+    else{throw new Error()}
+  }catch(e){btn.disabled=false;btn.textContent='Envoyer la demande';alert('Envoi échoué. Réessayez, ou écrivez-nous par email.');}
+});}
+</script>
+</body>
+</html>
