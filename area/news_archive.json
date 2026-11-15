@@ -1,75 +1,5 @@
 [
  {
-  "data": "2026-10-09",
-  "categoria": "valute_fx",
-  "titolo": "7-Eleven owner eyes European expansion after India exit",
-  "fonte": "Nikkei Asia",
-  "url": "https://asia.nikkei.com/business/retail/7-eleven-owner-eyes-european-expansion-after-india-exit"
- },
- {
-  "data": "2026-10-10",
-  "categoria": "energia",
-  "titolo": "Oil little changed as Saudi cuts prices, OPEC+ boosts target - CNBC",
-  "fonte": "CNBC",
-  "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPSHFERHlVbjVLeEFsMnA5T2h2TlV0SkhZM3o4clU4eFk3Y0gzenZReHVyYzIwSUdmZkFVNHA5SXV1WjBNV1NFS3pNX2pIRTNQVl80MUFKc1RkemdQaVQydGdTQzVfcUFkbHA5WGVXM2xPR1hmTmV6YUxybDY1eVNyZXNSbzBldTNNNFdSUzBDRkRhUdIBlwFBVV95cUxPb1Rha1RTZHdXeUd2bVdTT2xHN3Y3YUtuUW9HUzZtOVhkR0VOU1FLZW5sNXYtQ1FwaXdXV2dhN1VNTzhENjBDQy1fT25SWTFrbkFQbjZiQlk2X3BEOW0wbFZyNjV3Szh4b2laM1FWcndDenBwZFI4dXJGckp1M0h2eUNWUTFhWXFuamNCWHduOGIwMGM3TG9Z?oc=5"
- },
- {
-  "data": "2026-10-10",
-  "categoria": "energia",
-  "titolo": "Europe Must Top Record LNG Imports This Winter to Protect Storage, GIE Warns - Natural Gas Intelligence",
-  "fonte": "Natural Gas Intelligence",
-  "url": "https://news.google.com/rss/articles/CBMilwNBVV95cUxORHVlN0ZPODNaMmhYc0p2SXFpSHpUcTEzNzZ1VWE2TlFHekJDVGxIcS1vTm4zRjhKWk05NUstaTdmV0J6VDJoQVR5ZDJEb3IxZDV5UUdyQ0ZXdDFIZ29CTkRHU1M2UHQzUUJCSXVfRHY4azBPUjAyRkUwNENrV2YwQTdLS244Zko1dnVjRkY5anNlRlVBUkpyX2g3QjV2Q2lnQXNVcVZqMUo3bWg5SnF4M0FPcWhTellmaVlxTDNPam1zb0VhdkEwRFZpcXRVTTlsVXdnNlBZZjBXSDl2S0ZwWkprWHpzTmh6Z0tfUExtMVlVWnpyOW1uOWxmMUJucG5rWTJIbGRkZ2puZ1FCSDZ0QmkyQm5iZTNzdTN5US1SVDJmVlFRS1F3TmtwM3l6SU5qM0NLZE5Vd3Ixd1VYQzhsMzRKbFlRdnZpSzUybEtyX0lEdHlnVGxFakpaU2NFdllxZ0owSFI2dGpEUlRZbDFrczk5TzhqRTlYMG51NVQxSlJ5aXBQRl9NV2YxNnFQdnZLYV9hYUNWYw?oc=5"
- },
- {
-  "data": "2026-10-10",
-  "categoria": "energia",
-  "titolo": "EU Faces Potential Winter Gas Shortfall as Storage Hits Record Low - IndexBox",
-  "fonte": "IndexBox",
-  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOUjlwU2RRXzdVZmtDQ3RjZHNpWUl2X1czTmNIVHFMZ0p0aTZNUzFwS0FCZzJSOXhJeThmNnlYRU5iUFBVaHFNTGVZQjFqVXdNZURHRTJzekZ5MlZMelBDUVBIY01NM0FaN1JoNy05SUZxdG9SVUc0NmtLQm1pNmk3UEFRSkxyMFYtMkJoUS1yS0x3ei1NRWtvSWltQ3o?oc=5"
- },
- {
-  "data": "2026-10-10",
-  "categoria": "energia",
-  "titolo": "EU Transition Operators Sound Alarm on LNG Import Need - Energy Intelligence",
-  "fonte": "Energy Intelligence",
-  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBLRFd6UFhwSE5YUm81VUJyTHloV19rQXYyLXRoVWd5T2FiMmlrZTVjUDg3d2cyX3RoZTFsMTQ0Rjg5cnRxNTVzc29MQVlWTV95LThlQS04cEhVT1FKOGRjeEFvSjRyMEx0VFNHMG1YRmhfQQ?oc=5"
- },
- {
-  "data": "2026-10-10",
-  "categoria": "energia",
-  "titolo": "Chilling in the USA: LNG Securing Strong Long-Term Position in C&I Energy Transition - EnergyTech",
-  "fonte": "EnergyTech",
-  "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQV3NfN1NaajRsMFJvSkZyVUNac2haSVJ2MWpXU2NJWmZoa2ViX29iQjRYRzJpOUE2eVEyM0E3aC14bTNkUE80M2xFd2ZkQlR3ZGR3dEE1dElPbDBKZFFvNXo1aXBUZUQyWVlWcTc2RjFseWtFQTB6WTJlWEpZVG9BQ0F2TG5wekhiZFlsb19pS3VNb2FCejdycEZfMU93MFl0TzFLYldjbGhwVmFmWjhqSVlnSWh5T0RPMnJ5SVVmMnZBR1E5SWRYazhqWjhUUU53ZjhVbmh0Nzg?oc=5"
- },
- {
-  "data": "2026-10-10",
-  "categoria": "energia",
-  "titolo": "How crisis has tested the resilience of the LNG industry - Energy Connects",
-  "fonte": "Energy Connects",
-  "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQOEtsdzRUcUVsVS0xV0FWZjI2cDcwbUNXN2hmeDFOcDM4a053SXVBeHpHemlOZFdjbUk2eHJuUF9aYXcydEtZazR0U2g2SHltVlVnRkljSVQ1Skc4azlGWWNqR1NoV3d1Nk5hSVdfQ0k0S19Pbkpvc0pUeXNXTWpnZ0ktSWtaMjJwaENVWkx6a1ZJT3lqTWxNTjZodG1SZnRrc0lIY3g0ZmJyOU9iLWlzTEJYdHdEbC0tVTRaQmFQZHljd21sa18tckxB?oc=5"
- },
- {
-  "data": "2026-10-10",
-  "categoria": "energia",
-  "titolo": "EU’s new list of critical mineral projects focuses on clean energy metals - POLITICO.eu",
-  "fonte": "POLITICO.eu",
-  "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPRE85czRTdEdua3U2RlVVTkdvMHRuQlhvbXM5T1JpWkdyTmExZEc4dmdRbllKTWo3dVNucml3dVQwc1V2RlRpOG82QzVQc2lXVUxTREkzMHZtVHVWSEk1bmlfMHZjZU1saGo1SjFYTFFveXh6dGVTVVc1bTdVbndVNUZIalE1NWg0OEhPMTN1QTZ2SDdKSjdxeXNxMkVWVnBpNEU4cXhyMzU?oc=5"
- },
- {
-  "data": "2026-10-10",
-  "categoria": "energia",
-  "titolo": "Why Record Crude Output Can’t Solve America’s Diesel Crisis",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Energy/Crude-Oil/Why-Record-Crude-Output-Cant-Solve-Americas-Diesel-Crisis.html"
- },
- {
-  "data": "2026-10-10",
-  "categoria": "energia",
-  "titolo": "Russia, Germany Add Diesel Supply as Fuel Market Scrambles for Barrels",
-  "fonte": "OilPrice",
-  "url": "https://oilprice.com/Latest-Energy-News/World-News/Russia-Germany-Add-Diesel-Supply-as-Fuel-Market-Scrambles-for-Barrels.html"
- },
- {
   "data": "2026-10-10",
   "categoria": "energia",
   "titolo": "Trump Puts Iran Strikes on Hold as Hurricane Threatens Oil Supply",
@@ -34998,5 +34928,75 @@
   "titolo": "APEC summit in Shenzhen, Indonesia monetary policy, ASEAN diplomacy",
   "fonte": "Nikkei Asia",
   "url": "https://asia.nikkei.com/spotlight/your-week-in-asia/apec-summit-in-shenzhen-indonesia-monetary-policy-asean-diplomacy"
+ },
+ {
+  "data": "2026-11-15",
+  "categoria": "energia",
+  "titolo": "Global liquefied natural gas trade volumes reached record high in 2025 - U.S. Energy Information Administration (EIA) (.gov)",
+  "fonte": "U.S. Energy Information Administration (EIA) (.gov)",
+  "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFB5cTlqRXBjTVlvalR6emdVODVHcDBSMndNUTVESFAtUUZOVkpGbDBzcEtqZEU5S1oyX1FkUDVsbmltRGQzdWptT3QzOVdxYzJfXzZYZlpqWWVGdWpOSkFremhWMA?oc=5"
+ },
+ {
+  "data": "2026-11-15",
+  "categoria": "metalli_preziosi",
+  "titolo": "Gold and silver are supposed to protect against inflation. So why are both metals tumbling instead?",
+  "fonte": "MarketWatch",
+  "url": "https://www.marketwatch.com/story/gold-and-silver-are-supposed-to-protect-against-inflation-so-why-are-both-metals-tumbling-instead-1735eca7?mod=mw_rss_topstories"
+ },
+ {
+  "data": "2026-11-15",
+  "categoria": "metalli_preziosi",
+  "titolo": "Folgiero, cantieri da alta intensità di lavoro ad alta intensità tecnologica",
+  "fonte": "ANSA Economia",
+  "url": "https://www.ansa.it/sito/notizie/economia/2026/11/15/folgiero-cantieri-da-alta-intensita-di-lavoro-ad-alta-intensita-tecnologica_e7e753e2-85b7-4639-8b81-d721dc75d5a9.html"
+ },
+ {
+  "data": "2026-11-15",
+  "categoria": "shipping_logistica",
+  "titolo": "Borderlands Mexico: Texas cross-border traffic rises by 400 trucks through Saturday pilot",
+  "fonte": "FreightWaves",
+  "url": "https://www.freightwaves.com/news/borderlands-mexico-texas-cross-border-traffic-rises-by-400-trucks-through-saturday-pilot"
+ },
+ {
+  "data": "2026-11-15",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Nvidia turmoil could shake Korea’s chip industry - Korea JoongAng Daily",
+  "fonte": "Korea JoongAng Daily",
+  "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOa3RaYnZwQmpiMEpTeUg2UVZHRElCUFVJTUFjc3FjUmJFMVluMEhZWlkyVjZsb3o1SVNDaUIycmdUSmZRTHZRMDdVR0w4dWpFYVRqQjJJdFp5TEhFNFd4NnhSMXJhbFJkWXpDaTlmQjdGUjR1T09JZVlQM2M3TGpsdXpOYmtiR2tmY2FpNGZlY3lRd1FDRjExa3hudFB0eXVmNHdj?oc=5"
+ },
+ {
+  "data": "2026-11-15",
+  "categoria": "ai_semiconduttori",
+  "titolo": "3 US Power Grid Stocks for AI Data Center Demand - Simply Wall St",
+  "fonte": "Simply Wall St",
+  "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaENUVkZ3QzI1ZmI5dE0wV1VqN3dIQUx0Y0tOYWJMV0xmTngwTGhpSFJoRHFRY2RGZUVqUG1kQ0FnOFEybjBva3dLXzQzMXpGODRqZFpxVkkwUUxWY0NGV3BZTS1uVVl5bnlSWkNkYndYcjZBejc4cFZRdldqSnhzNzJ6MFRXWkVfenpVUmpIeGNfd21uZlpsY0o5ZWRBTVJGeFBWaXJaVFVtZmhLSDU2ZjUtQ1VGdmFrOUFUZnB1MTdwdDZRV0NkelJUTVlTX2_SAdQBQVVfeXFMTUNaT05CMUFwUHdkWDB2VHNLNE5BZGFjdWQ5bWFIN0lLUHFqWFB3aUJJdEU2TDhiYmtzalA4UzJMbGF6NHlZMlhBQmRsa2JWN1Q5YlphS0F3MHV4VHJuRTFGT29KNmduRWV5ZXlTMXo1bEtyMnBJMFZMX2RNVm56aE1pWHgyRTNBOXR5TUc2YmNpU2ZlRUVpYzlDTjg3NTBPeEZjT0owNkJVZDNxX3BuRXVLVXdScjhveTB3TjBzQ2NRV0NzZ1NPVjlsNE9tMUkySXIwVnE?oc=5"
+ },
+ {
+  "data": "2026-11-15",
+  "categoria": "ai_semiconduttori",
+  "titolo": "Anthropic’s IPO lands as the embattled AI trade looks for a much-needed bright spot",
+  "fonte": "CNBC Top",
+  "url": "https://www.cnbc.com/2026/11/15/anthropic-ipo-is-make-or-break-for-the-technology-industry.html"
+ },
+ {
+  "data": "2026-11-15",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Dev hacks Coway air purifier to cut it off from the cloud",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/tech-industry/cyber-security/dev-hacks-coway-air-purifier-to-cut-it-off-from-the-cloud-now-runs-locally-in-home-assistant-fan-downloads-the-certificate-over-plain-http-letting-a-home-server-stand-in-for-coways"
+ },
+ {
+  "data": "2026-11-15",
+  "categoria": "difesa_geopolitica",
+  "titolo": "Dr. Lisa Su graces the opening of Micro Center's new Austin store",
+  "fonte": "Tom's Hardware",
+  "url": "https://www.tomshardware.com/desktops/pc-building/dr-lisa-su-graces-the-opening-of-micro-centers-new-austin-store-amd-ceo-meets-with-gamers-autographs-a-9070-xt-gpu-and-hands-out-300-swag-bags"
+ },
+ {
+  "data": "2026-11-15",
+  "categoria": "valute_fx",
+  "titolo": "Fed likely to need to raise rates amid worsening inflation: Daly - Reuters",
+  "fonte": "Reuters",
+  "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOaHBuM0FNRHlsWlNrX090Q3F6R2VZUTFYRkF3bFZwbDNQMUwxZXpiYmROVUJWWTVKZHRoOExqUkxpcktRYUZodDVncmNVSEdIMDktTDYxMXlWM1hvdXVKRmVfMmtvbTBUd1MyWkxFR3RqTlNJNVk1WFNtc2pnQ0w4QjRTdjlmcFdPUkVUZFVndGdCRWRPMEw3cFZHcjBlc3lhdDY2Vw?oc=5"
  }
 ]
