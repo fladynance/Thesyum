@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Thesyum — anteprima redesign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --bg:#FBFAF7;
+  --surface:#FFFFFF;
+  --panel:#F3F4F1;
+  --border:#E5E6E1;
+  --border-2:#D9DBD4;
+  --ink:#121813;
+  --ink-2:#55605A;
+  --ink-3:#8B938D;
+  --accent:#0E9F5B;
+  --accent-d:#0A7A45;
+  --accent-soft:#E7F6EE;
+  --amber:#B4690E;
+  --amber-soft:#FBEFDD;
+  --red:#C03227;
+  --red-soft:#FBEAE8;
+  --serif:'Space Grotesk','Inter',system-ui,sans-serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',Consolas,monospace;
+  --shadow-s:0 1px 2px rgba(18,24,19,.04),0 1px 3px rgba(18,24,19,.06);
+  --shadow-m:0 10px 30px rgba(18,24,19,.06),0 2px 8px rgba(18,24,19,.05);
+  --shadow-l:0 30px 60px rgba(18,24,19,.10),0 8px 20px rgba(18,24,19,.06);
+  --r-sm:9px;--r-md:14px;--r-lg:22px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+button{cursor:pointer;font-family:inherit;}
+img{max-width:100%;display:block;}
+.container{max-width:1140px;margin:0 auto;padding:0 24px;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-d);background:var(--accent-soft);border:1px solid rgba(14,159,91,.2);padding:6px 13px;border-radius:100px;}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);}
+
+/* NAV */
+#nav{position:sticky;top:0;z-index:100;background:rgba(251,250,247,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px;}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:-.01em;}
+.logo .mark{width:30px;height:30px;border-radius:9px;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo .mark span{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(14,159,91,.25);}
+.nav-links{display:flex;align-items:center;gap:30px;list-style:none;}
+.nav-links a{font-size:14.5px;font-weight:500;color:var(--ink-2);transition:color .2s;}
+.nav-links a:hover{color:var(--ink);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;border-radius:10px;transition:.2s;border:1px solid transparent;}
+.btn-solid{background:var(--accent);color:#fff;padding:11px 20px;font-size:14.5px;box-shadow:0 1px 2px rgba(10,122,69,.3);}
+.btn-solid:hover{background:var(--accent-d);transform:translateY(-1px);box-shadow:0 6px 16px rgba(10,122,69,.28);}
+.btn-ghost{background:var(--surface);color:var(--ink);padding:11px 20px;font-size:14.5px;border-color:var(--border-2);}
+.btn-ghost:hover{border-color:var(--ink-3);transform:translateY(-1px);}
+.btn-lg{padding:15px 28px;font-size:16px;border-radius:12px;}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;}
+.hamburger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.25s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;background:var(--surface);border-bottom:1px solid var(--border);padding:12px 24px 22px;}
+.mobile-menu.open{display:block;}
+.mobile-menu a{display:block;padding:13px 0;border-bottom:1px solid var(--border);font-weight:500;color:var(--ink-2);}
+.mobile-menu .btn{width:100%;margin-top:16px;}
+
+/* HERO */
+#hero{position:relative;overflow:hidden;padding:84px 0 80px;}
+#hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse 60% 50% at 85% 0%,rgba(14,159,91,.10),transparent 70%),
+  radial-gradient(ellipse 50% 40% at 0% 100%,rgba(14,159,91,.05),transparent 70%);
+  pointer-events:none;}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+.hero-h1{font-family:var(--serif);font-size:clamp(36px,4.6vw,56px);font-weight:600;line-height:1.08;letter-spacing:-.025em;margin:22px 0 20px;text-wrap:balance;}
+.hero-h1 .hl{color:var(--accent-d);}
+.hero-sub{font-size:19px;color:var(--ink-2);line-height:1.6;max-width:520px;margin-bottom:30px;}
+.hero-sub strong{color:var(--ink);font-weight:600;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.hero-reassure{display:flex;align-items:center;gap:18px;margin-top:22px;flex-wrap:wrap;}
+.hero-reassure .r{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--ink-2);}
+.hero-reassure svg{width:16px;height:16px;color:var(--accent);flex-shrink:0;}
+
+/* sample card */
+.sample-wrap{position:relative;}
+.sample-cap{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink-2);margin-bottom:12px;font-weight:500;}
+.sample-cap svg{width:17px;height:17px;color:var(--accent);}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-l);overflow:hidden;}
+.card-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#fff,#fcfdfc);}
+.card-head .ht{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.03em;}
+.card-head .ht .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(14,159,91,.18);}
+.card-head .hd{font-family:var(--mono);font-size:12px;color:var(--ink-3);}
+.card-intro{padding:15px 20px 6px;font-size:13px;color:var(--ink-3);font-family:var(--mono);letter-spacing:.02em;}
+.sig{display:flex;gap:13px;padding:15px 20px;border-top:1px solid var(--border);}
+.sig:first-of-type{border-top:none;}
+.sig .tag{flex-shrink:0;align-self:flex-start;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 8px;border-radius:6px;white-space:nowrap;}
+.tag.ok{background:var(--accent-soft);color:var(--accent-d);}
+.tag.mid{background:var(--amber-soft);color:var(--amber);}
+.tag.bad{background:var(--red-soft);color:var(--red);}
+.sig .txt{font-size:13.5px;color:var(--ink-2);line-height:1.5;}
+.sig .txt b{color:var(--ink);font-weight:600;}
+.card-foot{padding:13px 20px;border-top:1px solid var(--border);background:var(--panel);font-family:var(--mono);font-size:11.5px;color:var(--ink-3);display:flex;align-items:center;gap:8px;}
+.card-foot svg{width:14px;height:14px;color:var(--accent-d);}
+
+/* LOGOS / trust strip */
+#trust{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface);}
+.trust-inner{display:flex;align-items:center;justify-content:center;gap:40px;padding:22px 0;flex-wrap:wrap;}
+.trust-inner .t{font-size:13px;color:var(--ink-3);display:flex;align-items:center;gap:9px;}
+.trust-inner .t b{color:var(--ink);font-family:var(--serif);font-size:20px;font-weight:600;}
+
+/* SECTION */
+section{scroll-margin-top:80px;}
+.sec{padding:92px 0;}
+.sec-head{max-width:680px;margin:0 auto 56px;text-align:center;}
+.sec-h2{font-family:var(--serif);font-size:clamp(28px,3.4vw,40px);font-weight:600;line-height:1.12;letter-spacing:-.02em;margin:16px 0 14px;text-wrap:balance;}
+.sec-lead{font-size:17px;color:var(--ink-2);line-height:1.6;}
+
+/* COME FUNZIONA */
+#come{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.step{position:relative;padding:30px 26px;border:1px solid var(--border);border-radius:var(--r-md);background:var(--bg);}
+.step .n{width:40px;height:40px;border-radius:11px;background:var(--ink);color:#fff;font-family:var(--mono);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.step h3{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:9px;}
+.step p{font-size:14.5px;color:var(--ink-2);line-height:1.6;}
+.step .big{font-family:var(--serif);font-size:15px;color:var(--accent-d);font-weight:600;margin-top:12px;}
+
+/* PRICED IN */
+.pi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.pi{border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface);padding:28px 24px;box-shadow:var(--shadow-s);}
+.pi .tag{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 11px;border-radius:7px;margin-bottom:18px;}
+.pi .tag .d{width:7px;height:7px;border-radius:50%;}
+.pi.ok .tag{background:var(--accent-soft);color:var(--accent-d);} .pi.ok .tag .d{background:var(--accent);}
+.pi.mid .tag{background:var(--amber-soft);color:var(--amber);} .pi.mid .tag .d{background:var(--amber);}
+.pi.bad .tag{background:var(--red-soft);color:var(--red);} .pi.bad .tag .d{background:var(--red);}
+.pi h3{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:8px;}
+.pi p{font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:16px;}
+.pi .ex{font-size:13px;color:var(--ink-3);border-top:1px dashed var(--border-2);padding-top:14px;}
+.pi .ex b{color:var(--ink-2);font-weight:600;display:block;margin-bottom:3px;font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;}
+
+/* COSA RICEVI */
+#ricevi{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.ric-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.ric{border:1px solid var(--border);border-radius:var(--r-md);background:var(--bg);padding:34px 30px;}
+.ric .badge{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-d);background:var(--accent-soft);padding:5px 11px;border-radius:7px;margin-bottom:18px;}
+.ric h3{font-family:var(--serif);font-size:22px;font-weight:600;margin-bottom:10px;}
+.ric p{font-size:14.5px;color:var(--ink-2);line-height:1.6;margin-bottom:18px;}
+.ric ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.ric li{display:flex;gap:11px;font-size:14.5px;color:var(--ink-2);line-height:1.45;}
+.ric li svg{width:19px;height:19px;color:var(--accent);flex-shrink:0;margin-top:1px;}
+
+/* PREZZI */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start;}
+.plan{border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface);padding:30px 28px;display:flex;flex-direction:column;box-shadow:var(--shadow-s);}
+.plan.feat{border:2px solid var(--accent);box-shadow:var(--shadow-m);position:relative;}
+.plan .feat-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 14px;border-radius:100px;}
+.plan .pn{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:16px;}
+.plan.feat .pn{color:var(--accent-d);}
+.plan .pp{display:flex;align-items:baseline;gap:4px;margin-bottom:6px;}
+.plan .pp .eur{font-size:20px;color:var(--ink-2);font-weight:500;}
+.plan .pp .amt{font-family:var(--serif);font-size:46px;font-weight:600;line-height:1;}
+.plan .pp .per{font-size:14px;color:var(--ink-3);}
+.plan .tl{font-size:13.5px;color:var(--ink-2);margin-bottom:24px;min-height:40px;}
+.plan .div{border:none;border-top:1px solid var(--border);margin-bottom:22px;}
+.plan ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:26px;flex:1;}
+.plan li{display:flex;gap:10px;font-size:14px;color:var(--ink-2);line-height:1.4;align-items:flex-start;}
+.plan li svg{width:17px;height:17px;flex-shrink:0;margin-top:1px;}
+.plan li.y svg{color:var(--accent);}
+.plan li.n{color:var(--ink-3);} .plan li.n svg{color:var(--ink-3);}
+.plan .btn{width:100%;}
+
+/* FAQ */
+.faq{max-width:760px;margin:0 auto;}
+.fi{border-bottom:1px solid var(--border);}
+.fi:first-child{border-top:1px solid var(--border);}
+.fq{width:100%;background:none;border:none;padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;font-size:16px;font-weight:600;color:var(--ink);}
+.fq:hover{color:var(--accent-d);}
+.fi .ic{width:24px;height:24px;flex-shrink:0;border:1px solid var(--border-2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ink-3);transition:.25s;line-height:1;}
+.fi.open .ic{transform:rotate(45deg);color:var(--accent-d);border-color:var(--accent);}
+.fa{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.fi.open .fa{max-height:300px;}
+.fa-in{padding-bottom:22px;font-size:15px;color:var(--ink-2);line-height:1.7;}
+
+/* FINAL CTA */
+#final{background:var(--ink);color:#fff;text-align:center;}
+#final .sec-h2{color:#fff;}
+#final .sec-lead{color:rgba(255,255,255,.72);}
+#final .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3);}
+#final .btn-ghost:hover{border-color:#fff;}
+
+/* FOOTER */
+footer{background:var(--surface);border-top:1px solid var(--border);padding:50px 0 34px;}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:34px;border-bottom:1px solid var(--border);margin-bottom:26px;}
+.foot-top .ft-tag{font-size:13.5px;color:var(--ink-3);line-height:1.6;max-width:260px;margin-top:12px;}
+.foot-col h4{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin-bottom:15px;}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.foot-col a{font-size:13.5px;color:var(--ink-2);}
+.foot-col a:hover{color:var(--ink);}
+.foot-bot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-3);}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:40px;}
+  .hero-sub{max-width:none;}
+  .steps,.pi-grid,.price-grid{grid-template-columns:1fr;}
+  .ric-grid{grid-template-columns:1fr;}
+  .foot-top{grid-template-columns:1fr 1fr;}
+  .foot-top .foot-brand{grid-column:1/-1;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .sec{padding:68px 0;}
+  #hero{padding:56px 0 60px;}
+}
+@media(max-width:480px){
+  .hero-ctas{flex-direction:column;}
+  .hero-ctas .btn{width:100%;}
+  .trust-inner{gap:22px;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="logo"><span class="mark"><span></span></span>Thesyum</a>
+      <ul class="nav-links">
+        <li><a href="#come">Come funziona</a></li>
+        <li><a href="#priced">Priced In</a></li>
+        <li><a href="#ricevi">Cosa ricevi</a></li>
+        <li><a href="#prezzi">Prezzi</a></li>
+        <li><a href="#final" class="btn btn-solid">Prova 14 giorni gratis</a></li>
+      </ul>
+      <button class="hamburger" id="hb" onclick="tm()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mm">
+    <a href="#come" onclick="tm()">Come funziona</a>
+    <a href="#priced" onclick="tm()">Priced In</a>
+    <a href="#ricevi" onclick="tm()">Cosa ricevi</a>
+    <a href="#prezzi" onclick="tm()">Prezzi</a>
+    <a href="#final" class="btn btn-solid" onclick="tm()">Prova 14 giorni gratis</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Intelligenza di mercato · ogni mattina</span>
+        <h1 class="hero-h1">Ogni mattina sai <span class="hl">quali 3 notizie</span> muovono i mercati — e se sono già nel prezzo.</h1>
+        <p class="hero-sub">Thesyum legge oltre <strong>180 fonti ogni notte</strong>, scarta il rumore e alle 7:00 ti manda via email i pochi segnali che contano davvero, ognuno già classificato. <strong>Lo leggi in 4 minuti</strong>, prima dell'apertura.</p>
+        <div class="hero-ctas">
+          <a href="#final" class="btn btn-solid btn-lg">Prova 14 giorni gratis</a>
+          <a href="#ricevi" class="btn btn-ghost btn-lg">Guarda un esempio</a>
+        </div>
+        <div class="hero-reassure">
+          <span class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Nessuna carta richiesta</span>
+          <span class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Disdici in un clic</span>
+          <span class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Pronto in 4 minuti</span>
+        </div>
+      </div>
+      <div class="sample-wrap">
+        <div class="sample-cap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.17L4 17.17V4z"/></svg>
+          Questo è esattamente ciò che ricevi ogni mattina:
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <span class="ht"><span class="dot"></span>THESYUM · Daily Note</span>
+            <span class="hd">gio 20 nov</span>
+          </div>
+          <div class="card-intro">I 3 segnali di oggi, in ordine di opportunità ↓</div>
+          <div class="sig">
+            <span class="tag ok">Non prezzata</span>
+            <span class="txt"><b>Taglio Fed anticipato.</b> I futures non lo scontano ancora — finestra operativa di 48h.</span>
+          </div>
+          <div class="sig">
+            <span class="tag mid">Parz. prezzata</span>
+            <span class="txt"><b>Inflazione PCE sopra attese.</b> Il mercato ha assorbito ~60%, rischio residuo al ribasso.</span>
+          </div>
+          <div class="sig">
+            <span class="tag bad">Già prezzata</span>
+            <span class="txt"><b>Tensioni geopolitiche sull'energia.</b> Già nel prezzo: nessun margine operativo.</span>
+          </div>
+          <div class="card-foot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            Letto in 4 minuti · ogni mattina alle 7:00
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div id="trust">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="t"><b>180+</b> fonti analizzate ogni notte</div>
+      <div class="t"><b>07:00</b> nella tua email, prima dell'apertura</div>
+      <div class="t"><b>4 min</b> per essere operativo</div>
+      <div class="t"><b>4,9/5</b> da consulenti e trader</div>
+    </div>
+  </div>
+</div>
+
+<!-- COME FUNZIONA -->
+<section id="come" class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Come funziona</span>
+      <h2 class="sec-h2">Da 180 fonti a 3 segnali. In automatico, ogni notte.</h2>
+      <p class="sec-lead">Non è l'ennesima newsletter. È un filtro che elimina il rumore e ti lascia solo ciò che può muovere i portafogli nelle prossime 24–72 ore.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>Legge tutto</h3>
+        <p>Ogni notte analizza oltre 180 fonti: dati macro, Fed, flussi ETF, earnings, geopolitica e altro.</p>
+        <div class="big">180 fonti →</div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>Scarta il rumore</h3>
+        <p>Il modello tiene solo gli eventi con impatto reale e misurabile sui mercati. Il resto viene eliminato.</p>
+        <div class="big">~40 rilevanti →</div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>Ti consegna i segnali</h3>
+        <p>Alle 7:00 ricevi 3 segnali con contesto, direzione e la classificazione «Priced In». Pronti all'uso.</p>
+        <div class="big">3 segnali ✓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICED IN -->
+<section id="priced" class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Il concetto chiave</span>
+      <h2 class="sec-h2">Non tutte le notizie sono un'opportunità.</h2>
+      <p class="sec-lead">La differenza tra guadagnare e inseguire è una sola domanda: <strong>il mercato l'ha già prezzata?</strong> Thesyum risponde per te, su ogni segnale.</p>
+    </div>
+    <div class="pi-grid">
+      <div class="pi ok">
+        <span class="tag"><span class="d"></span>Non prezzata</span>
+        <h3>Opportunità aperta</h3>
+        <p>Il mercato non ha ancora incorporato questa informazione. Qui c'è margine per agire.</p>
+        <div class="ex"><b>Esempio</b>Taglio Fed prima del previsto, non ancora nei futures.</div>
+      </div>
+      <div class="pi mid">
+        <span class="tag"><span class="d"></span>Parz. prezzata</span>
+        <h3>Opportunità ridotta</h3>
+        <p>Il mercato ha assorbito parte dell'impatto. Il margine è limitato: valuta il rischio residuo.</p>
+        <div class="ex"><b>Esempio</b>Inflazione PCE sopra consenso per il 3° mese.</div>
+      </div>
+      <div class="pi bad">
+        <span class="tag"><span class="d"></span>Già prezzata</span>
+        <h3>Nessun margine</h3>
+        <p>L'informazione è completamente nel prezzo. Agire ora significa solo inseguire.</p>
+        <div class="ex"><b>Esempio</b>Tensioni geopolitiche già nel prezzo del petrolio.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COSA RICEVI -->
+<section id="ricevi" class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Cosa ricevi</span>
+      <h2 class="sec-h2">Due documenti. Zero rumore.</h2>
+      <p class="sec-lead">La Daily Note per operare subito, il Weekly Report per il quadro strategico. Nient'altro nella tua casella.</p>
+    </div>
+    <div class="ric-grid">
+      <div class="ric">
+        <span class="badge">Ogni mattina · 07:00</span>
+        <h3>Thesyum Daily Note</h3>
+        <p>Il briefing con i segnali più importanti della giornata, già classificati e pronti all'uso.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Segnali classificati (Non / Parz. / Già prezzata)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Contesto macro delle ultime 72 ore</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Direzione e finestra temporale per ogni segnale</li>
+        </ul>
+      </div>
+      <div class="ric">
+        <span class="badge">Ogni domenica</span>
+        <h3>Thesyum Weekly Report</h3>
+        <p>L'analisi strategica della settimana: scenari, calendario eventi e dati strutturali.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Calendario eventi con impatto atteso</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>2–3 scenari macro con probabilità</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Dati strutturali: flussi, posizionamento, COT</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREZZI -->
+<section id="prezzi" class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Prezzi</span>
+      <h2 class="sec-h2">Inizia gratis. Cresci quando vuoi.</h2>
+      <p class="sec-lead">14 giorni di prova gratuita su tutti i piani. Nessuna carta di credito richiesta.</p>
+    </div>
+    <div class="price-grid">
+      <div class="plan">
+        <div class="pn">Essenziale</div>
+        <div class="pp"><span class="eur">€</span><span class="amt">49</span><span class="per">/mese</span></div>
+        <p class="tl">Per chi vuole il briefing quotidiano senza fronzoli.</p>
+        <hr class="div">
+        <ul>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Daily Note ogni mattina alle 7:00</li>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Segnali classificati Priced In</li>
+          <li class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Weekly Report strategico</li>
+          <li class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Archivio storico</li>
+        </ul>
+        <a href="#final" class="btn btn-ghost">Inizia gratis</a>
+      </div>
+      <div class="plan feat">
+        <div class="feat-tag">Più scelto</div>
+        <div class="pn">Pro</div>
+        <div class="pp"><span class="eur">€</span><span class="amt">99</span><span class="per">/mese</span></div>
+        <p class="tl">Il quadro completo per chi opera attivamente sui mercati.</p>
+        <hr class="div">
+        <ul>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Daily Note ogni mattina alle 7:00</li>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Segnali classificati Priced In</li>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Weekly Report strategico</li>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Archivio storico 12 mesi</li>
+        </ul>
+        <a href="#final" class="btn btn-solid">Inizia gratis</a>
+      </div>
+      <div class="plan">
+        <div class="pn">Elite</div>
+        <div class="pp"><span class="eur">€</span><span class="amt">199</span><span class="per">/mese</span></div>
+        <p class="tl">Per professionisti e team che vogliono il massimo contesto.</p>
+        <hr class="div">
+        <ul>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Tutto del piano Pro</li>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Archivio storico illimitato</li>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Accesso community + Q&amp;A mensile</li>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Supporto prioritario</li>
+        </ul>
+        <a href="#final" class="btn btn-ghost">Inizia gratis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="sec-head"><span class="eyebrow">FAQ</span><h2 class="sec-h2">Domande frequenti</h2></div>
+    <div class="faq">
+      <div class="fi"><button class="fq" onclick="tf(this)">Thesyum fornisce consigli di investimento?<span class="ic">+</span></button><div class="fa"><div class="fa-in">No. Thesyum è uno strumento di analisi e intelligence, non un servizio di consulenza finanziaria regolamentata. I segnali rafforzano la tua analisi con un contesto che altrimenti richiederebbe ore, ma la decisione resta tua.</div></div></div>
+      <div class="fi"><button class="fq" onclick="tf(this)">A che ora arriva la Daily Note?<span class="ic">+</span></button><div class="fa"><div class="fa-in">Ogni giorno lavorativo entro le 7:00, ora italiana, così la leggi prima dell'apertura dei mercati europei.</div></div></div>
+      <div class="fi"><button class="fq" onclick="tf(this)">La prova gratuita richiede la carta di credito?<span class="ic">+</span></button><div class="fa"><div class="fa-in">No. I 14 giorni di prova sono completamente gratuiti, senza inserire dati di pagamento. Ti contattiamo prima della scadenza per chiederti se vuoi continuare.</div></div></div>
+      <div class="fi"><button class="fq" onclick="tf(this)">Posso disdire quando voglio?<span class="ic">+</span></button><div class="fa"><div class="fa-in">Sì, senza penali e senza spiegazioni. L'abbonamento si rinnova mensilmente e puoi disdire in un clic.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="final" class="sec">
+  <div class="container">
+    <div class="sec-head" style="margin-bottom:34px;">
+      <h2 class="sec-h2">Domani mattina alle 7:00, sei già un passo avanti.</h2>
+      <p class="sec-lead">14 giorni gratis. Nessuna carta richiesta. Disdici in un clic.</p>
+    </div>
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+      <a href="#" class="btn btn-solid btn-lg">Prova 14 giorni gratis</a>
+      <a href="#prezzi" class="btn btn-ghost btn-lg">Confronta i piani</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#" class="logo"><span class="mark"><span></span></span>Thesyum</a>
+        <p class="ft-tag">Intelligenza finanziaria quotidiana per consulenti e trader che muovono capitale vero.</p>
+      </div>
+      <div class="foot-col"><h4>Prodotto</h4><ul><li><a href="#come">Come funziona</a></li><li><a href="#priced">Priced In</a></li><li><a href="#ricevi">Cosa ricevi</a></li><li><a href="#prezzi">Prezzi</a></li></ul></div>
+      <div class="foot-col"><h4>Supporto</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Contatti</a></li><li><a href="#">Privacy</a></li><li><a href="#">Termini</a></li></ul></div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Thesyum. Tutti i diritti riservati. Non costituisce consulenza finanziaria.</span>
+      <span>info@thesyum.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function tm(){document.getElementById('hb').classList.toggle('open');document.getElementById('mm').classList.toggle('open');}
+function tf(b){var i=b.parentElement,o=i.classList.contains('open');document.querySelectorAll('.fi.open').forEach(function(e){e.classList.remove('open');});if(!o)i.classList.add('open');}
+</script>
+</body>
+</html>
