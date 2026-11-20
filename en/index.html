@@ -204,6 +204,26 @@ section{scroll-margin-top:80px;}.sec{padding:96px 0;}
 .pout li .pc svg{width:15px;height:15px;}
 .pout li b{font-weight:600;}
 @media(max-width:760px){.pgrid{grid-template-columns:1fr;gap:18px;}.job{padding:18px 20px;}.job .jt{font-size:14.5px;}}
+/* CONTATTI */
+.ct-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:start;}
+.ct-details{display:flex;flex-direction:column;gap:18px;}
+.ct-item{display:flex;gap:14px;align-items:flex-start;}
+.ct-ic{width:40px;height:40px;border-radius:11px;background:var(--accent-soft);border:1px solid rgba(16,161,92,.2);color:var(--accent-d);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ct-ic svg{width:18px;height:18px;}
+.ct-k{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink3);}
+.ct-v{font-size:14.5px;color:var(--ink);margin-top:2px;}
+.ct-form{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-md);padding:32px;box-shadow:var(--sh-s);}
+.fr{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+.fr label{font-size:13px;font-weight:500;color:var(--ink2);}
+.fr input,.fr select,.fr textarea{background:var(--surface);border:1px solid var(--border2);border-radius:10px;padding:12px 14px;font-family:var(--sans);font-size:14px;color:var(--ink);outline:none;transition:border-color .2s;width:100%;}
+.fr input::placeholder,.fr textarea::placeholder{color:var(--ink3);}
+.fr input:focus,.fr select:focus,.fr textarea:focus{border-color:var(--accent);}
+.fr textarea{resize:vertical;min-height:90px;}
+.fr select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238A948D' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;}
+.form-submit{width:100%;background:var(--accent);color:#fff;border:none;border-radius:11px;padding:14px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;margin-top:4px;}
+.form-submit:hover{background:var(--accent-d);}
+#form-feedback{text-align:center;margin-top:12px;font-size:14px;min-height:20px;}
+@media(max-width:760px){.ct-grid{grid-template-columns:1fr;gap:32px;}.ct-form{padding:24px 20px;}}
 
 /* PREZZI */
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start;}
@@ -273,7 +293,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
         <li><a href="#dentro">What you get</a></li>
         <li><a href="#prezzi">Pricing</a></li>
         <li><span class="nav-lang"><a href="../index.html">IT</a>/<a href="index.html" class="on">EN</a>/<a href="../ar/index.html">AR</a>/<a href="../fr/index.html">FR</a>/<a href="../es/index.html">ES</a></span></li>
-        <li><a href="#final" class="btn btn-solid">Try 14 days free</a></li>
+        <li><a href="#contatti" class="btn btn-solid">Try 14 days free</a></li>
       </ul>
       <button class="hamburger" id="hb" onclick="tm()"><span></span><span></span><span></span></button>
     </div>
@@ -281,7 +301,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
   <div class="mobile-menu" id="mm">
     <a href="#come" onclick="tm()">How it works</a><a href="#concetto" onclick="tm()">The thesis</a><a href="#dentro" onclick="tm()">What you get</a><a href="#prezzi" onclick="tm()">Pricing</a>
     <div class="nav-lang"><a href="../index.html">IT</a>/<a href="index.html" class="on">EN</a>/<a href="../ar/index.html">AR</a>/<a href="../fr/index.html">FR</a>/<a href="../es/index.html">ES</a></div>
-    <a href="#final" class="btn btn-solid" onclick="tm()">Try 14 days free</a>
+    <a href="#contatti" class="btn btn-solid" onclick="tm()">Try 14 days free</a>
   </div>
 </nav>
 
@@ -294,7 +314,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
         <h1 class="hero-h1">Every headline has an effect <span class="hl">the market doesn’t see right away.</span></h1>
         <p class="hero-sub">Thesyum reads <strong>180+ sources every night</strong>, finds the few that matter and for each tells you what the market prices today — <strong>and the chain of hidden consequences</strong> where the real value is. You read it in 4 minutes, before the open.</p>
         <div class="hero-ctas">
-          <a href="#final" class="btn btn-solid btn-lg">Try 14 days free</a>
+          <a href="#contatti" class="btn btn-solid btn-lg">Try 14 days free</a>
           <a href="#dentro" class="btn btn-ghost btn-lg">See an example</a>
         </div>
         <div class="hero-re">
@@ -445,7 +465,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
           <li class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Strategic weekly report</li>
           <li class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Historical archive</li>
         </ul>
-        <a href="#final" class="btn btn-ghost">Start free</a>
+        <a href="#contatti" class="btn btn-ghost">Start free</a>
       </div>
       <div class="plan feat2">
         <div class="ft">Most chosen</div><div class="pn">Pro</div><div class="pp"><span class="e">€</span><span class="a">99</span><span class="pr">/mo</span></div>
@@ -456,7 +476,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
           <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Strategic weekly report</li>
           <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>12-month archive</li>
         </ul>
-        <a href="#final" class="btn btn-solid">Start free</a>
+        <a href="#contatti" class="btn btn-solid">Start free</a>
       </div>
       <div class="plan">
         <div class="pn">Elite</div><div class="pp"><span class="e">€</span><span class="a">199</span><span class="pr">/mo</span></div>
@@ -467,7 +487,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
           <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Community access + monthly Q&amp;A</li>
           <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Priority support</li>
         </ul>
-        <a href="#final" class="btn btn-ghost">Start free</a>
+        <a href="#contatti" class="btn btn-ghost">Start free</a>
       </div>
     </div>
   </div>
@@ -494,8 +514,37 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
       <p class="sec-lead">14 days free. No card required. Cancel in one click.</p>
     </div>
     <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
-      <a href="#" class="btn btn-green btn-lg">Try 14 days free</a>
+      <a href="#contatti" class="btn btn-green btn-lg">Try 14 days free</a>
       <a href="#prezzi" class="btn btn-ghost btn-lg">Compare plans</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+<section id="contatti" class="sec" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="ct-grid">
+      <div class="ct-info">
+        <span class="eyebrow">Start now</span>
+        <h2 class="sec-h2" style="margin:14px 0 12px;">14 days free.<br>No card required.</h2>
+        <p class="sec-lead" style="margin-bottom:30px;">Fill out the form and we’ll send you the instructions to access the free trial. We reply within 2 business hours.</p>
+        <div class="ct-details">
+          <div class="ct-item"><span class="ct-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><div class="ct-k">Email</div><div class="ct-v">info@thesyum.com</div></div></div>
+          <div class="ct-item"><span class="ct-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><div class="ct-k">Response</div><div class="ct-v">Within 2 business hours</div></div></div>
+          <div class="ct-item"><span class="ct-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><div><div class="ct-k">Privacy</div><div class="ct-v">No spam. Only what you asked for.</div></div></div>
+        </div>
+      </div>
+      <div class="ct-form">
+        <form id="contact-form" action="https://formspree.io/f/mjgnrqpb" method="POST">
+          <div class="fr"><label for="nome">Full name</label><input id="nome" name="nome" type="text" placeholder="John Smith" required></div>
+          <div class="fr"><label for="email">Work email</label><input id="email" name="email" type="email" placeholder="john@firm.com" required></div>
+          <div class="fr"><label for="ruolo">Profile</label><select id="ruolo" name="ruolo" required><option value="">Select your profile</option><option>Financial advisor / wealth manager</option><option>Independent trader</option><option>Portfolio manager</option><option>Active private investor</option><option>Other</option></select></div>
+          <div class="fr"><label for="piano">Preferred plan</label><select id="piano" name="piano"><option value="">Select a plan</option><option>Essential — €49/mo</option><option>Pro — €99/mo</option><option>Elite — €199/mo</option><option>Not sure yet</option></select></div>
+          <div class="fr"><label for="messaggio">Message (optional)</label><textarea id="messaggio" name="messaggio" placeholder="Questions, specific needs…"></textarea></div>
+          <button type="submit" class="form-submit">Start the free trial →</button>
+          <div id="form-feedback"></div>
+        </form>
+      </div>
     </div>
   </div>
 </section>
@@ -510,7 +559,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
       </div>
       <div class="foot-col"><h4>Product</h4><ul><li><a href="#come">How it works</a></li><li><a href="#concetto">The thesis</a></li><li><a href="#dentro">What you get</a></li><li><a href="#prezzi">Pricing</a></li></ul></div>
       <div class="foot-col"><h4>Resources</h4><ul><li><a href="#">Sample report</a></li><li><a href="#">The framework</a></li><li><a href="#">Method & data</a></li><li><a href="#">FAQ</a></li></ul></div>
-      <div class="foot-col"><h4>Company</h4><ul><li><a href="#final">Contact</a></li><li><a href="../privacy.html">Privacy</a></li><li><a href="../termini.html">Terms</a></li><li><a href="../privacy.html">Cookie</a></li></ul></div>
+      <div class="foot-col"><h4>Company</h4><ul><li><a href="#contatti">Contact</a></li><li><a href="../privacy.html">Privacy</a></li><li><a href="../termini.html">Terms</a></li><li><a href="../privacy.html">Cookie</a></li></ul></div>
     </div>
     <div class="foot-bot"><span>© 2026 Thesyum. All rights reserved. Not financial advice.</span><span>info@thesyum.com</span></div>
   </div>
@@ -520,6 +569,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
 function tm(){document.getElementById('hb').classList.toggle('open');document.getElementById('mm').classList.toggle('open');}
 function tf(b){var i=b.parentElement,o=i.classList.contains('open');document.querySelectorAll('.fi.open').forEach(function(e){e.classList.remove('open');});if(!o)i.classList.add('open');}
 function seg(i){document.querySelectorAll('.seg button').forEach(function(b,j){b.classList.toggle('on',j===i);});document.querySelectorAll('.persona').forEach(function(p,j){p.classList.toggle('on',j===i);});}
+(function(){var form=document.getElementById('contact-form'),fb=document.getElementById('form-feedback');if(!form||!fb)return;form.addEventListener('submit',async function(e){e.preventDefault();var btn=form.querySelector('.form-submit');btn.disabled=true;btn.textContent='Sending…';try{var res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});if(res.ok){fb.style.color='var(--accent-d)';fb.textContent='✓ Ricevuto. Ti contattiamo entro 2 ore lavorative.';form.reset();btn.textContent='Inviato ✓';}else{throw new Error('x');}}catch(err){fb.style.color='var(--red)';fb.textContent='Something went wrong. Email info@thesyum.com';btn.disabled=false;btn.textContent='Riprova →';}});})();
 (function(){
   var items=[['WTI Crude','99.77','-3.8%','d'],['Gold','4,141','-0.5%','d'],['Copper','6.60','+0.9%','u'],['Silver','57.55','+1.0%','u'],['Rare Earths REMX','53.36','-1.6%','d'],['Semis SOXX','501.9','+1.7%','u'],['Natural Gas','3.01','-1.7%','d'],['Shipping BOAT','51.77','-0.2%','d'],['Defense ITA','207.8','-0.6%','d'],['EUR/USD','1.12','+0.0%','u'],['Treasury 10Y','5.09%','-0.2%','d'],['Fed Rate','3.75%','—','u']];
   function tk(i){return '<span class="tk"><span class="n">'+i[0]+'</span><span class="v">'+i[1]+'</span><span class="c '+i[3]+'">'+i[2]+'</span></span>';}
