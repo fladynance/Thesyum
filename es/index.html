@@ -3,1371 +3,248 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Thesyum</title>
+<title>Thesyum — anteprima redesign</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
 <style>
-/* ── TOKENS ─────────────────────────────────────────────── */
-:root {
-  --void:   #07080D;
-  --bg:     #0B0D14;
-  --s1:     #10121A;
-  --s2:     #161921;
-  --border: #1F2230;
-  --t1:     #E4E9F2;
-  --t2:     #8A95AB;
-  --t3:     #4A5266;
-  --gold:   #5CF5A0;
-  --gold-l: #7FFCB8;
-  --ok:     #30D158;
-  --mid:    #FF9F0A;
-  --bad:    #FF453A;
-  --serif:  'Space Grotesk', 'Inter', system-ui, sans-serif;
-  --sans:   'Inter', system-ui, sans-serif;
-  --mono:   'JetBrains Mono', Consolas, monospace;
-  --glow:   0 0 40px rgba(92,245,160,.28);
-  --grad:   linear-gradient(120deg, #7FFCB8 0%, #5CF5A0 45%, #3FD8FF 100%);
-  --r-sm: 8px; --r-md: 14px; --r-lg: 20px;
-  color-scheme: dark;
+:root{
+  --bg:#FAFBF9;--surface:#FFFFFF;--mint:#EFF7F1;--mint2:#E4F2E9;--panel:#F1F4F0;--border:#E7E9E3;--border2:#D7DBD3;
+  --ink:#0B120D;--ink2:#505B53;--ink3:#8A948D;
+  --accent:#10A15C;--accent-d:#0A7A45;--accent-soft:#E7F6EE;
+  --amber:#B4690E;--amber-soft:#FBEFDD;--red:#C23127;--red-soft:#FBEAE8;
+  --dark:#0B120D;
+  --serif:'Space Grotesk','Inter',system-ui,sans-serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',Consolas,monospace;
+  --sh-s:0 1px 2px rgba(11,18,13,.05),0 1px 3px rgba(11,18,13,.06);
+  --sh-m:0 14px 34px rgba(11,18,13,.08),0 3px 8px rgba(11,18,13,.05);
+  --sh-l:0 40px 80px rgba(11,18,13,.16),0 12px 28px rgba(11,18,13,.08);
+  --r-sm:10px;--r-md:16px;--r-lg:26px;color-scheme:light;
 }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}button{cursor:pointer;font-family:inherit;}img{max-width:100%;display:block;}
+.container{max-width:1160px;margin:0 auto;padding:0 24px;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-d);background:var(--accent-soft);border:1px solid rgba(16,161,92,.2);padding:6px 13px;border-radius:100px;}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(16,161,92,.2);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;border-radius:12px;transition:.2s;border:1px solid transparent;white-space:nowrap;}
+.btn-solid{background:var(--dark);color:#fff;padding:13px 24px;font-size:14.5px;}
+.btn-solid:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(11,18,13,.22);}
+.btn-ghost{background:var(--surface);color:var(--ink);padding:13px 24px;font-size:14.5px;border-color:var(--border2);}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-1px);}
+.btn-green{background:var(--accent);color:#fff;padding:13px 24px;font-size:14.5px;}
+.btn-green:hover{background:var(--accent-d);transform:translateY(-1px);box-shadow:0 10px 24px rgba(10,122,69,.3);}
+.btn-lg{padding:16px 30px;font-size:16px;border-radius:13px;}
 
-/* ── RESET ──────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
-body {
-  font-family: var(--sans);
-  background: var(--void);
-  color: var(--t1);
-  font-size: 16px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
-button { cursor: pointer; font-family: inherit; }
+/* NAV */
+#nav{position:sticky;top:0;z-index:100;background:rgba(250,251,249,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px;}
+.nav-logo{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:-.01em;color:var(--ink);}
+.logo-chip{width:36px;height:36px;border-radius:10px;background:var(--dark);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nav-logo svg{display:block;}
+.nav-links{display:flex;align-items:center;gap:30px;list-style:none;}
+.nav-links a{font-size:14.5px;font-weight:500;color:var(--ink2);transition:color .2s;}
+.nav-links a:hover{color:var(--ink);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;}
+.hamburger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.25s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;background:var(--surface);border-bottom:1px solid var(--border);padding:12px 24px 22px;}
+.mobile-menu.open{display:block;}
+.mobile-menu a{display:block;padding:13px 0;border-bottom:1px solid var(--border);font-weight:500;color:var(--ink2);}
+.mobile-menu .btn{width:100%;margin-top:16px;}
+.nav-lang{font-family:var(--mono);font-size:11px;white-space:nowrap;display:flex;align-items:center;}
+.nav-links .nav-lang a{color:var(--ink3);padding:0 3px;}
+.nav-links .nav-lang a.on{color:var(--ink);font-weight:700;}
+.nav-links .nav-lang a:hover{color:var(--accent-d);}
+.mobile-menu .nav-lang{gap:2px;padding:14px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.mobile-menu .nav-lang a{display:inline;border:none;padding:0 4px;color:var(--ink2);}
+.mobile-menu .nav-lang a.on{color:var(--ink);font-weight:700;}
 
-/* ── UTILS ──────────────────────────────────────────────── */
-.container {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-.eyebrow {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 18px;
-  padding: 6px 14px 6px 12px;
-  border: 1px solid rgba(92,245,160,.22);
-  border-radius: 100px;
-  background: rgba(92,245,160,.06);
-}
-.eyebrow::before {
-  content: "";
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 8px var(--gold);
-}
-section { border-top: 1px solid var(--border); }
-@media (prefers-reduced-motion: reduce) {
-  .ticker-live .pulse { animation: none; }
-  .btn-primary::after { display: none; }
-  .note-card, .perchi-card, .ricevi-card, .testi-card, .prezzi-card, .btn-primary { transition: none; }
-}
-.perchi-card, .ricevi-card, .testi-card, .prezzi-card {
-  background: linear-gradient(180deg, var(--s2) 0%, var(--s1) 100%);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
-  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-}
-.perchi-card:hover, .ricevi-card:hover, .testi-card:hover, .prezzi-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(92,245,160,.4);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 24px 48px rgba(0,0,0,.4), 0 0 0 1px rgba(92,245,160,.12);
-}
+/* HERO */
+#hero{position:relative;overflow:hidden;padding:80px 0 60px;background:linear-gradient(180deg,var(--mint) 0%,var(--mint) 38%,var(--bg) 100%);}
+#hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 46% at 88% 6%,rgba(16,161,92,.16),transparent 68%);pointer-events:none;}
+#hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(11,18,13,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(11,18,13,.03) 1px,transparent 1px);background-size:40px 40px;-webkit-mask-image:radial-gradient(ellipse 90% 70% at 70% 15%,#000 8%,transparent 72%);mask-image:radial-gradient(ellipse 90% 70% at 70% 15%,#000 8%,transparent 72%);pointer-events:none;}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center;}
+.hero-h1{font-family:var(--serif);font-size:clamp(36px,4.7vw,58px);font-weight:600;line-height:1.05;letter-spacing:-.03em;margin:22px 0 20px;text-wrap:balance;}
+.hero-h1 .hl{background:linear-gradient(100deg,var(--accent),#1FB8A6);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero-sub{font-size:19px;color:var(--ink2);line-height:1.58;max-width:520px;margin-bottom:30px;}
+.hero-sub strong{color:var(--ink);font-weight:600;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.hero-re{display:flex;align-items:center;gap:18px;margin-top:22px;flex-wrap:wrap;}
+.hero-re .r{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--ink2);}
+.hero-re svg{width:16px;height:16px;color:var(--accent);flex-shrink:0;}
 
-/* ── NAV ────────────────────────────────────────────────── */
-#nav {
-  position: sticky;
-  top: env(safe-area-inset-top, 0px);
-  z-index: 100;
-  background: rgba(7,8,13,.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-}
-.nav-logo {
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -.01em;
-  color: var(--t1);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-.nav-logo svg { flex-shrink: 0; }
-.nav-logo span { color: var(--gold); }
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  list-style: none;
-}
-.nav-links a {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--t2);
-  transition: color .2s;
-}
-.nav-links a:hover { color: var(--t1); }
-.btn-nav {
-  background: var(--gold);
-  color: var(--void);
-  font-size: 13px;
-  font-weight: 600;
-  padding: 8px 18px;
-  border-radius: 6px;
-  border: none;
-  transition: background .2s;
-}
-.btn-nav:hover { background: var(--gold-l); box-shadow: var(--glow); }
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  padding: 4px;
-}
-.hamburger span {
-  width: 22px; height: 2px;
-  background: var(--t1);
-  border-radius: 2px;
-  transition: .25s;
-}
-.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.mobile-menu {
-  display: none;
-  background: var(--bg);
-  border-top: 1px solid var(--border);
-  padding: 16px 24px 24px;
-}
-.mobile-menu.open { display: block; }
-.mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 0; }
-.mobile-menu li a {
-  display: block;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--t2);
-}
-.mobile-menu .btn-full {
-  display: block;
-  margin-top: 16px;
-  text-align: center;
-  background: var(--gold);
-  color: var(--void);
-  font-weight: 600;
-  font-size: 15px;
-  padding: 14px;
-  border-radius: 8px;
-}
-.nav-lang {
-  font-family: var(--mono);
-  font-size: 11px;
-  white-space: nowrap;
-}
-.nav-links .nav-lang a { color: var(--t3); padding: 0 3px; }
-.nav-links .nav-lang a.on { color: var(--gold); font-weight: 700; }
-.nav-links .nav-lang a:hover { color: var(--t1); }
-.mobile-menu .nav-lang {
-  display: flex;
-  gap: 2px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 13px;
-}
-.mobile-menu .nav-lang a { padding: 0 4px; color: var(--t2); }
-.mobile-menu .nav-lang a.on { color: var(--gold); font-weight: 700; }
+/* TESI CARD (animated) */
+.tc-cap{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink2);margin-bottom:12px;font-weight:500;}
+.tc-cap .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(16,161,92,.5);animation:pulse 1.8s infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(16,161,92,.5);}70%{box-shadow:0 0 0 9px rgba(16,161,92,0);}100%{box-shadow:0 0 0 0 rgba(16,161,92,0);}}
+.tesi{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--sh-l);overflow:hidden;}
+.tesi::before{content:"";position:absolute;inset:0;border-radius:var(--r-lg);padding:1px;background:linear-gradient(150deg,rgba(16,161,92,.5),transparent 42%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
+.tc-head{display:flex;align-items:center;justify-content:space-between;padding:15px 20px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#fff,#fcfdfc);}
+.tc-badge{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--ink);}
+.tc-badge .d{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(16,161,92,.16);}
+.tc-badge .dir.up{color:var(--accent-d);}.tc-badge .dir.down{color:var(--red);}
+.tc-live{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--accent-d);background:var(--accent-soft);padding:4px 8px;border-radius:6px;}
+.tc-body{padding:4px 20px 18px;transition:opacity .45s ease;}
+.tc-body.swap{opacity:0;}
+.tc-claim{font-family:var(--serif);font-size:17.5px;font-weight:600;line-height:1.3;letter-spacing:-.01em;padding:16px 0 12px;opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease;}
+.tc-meta{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px;opacity:0;transform:translateY(8px);transition:opacity .5s ease .08s,transform .5s ease .08s;}
+.chip{font-family:var(--mono);font-size:10.5px;font-weight:600;padding:5px 9px;border-radius:7px;background:var(--panel);color:var(--ink2);}
+.chip b{color:var(--ink);}.chip.lo{background:var(--accent-soft);color:var(--accent-d);}
+.tc-conf{margin-bottom:4px;opacity:0;transition:opacity .5s ease .14s;}
+.tc-conf-row{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--ink3);margin-bottom:5px;}
+.tc-conf-row b{color:var(--ink);}
+.tc-track{height:6px;border-radius:4px;background:var(--panel);overflow:hidden;}
+.tc-fill{height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent-d));transition:width 1.1s cubic-bezier(.4,0,.2,1) .25s;}
+.tc-eff{padding:14px 0 0;opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease;}
+.tc-eff .k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink3);margin-bottom:5px;}
+.tc-eff .k .sub{color:var(--ink3);font-weight:500;text-transform:none;letter-spacing:0;}
+.tc-eff p{font-size:13.5px;color:var(--ink2);line-height:1.5;}
+.tc-eff.direct{transition-delay:.2s;}
+.tc-eff.hidden{margin:14px -20px 0;padding:14px 20px 2px;border-top:1px solid var(--border);background:linear-gradient(180deg,var(--accent-soft),rgba(231,246,238,0));transition-delay:.5s;}
+.tc-eff.hidden .k{color:var(--accent-d);}.tc-eff.hidden p{color:#2d4a3b;}
+.tesi.on .tc-claim,.tesi.on .tc-meta,.tesi.on .tc-eff{opacity:1;transform:translateY(0);}
+.tesi.on .tc-conf{opacity:1;}
+@media(prefers-reduced-motion:reduce){.tc-body,.tc-claim,.tc-meta,.tc-conf,.tc-eff,.tc-fill{transition:none!important;}}
 
-/* ── HERO ───────────────────────────────────────────────── */
-#hero {
-  position: relative;
-  background: var(--void);
-  border-top: none;
-  padding: 80px 0 72px;
-  overflow: hidden;
-}
-#hero::before {
-  content: "";
-  position: absolute;
-  inset: -10% -10% 0 -10%;
-  background: radial-gradient(closest-side at 78% 22%, rgba(92,245,160,.14), transparent 72%);
-  pointer-events: none;
-}
-#hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(140,160,200,.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(140,160,200,.06) 1px, transparent 1px);
-  background-size: 38px 38px;
-  -webkit-mask-image: radial-gradient(ellipse 100% 80% at 60% 30%, #000 20%, transparent 80%);
-          mask-image: radial-gradient(ellipse 100% 80% at 60% 30%, #000 20%, transparent 80%);
-  animation: gridDrift 24s linear infinite;
-  pointer-events: none;
-}
-@keyframes gridDrift {
-  from { background-position: 0 0, 0 0; }
-  to   { background-position: 38px 38px, 38px 38px; }
-}
-#hero .container { position: relative; z-index: 1; }
-@media (prefers-reduced-motion: reduce) { #hero::after { animation: none; } }
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
-}
-.hero-h1 {
-  font-family: var(--serif);
-  font-size: clamp(40px, 5.4vw, 68px);
-  font-weight: 600;
-  line-height: 1.03;
-  letter-spacing: -.035em;
-  color: var(--t1);
-  margin-bottom: 24px;
-  text-wrap: balance;
-}
-.hero-h1 em {
-  font-style: normal;
-  color: var(--gold);
-}
-.hero-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 7px 8px 7px 14px;
-  margin-bottom: 26px;
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: .02em;
-  color: var(--t1);
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
-  transition: border-color .2s, transform .2s;
-}
-.hero-pill:hover { border-color: rgba(92,245,160,.4); transform: translateY(-1px); }
-.hero-pill .hp-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--gold); box-shadow: 0 0 8px var(--gold);
-  animation: tickerPulse 1.8s infinite;
-}
-.hero-pill .hp-arrow {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 20px; height: 20px; border-radius: 50%;
-  background: rgba(92,245,160,.12); color: var(--gold); font-size: 12px;
-}
-.hero-sub {
-  font-size: 18px;
-  color: var(--t2);
-  line-height: 1.65;
-  max-width: 480px;
-  margin-bottom: 32px;
-}
-.hero-sub strong { color: var(--t1); font-weight: 600; }
-.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
-.hero-trust {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 28px;
-}
-.ht-stars { color: var(--gold); font-size: 15px; letter-spacing: 2px; }
-.ht-text { font-size: 13px; color: var(--t3); line-height: 1.4; }
-.btn-primary {
-  position: relative;
-  background: var(--gold);
-  color: var(--void);
-  font-size: 15px;
-  font-weight: 600;
-  padding: 14px 28px;
-  border-radius: 8px;
-  border: none;
-  display: inline-block;
-  overflow: hidden;
-  box-shadow: var(--glow);
-  transition: box-shadow .25s, transform .15s;
-}
-.btn-primary::after {
-  content: "";
-  position: absolute;
-  top: 0; left: -120%;
-  width: 60%; height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,.5), transparent);
-  transform: skewX(-20deg);
-  transition: left .55s ease;
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 56px rgba(92,245,160,.45);
-}
-.btn-primary:hover::after { left: 130%; }
-.btn-ghost {
-  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.01));
-  color: var(--t1);
-  font-size: 15px;
-  font-weight: 500;
-  padding: 14px 24px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  display: inline-block;
-  transition: border-color .2s, color .2s, transform .15s;
-}
-.btn-ghost:hover { border-color: rgba(92,245,160,.35); color: var(--gold-l); transform: translateY(-1px); }
+/* TRUST */
+#trust{border-bottom:1px solid var(--border);background:var(--surface);}
+.trust-inner{display:flex;align-items:center;justify-content:center;gap:14px 40px;padding:20px 0;flex-wrap:wrap;}
+.trust-inner .t{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--ink2);}
+.trust-inner .stars{color:var(--accent);font-size:15px;letter-spacing:1px;}
+.trust-inner b{color:var(--ink);font-weight:700;}
+.trust-inner .sep{width:1px;height:20px;background:var(--border);}
 
-/* Daily Note Card */
-.note-card {
-  position: relative;
-  background: var(--s1);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 32px 64px rgba(0,0,0,.45), var(--glow);
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-.note-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 14px;
-  padding: 1px;
-  background: linear-gradient(160deg, rgba(92,245,160,.5), transparent 45%);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  pointer-events: none;
-}
-.note-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 40px 80px rgba(0,0,0,.5), 0 0 60px rgba(92,245,160,.35);
-}
-.note-card-header {
-  background: var(--s2);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.nc-title {
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--gold);
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.nc-date {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--t3);
-}
-.note-card-body { padding: 20px; display: flex; flex-direction: column; gap: 0; }
-.nc-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--border);
-}
-.nc-row:last-child { border-bottom: none; }
-.nc-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  margin-top: 6px;
-  flex-shrink: 0;
-}
-.nc-dot.ok  { background: var(--ok);  box-shadow: 0 0 6px var(--ok); }
-.nc-dot.mid { background: var(--mid); box-shadow: 0 0 6px var(--mid); }
-.nc-dot.bad { background: var(--bad); box-shadow: 0 0 6px var(--bad); }
-.nc-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-.nc-label.ok  { color: var(--ok); }
-.nc-label.mid { color: var(--mid); }
-.nc-label.bad { color: var(--bad); }
-.nc-text { font-size: 13px; color: var(--t2); line-height: 1.55; }
-/* live chart inside product panel */
-.nc-chart {
-  position: relative;
-  padding: 16px 20px 10px;
-  border-bottom: 1px solid var(--border);
-  background:
-    linear-gradient(180deg, rgba(92,245,160,.04), transparent),
-    repeating-linear-gradient(0deg, transparent 0 17px, rgba(255,255,255,.02) 17px 18px);
-}
-.nc-chart-top {
-  display: flex; align-items: baseline; justify-content: space-between;
-  margin-bottom: 8px;
-}
-.nc-symbol { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--t1); letter-spacing: .04em; }
-.nc-symbol .nc-tag { color: var(--t3); font-weight: 500; margin-left: 6px; }
-.nc-price { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--ok); }
-.nc-price::before { content: "▲ "; font-size: 8px; }
-.nc-chart svg { display: block; width: 100%; height: 72px; }
-.nc-caption {
-  display: flex; align-items: center; gap: 7px;
-  margin-top: 8px;
-  font-family: var(--mono); font-size: 10px;
-  letter-spacing: .03em; color: var(--t3);
-}
-.nc-cap-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--gold); box-shadow: 0 0 6px var(--gold);
-  flex-shrink: 0;
-}
-.spark-area { fill: rgba(92,245,160,.10); }
-.spark-line {
-  fill: none; stroke: var(--gold); stroke-width: 2;
-  stroke-linecap: round; stroke-linejoin: round;
-  filter: drop-shadow(0 0 6px rgba(92,245,160,.5));
-  stroke-dasharray: 1000; stroke-dashoffset: 1000;
-  animation: sparkDraw 2.4s cubic-bezier(.6,.05,.2,1) forwards;
-}
-@keyframes sparkDraw { to { stroke-dashoffset: 0; } }
-.spark-dot {
-  fill: var(--gold);
-  animation: sparkDot 1.6s ease-in-out infinite;
-  transform-box: fill-box; transform-origin: center;
-}
-@keyframes sparkDot { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
-@media (prefers-reduced-motion: reduce) {
-  .spark-line { animation: none; stroke-dashoffset: 0; }
-  .spark-dot { animation: none; }
-}
+/* TICKER */
+#ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg);overflow:hidden;}
+.tk-track{display:flex;white-space:nowrap;animation:tk 40s linear infinite;width:max-content;}
+#ticker:hover .tk-track{animation-play-state:paused;}
+@keyframes tk{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.tk{display:inline-flex;align-items:baseline;gap:9px;padding:13px 26px;font-family:var(--mono);font-size:12.5px;border-right:1px solid var(--border);}
+.tk .n{color:var(--ink2);font-weight:500;}.tk .v{color:var(--ink);font-weight:700;}
+.tk .c{font-size:11.5px;font-weight:700;}.tk .c.u{color:var(--accent-d);}.tk .c.d{color:var(--red);}
 
-/* ── TICKER ─────────────────────────────────────────────── */
-#ticker-wrap {
-  position: relative;
-  display: flex;
-  align-items: stretch;
-  background: var(--bg);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  overflow: hidden;
-}
-.ticker-live {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  flex-shrink: 0;
-  padding: 15px 20px;
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--gold);
-  background: var(--void);
-  border-right: 1px solid var(--border);
-  z-index: 2;
-}
-.ticker-live .pulse {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--gold);
-  animation: tickerPulse 1.8s infinite;
-}
-@keyframes tickerPulse {
-  0%   { box-shadow: 0 0 0 0 rgba(92,245,160,.6); }
-  70%  { box-shadow: 0 0 0 8px rgba(92,245,160,0); }
-  100% { box-shadow: 0 0 0 0 rgba(92,245,160,0); }
-}
-.ticker-flow {
-  position: relative;
-  flex: 1;
-  min-width: 0;
-  overflow: hidden;
-}
-.ticker-track {
-  display: inline-flex;
-  align-items: center;
-  white-space: nowrap;
-  will-change: transform;
-  animation: tickerScroll 48s linear infinite;
-}
-#ticker-wrap:hover .ticker-track { animation-play-state: paused; }
-@keyframes tickerScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-.tk-item {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 9px;
-  padding: 15px 26px;
-  font-family: var(--mono);
-  font-size: 13px;
-  border-right: 1px solid var(--border);
-}
-.tk-name { color: var(--t2); font-weight: 500; letter-spacing: .02em; }
-.tk-val  { color: var(--t1); font-weight: 700; font-variant-numeric: tabular-nums; }
-.tk-chg  { font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
-.tk-chg.up   { color: var(--ok); }
-.tk-chg.down { color: var(--bad); }
-.tk-chg::before { margin-right: 2px; }
-.tk-chg.up::before   { content: "▲"; font-size: 8px; }
-.tk-chg.down::before { content: "▼"; font-size: 8px; }
-@media (max-width: 480px) {
-  .ticker-live { padding: 12px 14px; font-size: 10px; letter-spacing: .1em; }
-  .ticker-live .lbl { display: none; }
-  .tk-item { padding: 12px 18px; font-size: 12px; }
-  .ticker-track { animation-duration: 32s; }
-}
+/* SECTIONS */
+section{scroll-margin-top:80px;}.sec{padding:96px 0;}
+.sec-head{max-width:700px;margin:0 auto 60px;text-align:center;}
+.sec-h2{font-family:var(--serif);font-size:clamp(28px,3.5vw,42px);font-weight:600;line-height:1.1;letter-spacing:-.025em;margin:16px 0 14px;text-wrap:balance;}
+.sec-lead{font-size:17px;color:var(--ink2);line-height:1.6;}.sec-lead strong{color:var(--ink);font-weight:600;}
 
-/* ── STATS ──────────────────────────────────────────────── */
-#stats {
-  background: var(--bg);
-  padding: 64px 0;
-}
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-}
-.stat-cell {
-  background: var(--s1);
-  padding: 32px 24px;
-  text-align: center;
-}
-.stat-num {
-  font-family: var(--serif);
-  font-size: clamp(32px, 3.5vw, 44px);
-  font-weight: 600;
-  color: var(--t1);
-  line-height: 1;
-  margin-bottom: 8px;
-  font-variant-numeric: tabular-nums;
-}
-.stat-label {
-  font-size: 13px;
-  color: var(--t2);
-  line-height: 1.4;
-}
+/* COME */
+#come{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.step{position:relative;padding:30px 26px;border:1px solid var(--border);border-radius:var(--r-md);background:var(--bg);}
+.step .n{width:42px;height:42px;border-radius:12px;background:var(--dark);color:#fff;font-family:var(--mono);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.step h3{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:9px;}
+.step p{font-size:14.5px;color:var(--ink2);line-height:1.6;}
+.step .big{font-family:var(--mono);font-size:13px;color:var(--accent-d);font-weight:700;margin-top:13px;}
 
-/* ── SECTION COMMON ─────────────────────────────────────── */
-.section-header {
-  max-width: 640px;
-  margin: 0 auto 64px;
-  text-align: center;
-}
-.section-h2 {
-  font-family: var(--serif);
-  font-size: clamp(30px, 3.8vw, 46px);
-  font-weight: 600;
-  line-height: 1.08;
-  letter-spacing: -.03em;
-  color: var(--t1);
-  margin-bottom: 16px;
-  text-wrap: balance;
-}
-.section-lead {
-  font-size: 16px;
-  color: var(--t2);
-  line-height: 1.7;
-}
+/* FEATURE ROWS (alternating, with mini product visuals) */
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:84px;}
+.frow:last-child{margin-bottom:0;}
+.frow.rev .ftxt{order:2;}
+.fkick{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-d);margin-bottom:12px;}
+.ftxt h3{font-family:var(--serif);font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.15;margin-bottom:14px;}
+.ftxt p{font-size:16px;color:var(--ink2);line-height:1.6;}
+.fvis{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--sh-m);overflow:hidden;}
+/* mini: price table */
+.mt{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12px;}
+.mt caption{text-align:left;padding:13px 16px;font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--accent-d);border-bottom:1px solid var(--border);}
+.mt td{padding:9px 16px;border-top:1px solid var(--border);color:var(--ink2);}
+.mt td:first-child{color:var(--ink2);}.mt .v{color:var(--ink);text-align:right;font-weight:700;}
+.mt .u{color:var(--accent-d);text-align:right;}.mt .d{color:var(--red);text-align:right;}
+/* mini: heat */
+.mh{padding:14px 16px;}
+.mh .ht{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--amber);letter-spacing:.04em;margin-bottom:12px;}
+.mh .r{margin-bottom:12px;}
+.mh .r .nm{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:5px;display:flex;justify-content:space-between;}
+.mh .r .nm .x{font-family:var(--mono);color:var(--amber);}
+.mh .trk{height:6px;border-radius:4px;background:#F2EADD;overflow:hidden;}
+.mh .fl{height:100%;border-radius:4px;background:linear-gradient(90deg,#F59E0B,#D97706);}
+/* mini: pagella */
+.mp{padding:6px 16px 12px;}
+.mp .pt{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--accent-d);letter-spacing:.04em;padding:12px 0 6px;}
+.mp .v{display:flex;gap:11px;padding:12px 0;border-top:1px solid var(--border);align-items:flex-start;}
+.mp .o{font-family:var(--mono);font-size:10px;font-weight:700;padding:4px 8px;border-radius:6px;flex-shrink:0;}
+.mp .o.ok{background:var(--accent-soft);color:var(--accent-d);}.mp .o.no{background:var(--red-soft);color:var(--red);}
+.mp .vt{font-size:12.5px;color:var(--ink);line-height:1.4;}.mp .vt .m{display:block;font-family:var(--mono);font-size:10.5px;color:var(--ink3);margin-top:3px;}
 
-/* ── COME FUNZIONA ──────────────────────────────────────── */
-#come-funziona {
-  background: var(--void);
-  padding: 96px 0;
-}
-.funnel-track {
-  display: grid;
-  grid-template-columns: 1fr 40px 1fr 40px 1fr;
-  align-items: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.funnel-step {
-  background: var(--s1);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 32px 24px;
-  text-align: center;
-}
-.funnel-n {
-  font-family: var(--serif);
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 1;
-  color: var(--t1);
-  margin-bottom: 8px;
-}
-.funnel-n.dim { color: var(--t3); font-size: 36px; }
-.funnel-tag {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.funnel-step-text { font-size: 14px; color: var(--t2); line-height: 1.5; }
-.funnel-arrow {
-  text-align: center;
-  color: var(--border);
-  font-size: 24px;
-  line-height: 1;
-}
+/* PREZZI */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start;}
+.plan{border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface);padding:30px 28px;display:flex;flex-direction:column;box-shadow:var(--sh-s);}
+.plan.feat2{border:1.5px solid var(--dark);box-shadow:var(--sh-m);position:relative;}
+.plan .ft{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--dark);color:#fff;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 14px;border-radius:100px;}
+.plan .pn{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);margin-bottom:16px;}
+.plan.feat2 .pn{color:var(--ink);}
+.plan .pp{display:flex;align-items:baseline;gap:4px;margin-bottom:6px;}
+.plan .pp .e{font-size:20px;color:var(--ink2);font-weight:500;}.plan .pp .a{font-family:var(--serif);font-size:46px;font-weight:600;line-height:1;}.plan .pp .pr{font-size:14px;color:var(--ink3);}
+.plan .tl{font-size:13.5px;color:var(--ink2);margin-bottom:24px;min-height:40px;}
+.plan .dv{border:none;border-top:1px solid var(--border);margin-bottom:22px;}
+.plan ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:26px;flex:1;}
+.plan li{display:flex;gap:10px;font-size:14px;color:var(--ink2);line-height:1.4;align-items:flex-start;}
+.plan li svg{width:17px;height:17px;flex-shrink:0;margin-top:1px;}
+.plan li.y svg{color:var(--accent);}.plan li.n{color:var(--ink3);}.plan li.n svg{color:var(--ink3);}
+.plan .btn{width:100%;}
 
-/* ── PRICED IN ──────────────────────────────────────────── */
-#priced-in {
-  background: var(--bg);
-  padding: 96px 0;
-}
-.priced-scroll {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-}
-.priced-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.priced-table thead th {
-  background: var(--s2);
-  padding: 16px 20px;
-  text-align: left;
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--t3);
-  border-bottom: 1px solid var(--border);
-}
-.priced-table thead th:last-child { text-align: right; }
-.priced-table tbody tr { border-bottom: 1px solid var(--border); transition: background .15s; }
-.priced-table tbody tr:last-child { border-bottom: none; }
-.priced-table tbody tr:hover { background: var(--s1); }
-.priced-table td { padding: 18px 20px; vertical-align: middle; }
-.priced-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  padding: 5px 10px;
-  border-radius: 5px;
-  white-space: nowrap;
-}
-.priced-badge.ok  { background: rgba(48,209,88,.12);  color: var(--ok); }
-.priced-badge.mid { background: rgba(255,159,10,.12); color: var(--mid); }
-.priced-badge.bad { background: rgba(255,69,58,.12);  color: var(--bad); }
-.priced-badge .dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.priced-badge.ok  .dot { background: var(--ok);  box-shadow: 0 0 5px var(--ok); }
-.priced-badge.mid .dot { background: var(--mid); box-shadow: 0 0 5px var(--mid); }
-.priced-badge.bad .dot { background: var(--bad); box-shadow: 0 0 5px var(--bad); }
-.priced-name { font-size: 15px; font-weight: 500; color: var(--t1); }
-.priced-desc { font-size: 13px; color: var(--t2); margin-top: 2px; }
-.priced-action { text-align: right; font-size: 13px; color: var(--t2); font-style: italic; }
+/* FAQ */
+.faq{max-width:760px;margin:0 auto;}
+.fi{border-bottom:1px solid var(--border);}.fi:first-child{border-top:1px solid var(--border);}
+.fq{width:100%;background:none;border:none;padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;font-size:16px;font-weight:600;color:var(--ink);}
+.fq:hover{color:var(--accent-d);}
+.fi .ic{width:24px;height:24px;flex-shrink:0;border:1px solid var(--border2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ink3);transition:.25s;line-height:1;}
+.fi.open .ic{transform:rotate(45deg);color:var(--accent-d);border-color:var(--accent);}
+.fa{max-height:0;overflow:hidden;transition:max-height .35s ease;}.fi.open .fa{max-height:320px;}
+.fa-in{padding-bottom:22px;font-size:15px;color:var(--ink2);line-height:1.7;}
 
-/* ── CHAIN OF EFFECTS ───────────────────────────────────── */
-#chain {
-  background: var(--void);
-  padding: 96px 0;
-}
-.chain-flow {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.chain-node {
-  position: relative;
-  padding: 26px 22px;
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  background: linear-gradient(180deg, var(--s2), var(--s1));
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
-  transition: transform .25s ease, border-color .25s ease;
-}
-.chain-node:hover { transform: translateY(-4px); border-color: rgba(92,245,160,.4); }
-.chain-node:not(:last-child)::after {
-  content: "→";
-  position: absolute;
-  right: -14px; top: 42px;
-  transform: translateX(50%);
-  color: var(--t3);
-  font-size: 16px;
-  z-index: 1;
-}
-.chain-num {
-  position: relative;
-  width: 42px; height: 42px;
-  border-radius: 12px;
-  background: rgba(92,245,160,.08);
-  border: 1px solid rgba(92,245,160,.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--mono);
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 18px;
-  box-shadow: 0 0 16px rgba(92,245,160,.12);
-}
-.chain-title { font-weight: 600; font-size: 15px; color: var(--t1); margin-bottom: 8px; }
-.chain-text { font-size: 14px; color: var(--t2); line-height: 1.6; }
+/* FINAL */
+#final{background:var(--dark);color:#fff;text-align:center;position:relative;overflow:hidden;}
+#final::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 52% 62% at 50% 0%,rgba(16,161,92,.26),transparent 70%);}
+#final .container{position:relative;}#final .sec-h2{color:#fff;}#final .sec-lead{color:rgba(255,255,255,.72);}
+#final .btn-ghost{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.28);}
+#final .btn-ghost:hover{border-color:#fff;}
 
-/* ── PER CHI ────────────────────────────────────────────── */
-#per-chi {
-  background: var(--bg);
-  padding: 96px 0;
-}
-.perchi-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-.perchi-card {
-  background: var(--s1);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 36px 32px;
-}
-.perchi-icon {
-  width: 46px; height: 46px;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 22px;
-  border-radius: 12px;
-  color: var(--gold);
-  background: rgba(92,245,160,.08);
-  border: 1px solid rgba(92,245,160,.2);
-}
-.perchi-icon svg { width: 22px; height: 22px; }
-.perchi-title {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--t1);
-  margin-bottom: 12px;
-}
-.perchi-sub { font-size: 14px; color: var(--t2); line-height: 1.6; margin-bottom: 24px; }
-.perchi-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.perchi-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--t2);
-  line-height: 1.5;
-}
-.perchi-list li::before {
-  content: '→';
-  color: var(--gold);
-  font-weight: 600;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
+/* FOOTER */
+footer{background:var(--surface);border-top:1px solid var(--border);padding:54px 0 34px;}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:34px;border-bottom:1px solid var(--border);margin-bottom:26px;}
+.foot-top .ft-tag{font-size:13.5px;color:var(--ink3);line-height:1.6;max-width:240px;margin-top:12px;}
+.foot-col h4{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:15px;}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.foot-col a{font-size:13.5px;color:var(--ink2);}.foot-col a:hover{color:var(--ink);}
+.foot-bot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink3);}
 
-/* ── COSA RICEVI ────────────────────────────────────────── */
-#cosa-ricevi {
-  background: var(--void);
-  padding: 96px 0;
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:38px;}.hero-sub{max-width:none;}
+  .steps,.price-grid{grid-template-columns:1fr;}
+  .frow{grid-template-columns:1fr;gap:28px;margin-bottom:56px;}.frow.rev .ftxt{order:0;}
+  .foot-top{grid-template-columns:1fr 1fr;}.foot-brand{grid-column:1/-1;}
+  .nav-links{display:none;}.hamburger{display:flex;}.sec{padding:66px 0;}#hero{padding:54px 0 48px;}
 }
-.ricevi-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-.ricevi-card {
-  background: var(--s1);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 32px;
-}
-.ricevi-badge {
-  display: inline-block;
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--gold);
-  background: rgba(92,245,160,.1);
-  border: 1px solid rgba(92,245,160,.2);
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin-bottom: 20px;
-}
-.ricevi-title {
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--t1);
-  margin-bottom: 10px;
-}
-.ricevi-desc { font-size: 14px; color: var(--t2); line-height: 1.65; margin-bottom: 20px; }
-.ricevi-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.ricevi-bullets li {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--t3);
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
-}
-.ricevi-bullets li::before {
-  content: '—';
-  color: var(--border);
-  flex-shrink: 0;
-}
-
-/* ── CONFRONTO ──────────────────────────────────────────── */
-#confronto {
-  background: var(--bg);
-  padding: 96px 0;
-}
-.confronto-wrap {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-}
-.confronto-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.confronto-table th {
-  background: var(--s2);
-  padding: 16px 20px;
-  text-align: center;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--t2);
-  border-bottom: 1px solid var(--border);
-}
-.confronto-table th:first-child { text-align: left; width: 40%; }
-.confronto-table th.highlight { color: var(--gold); }
-.confronto-table tbody tr:nth-child(even) { background: rgba(255,255,255,.02); }
-.confronto-table tbody tr:hover { background: var(--s1); }
-.confronto-table td {
-  padding: 14px 20px;
-  border-bottom: 1px solid var(--border);
-  text-align: center;
-  font-size: 14px;
-  color: var(--t2);
-}
-.confronto-table tbody tr:last-child td { border-bottom: none; }
-.confronto-table td:first-child {
-  text-align: left;
-  font-size: 14px;
-  color: var(--t1);
-  font-weight: 500;
-}
-.chk { color: var(--ok); font-size: 16px; }
-.crs { color: var(--bad); font-size: 16px; }
-.partial { color: var(--mid); font-size: 14px; font-style: italic; }
-
-/* ── TESTIMONIALS ───────────────────────────────────────── */
-#testimonials {
-  background: var(--void);
-  padding: 96px 0;
-}
-.testi-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.testi-card {
-  background: var(--s1);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.testi-stars { font-size: 13px; color: var(--gold); letter-spacing: 2px; }
-.testi-quote {
-  font-size: 14px;
-  color: var(--t2);
-  line-height: 1.7;
-  flex: 1;
-  font-style: italic;
-}
-.testi-author {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-}
-.testi-name { font-size: 14px; font-weight: 600; color: var(--t1); }
-.testi-role { font-family: var(--mono); font-size: 11px; color: var(--t3); letter-spacing: .06em; text-transform: uppercase; }
-
-/* ── PREZZI ─────────────────────────────────────────────── */
-#prezzi {
-  background: var(--bg);
-  padding: 96px 0;
-}
-.prezzi-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  align-items: start;
-}
-.prezzi-card {
-  background: var(--s1);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-}
-.prezzi-card.featured {
-  border-color: var(--gold);
-  background: var(--s2);
-  position: relative;
-}
-.prezzi-badge-feat {
-  position: absolute;
-  top: -1px; left: 50%;
-  transform: translateX(-50%);
-  background: var(--gold);
-  color: var(--void);
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  padding: 5px 14px;
-  border-radius: 0 0 8px 8px;
-  white-space: nowrap;
-}
-.plan-name {
-  font-family: var(--mono);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--t3);
-  margin-bottom: 20px;
-}
-.plan-name.feat { color: var(--gold); }
-.plan-price {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-  margin-bottom: 8px;
-}
-.plan-eur { font-size: 20px; font-weight: 500; color: var(--t2); }
-.plan-amount {
-  font-family: var(--serif);
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 1;
-  color: var(--t1);
-  font-variant-numeric: tabular-nums;
-}
-.plan-period { font-size: 14px; color: var(--t3); }
-.plan-tagline { font-size: 13px; color: var(--t2); margin-bottom: 28px; line-height: 1.5; }
-.plan-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 24px; }
-.plan-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; flex: 1; }
-.plan-features li {
-  display: flex;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--t2);
-  align-items: flex-start;
-  line-height: 1.4;
-}
-.plan-features .pchk { color: var(--ok); flex-shrink: 0; }
-.plan-features .px   { color: var(--t3); flex-shrink: 0; }
-.plan-cta {
-  display: block;
-  text-align: center;
-  padding: 13px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  transition: .2s;
-}
-.plan-cta.outline {
-  border: 1px solid var(--border);
-  color: var(--t2);
-}
-.plan-cta.outline:hover { border-color: var(--t2); color: var(--t1); }
-.plan-cta.solid {
-  background: var(--gold);
-  color: var(--void);
-  border: 1px solid var(--gold);
-}
-.plan-cta.solid:hover { background: var(--gold-l); }
-
-/* ── FAQ ────────────────────────────────────────────────── */
-#faq {
-  background: var(--void);
-  padding: 96px 0;
-}
-.faq-list { max-width: 740px; margin: 0 auto; }
-.faq-item { border-bottom: 1px solid var(--border); }
-.faq-item:first-child { border-top: 1px solid var(--border); }
-.faq-q {
-  width: 100%;
-  background: none;
-  border: none;
-  padding: 22px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  text-align: left;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--t1);
-  cursor: pointer;
-  transition: color .2s;
-}
-.faq-q:hover { color: var(--gold); }
-.faq-icon {
-  width: 22px; height: 22px;
-  flex-shrink: 0;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  color: var(--t3);
-  transition: transform .25s, color .25s, border-color .25s;
-  line-height: 1;
-}
-.faq-item.open .faq-q .faq-icon {
-  transform: rotate(45deg);
-  color: var(--gold);
-  border-color: var(--gold);
-}
-.faq-a {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .35s ease;
-}
-.faq-item.open .faq-a { max-height: 400px; }
-.faq-a-inner {
-  padding-bottom: 22px;
-  font-size: 14px;
-  color: var(--t2);
-  line-height: 1.75;
-}
-
-/* ── CONTATTI ───────────────────────────────────────────── */
-#contatti {
-  background: var(--bg);
-  padding: 96px 0;
-}
-.contatti-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: start;
-}
-.form-wrap {
-  background: var(--s1);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 36px;
-}
-.form-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-.form-row label { font-size: 13px; font-weight: 500; color: var(--t2); }
-.form-row input,
-.form-row select,
-.form-row textarea {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 12px 14px;
-  font-family: var(--sans);
-  font-size: 14px;
-  color: var(--t1);
-  outline: none;
-  transition: border-color .2s;
-  width: 100%;
-}
-.form-row input::placeholder,
-.form-row textarea::placeholder { color: var(--t3); }
-.form-row input:focus,
-.form-row select:focus,
-.form-row textarea:focus { border-color: var(--gold); }
-.form-row textarea { resize: vertical; min-height: 100px; }
-.form-row select { -webkit-appearance: none; appearance: none; }
-.form-row select option { background: var(--bg); }
-.form-submit {
-  width: 100%;
-  background: var(--gold);
-  color: var(--void);
-  border: none;
-  border-radius: 8px;
-  padding: 14px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background .2s;
-  margin-top: 4px;
-}
-.form-submit:hover { background: var(--gold-l); }
-#form-feedback {
-  text-align: center;
-  margin-top: 12px;
-  font-size: 14px;
-  min-height: 20px;
-}
-.contact-info { padding-top: 8px; }
-.contact-info .section-h2 { text-align: left; }
-.contact-info .section-lead { text-align: left; }
-.contact-details {
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.contact-item { display: flex; gap: 14px; align-items: flex-start; }
-.ci-icon {
-  width: 38px; height: 38px;
-  background: rgba(92,245,160,.08);
-  border: 1px solid rgba(92,245,160,.2);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold);
-  flex-shrink: 0;
-}
-.ci-icon svg { width: 18px; height: 18px; }
-.ci-text { display: flex; flex-direction: column; gap: 2px; }
-.ci-label { font-size: 12px; font-weight: 500; color: var(--t3); font-family: var(--mono); letter-spacing: .06em; text-transform: uppercase; }
-.ci-value { font-size: 14px; color: var(--t1); }
-
-/* ── FINAL CTA ──────────────────────────────────────────── */
-#final-cta {
-  background: var(--void);
-  padding: 112px 0;
-  text-align: center;
-}
-.cta-inner { max-width: 600px; margin: 0 auto; }
-.cta-inner .section-h2 { margin-bottom: 20px; }
-.cta-inner .section-lead { margin-bottom: 40px; }
-.cta-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-
-/* ── FOOTER ─────────────────────────────────────────────── */
-footer {
-  background: var(--bg);
-  border-top: 1px solid var(--border);
-  padding: 48px 0 32px;
-}
-.footer-top {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid var(--border);
-}
-.footer-brand .nav-logo { font-size: 22px; margin-bottom: 12px; display: block; }
-.footer-tagline { font-size: 13px; color: var(--t3); line-height: 1.6; max-width: 240px; }
-.footer-col h4 {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--t3);
-  margin-bottom: 16px;
-}
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul li a { font-size: 13px; color: var(--t2); transition: color .2s; }
-.footer-col ul li a:hover { color: var(--t1); }
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.footer-copy { font-size: 12px; color: var(--t3); }
-.footer-legal { display: flex; gap: 20px; }
-.footer-legal a { font-size: 12px; color: var(--t3); transition: color .2s; }
-.footer-legal a:hover { color: var(--t1); }
-
-/* ── MOBILE STICKY BAR ──────────────────────────────────── */
-#sticky-bar {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 90;
-  background: var(--bg);
-  border-top: 1px solid var(--border);
-  padding: 12px 20px;
-  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-  align-items: center;
-  gap: 10px;
-  transition: opacity .3s;
-}
-.sticky-text { flex: 1; }
-.sticky-text strong { display: block; font-size: 14px; font-weight: 600; color: var(--t1); }
-.sticky-text span { font-size: 12px; color: var(--t3); }
-.sticky-cta {
-  background: var(--gold);
-  color: var(--void);
-  font-size: 14px;
-  font-weight: 600;
-  padding: 12px 20px;
-  border-radius: 8px;
-  border: none;
-  white-space: nowrap;
-  flex-shrink: 0;
-  display: inline-block;
-}
-
-/* ── RESPONSIVE ─────────────────────────────────────────── */
-@media (max-width: 960px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-  .hero-sub { max-width: none; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .funnel-track { grid-template-columns: 1fr; }
-  .funnel-arrow { transform: rotate(90deg); text-align: center; padding: 8px 0; }
-  .chain-flow { grid-template-columns: 1fr 1fr; }
-  .chain-node:not(:last-child)::after { display: none; }
-  .perchi-grid { grid-template-columns: 1fr; }
-  .ricevi-grid { grid-template-columns: 1fr; }
-  .testi-grid { grid-template-columns: 1fr; }
-  .prezzi-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
-  .contatti-grid { grid-template-columns: 1fr; gap: 40px; }
-  .footer-top { grid-template-columns: 1fr 1fr; }
-  .footer-brand { grid-column: 1 / -1; }
-}
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  #sticky-bar { display: flex; }
-  body { padding-bottom: 80px; }
-  #hero { padding: 56px 0 48px; }
-  .section-header { margin-bottom: 40px; }
-  #come-funziona, #priced-in, #chain, #per-chi,
-  #cosa-ricevi, #confronto, #testimonials, #prezzi,
-  #faq, #contatti { padding: 64px 0; }
-  .footer-top { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
-}
-@media (max-width: 480px) {
-  .hero-ctas { flex-direction: column; }
-  .btn-primary, .btn-ghost { text-align: center; }
-  .cta-actions { flex-direction: column; align-items: stretch; }
-  .cta-actions .btn-primary,
-  .cta-actions .btn-ghost { text-align: center; }
-  .stats-grid { grid-template-columns: 1fr 1fr; }
-  .hide-mobile { display: none; }
-  /* priced-in table → stacked cards on mobile */
-  .priced-table thead { display: none; }
-  .priced-table tbody tr {
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-    gap: 8px;
-    border-bottom: 1px solid var(--border);
-  }
-  .priced-table td { padding: 0; border: none; }
-  .priced-action { text-align: left; }
-  /* confronto table → drop the generic-newsletter column, keep Thesyum vs Terminal Pro */
-  .confronto-table th:nth-child(4),
-  .confronto-table td:nth-child(4) { display: none; }
-  .confronto-table th,
-  .confronto-table td { padding: 10px 11px; font-size: 12px; }
-  .confronto-table th:first-child { width: auto; }
-
-  .funnel-arrow { font-size: 18px; padding: 4px 0; }
-  .funnel-n { font-size: 40px; }
-  .chain-flow { grid-template-columns: 1fr; }
-  .note-card-body { padding: 14px; }
-  .nc-text { font-size: 12px; }
-  .section-h2 { font-size: 26px; }
-  .perchi-card, .ricevi-card, .form-wrap { padding: 24px 20px; }
-  .testi-card { padding: 20px; }
-  .prezzi-grid { max-width: none; }
-  .plan-amount { font-size: 40px; }
-  .chain-visual { padding: 18px 16px; }
-}
+@media(max-width:480px){.hero-ctas{flex-direction:column;}.hero-ctas .btn{width:100%;}.foot-top{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="nav">
   <div class="container">
     <div class="nav-inner">
-      <a href="#" class="nav-logo"><svg viewBox="0 0 26 26" fill="none" width="26" height="26"><rect x="1" y="1" width="24" height="24" stroke="#EAF3EE" stroke-opacity=".3"/><line x1="1" y1="9" x2="25" y2="9" stroke="#EAF3EE" stroke-opacity=".22"/><line x1="1" y1="17" x2="25" y2="17" stroke="#EAF3EE" stroke-opacity=".22"/><circle cx="7" cy="5" r="2" fill="#6EE7A8"/><circle cx="7" cy="13" r="2" fill="#E3B24A"/><circle cx="7" cy="21" r="2" fill="#6EE7A8"/></svg>Thesyum</a>
+      <a href="#" class="nav-logo"><span class="logo-chip"><svg viewBox="0 0 26 26" fill="none" width="24" height="24"><rect x="1" y="1" width="24" height="24" stroke="#EAF3EE" stroke-opacity=".3"/><line x1="1" y1="9" x2="25" y2="9" stroke="#EAF3EE" stroke-opacity=".22"/><line x1="1" y1="17" x2="25" y2="17" stroke="#EAF3EE" stroke-opacity=".22"/><circle cx="7" cy="5" r="2" fill="#6EE7A8"/><circle cx="7" cy="13" r="2" fill="#E3B24A"/><circle cx="7" cy="21" r="2" fill="#6EE7A8"/></svg></span>Thesyum</a>
       <ul class="nav-links">
-        <li><a href="#come-funziona">Cómo funciona</a></li>
-        <li><a href="#priced-in">Priced In</a></li>
+        <li><a href="#come">Cómo funciona</a></li>
+        <li><a href="#concetto">La tesis</a></li>
+        <li><a href="#dentro">Qué recibes</a></li>
         <li><a href="#prezzi">Precios</a></li>
-        <li><a href="#faq">FAQ</a></li>
         <li><span class="nav-lang"><a href="../index.html">IT</a>/<a href="../en/index.html">EN</a>/<a href="../ar/index.html">AR</a>/<a href="../fr/index.html">FR</a>/<a href="index.html" class="on">ES</a></span></li>
-        <li><a href="#contatti" class="btn-nav">Empezar</a></li>
+        <li><a href="#final" class="btn btn-solid">Prueba 14 días gratis</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" id="hb" onclick="tm()"><span></span><span></span><span></span></button>
     </div>
   </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <ul>
-      <li><a href="#come-funziona" onclick="toggleMenu()">Cómo funciona</a></li>
-      <li><a href="#priced-in" onclick="toggleMenu()">Priced In</a></li>
-      <li><a href="#prezzi" onclick="toggleMenu()">Precios</a></li>
-      <li><a href="#faq" onclick="toggleMenu()">FAQ</a></li>
-    </ul>
+  <div class="mobile-menu" id="mm">
+    <a href="#come" onclick="tm()">Cómo funciona</a><a href="#concetto" onclick="tm()">La tesis</a><a href="#dentro" onclick="tm()">Qué recibes</a><a href="#prezzi" onclick="tm()">Precios</a>
     <div class="nav-lang"><a href="../index.html">IT</a>/<a href="../en/index.html">EN</a>/<a href="../ar/index.html">AR</a>/<a href="../fr/index.html">FR</a>/<a href="index.html" class="on">ES</a></div>
-    <a href="#contatti" class="btn-full" onclick="toggleMenu()">Empezar →</a>
+    <a href="#final" class="btn btn-solid" onclick="tm()">Prueba 14 días gratis</a>
   </div>
 </nav>
 
@@ -1376,57 +253,35 @@ footer {
   <div class="container">
     <div class="hero-grid">
       <div>
-        <a href="#priced-in" class="hero-pill"><span class="hp-dot"></span>Framework Priced In<span class="hp-arrow">→</span></a>
-        <h1 class="hero-h1">Deja de reaccionar<br>a las noticias.<br><em>Anticipa los precios.</em></h1>
-        <p class="hero-sub">Thesyum analiza más de 180 fuentes macro cada noche y te entrega las pocas señales que realmente mueven las carteras — clasificadas según cuánto ya están descontadas. Operativo en 4 minutos, antes de la apertura.</p>
+        <span class="eyebrow">Inteligencia de mercado · cada mañana</span>
+        <h1 class="hero-h1">Cada noticia tiene un efecto <span class="hl">que el mercado no ve enseguida.</span></h1>
+        <p class="hero-sub">Thesyum lee más de <strong>180 fuentes cada noche</strong>, encuentra las pocas que importan y, para cada una, te dice qué descuenta el mercado hoy — <strong>y la cadena de consecuencias ocultas</strong> donde está el verdadero valor. Lo lees en 4 minutos, antes de la apertura.</p>
         <div class="hero-ctas">
-          <a href="#contatti" class="btn-primary">Empieza los 14 días gratis →</a>
-          <a href="#come-funziona" class="btn-ghost">Ve cómo funciona</a>
+          <a href="#final" class="btn btn-solid btn-lg">Prueba 14 días gratis</a>
+          <a href="#dentro" class="btn btn-ghost btn-lg">Ve un ejemplo</a>
         </div>
-        <div class="hero-trust">
-          <span class="ht-stars">★★★★★</span>
-          <span class="ht-text">4,9/5 — usado por asesores, traders y gestores que mueven capital real.</span>
+        <div class="hero-re">
+          <span class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Sin tarjeta</span>
+          <span class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Cancela en un clic</span>
+          <span class="r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Listo en 4 minutos</span>
         </div>
       </div>
       <div>
-        <div class="note-card">
-          <div class="note-card-header">
-            <span class="nc-title">Thesyum Daily Note</span>
-            <span class="nc-date" id="nc-date">—</span>
+        <div class="tc-cap"><span class="pulse"></span>La tesis de hoy, desde tu informe:</div>
+        <div class="tesi" id="tesi">
+          <div class="tc-head">
+            <span class="tc-badge"><span class="d"></span>TESIS DEL DÍA <span class="dir up" id="tcDir">▲</span></span>
+            <span class="tc-live">LIVE</span>
           </div>
-          <div class="nc-chart">
-            <div class="nc-chart-top">
-              <span class="nc-symbol">S&amp;P 500 <span class="nc-tag">· evolución de hoy</span></span>
-              <span class="nc-price">+0,42%</span>
+          <div class="tc-body" id="tcBody">
+            <div class="tc-claim" id="tcClaim"></div>
+            <div class="tc-meta" id="tcMeta"></div>
+            <div class="tc-conf">
+              <div class="tc-conf-row"><span id="tcOriz"></span><span>confianza <b id="tcConfVal"></b></span></div>
+              <div class="tc-track"><div class="tc-fill" id="tcFill"></div></div>
             </div>
-            <svg viewBox="0 0 600 76" preserveAspectRatio="none" aria-hidden="true">
-              <path class="spark-area" d="M0,58 L46,52 L92,60 L138,44 L184,50 L230,36 L276,42 L322,28 L368,34 L414,22 L460,28 L506,16 L552,20 L600,10 L600,76 L0,76 Z"/>
-              <path class="spark-line" pathLength="1000" d="M0,58 L46,52 L92,60 L138,44 L184,50 L230,36 L276,42 L322,28 L368,34 L414,22 L460,28 L506,16 L552,20 L600,10"/>
-            </svg>
-            <div class="nc-caption"><span class="nc-cap-dot"></span>Contexto de mercado · las 3 señales operativas abajo ↓</div>
-          </div>
-          <div class="note-card-body">
-            <div class="nc-row">
-              <div class="nc-dot ok"></div>
-              <div>
-                <div class="nc-label ok">No descontada</div>
-                <div class="nc-text">Pivote de la Fed más lento de lo previsto. Los futuros descuentan −25pb en diciembre, el mercado físico aún no se ha movido. Ventana de 48h.</div>
-              </div>
-            </div>
-            <div class="nc-row">
-              <div class="nc-dot mid"></div>
-              <div>
-                <div class="nc-label mid">Parc. descontada</div>
-                <div class="nc-text">Inflación PCE por encima del consenso durante el 3.º mes. La renta variable ha absorbido alrededor del 60 % — el riesgo residual es asimétrico a la baja.</div>
-              </div>
-            </div>
-            <div class="nc-row">
-              <div class="nc-dot bad"></div>
-              <div>
-                <div class="nc-label bad">Ya descontada</div>
-                <div class="nc-text">Tensiones geopolíticas en Oriente Medio totalmente incorporadas en los precios de la energía. Ningún edge operativo por el momento.</div>
-              </div>
-            </div>
+            <div class="tc-eff direct"><div class="k">Efecto directo <span class="sub">— lo que el mercado descuenta al instante</span></div><p id="tcDirect"></p></div>
+            <div class="tc-eff hidden"><div class="k">Efecto oculto <span class="sub">— donde está el valor</span></div><p id="tcHidden"></p></div>
           </div>
         </div>
       </div>
@@ -1434,321 +289,130 @@ footer {
   </div>
 </section>
 
-<!-- TICKER -->
-<div id="ticker-wrap">
-  <div class="ticker-live"><span class="pulse"></span><span class="lbl">Mercados</span></div>
-  <div class="ticker-flow">
-    <div class="ticker-track" id="ticker-track"></div>
+<!-- TRUST -->
+<div id="trust">
+  <div class="container">
+    <div class="trust-inner">
+      <span class="t"><span class="stars">★★★★★</span><b>4,9/5</b></span>
+      <span class="sep"></span>
+      <span class="t">Usado por <b>asesores y traders</b> que mueven capital real</span>
+      <span class="sep"></span>
+      <span class="t">Datos reales de <b>Yahoo Finance</b> · <b>FRED / Federal Reserve</b></span>
+    </div>
   </div>
 </div>
 
-<!-- STATS -->
-<section id="stats">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-cell">
-        <div class="stat-num">180+</div>
-        <div class="stat-label">Fuentes macro y de flujo analizadas cada noche</div>
-      </div>
-      <div class="stat-cell">
-        <div class="stat-num">07:00</div>
-        <div class="stat-label">En tu bandeja de entrada, antes de la apertura europea</div>
-      </div>
-      <div class="stat-cell">
-        <div class="stat-num">4 min</div>
-        <div class="stat-label">Del despertar a la operativa</div>
-      </div>
-      <div class="stat-cell">
-        <div class="stat-num">96%</div>
-        <div class="stat-label">Renueva después del primer mes</div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- TICKER -->
+<div id="ticker"><div class="tk-track" id="tkTrack"></div></div>
 
-<!-- COME FUNZIONA -->
-<section id="come-funziona">
+<!-- COME -->
+<section id="come" class="sec">
   <div class="container">
-    <div class="section-header">
+    <div class="sec-head">
       <span class="eyebrow">Cómo funciona</span>
-      <h2 class="section-h2">De 180 fuentes a las señales que importan. Cada mañana.</h2>
-      <p class="section-lead">No es una newsletter. Es un sistema de filtrado que elimina el ruido y aísla lo que puede mover las carteras en las próximas 24–72 horas.</p>
+      <h2 class="sec-h2">De 180 fuentes a las pocas tesis que importan. Cada noche.</h2>
+      <p class="sec-lead">No es un boletín. Es un sistema que lee mercados y noticias, descarta el ruido y aísla lo que puede mover las carteras en las próximas semanas.</p>
     </div>
-    <div class="funnel-track">
-      <div class="funnel-step">
-        <div class="funnel-n">180</div>
-        <div class="funnel-tag" style="color:var(--t3)">Fuentes</div>
-        <div class="funnel-step-text">Feeds macro, repos de la Fed, datos del BLS, flujos de ETF, earnings calls, noticias geopolíticas y mucho más.</div>
-      </div>
-      <div class="funnel-arrow">→</div>
-      <div class="funnel-step">
-        <div class="funnel-n dim">~40</div>
-        <div class="funnel-tag" style="color:var(--t2)">Relevantes</div>
-        <div class="funnel-step-text">El modelo descarta el ruido. Solo quedan los eventos con impacto cuantificable en los mercados.</div>
-      </div>
-      <div class="funnel-arrow">→</div>
-      <div class="funnel-step">
-        <div class="funnel-n" style="color:var(--gold)">3</div>
-        <div class="funnel-tag" style="color:var(--gold)">Señales</div>
-        <div class="funnel-step-text">Tres insights con contexto, dirección y clasificación Priced In. Listos para tu operativa.</div>
-      </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Lo lee todo</h3><p>Cada noche analiza más de 180 fuentes y los precios reales de materias primas, tipos y divisas.</p><div class="big">180 fuentes →</div></div>
+      <div class="step"><div class="n">2</div><h3>Encuentra la cadena</h3><p>Para cada noticia relevante calcula efecto directo, efecto oculto, horizonte y cuánto ya está descontado.</p><div class="big">efecto oculto →</div></div>
+      <div class="step"><div class="n">3</div><h3>Se verifica</h3><p>Al vencimiento comprueba por sí solo si la tesis acertó. Sin tesis débiles: si no hay nada sobre el umbral, cero tesis.</p><div class="big">boletín ✓</div></div>
     </div>
   </div>
 </section>
 
-<!-- PRICED IN -->
-<section id="priced-in">
+<!-- CONCETTO -->
+<section id="concetto" class="sec" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">El framework Priced In</span>
-      <h2 class="section-h2">No todas las noticias<br>son oportunidades.</h2>
-      <p class="section-lead">Thesyum clasifica cada evento en tres categorías. Siempre sabes si estás actuando sobre una oportunidad real o persiguiendo algo que ya está incorporado en los precios.</p>
+    <div class="sec-head">
+      <span class="eyebrow">La idea clave</span>
+      <h2 class="sec-h2">El valor no está en la noticia. Está en lo que viene después.</h2>
+      <p class="sec-lead">Todos leen la misma noticia y descuentan el mismo efecto obvio. Thesyum te muestra <strong>el paso oculto</strong>, 2–3 jugadas más allá, antes de que el mercado llegue.</p>
     </div>
-    <div class="priced-scroll">
-    <table class="priced-table">
-      <thead>
-        <tr>
-          <th>Clasificación</th>
-          <th>Significado</th>
-          <th class="hide-mobile">Ejemplo</th>
-          <th>Acción típica</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="priced-badge ok"><span class="dot"></span>No Descontada</span></td>
-          <td>
-            <div class="priced-name">Oportunidad abierta</div>
-            <div class="priced-desc">El mercado aún no ha incorporado esta información</div>
-          </td>
-          <td class="hide-mobile" style="font-size:13px;color:var(--t2)">Pivote de la Fed antes de lo previsto, aún no en los futuros</td>
-          <td class="priced-action">Analiza y actúa en 48h</td>
-        </tr>
-        <tr>
-          <td><span class="priced-badge mid"><span class="dot"></span>Parc. Descontada</span></td>
-          <td>
-            <div class="priced-name">Oportunidad reducida</div>
-            <div class="priced-desc">El mercado ha absorbido parte del impacto, edge limitado</div>
-          </td>
-          <td class="hide-mobile" style="font-size:13px;color:var(--t2)">Inflación PCE por encima del consenso durante el 3.º mes</td>
-          <td class="priced-action">Evalúa el riesgo residual</td>
-        </tr>
-        <tr>
-          <td><span class="priced-badge bad"><span class="dot"></span>Ya Descontada</span></td>
-          <td>
-            <div class="priced-name">Ningún edge</div>
-            <div class="priced-desc">La información está completamente incorporada — actuar ahora significa perseguir</div>
-          </td>
-          <td class="hide-mobile" style="font-size:13px;color:var(--t2)">Tensiones geopolíticas ya en el precio del petróleo</td>
-          <td class="priced-action">Evita. Espera el próximo ciclo</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-  </div>
-</section>
-
-<!-- CHAIN OF EFFECTS -->
-<section id="chain">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Chain of Effects</span>
-      <h2 class="section-h2">Entiende las cascadas,<br>no solo el titular.</h2>
-      <p class="section-lead">Cada señal incluye la cadena de efectos: cómo un evento macro se propaga a través de las clases de activos, los sectores y los instrumentos individuales — con dirección e intensidad.</p>
-    </div>
-    <div class="chain-flow">
-      <div class="chain-node">
-        <div class="chain-num">1</div>
-        <div class="chain-title">Evento macro identificado</div>
-        <div class="chain-text">El dato o el evento se contextualiza respecto a las expectativas del mercado, no en términos absolutos.</div>
+    <div class="frow">
+      <div class="ftxt">
+        <div class="fkick">Efecto directo → Efecto oculto</div>
+        <h3>Ve la jugada que los demás no descuentan.</h3>
+        <p>Para cada tesis, Thesyum separa la reacción obvia — ya descontada, poco margen — de la cadena de consecuencias 2–3 pasos después, donde el mercado aún no ha llegado y queda valor. Con horizonte, confianza y cuánto ya está descontado.</p>
       </div>
-      <div class="chain-node">
-        <div class="chain-num">2</div>
-        <div class="chain-title">Clasificación Priced In</div>
-        <div class="chain-text">Se determina cuánto ha incorporado ya el mercado la información en los precios actuales.</div>
-      </div>
-      <div class="chain-node">
-        <div class="chain-num">3</div>
-        <div class="chain-title">Propagación por clase de activo</div>
-        <div class="chain-text">Se mapea el impacto en renta variable, bonos, divisas y materias primas con dirección e intensidad.</div>
-      </div>
-      <div class="chain-node">
-        <div class="chain-num">4</div>
-        <div class="chain-title">Señal accionable</div>
-        <div class="chain-text">Resultado final: una acción específica con ventana temporal y nivel de prioridad.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PER CHI -->
-<section id="per-chi">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Para quién es Thesyum</span>
-      <h2 class="section-h2">Construido para quienes<br>gestionan capital real.</h2>
-    </div>
-    <div class="perchi-grid">
-      <div class="perchi-card">
-        <div class="perchi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/></svg></div>
-        <h3 class="perchi-title">Asesores y Wealth Managers</h3>
-        <p class="perchi-sub">Llegas a la reunión con el contexto macro ya listo, sin quemar una hora de investigación cada mañana.</p>
-        <ul class="perchi-list">
-          <li>Contexto fresco y contextualizado para cada cliente</li>
-          <li>Explicas los movimientos con un lenguaje preciso y seguro</li>
-          <li>Identificas los riesgos de cartera antes de que estallen</li>
-          <li>Recuperas más de 90 minutos cada día laborable</li>
-        </ul>
-      </div>
-      <div class="perchi-card">
-        <div class="perchi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M19 8l-5 5-3-3-4 4"/></svg></div>
-        <h3 class="perchi-title">Traders e Inversores Activos</h3>
-        <p class="perchi-sub">Sabes de un vistazo qué catalizadores ya están descontados y dónde queda todavía edge por explotar.</p>
-        <ul class="perchi-list">
-          <li>Deja de perseguir noticias que ya están en los precios</li>
-          <li>Reconoce las ventanas temporales de oportunidad</li>
-          <li>Entiende la propagación macro antes de entrar</li>
-          <li>Un framework replicable, no opiniones al azar</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COSA RICEVI -->
-<section id="cosa-ricevi">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">El contenido</span>
-      <h2 class="section-h2">Dos documentos.<br>Cero ruido.</h2>
-      <p class="section-lead">Cada día recibes dos documentos complementarios. La Daily Note para la operativa inmediata, el Weekly Report para el contexto estratégico.</p>
-    </div>
-    <div class="ricevi-grid">
-      <div class="ricevi-card">
-        <span class="ricevi-badge">Diario · 07:00</span>
-        <h3 class="ricevi-title">Thesyum Daily Note</h3>
-        <p class="ricevi-desc">El briefing matutino con las señales más importantes del día. Cada señal incluye clasificación Priced In, cadena de efectos y ventana temporal de validez.</p>
-        <ul class="ricevi-bullets">
-          <li>Señales clasificadas (No Descontada / Parc. / Ya)</li>
-          <li>Contexto macro de 72h para cada señal</li>
-          <li>Propagación por clase de activo con dirección</li>
-          <li>Ventana temporal de validez de la oportunidad</li>
-          <li>Nivel de prioridad y confianza</li>
-        </ul>
-      </div>
-      <div class="ricevi-card">
-        <span class="ricevi-badge">Semanal · Domingo</span>
-        <h3 class="ricevi-title">Thesyum Weekly Report</h3>
-        <p class="ricevi-desc">El análisis estratégico de la semana. Calendarios de eventos, escenarios macro en construcción, datos estructurales y framework para la semana entrante.</p>
-        <ul class="ricevi-bullets">
-          <li>Calendario de eventos con impacto esperado</li>
-          <li>2–3 escenarios macro con probabilidades</li>
-          <li>Revisión de las señales de la semana</li>
-          <li>Datos estructurales (flujos, posicionamiento, COT)</li>
-          <li>Watchlist para la semana entrante</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONFRONTO -->
-<section id="confronto">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Comparación</span>
-      <h2 class="section-h2">¿Por qué Thesyum<br>y no el resto?</h2>
-      <p class="section-lead">Los terminales profesionales son herramientas potentes — si tienes un equipo de analistas y 24.000€ al año para gastar. Thesyum hace el trabajo de filtrado por ti.</p>
-    </div>
-    <div class="confronto-wrap">
-      <table class="confronto-table">
-        <thead>
-          <tr>
-            <th>Característica</th>
-            <th class="highlight">Thesyum</th>
-            <th>Terminal Pro</th>
-            <th>Newsletter genérica</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Clasificación Priced In</td>
-            <td><span class="chk">✓</span></td>
-            <td><span class="crs">✗</span></td>
-            <td><span class="crs">✗</span></td>
-          </tr>
-          <tr>
-            <td>Cadena de efectos por clase de activo</td>
-            <td><span class="chk">✓</span></td>
-            <td><span class="partial">Manual</span></td>
-            <td><span class="crs">✗</span></td>
-          </tr>
-          <tr>
-            <td>Listo a las 7:00 cada mañana</td>
-            <td><span class="chk">✓</span></td>
-            <td><span class="chk">✓</span></td>
-            <td><span class="partial">Variable</span></td>
-          </tr>
-          <tr>
-            <td>Tiempo necesario para aprovecharlo</td>
-            <td>4 minutos</td>
-            <td>60–120 minutos</td>
-            <td>10–30 minutos</td>
-          </tr>
-          <tr>
-            <td>Coste mensual</td>
-            <td>Desde 49€</td>
-            <td>2.000€+</td>
-            <td>0–20€</td>
-          </tr>
-          <tr>
-            <td>Enfoque mercado italiano/europeo</td>
-            <td><span class="chk">✓</span></td>
-            <td><span class="partial">Parcial</span></td>
-            <td><span class="crs">✗</span></td>
-          </tr>
-          <tr>
-            <td>Ventana temporal por señal</td>
-            <td><span class="chk">✓</span></td>
-            <td><span class="crs">✗</span></td>
-            <td><span class="crs">✗</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Lo que dicen</span>
-      <h2 class="section-h2">Usado por profesionales<br>que gestionan capital real.</h2>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">La clasificación Priced In ha cambiado la forma en que proceso las noticias. Ya no persigo, selecciono.</p>
-        <div class="testi-author">
-          <span class="testi-name">Marco V.</span>
-          <span class="testi-role">Trader independiente · Milán</span>
+      <div class="fvis">
+        <div class="mp">
+          <div class="pt">EJEMPLO · TIERRAS RARAS</div>
+          <div class="v"><span class="o ok">directo</span><div class="vt">Más demanda europea = más extracción para mineras no chinas.<span class="m">la lectura obvia, ya descontada</span></div></div>
+          <div class="v"><span class="o no">oculto</span><div class="vt">El nudo es el refinado: China controla más del 85% de la capacidad global. Extraer no basta.<span class="m">donde está el valor</span></div></div>
         </div>
       </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">Lo uso antes de cada reunión con clientes. En 4 minutos tengo el contexto macro que antes me requería una hora de investigación.</p>
-        <div class="testi-author">
-          <span class="testi-name">Giulia R.</span>
-          <span class="testi-role">Asesora financiera · Roma</span>
+    </div>
+  </div>
+</section>
+
+<!-- DENTRO IL REPORT (alternating feature rows) -->
+<section id="dentro" class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Qué recibes</span>
+      <h2 class="sec-h2">Un informe al día. Cuatro cosas, cero ruido.</h2>
+      <p class="sec-lead">Cada mañana a las 7:00, antes de la apertura. Lo lees en 4 minutos.</p>
+    </div>
+
+    <div class="frow">
+      <div class="ftxt">
+        <div class="fkick">Precios reales</div>
+        <h3>Los números reales, no opiniones.</h3>
+        <p>Materias primas, tipos y divisas con variaciones a 1, 5 y 20 días. Escritos por el sistema directamente desde Yahoo Finance y FRED — <strong>nunca por la IA</strong>.</p>
+      </div>
+      <div class="fvis">
+        <table class="mt"><caption>CONTEXTO DE MERCADO · 20 NOV</caption>
+          <tr><td>Crudo WTI</td><td class="v">99.77</td><td class="d">-3.8%</td></tr>
+          <tr><td>Oro (futuro)</td><td class="v">4,141</td><td class="d">-0.5%</td></tr>
+          <tr><td>Cobre</td><td class="v">6.60</td><td class="u">+0.9%</td></tr>
+          <tr><td>Tierras Raras (REMX)</td><td class="v">53.36</td><td class="d">-24,1% 20d</td></tr>
+          <tr><td>Semis (SOXX)</td><td class="v">501.9</td><td class="u">+1.7%</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="frow rev">
+      <div class="ftxt">
+        <div class="fkick">La tesis del día</div>
+        <h3>Una tesis operativa, no un titular.</h3>
+        <p>Efecto directo, efecto oculto, horizonte, confianza y cuánto ya está descontado — con la noticia de origen. Y si no hay nada sobre el umbral, cero tesis: sin ruido.</p>
+      </div>
+      <div class="fvis">
+        <div class="mp">
+          <div class="pt">TESIS · ENERGÍA · conf. 62/100</div>
+          <div class="v"><span class="o ok">▲ tesis</span><div class="vt">El aplazamiento de la UE sobre el metano desbloquea una ventaja estructural para el GNL de EE. UU.<span class="m">horizonte 60d · ya descontado: bajo</span></div></div>
         </div>
       </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">Por fin una fuente que me dice no solo qué está pasando, sino cuánto ya está descontado y qué edge queda todavía.</p>
-        <div class="testi-author">
-          <span class="testi-name">Luca P.</span>
-          <span class="testi-role">Gestión patrimonial · Turín</span>
+    </div>
+
+    <div class="frow">
+      <div class="ftxt">
+        <div class="fkick">Temas en aceleración</div>
+        <h3>Qué se está calentando, antes del precio.</h3>
+        <p>Qué narrativas crecen frente a lo habitual (últimos 30 días vs media de 6 meses). Las ves acelerar antes de que sean movimiento de mercado.</p>
+      </div>
+      <div class="fvis">
+        <div class="mh">
+          <div class="ht">TEMAS EN ACELERACIÓN</div>
+          <div class="r"><div class="nm"><span>Cobre · doble shock de oferta</span><span class="x">6×</span></div><div class="trk"><div class="fl" style="width:100%"></div></div></div>
+          <div class="r"><div class="nm"><span>Shipping · congestión Asia</span><span class="x">6×</span></div><div class="trk"><div class="fl" style="width:100%"></div></div></div>
+          <div class="r"><div class="nm"><span>Petróleo · rutas de Ormuz</span><span class="x">2×</span></div><div class="trk"><div class="fl" style="width:40%"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frow rev">
+      <div class="ftxt">
+        <div class="fkick">El boletín</div>
+        <h3>Se juzga solo.</h3>
+        <p>Al vencimiento el sistema verifica con precios reales si sus tesis acertaron. Sin marketing: los resultados, confirmados o refutados, están escritos en blanco y negro.</p>
+      </div>
+      <div class="fvis">
+        <div class="mp">
+          <div class="pt">VERIFICACIONES AL VENCIMIENTO</div>
+          <div class="v"><span class="o no">refutada</span><div class="vt">Cuello de botella de imanes China→Japón.<span class="m">REMX: -29,5% en 60d (umbral ±3%)</span></div></div>
+          <div class="v"><span class="o ok">confirmada</span><div class="vt">Aplazamiento metano UE → impulso GNL EE. UU.<span class="m">Energía: +4,1% en 60d · dentro del horizonte</span></div></div>
         </div>
       </div>
     </div>
@@ -1756,228 +420,74 @@ footer {
 </section>
 
 <!-- PREZZI -->
-<section id="prezzi">
+<section id="prezzi" class="sec" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Planes</span>
-      <h2 class="section-h2">Empieza gratis.<br>Escala cuando estés listo.</h2>
-      <p class="section-lead">14 días de prueba gratuita en todos los planes. No se requiere tarjeta de crédito.</p>
+    <div class="sec-head">
+      <span class="eyebrow">Precios</span>
+      <h2 class="sec-h2">Empieza gratis. Crece cuando quieras.</h2>
+      <p class="sec-lead">14 días de prueba gratuita en todos los planes. Sin tarjeta de crédito.</p>
     </div>
-    <div class="prezzi-grid">
-      <div class="prezzi-card">
-        <div class="plan-name">Esencial</div>
-        <div class="plan-price">
-          <span class="plan-eur">€</span>
-          <span class="plan-amount">49</span>
-          <span class="plan-period">/mes</span>
-        </div>
-        <p class="plan-tagline">Para quien quiere el briefing diario sin adornos.</p>
-        <hr class="plan-divider">
-        <ul class="plan-features">
-          <li><span class="pchk">✓</span> Daily Note cada mañana a las 7:00</li>
-          <li><span class="pchk">✓</span> Señales clasificadas Priced In</li>
-          <li><span class="pchk">✓</span> Cadena de efectos por clase de activo</li>
-          <li><span class="px">✗</span> Weekly Report estratégico</li>
-          <li><span class="px">✗</span> Archivo histórico de señales</li>
-          <li><span class="px">✗</span> Acceso a la comunidad</li>
+    <div class="price-grid">
+      <div class="plan">
+        <div class="pn">Esencial</div><div class="pp"><span class="e">€</span><span class="a">49</span><span class="pr">/mes</span></div>
+        <p class="tl">Para quien quiere el informe diario sin adornos.</p><hr class="dv">
+        <ul>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Informe cada mañana a las 7:00</li>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Tesis con efecto directo y oculto</li>
+          <li class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Informe semanal estratégico</li>
+          <li class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Archivo histórico</li>
         </ul>
-        <a href="#contatti" class="plan-cta outline">Empieza gratis →</a>
+        <a href="#final" class="btn btn-ghost">Empieza gratis</a>
       </div>
-      <div class="prezzi-card featured">
-        <div class="prezzi-badge-feat">Más popular</div>
-        <div class="plan-name feat">Pro</div>
-        <div class="plan-price">
-          <span class="plan-eur">€</span>
-          <span class="plan-amount">99</span>
-          <span class="plan-period">/mes</span>
-        </div>
-        <p class="plan-tagline">El framework completo para quien opera activamente en los mercados.</p>
-        <hr class="plan-divider">
-        <ul class="plan-features">
-          <li><span class="pchk">✓</span> Daily Note cada mañana a las 7:00</li>
-          <li><span class="pchk">✓</span> Señales clasificadas Priced In</li>
-          <li><span class="pchk">✓</span> Cadena de efectos por clase de activo</li>
-          <li><span class="pchk">✓</span> Weekly Report estratégico</li>
-          <li><span class="pchk">✓</span> Archivo histórico de 12 meses</li>
-          <li><span class="px">✗</span> Acceso a la comunidad</li>
+      <div class="plan feat2">
+        <div class="ft">Más elegido</div><div class="pn">Pro</div><div class="pp"><span class="e">€</span><span class="a">99</span><span class="pr">/mes</span></div>
+        <p class="tl">El cuadro completo para quien opera activamente en los mercados.</p><hr class="dv">
+        <ul>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Informe cada mañana a las 7:00</li>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Tesis con efecto directo y oculto</li>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Informe semanal estratégico</li>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Archivo histórico 12 meses</li>
         </ul>
-        <a href="#contatti" class="plan-cta solid">Empieza gratis →</a>
+        <a href="#final" class="btn btn-solid">Empieza gratis</a>
       </div>
-      <div class="prezzi-card">
-        <div class="plan-name">Elite</div>
-        <div class="plan-price">
-          <span class="plan-eur">€</span>
-          <span class="plan-amount">199</span>
-          <span class="plan-period">/mes</span>
-        </div>
-        <p class="plan-tagline">Para profesionales y equipos que quieren el máximo contexto.</p>
-        <hr class="plan-divider">
-        <ul class="plan-features">
-          <li><span class="pchk">✓</span> Daily Note cada mañana a las 7:00</li>
-          <li><span class="pchk">✓</span> Señales clasificadas Priced In</li>
-          <li><span class="pchk">✓</span> Cadena de efectos por clase de activo</li>
-          <li><span class="pchk">✓</span> Weekly Report estratégico</li>
-          <li><span class="pchk">✓</span> Archivo histórico ilimitado</li>
-          <li><span class="pchk">✓</span> Acceso a la comunidad + Q&amp;A mensual</li>
+      <div class="plan">
+        <div class="pn">Elite</div><div class="pp"><span class="e">€</span><span class="a">199</span><span class="pr">/mes</span></div>
+        <p class="tl">Para profesionales y equipos que quieren el máximo contexto.</p><hr class="dv">
+        <ul>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Todo del plan Pro</li>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Archivo histórico ilimitado</li>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Acceso a comunidad + Q&amp;A mensual</li>
+          <li class="y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Soporte prioritario</li>
         </ul>
-        <a href="#contatti" class="plan-cta outline">Empieza gratis →</a>
+        <a href="#final" class="btn btn-ghost">Empieza gratis</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq">
+<section class="sec">
   <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">FAQ</span>
-      <h2 class="section-h2">Preguntas frecuentes.</h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          ¿Thesyum ofrece consejos de inversión?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">No. Thesyum es una herramienta de intelligence y análisis, no un servicio de asesoramiento financiero regulado. Las señales están pensadas para profesionales con sus propias competencias operativas — no sustituyen tu análisis, lo potencian con contexto que de otro modo requeriría horas.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          ¿A qué hora llega la Daily Note?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">Cada día hábil antes de las 7:00, hora italiana, para que puedas leerla antes de la apertura de los mercados europeos. En los días festivos el servicio se suspende y se envía una nota de contexto semanal.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          ¿Cómo se construye el framework Priced In?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">La clasificación se basa en el análisis del diferencial entre las expectativas implícitas en los precios de mercado (obtenidas de futuros, opciones y spreads) y el dato o evento observado. No es una opinión subjetiva — es una medición de la brecha entre expectativa y realidad, actualizada en tiempo real sobre las más de 180 fuentes monitorizadas.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          ¿Puedo cancelar en cualquier momento?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">Sí, sin penalizaciones y sin burocracia. La suscripción se renueva mensualmente y puedes cancelar dentro de las 24 horas posteriores a la renovación. No pedimos motivos, no hacemos retención agresiva.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          ¿La prueba gratuita requiere tarjeta de crédito?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">No. Los 14 días de prueba son completamente gratuitos, sin introducir datos de pago. Te contactaremos antes del vencimiento para preguntarte si quieres continuar.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          ¿También es adecuado para los mercados estadounidenses?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">Por supuesto. El framework macro es global, con un enfoque particular en la Fed, el BCE, los flujos institucionales y los datos macroeconómicos de EE. UU. y la UE. La mayoría de los suscriptores operan en renta variable y bonos tanto europeos como americanos.</div>
-        </div>
-      </div>
+    <div class="sec-head"><span class="eyebrow">FAQ</span><h2 class="sec-h2">Preguntas frecuentes</h2></div>
+    <div class="faq">
+      <div class="fi"><button class="fq" onclick="tf(this)">¿Thesyum ofrece consejos de inversión?<span class="ic">+</span></button><div class="fa"><div class="fa-in">No. Thesyum es una herramienta de análisis e inteligencia, no un servicio de asesoría financiera regulada. Refuerza tu análisis con un contexto que de otro modo llevaría horas, pero la decisión es tuya.</div></div></div>
+      <div class="fi"><button class="fq" onclick="tf(this)">¿De dónde vienen los datos y las tesis?<span class="ic">+</span></button><div class="fa"><div class="fa-in">Los precios e indicadores macro son datos reales (Yahoo Finance, FRED/Federal Reserve), escritos por el sistema. Las tesis nacen del análisis de noticias sobre temas en aceleración, con efecto directo, efecto oculto, horizonte y confianza.</div></div></div>
+      <div class="fi"><button class="fq" onclick="tf(this)">¿La prueba gratuita requiere tarjeta de crédito?<span class="ic">+</span></button><div class="fa"><div class="fa-in">No. Los 14 días de prueba son completamente gratuitos, sin datos de pago. Te contactamos antes del vencimiento para preguntarte si quieres continuar.</div></div></div>
+      <div class="fi"><button class="fq" onclick="tf(this)">¿Puedo cancelar cuando quiera?<span class="ic">+</span></button><div class="fa"><div class="fa-in">Sí, sin penalizaciones ni explicaciones. La suscripción se renueva mensualmente y puedes cancelar en un clic.</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- CONTATTI -->
-<section id="contatti">
+<!-- FINAL -->
+<section id="final" class="sec">
   <div class="container">
-    <div class="contatti-grid">
-      <div class="contact-info">
-        <span class="eyebrow">Empieza ahora</span>
-        <h2 class="section-h2">14 días gratis.<br>No se requiere tarjeta.</h2>
-        <p class="section-lead">Completa el formulario y te enviaremos las instrucciones para acceder a la prueba gratuita. Respuesta en menos de 2 horas hábiles.</p>
-        <div class="contact-details">
-          <div class="contact-item">
-            <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
-            <div class="ci-text">
-              <span class="ci-label">Email</span>
-              <span class="ci-value">info@thesyum.com</span>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-            <div class="ci-text">
-              <span class="ci-label">Respuesta</span>
-              <span class="ci-value">En menos de 2 horas hábiles</span>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
-            <div class="ci-text">
-              <span class="ci-label">Privacidad</span>
-              <span class="ci-value">Sin spam. Solo lo que has pedido.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="form-wrap">
-        <form id="contact-form" action="https://formspree.io/f/mjgnrqpb" method="POST">
-          <div class="form-row">
-            <label for="nome">Nombre y apellidos</label>
-            <input type="text" id="nome" name="nome" placeholder="Juan Pérez" required>
-          </div>
-          <div class="form-row">
-            <label for="email">Email profesional</label>
-            <input type="email" id="email" name="email" placeholder="juan@despacho.es" required>
-          </div>
-          <div class="form-row">
-            <label for="ruolo">Perfil</label>
-            <select id="ruolo" name="ruolo" required>
-              <option value="">Selecciona tu perfil</option>
-              <option>Asesor financiero / wealth manager</option>
-              <option>Trader independiente</option>
-              <option>Gestor de cartera</option>
-              <option>Inversor privado activo</option>
-              <option>Otro</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label for="piano">Plan de interés</label>
-            <select id="piano" name="piano">
-              <option value="">Selecciona un plan</option>
-              <option>Esencial — 49€/mes</option>
-              <option>Pro — 99€/mes</option>
-              <option>Elite — 199€/mes</option>
-              <option>Aún no lo sé</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label for="messaggio">Mensaje (opcional)</label>
-            <textarea id="messaggio" name="messaggio" placeholder="Preguntas, necesidades particulares…"></textarea>
-          </div>
-          <button type="submit" class="form-submit">Empieza la prueba gratuita →</button>
-          <div id="form-feedback"></div>
-        </form>
-      </div>
+    <div class="sec-head" style="margin-bottom:34px;">
+      <h2 class="sec-h2">Mañana por la mañana ves la cadena antes que los demás.</h2>
+      <p class="sec-lead">14 días gratis. Sin tarjeta. Cancela en un clic.</p>
     </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section id="final-cta">
-  <div class="container">
-    <div class="cta-inner">
-      <span class="eyebrow">Empieza hoy</span>
-      <h2 class="section-h2">Deja de leer noticias.<br>Empieza a leer el mercado.</h2>
-      <p class="section-lead">14 días gratis. No se requiere tarjeta. Cancelación con un clic.</p>
-      <div class="cta-actions">
-        <a href="#contatti" class="btn-primary">Empieza la prueba gratuita →</a>
-        <a href="#prezzi" class="btn-ghost">Compara los planes</a>
-      </div>
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+      <a href="#" class="btn btn-green btn-lg">Prueba 14 días gratis</a>
+      <a href="#prezzi" class="btn btn-ghost btn-lg">Compara los planes</a>
     </div>
   </div>
 </section>
@@ -1985,138 +495,39 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <span class="nav-logo"><svg viewBox="0 0 26 26" fill="none" width="26" height="26"><rect x="1" y="1" width="24" height="24" stroke="#EAF3EE" stroke-opacity=".3"/><line x1="1" y1="9" x2="25" y2="9" stroke="#EAF3EE" stroke-opacity=".22"/><line x1="1" y1="17" x2="25" y2="17" stroke="#EAF3EE" stroke-opacity=".22"/><circle cx="7" cy="5" r="2" fill="#6EE7A8"/><circle cx="7" cy="13" r="2" fill="#E3B24A"/><circle cx="7" cy="21" r="2" fill="#6EE7A8"/></svg>Thesyum</span>
-        <p class="footer-tagline">Intelligence financiera diaria para asesores y traders que gestionan capital real.</p>
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#" class="nav-logo"><span class="logo-chip"><svg viewBox="0 0 26 26" fill="none" width="24" height="24"><rect x="1" y="1" width="24" height="24" stroke="#EAF3EE" stroke-opacity=".3"/><line x1="1" y1="9" x2="25" y2="9" stroke="#EAF3EE" stroke-opacity=".22"/><line x1="1" y1="17" x2="25" y2="17" stroke="#EAF3EE" stroke-opacity=".22"/><circle cx="7" cy="5" r="2" fill="#6EE7A8"/><circle cx="7" cy="13" r="2" fill="#E3B24A"/><circle cx="7" cy="21" r="2" fill="#6EE7A8"/></svg></span>Thesyum</a>
+        <p class="ft-tag">Inteligencia financiera diaria para quien mueve capital real.</p>
       </div>
-      <div class="footer-col">
-        <h4>Producto</h4>
-        <ul>
-          <li><a href="#come-funziona">Cómo funciona</a></li>
-          <li><a href="#priced-in">Framework Priced In</a></li>
-          <li><a href="#cosa-ricevi">Lo que recibes</a></li>
-          <li><a href="#prezzi">Planes y precios</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Soporte</h4>
-        <ul>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contatti">Contacto</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Términos de servicio</a></li>
-        </ul>
-      </div>
+      <div class="foot-col"><h4>Producto</h4><ul><li><a href="#come">Cómo funciona</a></li><li><a href="#concetto">La tesis</a></li><li><a href="#dentro">Qué recibes</a></li><li><a href="#prezzi">Precios</a></li></ul></div>
+      <div class="foot-col"><h4>Recursos</h4><ul><li><a href="#">Informe de ejemplo</a></li><li><a href="#">El framework</a></li><li><a href="#">Método & datos</a></li><li><a href="#">FAQ</a></li></ul></div>
+      <div class="foot-col"><h4>Empresa</h4><ul><li><a href="#final">Contacto</a></li><li><a href="../privacy.html">Privacy</a></li><li><a href="../termini.html">Términos</a></li><li><a href="../privacy.html">Cookie</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2025 Thesyum. Todos los derechos reservados. Esto no constituye asesoramiento financiero.</span>
-      <div class="footer-legal">
-        <a href="#">Privacidad</a>
-        <a href="#">Términos</a>
-        <a href="#">Cookies</a>
-      </div>
-    </div>
+    <div class="foot-bot"><span>© 2026 Thesyum. Todos los derechos reservados. No es asesoramiento financiero.</span><span>info@thesyum.com</span></div>
   </div>
 </footer>
 
-<!-- MOBILE STICKY BAR -->
-<div id="sticky-bar">
-  <div class="sticky-text">
-    <strong>14 días gratis</strong>
-    <span>No se requiere tarjeta</span>
-  </div>
-  <a href="#contatti" class="sticky-cta">Empezar →</a>
-</div>
-
 <script>
-function toggleMenu() {
-  var btn = document.getElementById('hamburger');
-  var menu = document.getElementById('mobile-menu');
-  btn.classList.toggle('open');
-  menu.classList.toggle('open');
-}
-
-function toggleFaq(btn) {
-  var item = btn.parentElement;
-  var isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
-  if (!isOpen) item.classList.add('open');
-}
-
-(function() {
-  var el = document.getElementById('nc-date');
-  if (!el) return;
-  var d = new Date();
-  el.textContent = d.toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric' });
+function tm(){document.getElementById('hb').classList.toggle('open');document.getElementById('mm').classList.toggle('open');}
+function tf(b){var i=b.parentElement,o=i.classList.contains('open');document.querySelectorAll('.fi.open').forEach(function(e){e.classList.remove('open');});if(!o)i.classList.add('open');}
+(function(){
+  var items=[['Crudo WTI','99.77','-3.8%','d'],['Oro','4,141','-0.5%','d'],['Cobre','6.60','+0.9%','u'],['Plata','57.55','+1.0%','u'],['Tierras Raras REMX','53.36','-1.6%','d'],['Semis SOXX','501.9','+1.7%','u'],['Gas natural','3.01','-1.7%','d'],['Shipping BOAT','51.77','-0.2%','d'],['Defensa ITA','207.8','-0.6%','d'],['EUR/USD','1.12','+0.0%','u'],['Treasury 10Y','5.09%','-0.2%','d'],['Tasa Fed','3.75%','—','u']];
+  function tk(i){return '<span class="tk"><span class="n">'+i[0]+'</span><span class="v">'+i[1]+'</span><span class="c '+i[3]+'">'+i[2]+'</span></span>';}
+  var h=items.map(tk).join('');document.getElementById('tkTrack').innerHTML=h+h;
 })();
-
-(function() {
-  var track = document.getElementById('ticker-track');
-  if (!track) return;
-  var items = [
-    ['S&P 500',    '5.632,10',  '+0,42%', 'up'],
-    ['Nasdaq 100', '20.145,80', '+0,68%', 'up'],
-    ['FTSE MIB',   '34.210',    '-0,21%', 'down'],
-    ['DAX',        '18.720',    '+0,29%', 'up'],
-    ['EUR/USD',    '1,0842',    '+0,15%', 'up'],
-    ['Bitcoin',    '68.420',    '+2,10%', 'up'],
-    ['Oro',        '2.512,30',  '+0,34%', 'up'],
-    ['WTI',        '74,15',     '-1,05%', 'down'],
-    ['US 10Y',     '4,182%',    '+0,03',  'up'],
-    ['VIX',        '15,24',     '-3,40%', 'down']
+(function(){
+  var theses=[
+    {dir:'up',claim:'El aplazamiento de la UE sobre el metano desbloquea una ventaja estructural para el GNL de EE. UU.',tema:'Energía',priced:'bajo',fonte:'Natural Gas Intel.',oriz:'horizonte 60d',conf:62,direct:'Menos riesgo regulatorio para los proveedores de GNL de EE. UU.: contratos europeos menos expuestos a penalizaciones ESG.',hidden:'Quita a Qatar y Australia un argumento clave en la renegociación de contratos europeos a largo plazo.'},
+    {dir:'up',claim:'En tierras raras el verdadero cuello de botella no es extraer, sino refinar fuera de China.',tema:'Tierras raras',priced:'bajo',fonte:'The Guardian',oriz:'horizonte 90d',conf:65,direct:'El mercado descuenta la noticia como positiva genérica para mineras no chinas: más demanda europea, más extracción.',hidden:'El nudo es la separación/refinado: China controla más del 85% de la capacidad global. Extraer no basta.'},
+    {dir:'down',claim:'El cuello de botella de la red eléctrica frena los data centers y alarga los plazos de despliegue de GPU.',tema:'IA / Semiconductores',priced:'bajo',fonte:'Reuters',oriz:'horizonte 90d',conf:62,direct:'El mercado lo lee como positivo para utilities e infraestructura eléctrica, impulsadas por la demanda de IA.',hidden:'Sin nuevas líneas (permisos de 5–10 años) los data centers aprobados quedan en cola para la conexión: una restricción ya vinculante hoy.'}
   ];
-  function build() {
-    return items.map(function(i) {
-      return '<span class="tk-item"><span class="tk-name">' + i[0] + '</span>' +
-             '<span class="tk-val">' + i[1] + '</span>' +
-             '<span class="tk-chg ' + i[3] + '">' + i[2] + '</span></span>';
-    }).join('');
-  }
-  track.innerHTML = build() + build();
-})();
-
-(function() {
-  var bar = document.getElementById('sticky-bar');
-  var target = document.getElementById('contatti');
-  if (!bar || !target) return;
-  var obs = new IntersectionObserver(function(entries) {
-    bar.style.opacity = entries[0].isIntersecting ? '0' : '1';
-    bar.style.pointerEvents = entries[0].isIntersecting ? 'none' : '';
-  }, { threshold: 0.1 });
-  obs.observe(target);
-})();
-
-(function() {
-  var form = document.getElementById('contact-form');
-  var feedback = document.getElementById('form-feedback');
-  if (!form || !feedback) return;
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    var btn = form.querySelector('.form-submit');
-    btn.disabled = true;
-    btn.textContent = 'Enviando…';
-    try {
-      var res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        feedback.style.color = 'var(--ok)';
-        feedback.textContent = '✓ Recibido. Te contactaremos en menos de 2 horas hábiles.';
-        form.reset();
-        btn.textContent = 'Enviado ✓';
-      } else {
-        throw new Error('server');
-      }
-    } catch(err) {
-      feedback.style.color = 'var(--bad)';
-      feedback.textContent = 'Algo no ha funcionado. Escribe a info@thesyum.com';
-      btn.disabled = false;
-      btn.textContent = 'Reintentar →';
-    }
-  });
+  var el={tesi:document.getElementById('tesi'),body:document.getElementById('tcBody'),dir:document.getElementById('tcDir'),claim:document.getElementById('tcClaim'),meta:document.getElementById('tcMeta'),oriz:document.getElementById('tcOriz'),confv:document.getElementById('tcConfVal'),fill:document.getElementById('tcFill'),direct:document.getElementById('tcDirect'),hidden:document.getElementById('tcHidden')};
+  var i=0;
+  function paint(t){el.dir.textContent=t.dir==='up'?'▲':'▼';el.dir.className='dir '+(t.dir==='up'?'up':'down');el.claim.textContent=t.claim;el.meta.innerHTML='<span class="chip">tema <b>'+t.tema+'</b></span><span class="chip lo">ya descontado: '+t.priced+'</span><span class="chip">fuente <b>'+t.fonte+'</b></span>';el.oriz.textContent=t.oriz;el.confv.textContent=t.conf+'/100';el.direct.textContent=t.direct;el.hidden.textContent=t.hidden;}
+  function reveal(t){el.tesi.classList.remove('on');el.fill.style.transition='none';el.fill.style.width='0';void el.tesi.offsetWidth;el.tesi.classList.add('on');requestAnimationFrame(function(){el.fill.style.transition='';el.fill.style.width=t.conf+'%';});}
+  paint(theses[0]);reveal(theses[0]);
+  setInterval(function(){el.body.classList.add('swap');setTimeout(function(){i=(i+1)%theses.length;paint(theses[i]);el.body.classList.remove('swap');reveal(theses[i]);},450);},7000);
 })();
 </script>
 </body>
