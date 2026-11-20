@@ -171,6 +171,39 @@ section{scroll-margin-top:80px;}.sec{padding:96px 0;}
 .mp .o{font-family:var(--mono);font-size:10px;font-weight:700;padding:4px 8px;border-radius:6px;flex-shrink:0;}
 .mp .o.ok{background:var(--accent-soft);color:var(--accent-d);}.mp .o.no{background:var(--red-soft);color:var(--red);}
 .mp .vt{font-size:12.5px;color:var(--ink);line-height:1.4;}.mp .vt .m{display:block;font-family:var(--mono);font-size:10.5px;color:var(--ink3);margin-top:3px;}
+/* JOBS (colored) */
+.jobs{border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--surface);box-shadow:var(--sh-s);}
+.job{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 28px;border-top:1px solid var(--border);transition:background .2s;}
+.job:first-child{border-top:none;}
+.job:hover{background:var(--bg);}
+.job .jl{display:flex;align-items:center;gap:16px;}
+.job .ji{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.job .ji svg{width:21px;height:21px;}
+.job .jt{font-size:16px;font-weight:500;color:var(--ink);}
+.job .done{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.04em;padding:7px 14px;border-radius:100px;white-space:nowrap;}
+.job .done svg{width:13px;height:13px;}
+.c-green .ji{background:#E7F6EE;color:#0A7A45;}.c-green .done{background:#E7F6EE;color:#0A7A45;}
+.c-teal .ji{background:#DEF4F1;color:#0A8E82;}.c-teal .done{background:#DEF4F1;color:#0A8E82;}
+.c-amber .ji{background:#FBEFDD;color:#B4690E;}.c-amber .done{background:#FBEFDD;color:#B4690E;}
+.c-violet .ji{background:#ECE7FD;color:#6B4FE0;}.c-violet .done{background:#ECE7FD;color:#6B4FE0;}
+/* PERSONA (segmented) */
+.persona-wrap{margin-top:66px;text-align:center;}
+.persona-h{font-family:var(--serif);font-size:27px;font-weight:600;letter-spacing:-.02em;margin-bottom:4px;}
+.persona-sub{color:var(--ink2);font-size:15px;margin-bottom:26px;}
+.seg{display:inline-flex;background:var(--panel);border:1px solid var(--border);border-radius:100px;padding:4px;margin-bottom:34px;}
+.seg button{border:none;background:none;font-family:var(--sans);font-size:14.5px;font-weight:600;color:var(--ink2);padding:10px 26px;border-radius:100px;cursor:pointer;transition:.2s;}
+.seg button.on{background:var(--accent);color:#fff;box-shadow:0 5px 14px rgba(16,161,92,.32);}
+.persona{display:none;}.persona.on{display:block;}
+.pgrid{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;align-items:center;text-align:left;max-width:920px;margin:0 auto;}
+.ppain{background:linear-gradient(180deg,#FBEFDD,var(--surface));border:1px solid #EFE1CC;border-left:3px solid var(--amber);border-radius:16px;padding:26px;}
+.ppain .pk{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.ppain p{font-size:16.5px;color:var(--ink);line-height:1.5;font-weight:500;}
+.pout{list-style:none;display:flex;flex-direction:column;gap:16px;}
+.pout li{display:flex;gap:13px;font-size:15.5px;color:var(--ink);line-height:1.45;align-items:flex-start;}
+.pout li .pc{width:27px;height:27px;border-radius:8px;background:var(--accent-soft);color:var(--accent-d);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.pout li .pc svg{width:15px;height:15px;}
+.pout li b{font-weight:600;}
+@media(max-width:760px){.pgrid{grid-template-columns:1fr;gap:18px;}.job{padding:18px 20px;}.job .jt{font-size:14.5px;}}
 
 /* PREZZI */
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start;}
@@ -200,11 +233,14 @@ section{scroll-margin-top:80px;}.sec{padding:96px 0;}
 .fa-in{padding-bottom:22px;font-size:15px;color:var(--ink2);line-height:1.7;}
 
 /* FINAL */
-#final{background:var(--dark);color:#fff;text-align:center;position:relative;overflow:hidden;}
-#final::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 52% 62% at 50% 0%,rgba(16,161,92,.26),transparent 70%);}
-#final .container{position:relative;}#final .sec-h2{color:#fff;}#final .sec-lead{color:rgba(255,255,255,.72);}
-#final .btn-ghost{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.28);}
-#final .btn-ghost:hover{border-color:#fff;}
+#final{background:linear-gradient(125deg,#0A7A45 0%,#10A15C 42%,#1FB8A6 100%);color:#fff;text-align:center;position:relative;overflow:hidden;}
+#final::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 82% 8%,rgba(255,255,255,.22),transparent 60%),radial-gradient(ellipse 45% 55% at 12% 100%,rgba(255,255,255,.12),transparent 60%);}
+#final::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:40px 40px;-webkit-mask-image:radial-gradient(ellipse 85% 75% at 50% 45%,#000,transparent 75%);mask-image:radial-gradient(ellipse 85% 75% at 50% 45%,#000,transparent 75%);}
+#final .container{position:relative;z-index:1;}#final .sec-h2{color:#fff;}#final .sec-lead{color:rgba(255,255,255,.88);}
+#final .btn-green{background:#fff;color:var(--accent-d);}
+#final .btn-green:hover{background:#fff;color:var(--dark);box-shadow:0 16px 34px rgba(0,0,0,.2);}
+#final .btn-ghost{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.55);}
+#final .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.24);}
 
 /* FOOTER */
 footer{background:var(--surface);border-top:1px solid var(--border);padding:54px 0 34px;}
@@ -352,68 +388,39 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
   <div class="container">
     <div class="sec-head">
       <span class="eyebrow">What you get</span>
-      <h2 class="sec-h2">One report a day. Four things, zero noise.</h2>
-      <p class="sec-lead">Every morning at 7:00, before the open. You read it in 4 minutes.</p>
+      <h2 class="sec-h2">The work of a team of analysts.<br>Done every night.</h2>
+      <p class="sec-lead">What you’d do yourself, if you had the time and the team. Ready at 7:00, before the open.</p>
     </div>
 
-    <div class="frow">
-      <div class="ftxt">
-        <div class="fkick">Real prices</div>
-        <h3>The real numbers, not opinions.</h3>
-        <p>Commodities, rates and currencies with 1, 5 and 20-day moves. Written by the system straight from Yahoo Finance and FRED data — <strong>never by AI</strong>.</p>
-      </div>
-      <div class="fvis">
-        <table class="mt"><caption>MARKET CONTEXT · NOV 20</caption>
-          <tr><td>WTI Crude</td><td class="v">99.77</td><td class="d">-3.8%</td></tr>
-          <tr><td>Gold (future)</td><td class="v">4,141</td><td class="d">-0.5%</td></tr>
-          <tr><td>Copper</td><td class="v">6.60</td><td class="u">+0.9%</td></tr>
-          <tr><td>Rare Earths (REMX)</td><td class="v">53.36</td><td class="d">-24.1% 20d</td></tr>
-          <tr><td>Semis (SOXX)</td><td class="v">501.9</td><td class="u">+1.7%</td></tr>
-        </table>
-      </div>
+    <div class="jobs">
+      <div class="job c-green"><div class="jl"><div class="ji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14M4 19h16M8 7h8M8 11h8M8 15h5"/></svg></div><div class="jt">Read 180+ sources every night</div></div><span class="done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>done for you</span></div>
+      <div class="job c-teal"><div class="jl"><div class="ji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div class="jt">Tell if a story is already priced in</div></div><span class="done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>classified</span></div>
+      <div class="job c-amber"><div class="jl"><div class="ji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8M21 7v6h-6"/></svg></div><div class="jt">Trace the chain of hidden consequences</div></div><span class="done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>mapped</span></div>
+      <div class="job c-violet"><div class="jl"><div class="ji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div class="jt">Check if past theses were right</div></div><span class="done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>report card</span></div>
     </div>
 
-    <div class="frow rev">
-      <div class="ftxt">
-        <div class="fkick">The thesis of the day</div>
-        <h3>An actionable thesis, not a headline.</h3>
-        <p>Direct effect, hidden effect, horizon, confidence and how far it’s priced in — with the source story. And if nothing is above threshold, zero theses: no noise.</p>
-      </div>
-      <div class="fvis">
-        <div class="mp">
-          <div class="pt">THESIS · ENERGY · conf. 62/100</div>
-          <div class="v"><span class="o ok">▲ thesis</span><div class="vt">The EU methane-rule delay unlocks a structural advantage for US LNG.<span class="m">horizon 60d · priced in: low</span></div></div>
+    <div class="persona-wrap">
+      <h3 class="persona-h">Built for your role.</h3>
+      <p class="persona-sub">The same report, two ways to use it.</p>
+      <div class="seg"><button class="on" onclick="seg(0)">Advisor</button><button onclick="seg(1)">Trader</button></div>
+      <div class="persona on" id="p0">
+        <div class="pgrid">
+          <div class="ppain"><div class="pk">Your problem</div><p>Every morning you burn an hour of research and walk into meetings without a clear thesis for your client.</p></div>
+          <ul class="pout">
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Macro context <b>ready for every client</b>, by 7:00</span></li>
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>You explain moves <b>with confidence</b>, not hearsay</span></li>
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>You reclaim <b>90+ minutes</b> every business day</span></li>
+          </ul>
         </div>
       </div>
-    </div>
-
-    <div class="frow">
-      <div class="ftxt">
-        <div class="fkick">Accelerating themes</div>
-        <h3>What’s heating up, before the price.</h3>
-        <p>Which narratives are growing versus usual (last 30 days vs 6-month average). You see them accelerate before they become market moves.</p>
-      </div>
-      <div class="fvis">
-        <div class="mh">
-          <div class="ht">ACCELERATING THEMES</div>
-          <div class="r"><div class="nm"><span>Copper · double supply shock</span><span class="x">6×</span></div><div class="trk"><div class="fl" style="width:100%"></div></div></div>
-          <div class="r"><div class="nm"><span>Shipping · Asia congestion</span><span class="x">6×</span></div><div class="trk"><div class="fl" style="width:100%"></div></div></div>
-          <div class="r"><div class="nm"><span>Oil · Hormuz routes</span><span class="x">2×</span></div><div class="trk"><div class="fl" style="width:40%"></div></div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="frow rev">
-      <div class="ftxt">
-        <div class="fkick">The report card</div>
-        <h3>It grades itself.</h3>
-        <p>At expiry the system checks on real prices whether its theses were right. No marketing: the results, confirmed or disproven, are there in black and white.</p>
-      </div>
-      <div class="fvis">
-        <div class="mp">
-          <div class="pt">EXPIRY CHECKS</div>
-          <div class="v"><span class="o no">disproven</span><div class="vt">Magnet bottleneck China→Japan.<span class="m">REMX: -29.5% in 60d (±3% threshold)</span></div></div>
-          <div class="v"><span class="o ok">confirmed</span><div class="vt">EU methane delay → boost for US LNG.<span class="m">Energy: +4.1% in 60d · within horizon</span></div></div>
+      <div class="persona" id="p1">
+        <div class="pgrid">
+          <div class="ppain"><div class="pk">Your problem</div><p>You enter when the news is already in the price. You chase the move instead of anticipating it.</p></div>
+          <ul class="pout">
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>You know <b>where edge remains</b> and where it’s just noise</span></li>
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>You spot the opportunity’s <b>time window</b></span></li>
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>A <b>repeatable framework</b>, not random opinions</span></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -512,6 +519,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
 <script>
 function tm(){document.getElementById('hb').classList.toggle('open');document.getElementById('mm').classList.toggle('open');}
 function tf(b){var i=b.parentElement,o=i.classList.contains('open');document.querySelectorAll('.fi.open').forEach(function(e){e.classList.remove('open');});if(!o)i.classList.add('open');}
+function seg(i){document.querySelectorAll('.seg button').forEach(function(b,j){b.classList.toggle('on',j===i);});document.querySelectorAll('.persona').forEach(function(p,j){p.classList.toggle('on',j===i);});}
 (function(){
   var items=[['WTI Crude','99.77','-3.8%','d'],['Gold','4,141','-0.5%','d'],['Copper','6.60','+0.9%','u'],['Silver','57.55','+1.0%','u'],['Rare Earths REMX','53.36','-1.6%','d'],['Semis SOXX','501.9','+1.7%','u'],['Natural Gas','3.01','-1.7%','d'],['Shipping BOAT','51.77','-0.2%','d'],['Defense ITA','207.8','-0.6%','d'],['EUR/USD','1.12','+0.0%','u'],['Treasury 10Y','5.09%','-0.2%','d'],['Fed Rate','3.75%','—','u']];
   function tk(i){return '<span class="tk"><span class="n">'+i[0]+'</span><span class="v">'+i[1]+'</span><span class="c '+i[3]+'">'+i[2]+'</span></span>';}

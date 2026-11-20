@@ -171,6 +171,39 @@ section{scroll-margin-top:80px;}.sec{padding:96px 0;}
 .mp .o{font-family:var(--mono);font-size:10px;font-weight:700;padding:4px 8px;border-radius:6px;flex-shrink:0;}
 .mp .o.ok{background:var(--accent-soft);color:var(--accent-d);}.mp .o.no{background:var(--red-soft);color:var(--red);}
 .mp .vt{font-size:12.5px;color:var(--ink);line-height:1.4;}.mp .vt .m{display:block;font-family:var(--mono);font-size:10.5px;color:var(--ink3);margin-top:3px;}
+/* JOBS (colored) */
+.jobs{border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--surface);box-shadow:var(--sh-s);}
+.job{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 28px;border-top:1px solid var(--border);transition:background .2s;}
+.job:first-child{border-top:none;}
+.job:hover{background:var(--bg);}
+.job .jl{display:flex;align-items:center;gap:16px;}
+.job .ji{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.job .ji svg{width:21px;height:21px;}
+.job .jt{font-size:16px;font-weight:500;color:var(--ink);}
+.job .done{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.04em;padding:7px 14px;border-radius:100px;white-space:nowrap;}
+.job .done svg{width:13px;height:13px;}
+.c-green .ji{background:#E7F6EE;color:#0A7A45;}.c-green .done{background:#E7F6EE;color:#0A7A45;}
+.c-teal .ji{background:#DEF4F1;color:#0A8E82;}.c-teal .done{background:#DEF4F1;color:#0A8E82;}
+.c-amber .ji{background:#FBEFDD;color:#B4690E;}.c-amber .done{background:#FBEFDD;color:#B4690E;}
+.c-violet .ji{background:#ECE7FD;color:#6B4FE0;}.c-violet .done{background:#ECE7FD;color:#6B4FE0;}
+/* PERSONA (segmented) */
+.persona-wrap{margin-top:66px;text-align:center;}
+.persona-h{font-family:var(--serif);font-size:27px;font-weight:600;letter-spacing:-.02em;margin-bottom:4px;}
+.persona-sub{color:var(--ink2);font-size:15px;margin-bottom:26px;}
+.seg{display:inline-flex;background:var(--panel);border:1px solid var(--border);border-radius:100px;padding:4px;margin-bottom:34px;}
+.seg button{border:none;background:none;font-family:var(--sans);font-size:14.5px;font-weight:600;color:var(--ink2);padding:10px 26px;border-radius:100px;cursor:pointer;transition:.2s;}
+.seg button.on{background:var(--accent);color:#fff;box-shadow:0 5px 14px rgba(16,161,92,.32);}
+.persona{display:none;}.persona.on{display:block;}
+.pgrid{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;align-items:center;text-align:left;max-width:920px;margin:0 auto;}
+.ppain{background:linear-gradient(180deg,#FBEFDD,var(--surface));border:1px solid #EFE1CC;border-left:3px solid var(--amber);border-radius:16px;padding:26px;}
+.ppain .pk{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.ppain p{font-size:16.5px;color:var(--ink);line-height:1.5;font-weight:500;}
+.pout{list-style:none;display:flex;flex-direction:column;gap:16px;}
+.pout li{display:flex;gap:13px;font-size:15.5px;color:var(--ink);line-height:1.45;align-items:flex-start;}
+.pout li .pc{width:27px;height:27px;border-radius:8px;background:var(--accent-soft);color:var(--accent-d);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.pout li .pc svg{width:15px;height:15px;}
+.pout li b{font-weight:600;}
+@media(max-width:760px){.pgrid{grid-template-columns:1fr;gap:18px;}.job{padding:18px 20px;}.job .jt{font-size:14.5px;}}
 
 /* PREZZI */
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start;}
@@ -200,11 +233,14 @@ section{scroll-margin-top:80px;}.sec{padding:96px 0;}
 .fa-in{padding-bottom:22px;font-size:15px;color:var(--ink2);line-height:1.7;}
 
 /* FINAL */
-#final{background:var(--dark);color:#fff;text-align:center;position:relative;overflow:hidden;}
-#final::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 52% 62% at 50% 0%,rgba(16,161,92,.26),transparent 70%);}
-#final .container{position:relative;}#final .sec-h2{color:#fff;}#final .sec-lead{color:rgba(255,255,255,.72);}
-#final .btn-ghost{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.28);}
-#final .btn-ghost:hover{border-color:#fff;}
+#final{background:linear-gradient(125deg,#0A7A45 0%,#10A15C 42%,#1FB8A6 100%);color:#fff;text-align:center;position:relative;overflow:hidden;}
+#final::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 82% 8%,rgba(255,255,255,.22),transparent 60%),radial-gradient(ellipse 45% 55% at 12% 100%,rgba(255,255,255,.12),transparent 60%);}
+#final::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:40px 40px;-webkit-mask-image:radial-gradient(ellipse 85% 75% at 50% 45%,#000,transparent 75%);mask-image:radial-gradient(ellipse 85% 75% at 50% 45%,#000,transparent 75%);}
+#final .container{position:relative;z-index:1;}#final .sec-h2{color:#fff;}#final .sec-lead{color:rgba(255,255,255,.88);}
+#final .btn-green{background:#fff;color:var(--accent-d);}
+#final .btn-green:hover{background:#fff;color:var(--dark);box-shadow:0 16px 34px rgba(0,0,0,.2);}
+#final .btn-ghost{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.55);}
+#final .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.24);}
 
 /* FOOTER */
 footer{background:var(--surface);border-top:1px solid var(--border);padding:54px 0 34px;}
@@ -352,68 +388,39 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
   <div class="container">
     <div class="sec-head">
       <span class="eyebrow">Ce que vous recevez</span>
-      <h2 class="sec-h2">Un rapport par jour. Quatre choses, zéro bruit.</h2>
-      <p class="sec-lead">Chaque matin à 7h00, avant l’ouverture. Vous le lisez en 4 minutes.</p>
+      <h2 class="sec-h2">Le travail d’une équipe d’analystes.<br>Fait chaque nuit.</h2>
+      <p class="sec-lead">Ce que vous feriez vous-même, si vous aviez le temps et l’équipe. Prêt à 7h00, avant l’ouverture.</p>
     </div>
 
-    <div class="frow">
-      <div class="ftxt">
-        <div class="fkick">Prix réels</div>
-        <h3>Les vrais chiffres, pas des opinions.</h3>
-        <p>Matières premières, taux et devises avec variations à 1, 5 et 20 jours. Écrits par le système directement depuis Yahoo Finance et FRED — <strong>jamais par l’IA</strong>.</p>
-      </div>
-      <div class="fvis">
-        <table class="mt"><caption>CONTEXTE DE MARCHÉ · 20 NOV</caption>
-          <tr><td>Pétrole WTI</td><td class="v">99.77</td><td class="d">-3.8%</td></tr>
-          <tr><td>Or (future)</td><td class="v">4,141</td><td class="d">-0.5%</td></tr>
-          <tr><td>Cuivre</td><td class="v">6.60</td><td class="u">+0.9%</td></tr>
-          <tr><td>Terres rares (REMX)</td><td class="v">53.36</td><td class="d">-24,1% 20j</td></tr>
-          <tr><td>Semi. (SOXX)</td><td class="v">501.9</td><td class="u">+1.7%</td></tr>
-        </table>
-      </div>
+    <div class="jobs">
+      <div class="job c-green"><div class="jl"><div class="ji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14M4 19h16M8 7h8M8 11h8M8 15h5"/></svg></div><div class="jt">Lire plus de 180 sources chaque nuit</div></div><span class="done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>fait pour vous</span></div>
+      <div class="job c-teal"><div class="jl"><div class="ji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div class="jt">Savoir si une nouvelle est déjà pricée</div></div><span class="done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>classé</span></div>
+      <div class="job c-amber"><div class="jl"><div class="ji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8M21 7v6h-6"/></svg></div><div class="jt">Tracer la chaîne de conséquences cachées</div></div><span class="done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>cartographiée</span></div>
+      <div class="job c-violet"><div class="jl"><div class="ji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div class="jt">Vérifier si les thèses passées avaient raison</div></div><span class="done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>bulletin</span></div>
     </div>
 
-    <div class="frow rev">
-      <div class="ftxt">
-        <div class="fkick">La thèse du jour</div>
-        <h3>Une thèse opérationnelle, pas un titre.</h3>
-        <p>Effet direct, effet caché, horizon, confiance et degré déjà pricé — avec la nouvelle d’origine. Et s’il n’y a rien au-dessus du seuil, zéro thèse : pas de bruit.</p>
-      </div>
-      <div class="fvis">
-        <div class="mp">
-          <div class="pt">THÈSE · ÉNERGIE · conf. 62/100</div>
-          <div class="v"><span class="o ok">▲ thèse</span><div class="vt">Le report UE des règles méthane débloque un avantage structurel pour le GNL américain.<span class="m">horizon 60j · déjà pricé : faible</span></div></div>
+    <div class="persona-wrap">
+      <h3 class="persona-h">Conçu pour votre rôle.</h3>
+      <p class="persona-sub">Le même rapport, deux façons de l’utiliser.</p>
+      <div class="seg"><button class="on" onclick="seg(0)">Conseiller</button><button onclick="seg(1)">Trader</button></div>
+      <div class="persona on" id="p0">
+        <div class="pgrid">
+          <div class="ppain"><div class="pk">Votre problème</div><p>Chaque matin, vous brûlez une heure de recherche et arrivez en réunion sans thèse claire pour votre client.</p></div>
+          <ul class="pout">
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Contexte macro <b>prêt pour chaque client</b>, dès 7h00</span></li>
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Vous expliquez les mouvements <b>avec assurance</b>, pas avec des « on-dit »</span></li>
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Vous récupérez <b>plus de 90 minutes</b> chaque jour ouvré</span></li>
+          </ul>
         </div>
       </div>
-    </div>
-
-    <div class="frow">
-      <div class="ftxt">
-        <div class="fkick">Thèmes en accélération</div>
-        <h3>Ce qui chauffe, avant le prix.</h3>
-        <p>Quels récits croissent par rapport à l’habitude (30 derniers jours vs moyenne 6 mois). Vous les voyez accélérer avant qu’ils ne deviennent un mouvement de marché.</p>
-      </div>
-      <div class="fvis">
-        <div class="mh">
-          <div class="ht">THÈMES EN ACCÉLÉRATION</div>
-          <div class="r"><div class="nm"><span>Cuivre · double choc d’offre</span><span class="x">6×</span></div><div class="trk"><div class="fl" style="width:100%"></div></div></div>
-          <div class="r"><div class="nm"><span>Shipping · congestion Asie</span><span class="x">6×</span></div><div class="trk"><div class="fl" style="width:100%"></div></div></div>
-          <div class="r"><div class="nm"><span>Pétrole · routes d’Ormuz</span><span class="x">2×</span></div><div class="trk"><div class="fl" style="width:40%"></div></div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="frow rev">
-      <div class="ftxt">
-        <div class="fkick">Le bulletin</div>
-        <h3>Il se juge lui-même.</h3>
-        <p>À l’échéance, le système vérifie sur les prix réels si ses thèses avaient raison. Pas de marketing : les résultats, confirmés ou démentis, sont écrits noir sur blanc.</p>
-      </div>
-      <div class="fvis">
-        <div class="mp">
-          <div class="pt">VÉRIFICATIONS À ÉCHÉANCE</div>
-          <div class="v"><span class="o no">démentie</span><div class="vt">Goulot d’étranglement aimants Chine→Japon.<span class="m">REMX : -29,5% en 60j (seuil ±3%)</span></div></div>
-          <div class="v"><span class="o ok">confirmée</span><div class="vt">Report méthane UE → coup de pouce GNL USA.<span class="m">Énergie : +4,1% en 60j · dans l’horizon</span></div></div>
+      <div class="persona" id="p1">
+        <div class="pgrid">
+          <div class="ppain"><div class="pk">Votre problème</div><p>Vous entrez quand la nouvelle est déjà dans le prix. Vous courez après le mouvement au lieu de l’anticiper.</p></div>
+          <ul class="pout">
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Vous savez <b>où il reste de l’edge</b> et où ce n’est que du bruit</span></li>
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Vous repérez la <b>fenêtre temporelle</b> de l’opportunité</span></li>
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Un <b>framework répétable</b>, pas des opinions au hasard</span></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -512,6 +519,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
 <script>
 function tm(){document.getElementById('hb').classList.toggle('open');document.getElementById('mm').classList.toggle('open');}
 function tf(b){var i=b.parentElement,o=i.classList.contains('open');document.querySelectorAll('.fi.open').forEach(function(e){e.classList.remove('open');});if(!o)i.classList.add('open');}
+function seg(i){document.querySelectorAll('.seg button').forEach(function(b,j){b.classList.toggle('on',j===i);});document.querySelectorAll('.persona').forEach(function(p,j){p.classList.toggle('on',j===i);});}
 (function(){
   var items=[['Pétrole WTI','99.77','-3.8%','d'],['Or','4,141','-0.5%','d'],['Cuivre','6.60','+0.9%','u'],['Argent','57.55','+1.0%','u'],['Terres rares REMX','53.36','-1.6%','d'],['Semi. SOXX','501.9','+1.7%','u'],['Gaz naturel','3.01','-1.7%','d'],['Shipping BOAT','51.77','-0.2%','d'],['Défense ITA','207.8','-0.6%','d'],['EUR/USD','1.12','+0.0%','u'],['Treasury 10Y','5.09%','-0.2%','d'],['Taux Fed','3.75%','—','u']];
   function tk(i){return '<span class="tk"><span class="n">'+i[0]+'</span><span class="v">'+i[1]+'</span><span class="c '+i[3]+'">'+i[2]+'</span></span>';}
