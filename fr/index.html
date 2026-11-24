@@ -224,6 +224,20 @@ section{scroll-margin-top:80px;}.sec{padding:96px 0;}
 .form-submit:hover{background:var(--accent-d);}
 #form-feedback{text-align:center;margin-top:12px;font-size:14px;min-height:20px;}
 @media(max-width:760px){.ct-grid{grid-template-columns:1fr;gap:32px;}.ct-form{padding:24px 20px;}}
+/* CONFRONTO */
+.cmp-wrap{border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--surface);box-shadow:var(--sh-s);}
+.cmp{width:100%;border-collapse:collapse;}
+.cmp thead th{background:var(--panel);padding:16px 18px;text-align:center;font-size:13px;font-weight:600;color:var(--ink2);border-bottom:1px solid var(--border);}
+.cmp thead th:first-child{text-align:left;width:40%;}
+.cmp thead th.hl{color:var(--accent-d);background:var(--accent-soft);}
+.cmp tbody td{padding:14px 18px;border-bottom:1px solid var(--border);text-align:center;font-size:14px;color:var(--ink2);}
+.cmp tbody tr:last-child td{border-bottom:none;}
+.cmp td:first-child{text-align:left;color:var(--ink);font-weight:500;}
+.cmp td.hl{background:rgba(16,161,92,.05);font-weight:600;color:var(--ink);}
+.cmp .chk{color:var(--accent);font-size:17px;font-weight:700;}
+.cmp .crs{color:var(--ink3);font-size:16px;}
+.cmp .par{color:var(--amber);font-size:12.5px;font-style:italic;}
+@media(max-width:620px){.cmp thead th:nth-child(4),.cmp td:nth-child(4){display:none;}.cmp th,.cmp td{padding:11px 12px;font-size:12.5px;}.cmp thead th:first-child{width:auto;}}
 
 /* PREZZI */
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start;}
@@ -443,6 +457,33 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFRONTO -->
+<section id="confronto" class="sec">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Le comparatif</span>
+      <h2 class="sec-h2">Pourquoi Thesyum, et pas le reste.</h2>
+      <p class="sec-lead">Les terminaux professionnels sont puissants — si vous avez une équipe d’analystes et 24k€ par an. Les newsletters coûtent peu — et restent génériques. Thesyum fait le travail de filtrage à votre place.</p>
+    </div>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead>
+          <tr><th>Caractéristique</th><th class="hl">Thesyum</th><th>Terminal pro</th><th>Newsletter générique</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Effet direct + caché</td><td class="hl"><span class="chk">✓</span></td><td><span class="par">Manuel</span></td><td><span class="crs">✗</span></td></tr>
+          <tr><td>Classification « déjà pricé »</td><td class="hl"><span class="chk">✓</span></td><td><span class="crs">✗</span></td><td><span class="crs">✗</span></td></tr>
+          <tr><td>Se vérifie (bulletin)</td><td class="hl"><span class="chk">✓</span></td><td><span class="crs">✗</span></td><td><span class="crs">✗</span></td></tr>
+          <tr><td>Prix réels du système, jamais l’IA</td><td class="hl"><span class="chk">✓</span></td><td><span class="chk">✓</span></td><td><span class="par">Variable</span></td></tr>
+          <tr><td>Prêt à 7h00, lu en 4 min</td><td class="hl"><span class="chk">✓</span></td><td><span class="par">60–120 min</span></td><td><span class="par">Variable</span></td></tr>
+          <tr><td>Coût mensuel</td><td class="hl">dès 49€</td><td>2 000€+</td><td>0–20€</td></tr>
+          <tr><td>Focus matières premières, macro, géopolitique</td><td class="hl"><span class="chk">✓</span></td><td><span class="par">Partiel</span></td><td><span class="crs">✗</span></td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
