@@ -1,6 +1,30 @@
 [
   {
     "tipo": "giornaliero",
+    "data": "2026-11-24",
+    "titolo": "Report giornaliero · 24/11/2026",
+    "url": "macro_20261124.html"
+  },
+  {
+    "tipo": "giornaliero",
+    "data": "2026-11-23",
+    "titolo": "Report giornaliero · 23/11/2026",
+    "url": "macro_20261123.html"
+  },
+  {
+    "tipo": "giornaliero",
+    "data": "2026-11-22",
+    "titolo": "Report giornaliero · 22/11/2026",
+    "url": "macro_20261122.html"
+  },
+  {
+    "tipo": "giornaliero",
+    "data": "2026-11-21",
+    "titolo": "Report giornaliero · 21/11/2026",
+    "url": "macro_20261121.html"
+  },
+  {
+    "tipo": "giornaliero",
     "data": "2026-11-20",
     "titolo": "Report giornaliero · 20/11/2026",
     "url": "macro_20261120.html"
