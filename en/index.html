@@ -354,7 +354,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
               <div class="tc-track"><div class="tc-fill" id="tcFill"></div></div>
             </div>
             <div class="tc-eff direct"><div class="k">Direct effect <span class="sub">— what the market prices immediately</span></div><p id="tcDirect"></p></div>
-            <div class="tc-eff hidden"><div class="k">Hidden effect <span class="sub">— where the value is</span></div><p id="tcHidden"></p></div>
+            <div class="tc-eff hidden"><div class="k">Hidden effect <span class="sub">— who really profits</span></div><p id="tcHidden"></p></div>
           </div>
         </div>
       </div>
@@ -412,7 +412,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
         <div class="mp">
           <div class="pt">EXAMPLE · RARE EARTHS</div>
           <div class="v"><span class="o ok">direct</span><div class="vt">More European demand = more mining for non-Chinese miners.<span class="m">the obvious read, already priced in</span></div></div>
-          <div class="v"><span class="o no">hidden</span><div class="vt">The knot is refining: China controls over 85% of global capacity. Mining alone isn’t enough.<span class="m">where the value is</span></div></div>
+          <div class="v"><span class="o no">hidden</span><div class="vt">The ones who profit aren’t the miners, but whoever refines rare earths outside China (over 85% is there). Without refining, the ore doesn’t sell.<span class="m">who really profits</span></div></div>
         </div>
       </div>
     </div>
@@ -443,7 +443,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
         <div class="pgrid">
           <div class="ppain"><div class="pk">Your problem</div><p>Every morning you burn an hour of research and walk into meetings without a clear thesis for your client.</p></div>
           <ul class="pout">
-            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Macro context <b>ready for every client</b>, by 7:00</span></li>
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>A <b>personalized weekly note</b> on the themes each client has invested in</span></li>
             <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>You explain moves <b>with confidence</b>, not hearsay</span></li>
             <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>You reclaim <b>90+ minutes</b> every business day</span></li>
           </ul>
@@ -620,9 +620,9 @@ function seg(i){document.querySelectorAll('.seg button').forEach(function(b,j){b
 })();
 (function(){
   var theses=[
-    {dir:'up',claim:'The EU methane-rule delay unlocks a structural advantage for US LNG.',tema:'Energy',priced:'low',fonte:'Natural Gas Intel.',oriz:'horizon 60d',conf:62,direct:'Less regulatory risk for US LNG suppliers: European contracts less exposed to ESG penalties.',hidden:'It strips Qatar and Australia of a key argument in renegotiating long-term European contracts.'},
-    {dir:'up',claim:'On rare earths the real bottleneck isn’t mining, but refining outside China.',tema:'Rare earths',priced:'low',fonte:'The Guardian',oriz:'horizon 90d',conf:65,direct:'The market prices the news as generically positive for non-Chinese miners: more European demand, more mining.',hidden:'The knot is separation/refining: China controls over 85% of global capacity. Mining alone isn’t enough.'},
-    {dir:'down',claim:'The power-grid bottleneck slows data centers and stretches GPU deployment timelines.',tema:'AI / Semiconductors',priced:'low',fonte:'Reuters',oriz:'horizon 90d',conf:62,direct:'The market reads it as positive for utilities and power infrastructure, driven by AI demand.',hidden:'Without new lines (5–10 year permitting) approved data centers stay queued for grid connection: a binding constraint already today.'}
+    {dir:'up',claim:'The EU methane-rule delay unlocks a structural advantage for US LNG.',tema:'Energy',priced:'low',fonte:'Natural Gas Intel.',oriz:'horizon 60d',conf:62,direct:'Less regulatory risk for US LNG suppliers: European contracts less exposed to ESG penalties.',hidden:'Who really profits: US LNG exporters. With fewer ESG constraints they sign long-term European contracts and take leverage away from Qatar and Australia.'},
+    {dir:'up',claim:'On rare earths the real bottleneck isn’t mining, but refining outside China.',tema:'Rare earths',priced:'low',fonte:'The Guardian',oriz:'horizon 90d',conf:65,direct:'The market prices the news as generically positive for non-Chinese miners: more European demand, more mining.',hidden:'The ones who profit aren’t the miners, but the few companies that refine rare earths outside China (which controls over 85% of capacity). Without refining, the mined ore doesn’t sell.'},
+    {dir:'down',claim:'The power-grid bottleneck slows data centers and stretches GPU deployment timelines.',tema:'AI / Semiconductors',priced:'low',fonte:'Reuters',oriz:'horizon 90d',conf:62,direct:'The market reads it as positive for utilities and power infrastructure, driven by AI demand.',hidden:'Who profits: those who already own transmission lines and grid connections. New data centers stay queued 5–10 years for hookup — the edge is in the grid, not the GPUs.'}
   ];
   var el={tesi:document.getElementById('tesi'),body:document.getElementById('tcBody'),dir:document.getElementById('tcDir'),claim:document.getElementById('tcClaim'),meta:document.getElementById('tcMeta'),oriz:document.getElementById('tcOriz'),confv:document.getElementById('tcConfVal'),fill:document.getElementById('tcFill'),direct:document.getElementById('tcDirect'),hidden:document.getElementById('tcHidden')};
   var i=0;

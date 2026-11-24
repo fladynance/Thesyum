@@ -354,7 +354,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
               <div class="tc-track"><div class="tc-fill" id="tcFill"></div></div>
             </div>
             <div class="tc-eff direct"><div class="k">Effetto diretto <span class="sub">— quello che il mercato prezza subito</span></div><p id="tcDirect"></p></div>
-            <div class="tc-eff hidden"><div class="k">Effetto nascosto <span class="sub">— dove sta il valore</span></div><p id="tcHidden"></p></div>
+            <div class="tc-eff hidden"><div class="k">Effetto nascosto <span class="sub">— chi ci guadagna davvero</span></div><p id="tcHidden"></p></div>
           </div>
         </div>
       </div>
@@ -412,7 +412,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
         <div class="mp">
           <div class="pt">ESEMPIO · TERRE RARE</div>
           <div class="v"><span class="o ok">diretto</span><div class="vt">Più domanda europea = più estrazione per i miner non-cinesi.<span class="m">la lettura ovvia, già prezzata</span></div></div>
-          <div class="v"><span class="o no">nascosto</span><div class="vt">Il nodo è la raffinazione: la Cina controlla oltre l'85% della capacità globale. L'estrazione non basta.<span class="m">dove sta il valore</span></div></div>
+          <div class="v"><span class="o no">nascosto</span><div class="vt">A guadagnarci non sono i miner, ma chi raffina le terre rare fuori dalla Cina (oltre l'85% è là). Senza raffinazione, l'estratto non si vende.<span class="m">chi ci guadagna davvero</span></div></div>
         </div>
       </div>
     </div>
@@ -443,7 +443,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
         <div class="pgrid">
           <div class="ppain"><div class="pk">Il tuo problema</div><p>Ogni mattina bruci un'ora di ricerca e arrivi in riunione senza una tesi chiara da dare al cliente.</p></div>
           <ul class="pout">
-            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Contesto macro <b>pronto per ogni cliente</b>, già alle 7:00</span></li>
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Una <b>nota settimanale personalizzata</b> sui temi su cui ogni cliente ha investito</span></li>
             <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Spieghi i movimenti <b>con sicurezza</b>, non con il "si dice"</span></li>
             <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Recuperi <b>oltre 90 minuti</b> ogni giorno lavorativo</span></li>
           </ul>
@@ -620,9 +620,9 @@ function seg(i){document.querySelectorAll('.seg button').forEach(function(b,j){b
 })();
 (function(){
   var theses=[
-    {dir:'up',claim:'Il rinvio UE sulle regole metano sblocca un vantaggio strutturale per l’LNG americano.',tema:'Energia',priced:'basso',fonte:'Natural Gas Intel.',oriz:'orizzonte 60g',conf:62,direct:'Meno rischio normativo per i fornitori LNG USA: contratti europei meno esposti a penali ESG.',hidden:'Toglie a Qatar e Australia un argomento chiave nelle rinegoziazioni dei contratti europei di lungo termine.'},
-    {dir:'up',claim:'Sulle terre rare il vero collo di bottiglia non è estrarre, ma raffinare fuori dalla Cina.',tema:'Terre Rare',priced:'basso',fonte:'The Guardian',oriz:'orizzonte 90g',conf:65,direct:'Il mercato prezza la notizia come positiva generica per i miner non-cinesi: più domanda europea, più estrazione.',hidden:'Il nodo è la separazione/raffinazione: la Cina controlla oltre l’85% della capacità globale. L’estrazione non basta.'},
-    {dir:'down',claim:'Il collo di bottiglia sulla rete elettrica frena i data center e allunga i tempi di deployment GPU.',tema:'AI / Semiconduttori',priced:'basso',fonte:'Reuters',oriz:'orizzonte 90g',conf:62,direct:'Il mercato legge la notizia come positiva per utility e infrastrutture elettriche, trainate dalla domanda AI.',hidden:'Senza nuove linee (iter 5–10 anni) i data center approvati restano in coda per l’allaccio: vincolo già oggi binding.'}
+    {dir:'up',claim:'Il rinvio UE sulle regole metano sblocca un vantaggio strutturale per l’LNG americano.',tema:'Energia',priced:'basso',fonte:'Natural Gas Intel.',oriz:'orizzonte 60g',conf:62,direct:'Meno rischio normativo per i fornitori LNG USA: contratti europei meno esposti a penali ESG.',hidden:'Chi ci guadagna: gli esportatori di LNG USA. Con meno vincoli ESG firmano contratti europei a lungo termine e tolgono potere a Qatar e Australia.'},
+    {dir:'up',claim:'Sulle terre rare il vero collo di bottiglia non è estrarre, ma raffinare fuori dalla Cina.',tema:'Terre Rare',priced:'basso',fonte:'The Guardian',oriz:'orizzonte 90g',conf:65,direct:'Il mercato prezza la notizia come positiva generica per i miner non-cinesi: più domanda europea, più estrazione.',hidden:'A guadagnarci non sono i miner, ma le poche aziende che raffinano le terre rare fuori dalla Cina (che controlla oltre l’85% della capacità). Senza raffinazione, il minerale estratto non si vende.'},
+    {dir:'down',claim:'Il collo di bottiglia sulla rete elettrica frena i data center e allunga i tempi di deployment GPU.',tema:'AI / Semiconduttori',priced:'basso',fonte:'Reuters',oriz:'orizzonte 90g',conf:62,direct:'Il mercato legge la notizia come positiva per utility e infrastrutture elettriche, trainate dalla domanda AI.',hidden:'Chi ci guadagna: chi possiede già linee di trasmissione e connessioni alla rete. I nuovi data center restano in coda 5–10 anni per l’allaccio — l’edge è nella rete, non nelle GPU.'}
   ];
   var el={tesi:document.getElementById('tesi'),body:document.getElementById('tcBody'),dir:document.getElementById('tcDir'),claim:document.getElementById('tcClaim'),meta:document.getElementById('tcMeta'),oriz:document.getElementById('tcOriz'),confv:document.getElementById('tcConfVal'),fill:document.getElementById('tcFill'),direct:document.getElementById('tcDirect'),hidden:document.getElementById('tcHidden')};
   var i=0;

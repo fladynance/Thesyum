@@ -354,7 +354,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
               <div class="tc-track"><div class="tc-fill" id="tcFill"></div></div>
             </div>
             <div class="tc-eff direct"><div class="k">Efecto directo <span class="sub">— lo que el mercado descuenta al instante</span></div><p id="tcDirect"></p></div>
-            <div class="tc-eff hidden"><div class="k">Efecto oculto <span class="sub">— donde está el valor</span></div><p id="tcHidden"></p></div>
+            <div class="tc-eff hidden"><div class="k">Efecto oculto <span class="sub">— quién gana de verdad</span></div><p id="tcHidden"></p></div>
           </div>
         </div>
       </div>
@@ -412,7 +412,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
         <div class="mp">
           <div class="pt">EJEMPLO · TIERRAS RARAS</div>
           <div class="v"><span class="o ok">directo</span><div class="vt">Más demanda europea = más extracción para mineras no chinas.<span class="m">la lectura obvia, ya descontada</span></div></div>
-          <div class="v"><span class="o no">oculto</span><div class="vt">El nudo es el refinado: China controla más del 85% de la capacidad global. Extraer no basta.<span class="m">donde está el valor</span></div></div>
+          <div class="v"><span class="o no">oculto</span><div class="vt">Quienes ganan no son las mineras, sino quien refina fuera de China (más del 85% está allí). Sin refinado, el extraído no se vende.<span class="m">quién gana de verdad</span></div></div>
         </div>
       </div>
     </div>
@@ -443,7 +443,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
         <div class="pgrid">
           <div class="ppain"><div class="pk">Tu problema</div><p>Cada mañana quemas una hora de investigación y llegas a reuniones sin una tesis clara para tu cliente.</p></div>
           <ul class="pout">
-            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Contexto macro <b>listo para cada cliente</b>, ya a las 7:00</span></li>
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Una <b>nota semanal personalizada</b> sobre los temas en los que cada cliente ha invertido</span></li>
             <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Explicas los movimientos <b>con seguridad</b>, no con rumores</span></li>
             <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Recuperas <b>más de 90 minutos</b> cada día laborable</span></li>
           </ul>
@@ -620,9 +620,9 @@ function seg(i){document.querySelectorAll('.seg button').forEach(function(b,j){b
 })();
 (function(){
   var theses=[
-    {dir:'up',claim:'El aplazamiento de la UE sobre el metano desbloquea una ventaja estructural para el GNL de EE. UU.',tema:'Energía',priced:'bajo',fonte:'Natural Gas Intel.',oriz:'horizonte 60d',conf:62,direct:'Menos riesgo regulatorio para los proveedores de GNL de EE. UU.: contratos europeos menos expuestos a penalizaciones ESG.',hidden:'Quita a Qatar y Australia un argumento clave en la renegociación de contratos europeos a largo plazo.'},
-    {dir:'up',claim:'En tierras raras el verdadero cuello de botella no es extraer, sino refinar fuera de China.',tema:'Tierras raras',priced:'bajo',fonte:'The Guardian',oriz:'horizonte 90d',conf:65,direct:'El mercado descuenta la noticia como positiva genérica para mineras no chinas: más demanda europea, más extracción.',hidden:'El nudo es la separación/refinado: China controla más del 85% de la capacidad global. Extraer no basta.'},
-    {dir:'down',claim:'El cuello de botella de la red eléctrica frena los data centers y alarga los plazos de despliegue de GPU.',tema:'IA / Semiconductores',priced:'bajo',fonte:'Reuters',oriz:'horizonte 90d',conf:62,direct:'El mercado lo lee como positivo para utilities e infraestructura eléctrica, impulsadas por la demanda de IA.',hidden:'Sin nuevas líneas (permisos de 5–10 años) los data centers aprobados quedan en cola para la conexión: una restricción ya vinculante hoy.'}
+    {dir:'up',claim:'El aplazamiento de la UE sobre el metano desbloquea una ventaja estructural para el GNL de EE. UU.',tema:'Energía',priced:'bajo',fonte:'Natural Gas Intel.',oriz:'horizonte 60d',conf:62,direct:'Menos riesgo regulatorio para los proveedores de GNL de EE. UU.: contratos europeos menos expuestos a penalizaciones ESG.',hidden:'Quién gana de verdad: los exportadores de GNL de EE. UU. Con menos restricciones ESG firman contratos europeos a largo plazo y restan poder a Qatar y Australia.'},
+    {dir:'up',claim:'En tierras raras el verdadero cuello de botella no es extraer, sino refinar fuera de China.',tema:'Tierras raras',priced:'bajo',fonte:'The Guardian',oriz:'horizonte 90d',conf:65,direct:'El mercado descuenta la noticia como positiva genérica para mineras no chinas: más demanda europea, más extracción.',hidden:'Quienes ganan no son las mineras, sino las pocas empresas que refinan tierras raras fuera de China (que controla más del 85% de la capacidad). Sin refinado, el mineral extraído no se vende.'},
+    {dir:'down',claim:'El cuello de botella de la red eléctrica frena los data centers y alarga los plazos de despliegue de GPU.',tema:'IA / Semiconductores',priced:'bajo',fonte:'Reuters',oriz:'horizonte 90d',conf:62,direct:'El mercado lo lee como positivo para utilities e infraestructura eléctrica, impulsadas por la demanda de IA.',hidden:'Quién gana: quienes ya poseen líneas de transmisión y conexiones a la red. Los nuevos data centers quedan en cola 5–10 años para la conexión — el edge está en la red, no en las GPU.'}
   ];
   var el={tesi:document.getElementById('tesi'),body:document.getElementById('tcBody'),dir:document.getElementById('tcDir'),claim:document.getElementById('tcClaim'),meta:document.getElementById('tcMeta'),oriz:document.getElementById('tcOriz'),confv:document.getElementById('tcConfVal'),fill:document.getElementById('tcFill'),direct:document.getElementById('tcDirect'),hidden:document.getElementById('tcHidden')};
   var i=0;
