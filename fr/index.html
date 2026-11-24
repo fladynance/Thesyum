@@ -354,7 +354,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
               <div class="tc-track"><div class="tc-fill" id="tcFill"></div></div>
             </div>
             <div class="tc-eff direct"><div class="k">Effet direct <span class="sub">— ce que le marché price aussitôt</span></div><p id="tcDirect"></p></div>
-            <div class="tc-eff hidden"><div class="k">Effet caché <span class="sub">— où se trouve la valeur</span></div><p id="tcHidden"></p></div>
+            <div class="tc-eff hidden"><div class="k">Effet caché <span class="sub">— qui y gagne vraiment</span></div><p id="tcHidden"></p></div>
           </div>
         </div>
       </div>
@@ -412,7 +412,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
         <div class="mp">
           <div class="pt">EXEMPLE · TERRES RARES</div>
           <div class="v"><span class="o ok">direct</span><div class="vt">Plus de demande européenne = plus d’extraction pour les mineurs non chinois.<span class="m">la lecture évidente, déjà pricée</span></div></div>
-          <div class="v"><span class="o no">caché</span><div class="vt">Le nœud, c’est le raffinage : la Chine contrôle plus de 85% de la capacité mondiale. L’extraction ne suffit pas.<span class="m">où est la valeur</span></div></div>
+          <div class="v"><span class="o no">caché</span><div class="vt">Ceux qui y gagnent ne sont pas les mineurs, mais ceux qui raffinent hors de Chine (plus de 85% y est). Sans raffinage, l’extrait ne se vend pas.<span class="m">qui y gagne vraiment</span></div></div>
         </div>
       </div>
     </div>
@@ -443,7 +443,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:54px
         <div class="pgrid">
           <div class="ppain"><div class="pk">Votre problème</div><p>Chaque matin, vous brûlez une heure de recherche et arrivez en réunion sans thèse claire pour votre client.</p></div>
           <ul class="pout">
-            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Contexte macro <b>prêt pour chaque client</b>, dès 7h00</span></li>
+            <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Une <b>note hebdomadaire personnalisée</b> sur les thèmes où chaque client a investi</span></li>
             <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Vous expliquez les mouvements <b>avec assurance</b>, pas avec des « on-dit »</span></li>
             <li><span class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Vous récupérez <b>plus de 90 minutes</b> chaque jour ouvré</span></li>
           </ul>
@@ -620,9 +620,9 @@ function seg(i){document.querySelectorAll('.seg button').forEach(function(b,j){b
 })();
 (function(){
   var theses=[
-    {dir:'up',claim:'Le report UE des règles méthane débloque un avantage structurel pour le GNL américain.',tema:'Énergie',priced:'faible',fonte:'Natural Gas Intel.',oriz:'horizon 60j',conf:62,direct:'Moins de risque réglementaire pour les fournisseurs GNL américains : contrats européens moins exposés aux pénalités ESG.',hidden:'Il prive le Qatar et l’Australie d’un argument clé dans la renégociation des contrats européens de long terme.'},
-    {dir:'up',claim:'Sur les terres rares, le vrai goulot n’est pas l’extraction, mais le raffinage hors de Chine.',tema:'Terres rares',priced:'faible',fonte:'The Guardian',oriz:'horizon 90j',conf:65,direct:'Le marché price la nouvelle comme globalement positive pour les mineurs non chinois : plus de demande européenne, plus d’extraction.',hidden:'Le nœud, c’est la séparation/le raffinage : la Chine contrôle plus de 85% de la capacité mondiale. L’extraction ne suffit pas.'},
-    {dir:'down',claim:'Le goulot du réseau électrique freine les data centers et allonge les délais de déploiement GPU.',tema:'IA / Semi-conducteurs',priced:'faible',fonte:'Reuters',oriz:'horizon 90j',conf:62,direct:'Le marché y voit du positif pour les utilities et les infrastructures électriques, portées par la demande IA.',hidden:'Sans nouvelles lignes (permis 5–10 ans) les data centers approuvés restent en file pour le raccordement : contrainte déjà contraignante aujourd’hui.'}
+    {dir:'up',claim:'Le report UE des règles méthane débloque un avantage structurel pour le GNL américain.',tema:'Énergie',priced:'faible',fonte:'Natural Gas Intel.',oriz:'horizon 60j',conf:62,direct:'Moins de risque réglementaire pour les fournisseurs GNL américains : contrats européens moins exposés aux pénalités ESG.',hidden:'Qui y gagne vraiment : les exportateurs de GNL américains. Avec moins de contraintes ESG, ils signent des contrats européens de long terme et retirent du levier au Qatar et à l’Australie.'},
+    {dir:'up',claim:'Sur les terres rares, le vrai goulot n’est pas l’extraction, mais le raffinage hors de Chine.',tema:'Terres rares',priced:'faible',fonte:'The Guardian',oriz:'horizon 90j',conf:65,direct:'Le marché price la nouvelle comme globalement positive pour les mineurs non chinois : plus de demande européenne, plus d’extraction.',hidden:'Ceux qui y gagnent ne sont pas les mineurs, mais les rares entreprises qui raffinent les terres rares hors de Chine (qui contrôle plus de 85% de la capacité). Sans raffinage, le minerai extrait ne se vend pas.'},
+    {dir:'down',claim:'Le goulot du réseau électrique freine les data centers et allonge les délais de déploiement GPU.',tema:'IA / Semi-conducteurs',priced:'faible',fonte:'Reuters',oriz:'horizon 90j',conf:62,direct:'Le marché y voit du positif pour les utilities et les infrastructures électriques, portées par la demande IA.',hidden:'Qui y gagne : ceux qui possèdent déjà des lignes de transport et des raccordements. Les nouveaux data centers restent en file 5–10 ans pour le raccordement — l’edge est dans le réseau, pas dans les GPU.'}
   ];
   var el={tesi:document.getElementById('tesi'),body:document.getElementById('tcBody'),dir:document.getElementById('tcDir'),claim:document.getElementById('tcClaim'),meta:document.getElementById('tcMeta'),oriz:document.getElementById('tcOriz'),confv:document.getElementById('tcConfVal'),fill:document.getElementById('tcFill'),direct:document.getElementById('tcDirect'),hidden:document.getElementById('tcHidden')};
   var i=0;
